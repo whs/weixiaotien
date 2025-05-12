@@ -1,0 +1,180 @@
+{
+    "version": 2,
+    "model": "hf.co/scb10x/typhoon2.1-gemma3-12b-gguf:Q4_K_M",
+    "result": {
+        "valid_relationships": [
+            {
+                "a": "เว่ยเส้าเทียน",
+                "relation": "father",
+                "b": "พระเอก"
+            },
+            {
+                "a": "จางม่านจือ",
+                "relation": "mother",
+                "b": "พระเอก"
+            }
+        ],
+        "valid_optional_relationships": [
+            {
+                "a": "เซียะถงอี้",
+                "relation": "aunt",
+                "b": "พระเอก"
+            }
+        ],
+        "invalid_relationships": [
+            {
+                "a": "พระเอก",
+                "relation": "father",
+                "b": "เว่ยเส้าเทียน"
+            },
+            {
+                "a": "เว่ยเส้าเทียน",
+                "relation": "father",
+                "b": "จางม่านจือ"
+            },
+            {
+                "a": "จางฟู่เหยิน",
+                "relation": "father",
+                "b": "เว่ยเส้าเทียน"
+            },
+            {
+                "a": "เว่ยเส้าเทียน",
+                "relation": "father",
+                "b": "จางฟู่เหยิน"
+            },
+            {
+                "a": "จางฟู่เหยิน",
+                "relation": "friend",
+                "b": "หลี่เซียซุย"
+            },
+            {
+                "a": "หลี่เซียซุย",
+                "relation": "friend",
+                "b": "จางฟู่เหยิน"
+            },
+            {
+                "a": "จางฟู่เหยิน",
+                "relation": "mother",
+                "b": "เส้าสื่อเฉียน"
+            },
+            {
+                "a": "เส้าสื่อเฉียน",
+                "relation": "mother",
+                "b": "เว่ยเส้าเทียน"
+            },
+            {
+                "a": "เว่ยเส้าเทียน",
+                "relation": "father",
+                "b": "เส้าสื่อเฉียน"
+            },
+            {
+                "a": "พระเอก",
+                "relation": "aunt",
+                "b": "เซียะถงอี้"
+            },
+            {
+                "a": "หลี่เซียซุย",
+                "relation": "aunt",
+                "b": "พระเอก"
+            },
+            {
+                "a": "พระเอก",
+                "relation": "aunt",
+                "b": "หลี่เซียซุย"
+            }
+        ],
+        "missing_relationships": [
+            {
+                "a": "เว่ยเส้าเทียน",
+                "relation": "friend",
+                "b": "จางฟู่เหยิน"
+            },
+            {
+                "a": "จางฟู่เหยิน",
+                "relation": "friend",
+                "b": "เว่ยเส้าเทียน"
+            },
+            {
+                "a": "พระเอก",
+                "relation": "son",
+                "b": "เว่ยเส้าเทียน"
+            },
+            {
+                "a": "พระเอก",
+                "relation": "son",
+                "b": "จางม่านจือ"
+            },
+            {
+                "a": "เส้าสื่อเฉียน",
+                "relation": "found",
+                "b": "พระเอก"
+            },
+            {
+                "a": "จางฟู่เหยิน",
+                "relation": "adopted",
+                "b": "พระเอก"
+            }
+        ],
+        "valid_party_member_list": [
+            {
+                "name": "เส้าสื่อเฉียน",
+                "title": "แม่นาง 14"
+            }
+        ],
+        "invalid_party_member_list": [
+            {
+                "name": "พระเอก",
+                "title": "แม่นาง 14"
+            },
+            {
+                "name": "เว่ยเส้าเทียน",
+                "title": "แม่นาง 14"
+            },
+            {
+                "name": "หลี่เซียซุย",
+                "title": "แม่นาง 14"
+            },
+            {
+                "name": "จางฟู่เหยิน",
+                "title": "แม่นาง 14"
+            },
+            {
+                "name": "จางม่านจือ",
+                "title": "แม่นาง 14"
+            },
+            {
+                "name": "เซียะถงอี้",
+                "title": "แม่นาง 14"
+            }
+        ],
+        "missing_party_members": [
+            {
+                "name": "จางฟู่เหยิน",
+                "title": "หัวหน้าพรรค"
+            }
+        ],
+        "output": null
+    },
+    "score": 0.054285714285714284,
+    "error": null,
+    "cost": null,
+    "provider": "ollama_structured",
+    "pydantic_output": null,
+    "openai_response": null,
+    "ollama_response": {
+        "model": "hf.co/scb10x/typhoon2.1-gemma3-12b-gguf:Q4_K_M",
+        "created_at": "2025-05-12T17:56:03.071399553Z",
+        "message": {
+            "role": "assistant",
+            "content": "{\"relationships\": [\n    {\"a\": \"พระเอก\", \"relation\": \"father\", \"b\": \"เว่ยเส้าเทียน\"},\n    {\"a\": \"เว่ยเส้าเทียน\", \"relation\": \"father\", \"b\": \"พระเอก\"},\n    {\"a\": \"เว่ยเส้าเทียน\", \"relation\": \"father\", \"b\": \"จางม่านจือ\"},\n    {\"a\": \"จางม่านจือ\", \"relation\": \"mother\", \"b\": \"พระเอก\"},\n    {\"a\": \"จางฟู่เหยิน\", \"relation\": \"father\", \"b\": \"เว่ยเส้าเทียน\"},\n    {\"a\": \"เว่ยเส้าเทียน\", \"relation\": \"father\", \"b\": \"จางฟู่เหยิน\"},\n    {\"a\": \"จางฟู่เหยิน\", \"relation\": \"friend\", \"b\": \"หลี่เซียซุย\"},\n    {\"a\": \"หลี่เซียซุย\", \"relation\": \"friend\", \"b\": \"จางฟู่เหยิน\"},\n    {\"a\": \"จางฟู่เหยิน\", \"relation\": \"mother\", \"b\": \"เส้าสื่อเฉียน\"},\n    {\"a\": \"เส้าสื่อเฉียน\", \"relation\": \"mother\", \"b\": \"เว่ยเส้าเทียน\"},\n    {\"a\": \"เว่ยเส้าเทียน\", \"relation\": \"father\", \"b\": \"เส้าสื่อเฉียน\"},\n    {\"a\": \"เซียะถงอี้\", \"relation\": \"aunt\", \"b\": \"พระเอก\"},\n    {\"a\": \"พระเอก\", \"relation\": \"aunt\", \"b\": \"เซียะถงอี้\"},\n    {\"a\": \"หลี่เซียซุย\", \"relation\": \"aunt\", \"b\": \"พระเอก\"},\n    {\"a\": \"พระเอก\", \"relation\": \"aunt\", \"b\": \"หลี่เซียซุย\"}\n  ]\n  , \"party_members\": [\n    {\"name\": \"พระเอก\", \"title\": \"แม่นาง 14\"},\n    {\"name\": \"เว่ยเส้าเทียน\", \"title\": \"แม่นาง 14\"},\n    {\"name\": \"หลี่เซียซุย\", \"title\": \"แม่นาง 14\"},\n    {\"name\": \"จางฟู่เหยิน\", \"title\": \"แม่นาง 14\"},\n    {\"name\": \"จางม่านจือ\", \"title\": \"แม่นาง 14\"},\n    {\"name\": \"เส้าสื่อเฉียน\", \"title\": \"แม่นาง 14\"},\n    {\"name\": \"เซียะถงอี้\", \"title\": \"แม่นาง 14\"}\n  ]\n}\n"
+        },
+        "done_reason": "stop",
+        "done": true,
+        "total_duration": 21832190169,
+        "load_duration": 4551217795,
+        "prompt_eval_count": 417,
+        "prompt_eval_duration": 173702178,
+        "eval_count": 726,
+        "eval_duration": 17027536370
+    }
+}

@@ -245,6 +245,8 @@ def main_ollama():
         # {"model": "hf.co/tensorblock/OpenThaiLLM-Prebuilt-7B-GGUF:Q8_0", "provider": "ollama_structured", "completion_url": ollama_chat_url},
         # {"model": "PetrosStav/gemma3-tools:27b", "provider": "ollama_structured", "completion_url": ollama_chat_url},
         # {"model": "hf.co/aisingapore/Llama-SEA-LION-v3.5-70B-R-GGUF:Q2_K", "provider": "ollama_structured", "completion_url": ollama_chat_url},
+        # {"model": "hf.co/mradermacher/Sailor2-20B-Chat-GGUF:Q8_0", "provider": "ollama_structured", "completion_url": ollama_chat_url},
+        {"model": "hf.co/scb10x/typhoon2.1-gemma3-12b-gguf:Q4_K_M", "provider": "ollama_structured", "completion_url": ollama_chat_url},
     ]:
         print(model["model"])
         evaluate_model_ollama(**model)
