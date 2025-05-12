@@ -1,0 +1,319 @@
+{
+    "model": "gemini-2.0-flash",
+    "result": {
+        "valid_relationships": [
+            {
+                "a": "เว่ยเส้นเทียน",
+                "relation": "friend",
+                "b": "จางฟู่เหยิน"
+            },
+            {
+                "a": "จางฟู่เหยิน",
+                "relation": "adopted",
+                "b": "พระเอก"
+            }
+        ],
+        "valid_optional_relationships": [],
+        "invalid_relationships": [
+            {
+                "a": "พระเอก",
+                "relation": "father",
+                "b": "เว่ยเส้นเทียน"
+            },
+            {
+                "a": "เว่ยเส้นเทียน",
+                "relation": "aunt of mother's sister's mother",
+                "b": "หลี่เซียซุย"
+            },
+            {
+                "a": "หลี่เซียซุย",
+                "relation": "mother",
+                "b": "จางม่านจือ"
+            },
+            {
+                "a": "จางม่านจือ",
+                "relation": "son",
+                "b": "หลี่เซียซุย"
+            }
+        ],
+        "missing_relationships": [
+            {
+                "a": "จางฟู่เหยิน",
+                "relation": "friend",
+                "b": "เว่ยเส้นเทียน"
+            },
+            {
+                "a": "เว่ยเส้นเทียน",
+                "relation": "father",
+                "b": "พระเอก"
+            },
+            {
+                "a": "จางม่านจือ",
+                "relation": "mother",
+                "b": "พระเอก"
+            },
+            {
+                "a": "พระเอก",
+                "relation": "son",
+                "b": "เว่ยเส้นเทียน"
+            },
+            {
+                "a": "พระเอก",
+                "relation": "son",
+                "b": "จางม่านจือ"
+            },
+            {
+                "a": "เส้าสื่อเฉียน",
+                "relation": "found",
+                "b": "พระเอก"
+            }
+        ],
+        "valid_party_member_list": [
+            {
+                "name": "จางฟู่เหยิน",
+                "title": "หัวหน้าพรรค"
+            },
+            {
+                "name": "เส้าสื่อเฉียน",
+                "title": "แม่นาง 14"
+            }
+        ],
+        "invalid_party_member_list": [],
+        "missing_party_members": [],
+        "output": {
+            "output": {
+                "relationships": [
+                    {
+                        "a": "พระเอก",
+                        "relation": "father",
+                        "b": "เว่ยเส้นเทียน"
+                    },
+                    {
+                        "a": "เว่ยเส้นเทียน",
+                        "relation": "friend",
+                        "b": "จางฟู่เหยิน"
+                    },
+                    {
+                        "a": "จางฟู่เหยิน",
+                        "relation": "adopted",
+                        "b": "พระเอก"
+                    },
+                    {
+                        "a": "เว่ยเส้นเทียน",
+                        "relation": "aunt of mother's sister's mother",
+                        "b": "หลี่เซียซุย"
+                    },
+                    {
+                        "a": "หลี่เซียซุย",
+                        "relation": "mother",
+                        "b": "จางม่านจือ"
+                    },
+                    {
+                        "a": "จางม่านจือ",
+                        "relation": "son",
+                        "b": "หลี่เซียซุย"
+                    }
+                ],
+                "party_members": [
+                    {
+                        "name": "จางฟู่เหยิน",
+                        "title": "หัวหน้าพรรค"
+                    },
+                    {
+                        "name": "เส้าสื่อเฉียน",
+                        "title": "แม่นาง 14"
+                    }
+                ]
+            },
+            "_output_tool_name": "final_result",
+            "_state": {
+                "message_history": [
+                    {
+                        "parts": [
+                            {
+                                "content": "\nFrom this dialogue, create a relationship graph of all individuals involved. Return as JSON per schema.\nIf the relationship enum is missing, skip the relationship. All relationships are directional - if it is mutual\nthen it should be repeated for each directions.\n\nพระเอก: เว่ยเส้าเทียน วันนี้เป็นวันตายของเจ้า\nเว่ยเส้าเทียน: โอหัง แน่จริงก็เข้ามา\nพระเอก: ตายซะ!\nหลี่เซียซุย : ช้าก่อน! เว่ยเส้าเทียนคือพ่อของเจ้า!\nหลี่เซียซุย: ซึ่งเป็นสหายรัก ของจางฟู่เหยินหัวหน้าพรรคกิเลนขาว ที่เก็บเจ้ามาเลี้ยงเมื่อ 22 ปีก่อน\nซึ่งจริงๆแล้วก่อนที่จะเจอเจ้า แม่นางเส้าสื่อเฉียน แม่นาง 14\nเว่ยเส้าเทียน: แห่งพรรคกิเลนขาว ซึ่งได้พบเจ้าข้างหนองน้ำ ใกล้เมืองเหลียงคุน ซึ่งเป็นที่ๆ เซียะถงอี้ น้าสาวพี่แม่ได้แนะนำให้พบ\nหลี่เซียซุย: ข้าหลี่เซียซุย ก่อนที่จะเจอเจ้า\nเว่ยเส้าเทียน: ซึ่งอันที่จริงแล้ว ข้าเองก็ไม่เคยรู้มาก่อนว่าเจ้า เป็นลูกของ\nหลี่เซียซุย: จางฟู่เหยิน\nเว่ยเส้าเทียน: จนข้านึกขึ้นได้ จึงว่า\nหลี่เซียซุย: จางม่านจือ แม่เจ้า\nเว่ยเส้าเทียน: ได้พาข้าไปพบ\nหลี่เซียซุย: พี่สาวแม่ของเจ้า\nเว่ยเส้าเทียน: ซึ่งน้าสาวพี่แม่ของเจ้า ได้พาข้าไปรู้จักกับหลี่เซียซุย\nหลี่เซียซุย: น้าสาวพี่ของแม่เจ้า\nเว่ยเส้าเทียน: ก่อนที่จะเจอเจ้า\nหลี่เซียซุย: เมื่อ 22 ปีก่อน\n",
+                                "timestamp": "2025-05-12T10:25:17.952723Z",
+                                "part_kind": "user-prompt"
+                            }
+                        ],
+                        "instructions": null,
+                        "kind": "request"
+                    },
+                    {
+                        "parts": [
+                            {
+                                "tool_name": "final_result",
+                                "args": {},
+                                "tool_call_id": "pyd_ai_48210ba70f99494d8b8bf7bcefc1969b",
+                                "part_kind": "tool-call"
+                            }
+                        ],
+                        "model_name": "gemini-2.0-flash",
+                        "timestamp": "2025-05-12T10:25:20.777635Z",
+                        "kind": "response"
+                    },
+                    {
+                        "parts": [
+                            {
+                                "content": [
+                                    {
+                                        "type": "missing",
+                                        "loc": [
+                                            "relationships"
+                                        ],
+                                        "msg": "Field required",
+                                        "input": {}
+                                    },
+                                    {
+                                        "type": "missing",
+                                        "loc": [
+                                            "party_members"
+                                        ],
+                                        "msg": "Field required",
+                                        "input": {}
+                                    }
+                                ],
+                                "tool_name": "final_result",
+                                "tool_call_id": "pyd_ai_48210ba70f99494d8b8bf7bcefc1969b",
+                                "timestamp": "2025-05-12T10:25:20.777707Z",
+                                "part_kind": "retry-prompt"
+                            }
+                        ],
+                        "instructions": null,
+                        "kind": "request"
+                    },
+                    {
+                        "parts": [
+                            {
+                                "tool_name": "final_result",
+                                "args": {},
+                                "tool_call_id": "pyd_ai_68189bc7f7444c1d84bf551be4b51dd7",
+                                "part_kind": "tool-call"
+                            }
+                        ],
+                        "model_name": "gemini-2.0-flash",
+                        "timestamp": "2025-05-12T10:25:21.574254Z",
+                        "kind": "response"
+                    },
+                    {
+                        "parts": [
+                            {
+                                "content": [
+                                    {
+                                        "type": "missing",
+                                        "loc": [
+                                            "relationships"
+                                        ],
+                                        "msg": "Field required",
+                                        "input": {}
+                                    },
+                                    {
+                                        "type": "missing",
+                                        "loc": [
+                                            "party_members"
+                                        ],
+                                        "msg": "Field required",
+                                        "input": {}
+                                    }
+                                ],
+                                "tool_name": "final_result",
+                                "tool_call_id": "pyd_ai_68189bc7f7444c1d84bf551be4b51dd7",
+                                "timestamp": "2025-05-12T10:25:21.574490Z",
+                                "part_kind": "retry-prompt"
+                            }
+                        ],
+                        "instructions": null,
+                        "kind": "request"
+                    },
+                    {
+                        "parts": [
+                            {
+                                "tool_name": "final_result",
+                                "args": {
+                                    "relationships": [
+                                        {
+                                            "relation": "father",
+                                            "b": "เว่ยเส้นเทียน",
+                                            "a": "พระเอก"
+                                        },
+                                        {
+                                            "b": "จางฟู่เหยิน",
+                                            "a": "เว่ยเส้นเทียน",
+                                            "relation": "friend"
+                                        },
+                                        {
+                                            "relation": "adopted",
+                                            "b": "พระเอก",
+                                            "a": "จางฟู่เหยิน"
+                                        },
+                                        {
+                                            "b": "หลี่เซียซุย",
+                                            "relation": "aunt of mother's sister's mother",
+                                            "a": "เว่ยเส้นเทียน"
+                                        },
+                                        {
+                                            "relation": "mother",
+                                            "b": "จางม่านจือ",
+                                            "a": "หลี่เซียซุย"
+                                        },
+                                        {
+                                            "b": "หลี่เซียซุย",
+                                            "relation": "son",
+                                            "a": "จางม่านจือ"
+                                        }
+                                    ],
+                                    "party_members": [
+                                        {
+                                            "name": "จางฟู่เหยิน",
+                                            "title": "หัวหน้าพรรค"
+                                        },
+                                        {
+                                            "name": "เส้าสื่อเฉียน",
+                                            "title": "แม่นาง 14"
+                                        }
+                                    ]
+                                },
+                                "tool_call_id": "pyd_ai_cafeb287b4474cf0907cf0c2bb84e621",
+                                "part_kind": "tool-call"
+                            }
+                        ],
+                        "model_name": "gemini-2.0-flash",
+                        "timestamp": "2025-05-12T10:25:23.767949Z",
+                        "kind": "response"
+                    },
+                    {
+                        "parts": [
+                            {
+                                "tool_name": "final_result",
+                                "content": "Final result processed.",
+                                "tool_call_id": "pyd_ai_cafeb287b4474cf0907cf0c2bb84e621",
+                                "timestamp": "2025-05-12T10:25:23.768246Z",
+                                "part_kind": "tool-return"
+                            }
+                        ],
+                        "instructions": null,
+                        "kind": "request"
+                    }
+                ],
+                "usage": {
+                    "requests": 3,
+                    "request_tokens": 1963,
+                    "response_tokens": 142,
+                    "total_tokens": 2105,
+                    "details": null
+                },
+                "retries": 2,
+                "run_step": 3
+            },
+            "_new_message_index": 0,
+            "_traceparent_value": null
+        }
+    },
+    "score": 0.2666666666666667,
+    "error": null,
+    "cost": {
+        "request_cost_1k": 0,
+        "input_token_1m": 0.15,
+        "output_token_1m": 0.6
+    }
+}

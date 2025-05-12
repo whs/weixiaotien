@@ -1,6 +1,0 @@
-{
-    "model": "google/gemini-2.5-flash-preview",
-    "result": null,
-    "score": 0.0,
-    "error": "UnexpectedModelBehavior('Exceeded maximum retries (5) for result validation')"
-}

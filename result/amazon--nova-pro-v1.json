@@ -1,0 +1,7 @@
+{
+    "model": "amazon/nova-pro-v1",
+    "result": null,
+    "score": 0.0,
+    "error": "TypeError(\"'NoneType' object cannot be interpreted as an integer\")",
+    "cost": null
+}

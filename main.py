@@ -5,6 +5,7 @@ import re
 
 from pydantic import BaseModel
 from pydantic_ai import Agent
+from pydantic_ai.models.gemini import GeminiModel
 from pydantic_ai.models.openai import OpenAIModel
 from pydantic_ai.providers.openai import OpenAIProvider
 
@@ -56,7 +57,7 @@ def main():
         # OpenAIModel(model_name="hf.co/mradermacher/openthaigpt1.5-72b-instruct-i1-GGUF:IQ2_S", provider=ollama),
         # OpenAIModel(model_name="hf.co/mradermacher/openthaigpt1.5-14b-instruct-GGUF:Q8_0", provider=ollama),
         # OpenAIModel(model_name="hf.co/JulienElkaim/Tsunami-1.0-14B-Instruct-Q4_K_M-GGUF:Q4_K_M", provider=ollama),
-        OpenAIModel(model_name="hf.co/tensorblock/OpenThaiLLM-Prebuilt-7B-GGUF:Q8_0", provider=ollama),
+        # OpenAIModel(model_name="hf.co/tensorblock/OpenThaiLLM-Prebuilt-7B-GGUF:Q8_0", provider=ollama),
 
         # Public models
         # OpenAIModel(model_name="google/gemini-2.5-pro-preview", provider=openrouter), # ???
@@ -73,13 +74,16 @@ def main():
         # OpenAIModel(model_name="anthropic/claude-3.7-sonnet", provider=openrouter),
         # OpenAIModel(model_name="anthropic/claude-3.7-sonnet:thinking", provider=openrouter), # Fail
         # OpenAIModel(model_name="openai/gpt-4o-2024-11-20", provider=openrouter),
-        # OpenAIModel(model_name="qwen/qwen2.5-vl-72b-instruct", provider=openrouter), # No tool use
         # OpenAIModel(model_name="meta-llama/llama-4-maverick", provider=openrouter), # Fail
         # OpenAIModel(model_name="meta-llama/llama-3.3-70b-instruct", provider=openrouter),
         # OpenAIModel(model_name="anthropic/claude-3.5-haiku-20241022", provider=openrouter),
         # OpenAIModel(model_name="anthropic/claude-3.5-sonnet-20240620", provider=openrouter),
         # OpenAIModel(model_name="anthropic/claude-3.5-haiku", provider=openrouter),
         # OpenAIModel(model_name="anthropic/claude-3.5-sonnet", provider=openrouter),
+        # GeminiModel('gemini-2.0-flash', provider='google-vertex'),
+        # GeminiModel('gemini-2.5-flash-preview-04-17', provider='google-vertex'),
+        # GeminiModel('gemini-2.5-pro-preview-05-06', provider='google-vertex'),
+        OpenAIModel(model_name="amazon/nova-pro-v1", provider=openrouter),
     ]
 
     for model in models:
