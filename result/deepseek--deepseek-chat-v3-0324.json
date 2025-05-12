@@ -1,0 +1,6 @@
+{
+    "model": "deepseek/deepseek-chat-v3-0324",
+    "result": null,
+    "score": 0.0,
+    "error": "UnexpectedModelBehavior('Received empty model response')"
+}

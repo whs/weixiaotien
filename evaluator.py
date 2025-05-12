@@ -47,6 +47,8 @@ class Relation(str, Enum):
     son = "son"
     found = "found"
     adopted = "adopted"
+    aunt = "aunt"
+    aunt_of_mother_sister_mother = "aunt of mother's sister's mother"
 
 class PartyTitle(str, Enum):
     leader = "หัวหน้าพรรค"
@@ -92,7 +94,9 @@ expected_result = [
 
 # Like expected_result but is optional
 allowed_result = [
-    Relationship(a=Character.zhangmanzhi, relation=Relation.mother, b=Character.hero),
+    Relationship(a=Character.xiatongyi, relation=Relation.aunt, b=Character.hero),
+    Relationship(a=Character.xiatongyi, relation=Relation.aunt_of_mother_sister_mother, b=Character.hero),
+    Relationship(a=Character.xiatongyi, relation=Relation.aunt, b=Character.zhangmanzhi),
 ]
 
 party_member_list = [
@@ -116,10 +120,18 @@ class Result:
         # Valid relationship score: % of the expected results found
         valid_relationship_score = float(len(self.valid_relationships)) / float(len(expected_result))
         # Invalid relationship score: % of the result that is valid
-        invalid_relationship_score = 1 - (float(len(self.invalid_relationships)) / float(len(self.output.output.relationships)))
+        output_relationship_count = len(self.output.output.relationships)
+        if output_relationship_count > 0:
+            invalid_relationship_score = 1 - (float(len(self.invalid_relationships)) / float(output_relationship_count))
+        else:
+            invalid_relationship_score = 0
 
         party_member_list_score = float(len(self.valid_party_member_list)) / float(len(party_member_list))
-        invalid_party_member_list_score = 1 - (float(len(self.invalid_party_member_list)) / float(len(self.output.output.party_members)))
+        output_party_members_count = len(self.output.output.party_members)
+        if output_party_members_count > 0:
+            invalid_party_member_list_score = 1 - (float(len(self.invalid_party_member_list)) / float(output_party_members_count))
+        else:
+            invalid_party_member_list_score = 0
 
         # Relationship = 80% score
         # Party member = 20% score
@@ -144,9 +156,9 @@ def grade(output: Output) -> Result:
         missing_party_members=[],
         output=None,
     )
-    expected_result_remaining = expected_result[::] # Clone
-    allowed_result_remaining = allowed_result[::]
-    party_member_remaining = party_member_list[::]
+    expected_result_remaining = expected_result.copy()
+    allowed_result_remaining = allowed_result.copy()
+    party_member_remaining = party_member_list.copy()
 
     # Grade relationship graph
     for rel in output.relationships:
@@ -159,7 +171,7 @@ def grade(output: Output) -> Result:
                 break
 
         if found:
-            break
+            continue
 
         for i, expected in enumerate(allowed_result_remaining):
             if rel == expected:
@@ -178,7 +190,7 @@ def grade(output: Output) -> Result:
             if member == expected:
                 found = True
                 out.valid_party_member_list.append(member)
-                del expected_result_remaining[i]
+                del party_member_remaining[i]
                 break
 
         if not found:

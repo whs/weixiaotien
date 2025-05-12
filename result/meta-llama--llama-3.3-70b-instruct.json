@@ -1,0 +1,386 @@
+{
+    "model": "meta-llama/llama-3.3-70b-instruct",
+    "result": {
+        "valid_relationships": [
+            {
+                "a": "พระเอก",
+                "relation": "son",
+                "b": "เว่ยเส้นเทียน"
+            }
+        ],
+        "valid_optional_relationships": [
+            {
+                "a": "เซียะถงอี้",
+                "relation": "aunt",
+                "b": "จางม่านจือ"
+            }
+        ],
+        "invalid_relationships": [
+            {
+                "a": "เว่ยเส้นเทียน",
+                "relation": "friend",
+                "b": "หลี่เซียซุย"
+            },
+            {
+                "a": "หลี่เซียซุย",
+                "relation": "found",
+                "b": "พระเอก"
+            },
+            {
+                "a": "หลี่เซียซุย",
+                "relation": "adopted",
+                "b": "พระเอก"
+            },
+            {
+                "a": "พระเอก",
+                "relation": "mother",
+                "b": "จางม่านจือ"
+            }
+        ],
+        "missing_relationships": [
+            {
+                "a": "เว่ยเส้นเทียน",
+                "relation": "friend",
+                "b": "จางฟู่เหยิน"
+            },
+            {
+                "a": "จางฟู่เหยิน",
+                "relation": "friend",
+                "b": "เว่ยเส้นเทียน"
+            },
+            {
+                "a": "เว่ยเส้นเทียน",
+                "relation": "father",
+                "b": "พระเอก"
+            },
+            {
+                "a": "จางม่านจือ",
+                "relation": "mother",
+                "b": "พระเอก"
+            },
+            {
+                "a": "พระเอก",
+                "relation": "son",
+                "b": "จางม่านจือ"
+            },
+            {
+                "a": "เส้าสื่อเฉียน",
+                "relation": "found",
+                "b": "พระเอก"
+            },
+            {
+                "a": "จางฟู่เหยิน",
+                "relation": "adopted",
+                "b": "พระเอก"
+            }
+        ],
+        "valid_party_member_list": [],
+        "invalid_party_member_list": [
+            {
+                "name": "พระเอก",
+                "title": "หัวหน้าพรรค"
+            },
+            {
+                "name": "เว่ยเส้นเทียน",
+                "title": "หัวหน้าพรรค"
+            },
+            {
+                "name": "หลี่เซียซุย",
+                "title": "แม่นาง 14"
+            },
+            {
+                "name": "จางม่านจือ",
+                "title": "หัวหน้าพรรค"
+            }
+        ],
+        "missing_party_members": [
+            {
+                "name": "จางฟู่เหยิน",
+                "title": "หัวหน้าพรรค"
+            },
+            {
+                "name": "เส้าสื่อเฉียน",
+                "title": "แม่นาง 14"
+            }
+        ],
+        "output": {
+            "output": {
+                "relationships": [
+                    {
+                        "a": "พระเอก",
+                        "relation": "son",
+                        "b": "เว่ยเส้นเทียน"
+                    },
+                    {
+                        "a": "เว่ยเส้นเทียน",
+                        "relation": "friend",
+                        "b": "หลี่เซียซุย"
+                    },
+                    {
+                        "a": "หลี่เซียซุย",
+                        "relation": "found",
+                        "b": "พระเอก"
+                    },
+                    {
+                        "a": "หลี่เซียซุย",
+                        "relation": "adopted",
+                        "b": "พระเอก"
+                    },
+                    {
+                        "a": "พระเอก",
+                        "relation": "mother",
+                        "b": "จางม่านจือ"
+                    },
+                    {
+                        "a": "เซียะถงอี้",
+                        "relation": "aunt",
+                        "b": "จางม่านจือ"
+                    }
+                ],
+                "party_members": [
+                    {
+                        "name": "พระเอก",
+                        "title": "หัวหน้าพรรค"
+                    },
+                    {
+                        "name": "เว่ยเส้นเทียน",
+                        "title": "หัวหน้าพรรค"
+                    },
+                    {
+                        "name": "หลี่เซียซุย",
+                        "title": "แม่นาง 14"
+                    },
+                    {
+                        "name": "จางม่านจือ",
+                        "title": "หัวหน้าพรรค"
+                    }
+                ]
+            },
+            "_output_tool_name": "final_result",
+            "_state": {
+                "message_history": [
+                    {
+                        "parts": [
+                            {
+                                "content": "\nFrom this dialogue, create a relationship graph of all individuals involved. Return as JSON per schema.\nIf the relationship enum is missing, skip the relationship. All relationships are directional - if it is mutual\nthen it should be repeated for each directions.\n\nพระเอก: เว่ยเส้าเทียน วันนี้เป็นวันตายของเจ้า\nเว่ยเส้าเทียน: โอหัง แน่จริงก็เข้ามา\nพระเอก: ตายซะ!\nหลี่เซียซุย : ช้าก่อน! เว่ยเส้าเทียนคือพ่อของเจ้า!\nหลี่เซียซุย: ซึ่งเป็นสหายรัก ของจางฟู่เหยินหัวหน้าพรรคกิเลนขาว ที่เก็บเจ้ามาเลี้ยงเมื่อ 22 ปีก่อน\nซึ่งจริงๆแล้วก่อนที่จะเจอเจ้า แม่นางเส้าสื่อเฉียน แม่นาง 14\nเว่ยเส้าเทียน: แห่งพรรคกิเลนขาว ซึ่งได้พบเจ้าข้างหนองน้ำ ใกล้เมืองเหลียงคุน ซึ่งเป็นที่ๆ เซียะถงอี้ น้าสาวพี่แม่ได้แนะนำให้พบ\nหลี่เซียซุย: ข้าหลี่เซียซุย ก่อนที่จะเจอเจ้า\nเว่ยเส้าเทียน: ซึ่งอันที่จริงแล้ว ข้าเองก็ไม่เคยรู้มาก่อนว่าเจ้า เป็นลูกของ\nหลี่เซียซุย: จางฟู่เหยิน\nเว่ยเส้าเทียน: จนข้านึกขึ้นได้ จึงว่า\nหลี่เซียซุย: จางม่านจือ แม่เจ้า\nเว่ยเส้าเทียน: ได้พาข้าไปพบ\nหลี่เซียซุย: พี่สาวแม่ของเจ้า\nเว่ยเส้าเทียน: ซึ่งน้าสาวพี่แม่ของเจ้า ได้พาข้าไปรู้จักกับหลี่เซียซุย\nหลี่เซียซุย: น้าสาวพี่ของแม่เจ้า\nเว่ยเส้าเทียน: ก่อนที่จะเจอเจ้า\nหลี่เซียซุย: เมื่อ 22 ปีก่อน\n",
+                                "timestamp": "2025-05-12T08:35:48.265830Z",
+                                "part_kind": "user-prompt"
+                            }
+                        ],
+                        "instructions": null,
+                        "kind": "request"
+                    },
+                    {
+                        "parts": [
+                            {
+                                "content": "",
+                                "part_kind": "text"
+                            },
+                            {
+                                "tool_name": "final_result",
+                                "args": "{\"relationships\": [{\"a\": \"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\", \"relation\": \"son\", \"b\": \"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e19\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"}, {\"a\": \"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e19\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\", \"relation\": \"friend\", \"b\": \"\\u0e2b\\u0e25\\u0e35\\u0e48\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e0b\\u0e38\\u0e22\"}, {\"a\": \"\\u0e2b\\u0e25\\u0e35\\u0e48\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e0b\\u0e38\\u0e22\", \"relation\": \"found\", \"b\": \"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"}, {\"a\": \"\\u0e2b\\u0e25\\u0e35\\u0e48\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e0b\\u0e38\\u0e22\", \"relation\": \"adopted\", \"b\": \"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"}, {\"a\": \"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\", \"relation\": \"mother\", \"b\": \"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\"}, {\"a\": \"\\u0e2b\\u0e31\\u0e27\\u0e2b\\u0e19\\u0e49\\u0e32\\u0e1e\\u0e23\\u0e23\\u0e04\", \"relation\": \"aunt of mother's sister's mother\", \"b\": \"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"}], \"party_members\": [{\"name\": \"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\", \"title\": \"\\u0e2b\\u0e31\\u0e27\\u0e2b\\u0e19\\u0e49\\u0e32\\u0e1e\\u0e23\\u0e23\\u0e04\"}, {\"name\": \"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e19\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\", \"title\": \"\\u0e41\\u0e21\\u0e48\\u0e19\\u0e32\\u0e07 14\"}, {\"name\": \"\\u0e2b\\u0e25\\u0e35\\u0e48\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e0b\\u0e38\\u0e22\", \"title\": \"\\u0e2b\\u0e31\\u0e27\\u0e2b\\u0e19\\u0e49\\u0e32\\u0e1e\\u0e23\\u0e23\\u0e04\"}, {\"name\": \"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\", \"title\": \"\\u0e2b\\u0e31\\u0e27\\u0e2b\\u0e19\\u0e49\\u0e32\\u0e1e\\u0e23\\u0e23\\u0e04\"}]}",
+                                "tool_call_id": "call_1sbtF11GgOGd9Dow8Yz2oI3K",
+                                "part_kind": "tool-call"
+                            }
+                        ],
+                        "model_name": "meta-llama/llama-3.3-70b-instruct",
+                        "timestamp": "2025-05-12T08:35:48Z",
+                        "kind": "response"
+                    },
+                    {
+                        "parts": [
+                            {
+                                "content": [
+                                    {
+                                        "type": "enum",
+                                        "loc": [
+                                            "relationships",
+                                            5,
+                                            "a"
+                                        ],
+                                        "msg": "Input should be 'พระเอก', 'เว่ยเส้นเทียน', 'หลี่เซียซุย', 'จางฟู่เหยิน', 'จางม่านจือ', 'เส้าสื่อเฉียน' or 'เซียะถงอี้'",
+                                        "input": "หัวหน้าพรรค",
+                                        "ctx": {
+                                            "expected": "'พระเอก', 'เว่ยเส้นเทียน', 'หลี่เซียซุย', 'จางฟู่เหยิน', 'จางม่านจือ', 'เส้าสื่อเฉียน' or 'เซียะถงอี้'"
+                                        }
+                                    }
+                                ],
+                                "tool_name": "final_result",
+                                "tool_call_id": "call_1sbtF11GgOGd9Dow8Yz2oI3K",
+                                "timestamp": "2025-05-12T08:36:19.568393Z",
+                                "part_kind": "retry-prompt"
+                            }
+                        ],
+                        "instructions": null,
+                        "kind": "request"
+                    },
+                    {
+                        "parts": [
+                            {
+                                "content": "",
+                                "part_kind": "text"
+                            },
+                            {
+                                "tool_name": "final_result",
+                                "args": "{\"relationships\": [{\"a\": \"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\", \"relation\": \"son\", \"b\": \"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"}, {\"a\": \"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\", \"relation\": \"friend\", \"b\": \"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\"}, {\"a\": \"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\", \"relation\": \"found\", \"b\": \"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"}, {\"a\": \"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\", \"relation\": \"adopted\", \"b\": \"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"}, {\"a\": \"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\", \"relation\": \"mother\", \"b\": \"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\"}, {\"a\": \"\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e30\\u0e16\\u0e07\\u0e2d\\u0e35\\u0e49\", \"relation\": \"aunt\", \"b\": \"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\"}], \"party_members\": [{\"name\": \"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\", \"title\": \"\\u0e2b\\u0e31\\u0e27\\u0e2b\\u0e19\\u0e49\\u0e32\\u0e1e\\u0e23\\u0e23\\u0e04\"}, {\"name\": \"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\", \"title\": \"\\u0e2a\\u0e2b\\u0e32\\u0e22\\u0e23\\u0e31\\u0e01\"}, {\"name\": \"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\", \"title\": \"\\u0e2b\\u0e31\\u0e27\\u0e2b\\u0e19\\u0e49\\u0e32\\u0e1e\\u0e23\\u0e23\\u0e04\\u0e01\\u0e34\\u0e40\\u0e25\\u0e19\\u0e02\\u0e32\\u0e27\"}, {\"name\": \"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\", \"title\": \"\\u0e41\\u0e21\\u0e48\\u0e02\\u0e2d\\u0e07\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"}, {\"name\": \"\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e30\\u0e16\\u0e07\\u0e2d\\u0e35\\u0e49\", \"title\": \"\\u0e19\\u0e49\\u0e32\\u0e2a\\u0e32\\u0e27\\u0e1e\\u0e35\\u0e48\\u0e41\\u0e21\\u0e48\\u0e02\\u0e2d\\u0e07\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"}]}",
+                                "tool_call_id": "call_3iWQpgiDP66KTyRKAGppkUwv",
+                                "part_kind": "tool-call"
+                            }
+                        ],
+                        "model_name": "meta-llama/llama-3.3-70b-instruct",
+                        "timestamp": "2025-05-12T08:36:20Z",
+                        "kind": "response"
+                    },
+                    {
+                        "parts": [
+                            {
+                                "content": [
+                                    {
+                                        "type": "enum",
+                                        "loc": [
+                                            "relationships",
+                                            0,
+                                            "b"
+                                        ],
+                                        "msg": "Input should be 'พระเอก', 'เว่ยเส้นเทียน', 'หลี่เซียซุย', 'จางฟู่เหยิน', 'จางม่านจือ', 'เส้าสื่อเฉียน' or 'เซียะถงอี้'",
+                                        "input": "เว่ยเส้าเทียน",
+                                        "ctx": {
+                                            "expected": "'พระเอก', 'เว่ยเส้นเทียน', 'หลี่เซียซุย', 'จางฟู่เหยิน', 'จางม่านจือ', 'เส้าสื่อเฉียน' or 'เซียะถงอี้'"
+                                        }
+                                    },
+                                    {
+                                        "type": "enum",
+                                        "loc": [
+                                            "relationships",
+                                            1,
+                                            "a"
+                                        ],
+                                        "msg": "Input should be 'พระเอก', 'เว่ยเส้นเทียน', 'หลี่เซียซุย', 'จางฟู่เหยิน', 'จางม่านจือ', 'เส้าสื่อเฉียน' or 'เซียะถงอี้'",
+                                        "input": "เว่ยเส้าเทียน",
+                                        "ctx": {
+                                            "expected": "'พระเอก', 'เว่ยเส้นเทียน', 'หลี่เซียซุย', 'จางฟู่เหยิน', 'จางม่านจือ', 'เส้าสื่อเฉียน' or 'เซียะถงอี้'"
+                                        }
+                                    },
+                                    {
+                                        "type": "enum",
+                                        "loc": [
+                                            "party_members",
+                                            1,
+                                            "name"
+                                        ],
+                                        "msg": "Input should be 'พระเอก', 'เว่ยเส้นเทียน', 'หลี่เซียซุย', 'จางฟู่เหยิน', 'จางม่านจือ', 'เส้าสื่อเฉียน' or 'เซียะถงอี้'",
+                                        "input": "เว่ยเส้าเทียน",
+                                        "ctx": {
+                                            "expected": "'พระเอก', 'เว่ยเส้นเทียน', 'หลี่เซียซุย', 'จางฟู่เหยิน', 'จางม่านจือ', 'เส้าสื่อเฉียน' or 'เซียะถงอี้'"
+                                        }
+                                    },
+                                    {
+                                        "type": "enum",
+                                        "loc": [
+                                            "party_members",
+                                            1,
+                                            "title"
+                                        ],
+                                        "msg": "Input should be 'หัวหน้าพรรค' or 'แม่นาง 14'",
+                                        "input": "สหายรัก",
+                                        "ctx": {
+                                            "expected": "'หัวหน้าพรรค' or 'แม่นาง 14'"
+                                        }
+                                    },
+                                    {
+                                        "type": "enum",
+                                        "loc": [
+                                            "party_members",
+                                            2,
+                                            "title"
+                                        ],
+                                        "msg": "Input should be 'หัวหน้าพรรค' or 'แม่นาง 14'",
+                                        "input": "หัวหน้าพรรคกิเลนขาว",
+                                        "ctx": {
+                                            "expected": "'หัวหน้าพรรค' or 'แม่นาง 14'"
+                                        }
+                                    },
+                                    {
+                                        "type": "enum",
+                                        "loc": [
+                                            "party_members",
+                                            3,
+                                            "title"
+                                        ],
+                                        "msg": "Input should be 'หัวหน้าพรรค' or 'แม่นาง 14'",
+                                        "input": "แม่ของพระเอก",
+                                        "ctx": {
+                                            "expected": "'หัวหน้าพรรค' or 'แม่นาง 14'"
+                                        }
+                                    },
+                                    {
+                                        "type": "enum",
+                                        "loc": [
+                                            "party_members",
+                                            4,
+                                            "title"
+                                        ],
+                                        "msg": "Input should be 'หัวหน้าพรรค' or 'แม่นาง 14'",
+                                        "input": "น้าสาวพี่แม่ของพระเอก",
+                                        "ctx": {
+                                            "expected": "'หัวหน้าพรรค' or 'แม่นาง 14'"
+                                        }
+                                    }
+                                ],
+                                "tool_name": "final_result",
+                                "tool_call_id": "call_3iWQpgiDP66KTyRKAGppkUwv",
+                                "timestamp": "2025-05-12T08:36:29.175540Z",
+                                "part_kind": "retry-prompt"
+                            }
+                        ],
+                        "instructions": null,
+                        "kind": "request"
+                    },
+                    {
+                        "parts": [
+                            {
+                                "content": "",
+                                "part_kind": "text"
+                            },
+                            {
+                                "tool_name": "final_result",
+                                "args": "{\"relationships\": [{\"a\": \"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\", \"relation\": \"son\", \"b\": \"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e19\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"}, {\"a\": \"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e19\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\", \"relation\": \"friend\", \"b\": \"\\u0e2b\\u0e25\\u0e35\\u0e48\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e0b\\u0e38\\u0e22\"}, {\"a\": \"\\u0e2b\\u0e25\\u0e35\\u0e48\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e0b\\u0e38\\u0e22\", \"relation\": \"found\", \"b\": \"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"}, {\"a\": \"\\u0e2b\\u0e25\\u0e35\\u0e48\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e0b\\u0e38\\u0e22\", \"relation\": \"adopted\", \"b\": \"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"}, {\"a\": \"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\", \"relation\": \"mother\", \"b\": \"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\"}, {\"a\": \"\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e30\\u0e16\\u0e07\\u0e2d\\u0e35\\u0e49\", \"relation\": \"aunt\", \"b\": \"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\"}], \"party_members\": [{\"name\": \"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\", \"title\": \"\\u0e2b\\u0e31\\u0e27\\u0e2b\\u0e19\\u0e49\\u0e32\\u0e1e\\u0e23\\u0e23\\u0e04\"}, {\"name\": \"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e19\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\", \"title\": \"\\u0e2b\\u0e31\\u0e27\\u0e2b\\u0e19\\u0e49\\u0e32\\u0e1e\\u0e23\\u0e23\\u0e04\"}, {\"name\": \"\\u0e2b\\u0e25\\u0e35\\u0e48\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e0b\\u0e38\\u0e22\", \"title\": \"\\u0e41\\u0e21\\u0e48\\u0e19\\u0e32\\u0e07 14\"}, {\"name\": \"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\", \"title\": \"\\u0e2b\\u0e31\\u0e27\\u0e2b\\u0e19\\u0e49\\u0e32\\u0e1e\\u0e23\\u0e23\\u0e04\"}]}",
+                                "tool_call_id": "call_fvbJrvr7OweXNduYRCXtRvRw",
+                                "part_kind": "tool-call"
+                            }
+                        ],
+                        "model_name": "meta-llama/llama-3.3-70b-instruct",
+                        "timestamp": "2025-05-12T08:36:29Z",
+                        "kind": "response"
+                    },
+                    {
+                        "parts": [
+                            {
+                                "tool_name": "final_result",
+                                "content": "Final result processed.",
+                                "tool_call_id": "call_fvbJrvr7OweXNduYRCXtRvRw",
+                                "timestamp": "2025-05-12T08:36:56.391479Z",
+                                "part_kind": "tool-return"
+                            }
+                        ],
+                        "instructions": null,
+                        "kind": "request"
+                    }
+                ],
+                "usage": {
+                    "requests": 3,
+                    "request_tokens": 8420,
+                    "response_tokens": 2219,
+                    "total_tokens": 10639,
+                    "details": null
+                },
+                "retries": 2,
+                "run_step": 3
+            },
+            "_new_message_index": 0,
+            "_traceparent_value": null
+        }
+    },
+    "score": 0.03333333333333334,
+    "error": null
+}

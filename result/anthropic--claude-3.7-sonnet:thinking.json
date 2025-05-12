@@ -1,0 +1,6 @@
+{
+    "model": "anthropic/claude-3.7-sonnet:thinking",
+    "result": null,
+    "score": 0.0,
+    "error": "TypeError(\"'NoneType' object cannot be interpreted as an integer\")"
+}

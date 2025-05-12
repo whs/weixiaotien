@@ -1,0 +1,278 @@
+{
+    "model": "deepseek/deepseek-r1",
+    "result": {
+        "valid_relationships": [
+            {
+                "a": "เว่ยเส้นเทียน",
+                "relation": "father",
+                "b": "พระเอก"
+            },
+            {
+                "a": "จางม่านจือ",
+                "relation": "mother",
+                "b": "พระเอก"
+            }
+        ],
+        "valid_optional_relationships": [
+            {
+                "a": "เซียะถงอี้",
+                "relation": "aunt",
+                "b": "จางม่านจือ"
+            }
+        ],
+        "invalid_relationships": [
+            {
+                "a": "จางฟู่เหยิน",
+                "relation": "found",
+                "b": "พระเอก"
+            }
+        ],
+        "missing_relationships": [
+            {
+                "a": "เว่ยเส้นเทียน",
+                "relation": "friend",
+                "b": "จางฟู่เหยิน"
+            },
+            {
+                "a": "จางฟู่เหยิน",
+                "relation": "friend",
+                "b": "เว่ยเส้นเทียน"
+            },
+            {
+                "a": "พระเอก",
+                "relation": "son",
+                "b": "เว่ยเส้นเทียน"
+            },
+            {
+                "a": "พระเอก",
+                "relation": "son",
+                "b": "จางม่านจือ"
+            },
+            {
+                "a": "เส้าสื่อเฉียน",
+                "relation": "found",
+                "b": "พระเอก"
+            },
+            {
+                "a": "จางฟู่เหยิน",
+                "relation": "adopted",
+                "b": "พระเอก"
+            }
+        ],
+        "valid_party_member_list": [
+            {
+                "name": "จางฟู่เหยิน",
+                "title": "หัวหน้าพรรค"
+            },
+            {
+                "name": "เส้าสื่อเฉียน",
+                "title": "แม่นาง 14"
+            }
+        ],
+        "invalid_party_member_list": [],
+        "missing_party_members": [],
+        "output": {
+            "output": {
+                "relationships": [
+                    {
+                        "a": "เว่ยเส้นเทียน",
+                        "relation": "father",
+                        "b": "พระเอก"
+                    },
+                    {
+                        "a": "จางม่านจือ",
+                        "relation": "mother",
+                        "b": "พระเอก"
+                    },
+                    {
+                        "a": "เซียะถงอี้",
+                        "relation": "aunt",
+                        "b": "จางม่านจือ"
+                    },
+                    {
+                        "a": "จางฟู่เหยิน",
+                        "relation": "found",
+                        "b": "พระเอก"
+                    }
+                ],
+                "party_members": [
+                    {
+                        "name": "จางฟู่เหยิน",
+                        "title": "หัวหน้าพรรค"
+                    },
+                    {
+                        "name": "เส้าสื่อเฉียน",
+                        "title": "แม่นาง 14"
+                    }
+                ]
+            },
+            "_output_tool_name": "final_result",
+            "_state": {
+                "message_history": [
+                    {
+                        "parts": [
+                            {
+                                "content": "\nFrom this dialogue, create a relationship graph of all individuals involved. Return as JSON per schema.\nIf the relationship enum is missing, skip the relationship. All relationships are directional - if it is mutual\nthen it should be repeated for each directions.\n\nพระเอก: เว่ยเส้าเทียน วันนี้เป็นวันตายของเจ้า\nเว่ยเส้าเทียน: โอหัง แน่จริงก็เข้ามา\nพระเอก: ตายซะ!\nหลี่เซียซุย : ช้าก่อน! เว่ยเส้าเทียนคือพ่อของเจ้า!\nหลี่เซียซุย: ซึ่งเป็นสหายรัก ของจางฟู่เหยินหัวหน้าพรรคกิเลนขาว ที่เก็บเจ้ามาเลี้ยงเมื่อ 22 ปีก่อน\nซึ่งจริงๆแล้วก่อนที่จะเจอเจ้า แม่นางเส้าสื่อเฉียน แม่นาง 14\nเว่ยเส้าเทียน: แห่งพรรคกิเลนขาว ซึ่งได้พบเจ้าข้างหนองน้ำ ใกล้เมืองเหลียงคุน ซึ่งเป็นที่ๆ เซียะถงอี้ น้าสาวพี่แม่ได้แนะนำให้พบ\nหลี่เซียซุย: ข้าหลี่เซียซุย ก่อนที่จะเจอเจ้า\nเว่ยเส้าเทียน: ซึ่งอันที่จริงแล้ว ข้าเองก็ไม่เคยรู้มาก่อนว่าเจ้า เป็นลูกของ\nหลี่เซียซุย: จางฟู่เหยิน\nเว่ยเส้าเทียน: จนข้านึกขึ้นได้ จึงว่า\nหลี่เซียซุย: จางม่านจือ แม่เจ้า\nเว่ยเส้าเทียน: ได้พาข้าไปพบ\nหลี่เซียซุย: พี่สาวแม่ของเจ้า\nเว่ยเส้าเทียน: ซึ่งน้าสาวพี่แม่ของเจ้า ได้พาข้าไปรู้จักกับหลี่เซียซุย\nหลี่เซียซุย: น้าสาวพี่ของแม่เจ้า\nเว่ยเส้าเทียน: ก่อนที่จะเจอเจ้า\nหลี่เซียซุย: เมื่อ 22 ปีก่อน\n",
+                                "timestamp": "2025-05-12T08:06:32.851237Z",
+                                "part_kind": "user-prompt"
+                            }
+                        ],
+                        "instructions": null,
+                        "kind": "request"
+                    },
+                    {
+                        "parts": [
+                            {
+                                "content": "```json\n{\n  \"nodes\": [\n    {\n      \"id\": \"protagonist\",\n      \"name\": \"พระเอก\"\n    },\n    {\n      \"id\": \"wei_shaotian\",\n      \"name\": \"เว่ยเส้าเทียน\"\n    },\n    {\n      \"id\": \"li_xia_shui\",\n      \"name\": \"หลี่เซียซุย\"\n    },\n    {\n      \"id\": \"zhang_furen\",\n      \"name\": \"จางฟู่เหยิน\"\n    },\n    {\n      \"id\": \"shao_shi_qian\",\n      \"name\": \"เส้าสื่อเฉียน\"\n    },\n    {\n      \"id\": \"xia_tongyi\",\n      \"name\": \"เซียะถงอี้\"\n    },\n    {\n      \"id\": \"zhang_manzhi\",\n      \"name\": \"จางม่านจือ\"\n    }\n  ],\n  \"relationships\": [\n    {\n      \"from\": \"wei_shaotian\",\n      \"to\": \"protagonist\",\n      \"relationship\": \"PARENT\"\n    },\n    {\n      \"from\": \"zhang_manzhi\",\n      \"to\": \"protagonist\",\n      \"relationship\": \"PARENT\"\n    },\n    {\n      \"from\": \"shao_shi_qian\",\n      \"to\": \"wei_shaotian\",\n      \"relationship\": \"PARENT\"\n    },\n    {\n      \"from\": \"zhang_furen\",\n      \"to\": \"protagonist\",\n      \"relationship\": \"GUARDIAN\"\n    },\n    {\n      \"from\": \"li_xia_shui\",\n      \"to\": \"zhang_manzhi\",\n      \"relationship\": \"SIBLING\"\n    },\n    {\n      \"from\": \"zhang_manzhi\",\n      \"to\": \"li_xia_shui\",\n      \"relationship\": \"SIBLING\"\n    },\n    {\n      \"from\": \"xia_tongyi\",\n      \"to\": \"zhang_manzhi\",\n      \"relationship\": \"SIBLING\"\n    },\n    {\n      \"from\": \"zhang_manzhi\",\n      \"to\": \"xia_tongyi\",\n      \"relationship\": \"SIBLING\"\n    },\n    {\n      \"from\": \"wei_shaotian\",\n      \"to\": \"zhang_manzhi\",\n      \"relationship\": \"SPOUSE\"\n    },\n    {\n      \"from\": \"zhang_manzhi\",\n      \"to\": \"wei_shaotian\",\n      \"relationship\": \"SPOUSE\"\n    }\n  ]\n}\n```",
+                                "part_kind": "text"
+                            }
+                        ],
+                        "model_name": "deepseek/deepseek-r1",
+                        "timestamp": "2025-05-12T08:06:32Z",
+                        "kind": "response"
+                    },
+                    {
+                        "parts": [
+                            {
+                                "content": "Plain text responses are not permitted, please include your response in a tool call",
+                                "tool_name": null,
+                                "tool_call_id": "pyd_ai_e4d4ac5a93764dacb1f891839b889d5f",
+                                "timestamp": "2025-05-12T08:10:10.536337Z",
+                                "part_kind": "retry-prompt"
+                            }
+                        ],
+                        "instructions": null,
+                        "kind": "request"
+                    },
+                    {
+                        "parts": [
+                            {
+                                "content": "```json\n{\n  \"nodes\": [\n    {\n      \"id\": \"protagonist\",\n      \"name\": \"พระเอก\"\n    },\n    {\n      \"id\": \"wei_shaotian\",\n      \"name\": \"เว่ยเส้าเทียน\"\n    },\n    {\n      \"id\": \"li_xia_shui\",\n      \"name\": \"หลี่เซียซุย\"\n    },\n    {\n      \"id\": \"zhang_furen\",\n      \"name\": \"จางฟู่เหยิน\"\n    },\n    {\n      \"id\": \"xia_tongyi\",\n      \"name\": \"เซียะถงอี้\"\n    },\n    {\n      \"id\": \"zhang_manzhi\",\n      \"name\": \"จางม่านจือ\"\n    }\n  ],\n  \"relationships\": [\n    {\n      \"from\": \"wei_shaotian\",\n      \"to\": \"protagonist\",\n      \"relationship\": \"PARENT\"\n    },\n    {\n      \"from\": \"zhang_manzhi\",\n      \"to\": \"protagonist\",\n      \"relationship\": \"PARENT\"\n    },\n    {\n      \"from\": \"zhang_furen\",\n      \"to\": \"protagonist\",\n      \"relationship\": \"GUARDIAN\"\n    },\n    {\n      \"from\": \"xia_tongyi\",\n      \"to\": \"zhang_manzhi\",\n      \"relationship\": \"SIBLING\"\n    },\n    {\n      \"from\": \"zhang_manzhi\",\n      \"to\": \"xia_tongyi\",\n      \"relationship\": \"SIBLING\"\n    },\n    {\n      \"from\": \"wei_shaotian\",\n      \"to\": \"zhang_manzhi\",\n      \"relationship\": \"SPOUSE\"\n    },\n    {\n      \"from\": \"zhang_manzhi\",\n      \"to\": \"wei_shaotian\",\n      \"relationship\": \"SPOUSE\"\n    }\n  ]\n}\n```\n\n**Changes Made:**  \n1. **Removed Incorrect Relationships**:  \n   - Deleted `SIBLING` ties between `li_xia_shui` and `zhang_manzhi`/`xia_tongyi` (no explicit evidence in the dialogue).\n   - Removed the ambiguous `shao_shi_qian` node entirely, as the dialogue clarifies the protagonist’s parents are **Wei Shaotian** and **Zhang Manzhi**. The mention of \"เส้าสื่อเฉียน\" appears contextually disconnected after corrections.\n\n2. **Retained/Added Valid Relationships**:  \n   - **Wei Shaotian** and **Zhang Manzhi** as mutual `SPOUSE` and parents of the protagonist.  \n   - **Xia Tongyi** (aunt) and **Zhang Manzhi** as mutual `SIBLING`.  \n   - **Zhang Furen** retains `GUARDIAN` role.  \n\n3. **Simplified Structure**:  \n   Prioritized clarity by excluding speculative or redundant ties (e.g., guardianship timelines, non-enum relationships involving Li Xia Shui).",
+                                "part_kind": "text"
+                            }
+                        ],
+                        "model_name": "deepseek/deepseek-r1",
+                        "timestamp": "2025-05-12T08:10:10Z",
+                        "kind": "response"
+                    },
+                    {
+                        "parts": [
+                            {
+                                "content": "Plain text responses are not permitted, please include your response in a tool call",
+                                "tool_name": null,
+                                "tool_call_id": "pyd_ai_8dc67ff0d0a04f149c93741f0bfff3d8",
+                                "timestamp": "2025-05-12T08:12:44.932946Z",
+                                "part_kind": "retry-prompt"
+                            }
+                        ],
+                        "instructions": null,
+                        "kind": "request"
+                    },
+                    {
+                        "parts": [
+                            {
+                                "content": "",
+                                "part_kind": "text"
+                            },
+                            {
+                                "tool_name": "final_result",
+                                "args": "{\n  \"party_members\": [\n    {\n      \"name\": \"จางฟู่เหยิน\",\n      \"title\": \"หัวหน้าพรรค\"\n    },\n    {\n      \"name\": \"เส้าสื่อเฉียน\",\n      \"title\": \"แม่นาง 14\"\n    }\n  ],\n  \"relationships\": [\n    {\n      \"a\": \"เว่ยเส้นเทียน\",\n      \"b\": \"พระเอก\",\n      \"relation\": \"father\"\n    },\n    {\n      \"a\": \"จางม่านจือ\",\n      \"b\": \"พระเอก\",\n      \"relation\": \"mother\"\n    },\n    {\n      \"a\": \"เซียะถงอี้\",\n      \"b\": \"จางม่านจือ\",\n      \"relation\": \"aunt\"\n    },\n    {\n      \"a\": \"จางฟู่เหยิน\",\n      \"b\": \"พระเอก\",\n      \"relation\": \"found\"\n    },\n    {\n      \"a\": \"เว่ยเส้นเทียน\",\n      \"b\": \"จางม่านจือ\",\n      \"relation\": \"spouse\"\n    },\n    {\n      \"a\": \"จางม่านจือ\",\n      \"b\": \"เว่ยเส้นเทียน\",\n      \"relation\": \"spouse\"\n    }\n  ]\n}",
+                                "tool_call_id": "call_6rqw90d3msksrcd3uktuyalf",
+                                "part_kind": "tool-call"
+                            }
+                        ],
+                        "model_name": "deepseek/deepseek-r1",
+                        "timestamp": "2025-05-12T08:12:45Z",
+                        "kind": "response"
+                    },
+                    {
+                        "parts": [
+                            {
+                                "content": [
+                                    {
+                                        "type": "enum",
+                                        "loc": [
+                                            "relationships",
+                                            4,
+                                            "relation"
+                                        ],
+                                        "msg": "Input should be 'friend', 'father', 'mother', 'son', 'found', 'adopted', 'aunt' or \"aunt of mother's sister's mother\"",
+                                        "input": "spouse",
+                                        "ctx": {
+                                            "expected": "'friend', 'father', 'mother', 'son', 'found', 'adopted', 'aunt' or \"aunt of mother's sister's mother\""
+                                        }
+                                    },
+                                    {
+                                        "type": "enum",
+                                        "loc": [
+                                            "relationships",
+                                            5,
+                                            "relation"
+                                        ],
+                                        "msg": "Input should be 'friend', 'father', 'mother', 'son', 'found', 'adopted', 'aunt' or \"aunt of mother's sister's mother\"",
+                                        "input": "spouse",
+                                        "ctx": {
+                                            "expected": "'friend', 'father', 'mother', 'son', 'found', 'adopted', 'aunt' or \"aunt of mother's sister's mother\""
+                                        }
+                                    }
+                                ],
+                                "tool_name": "final_result",
+                                "tool_call_id": "call_6rqw90d3msksrcd3uktuyalf",
+                                "timestamp": "2025-05-12T08:13:29.819016Z",
+                                "part_kind": "retry-prompt"
+                            }
+                        ],
+                        "instructions": null,
+                        "kind": "request"
+                    },
+                    {
+                        "parts": [
+                            {
+                                "content": "",
+                                "part_kind": "text"
+                            },
+                            {
+                                "tool_name": "final_result",
+                                "args": "{\n  \"party_members\": [\n    {\n      \"name\": \"จางฟู่เหยิน\",\n      \"title\": \"หัวหน้าพรรค\"\n    },\n    {\n      \"name\": \"เส้าสื่อเฉียน\",\n      \"title\": \"แม่นาง 14\"\n    }\n  ],\n  \"relationships\": [\n    {\n      \"a\": \"เว่ยเส้นเทียน\",\n      \"b\": \"พระเอก\",\n      \"relation\": \"father\"\n    },\n    {\n      \"a\": \"จางม่านจือ\",\n      \"b\": \"พระเอก\",\n      \"relation\": \"mother\"\n    },\n    {\n      \"a\": \"เซียะถงอี้\",\n      \"b\": \"จางม่านจือ\",\n      \"relation\": \"aunt\"\n    },\n    {\n      \"a\": \"จางฟู่เหยิน\",\n      \"b\": \"พระเอก\",\n      \"relation\": \"found\"\n    }\n  ]\n}",
+                                "tool_call_id": "call_lw6gr9a10amf9z5197cercfd",
+                                "part_kind": "tool-call"
+                            }
+                        ],
+                        "model_name": "deepseek/deepseek-r1",
+                        "timestamp": "2025-05-12T08:13:29Z",
+                        "kind": "response"
+                    },
+                    {
+                        "parts": [
+                            {
+                                "tool_name": "final_result",
+                                "content": "Final result processed.",
+                                "tool_call_id": "call_lw6gr9a10amf9z5197cercfd",
+                                "timestamp": "2025-05-12T08:13:53.685412Z",
+                                "part_kind": "tool-return"
+                            }
+                        ],
+                        "instructions": null,
+                        "kind": "request"
+                    }
+                ],
+                "usage": {
+                    "requests": 4,
+                    "request_tokens": 7725,
+                    "response_tokens": 15805,
+                    "total_tokens": 23530,
+                    "details": {
+                        "reasoning_tokens": 1549,
+                        "cached_tokens": 0
+                    }
+                },
+                "retries": 3,
+                "run_step": 4
+            },
+            "_new_message_index": 0,
+            "_traceparent_value": null
+        }
+    },
+    "score": 0.35000000000000003,
+    "error": null
+}

@@ -1,0 +1,338 @@
+{
+    "model": "google/gemini-2.5-flash-preview:thinking",
+    "result": {
+        "valid_relationships": [],
+        "valid_optional_relationships": [],
+        "invalid_relationships": [],
+        "missing_relationships": [
+            {
+                "a": "เว่ยเส้นเทียน",
+                "relation": "friend",
+                "b": "จางฟู่เหยิน"
+            },
+            {
+                "a": "จางฟู่เหยิน",
+                "relation": "friend",
+                "b": "เว่ยเส้นเทียน"
+            },
+            {
+                "a": "เว่ยเส้นเทียน",
+                "relation": "father",
+                "b": "พระเอก"
+            },
+            {
+                "a": "จางม่านจือ",
+                "relation": "mother",
+                "b": "พระเอก"
+            },
+            {
+                "a": "พระเอก",
+                "relation": "son",
+                "b": "เว่ยเส้นเทียน"
+            },
+            {
+                "a": "พระเอก",
+                "relation": "son",
+                "b": "จางม่านจือ"
+            },
+            {
+                "a": "เส้าสื่อเฉียน",
+                "relation": "found",
+                "b": "พระเอก"
+            },
+            {
+                "a": "จางฟู่เหยิน",
+                "relation": "adopted",
+                "b": "พระเอก"
+            }
+        ],
+        "valid_party_member_list": [],
+        "invalid_party_member_list": [],
+        "missing_party_members": [
+            {
+                "name": "จางฟู่เหยิน",
+                "title": "หัวหน้าพรรค"
+            },
+            {
+                "name": "เส้าสื่อเฉียน",
+                "title": "แม่นาง 14"
+            }
+        ],
+        "output": {
+            "output": {
+                "relationships": [],
+                "party_members": []
+            },
+            "_output_tool_name": "final_result",
+            "_state": {
+                "message_history": [
+                    {
+                        "parts": [
+                            {
+                                "content": "\nFrom this dialogue, create a relationship graph of all individuals involved. Return as JSON per schema.\nIf the relationship enum is missing, skip the relationship. All relationships are directional - if it is mutual\nthen it should be repeated for each directions.\n\nพระเอก: เว่ยเส้าเทียน วันนี้เป็นวันตายของเจ้า\nเว่ยเส้าเทียน: โอหัง แน่จริงก็เข้ามา\nพระเอก: ตายซะ!\nหลี่เซียซุย : ช้าก่อน! เว่ยเส้าเทียนคือพ่อของเจ้า!\nหลี่เซียซุย: ซึ่งเป็นสหายรัก ของจางฟู่เหยินหัวหน้าพรรคกิเลนขาว ที่เก็บเจ้ามาเลี้ยงเมื่อ 22 ปีก่อน\nซึ่งจริงๆแล้วก่อนที่จะเจอเจ้า แม่นางเส้าสื่อเฉียน แม่นาง 14\nเว่ยเส้าเทียน: แห่งพรรคกิเลนขาว ซึ่งได้พบเจ้าข้างหนองน้ำ ใกล้เมืองเหลียงคุน ซึ่งเป็นที่ๆ เซียะถงอี้ น้าสาวพี่แม่ได้แนะนำให้พบ\nหลี่เซียซุย: ข้าหลี่เซียซุย ก่อนที่จะเจอเจ้า\nเว่ยเส้าเทียน: ซึ่งอันที่จริงแล้ว ข้าเองก็ไม่เคยรู้มาก่อนว่าเจ้า เป็นลูกของ\nหลี่เซียซุย: จางฟู่เหยิน\nเว่ยเส้าเทียน: จนข้านึกขึ้นได้ จึงว่า\nหลี่เซียซุย: จางม่านจือ แม่เจ้า\nเว่ยเส้าเทียน: ได้พาข้าไปพบ\nหลี่เซียซุย: พี่สาวแม่ของเจ้า\nเว่ยเส้าเทียน: ซึ่งน้าสาวพี่แม่ของเจ้า ได้พาข้าไปรู้จักกับหลี่เซียซุย\nหลี่เซียซุย: น้าสาวพี่ของแม่เจ้า\nเว่ยเส้าเทียน: ก่อนที่จะเจอเจ้า\nหลี่เซียซุย: เมื่อ 22 ปีก่อน\n",
+                                "timestamp": "2025-05-12T08:02:50.052471Z",
+                                "part_kind": "user-prompt"
+                            }
+                        ],
+                        "instructions": null,
+                        "kind": "request"
+                    },
+                    {
+                        "parts": [
+                            {
+                                "content": "",
+                                "part_kind": "text"
+                            },
+                            {
+                                "tool_name": "final_result",
+                                "args": "{\"party_members\":[\"จางฟู่เหยิน\",\"แม่นางเส้าสื่อเฉียน\"],\"relationships\":[\"เว่ยเส้าเทียน -> father -> พระเอก\",\"พระเอก -> son -> เว่ยเส้าเทียน\",\"จางม่านจือ -> mother -> พระเอก\",\"พระเอก -> son -> จางม่านจือ\",\"เว่ยเส้าเทียน -> close friend -> จางฟู่เหยิน\",\"จางฟู่เหยิน -> close friend -> เว่ยเส้าเทียน\",\"จางฟู่เหยิน -> raised -> พระเอก\",\"เซียะถงอี้ -> maternal aunt -> พระเอก\",\"พระเอก -> nephew -> เซียะถงอี้\",\"เซียะถงอี้ -> sister -> จางม่านจือ\",\"จางม่านจือ -> sister -> เซียะถงอี้\",\"เซียะถงอี้ -> introduced -> แม่นางเส้าสื่อเฉียน\",\"เซียะถงอี้ -> introduced -> พระเอก\"]}",
+                                "tool_call_id": "tool_0_final_result",
+                                "part_kind": "tool-call"
+                            }
+                        ],
+                        "model_name": "google/gemini-2.5-flash-preview:thinking",
+                        "timestamp": "2025-05-12T08:02:50Z",
+                        "kind": "response"
+                    },
+                    {
+                        "parts": [
+                            {
+                                "content": [
+                                    {
+                                        "type": "model_type",
+                                        "loc": [
+                                            "relationships",
+                                            0
+                                        ],
+                                        "msg": "Input should be an object",
+                                        "input": "เว่ยเส้าเทียน -> father -> พระเอก",
+                                        "ctx": {
+                                            "class_name": "Relationship"
+                                        }
+                                    },
+                                    {
+                                        "type": "model_type",
+                                        "loc": [
+                                            "relationships",
+                                            1
+                                        ],
+                                        "msg": "Input should be an object",
+                                        "input": "พระเอก -> son -> เว่ยเส้าเทียน",
+                                        "ctx": {
+                                            "class_name": "Relationship"
+                                        }
+                                    },
+                                    {
+                                        "type": "model_type",
+                                        "loc": [
+                                            "relationships",
+                                            2
+                                        ],
+                                        "msg": "Input should be an object",
+                                        "input": "จางม่านจือ -> mother -> พระเอก",
+                                        "ctx": {
+                                            "class_name": "Relationship"
+                                        }
+                                    },
+                                    {
+                                        "type": "model_type",
+                                        "loc": [
+                                            "relationships",
+                                            3
+                                        ],
+                                        "msg": "Input should be an object",
+                                        "input": "พระเอก -> son -> จางม่านจือ",
+                                        "ctx": {
+                                            "class_name": "Relationship"
+                                        }
+                                    },
+                                    {
+                                        "type": "model_type",
+                                        "loc": [
+                                            "relationships",
+                                            4
+                                        ],
+                                        "msg": "Input should be an object",
+                                        "input": "เว่ยเส้าเทียน -> close friend -> จางฟู่เหยิน",
+                                        "ctx": {
+                                            "class_name": "Relationship"
+                                        }
+                                    },
+                                    {
+                                        "type": "model_type",
+                                        "loc": [
+                                            "relationships",
+                                            5
+                                        ],
+                                        "msg": "Input should be an object",
+                                        "input": "จางฟู่เหยิน -> close friend -> เว่ยเส้าเทียน",
+                                        "ctx": {
+                                            "class_name": "Relationship"
+                                        }
+                                    },
+                                    {
+                                        "type": "model_type",
+                                        "loc": [
+                                            "relationships",
+                                            6
+                                        ],
+                                        "msg": "Input should be an object",
+                                        "input": "จางฟู่เหยิน -> raised -> พระเอก",
+                                        "ctx": {
+                                            "class_name": "Relationship"
+                                        }
+                                    },
+                                    {
+                                        "type": "model_type",
+                                        "loc": [
+                                            "relationships",
+                                            7
+                                        ],
+                                        "msg": "Input should be an object",
+                                        "input": "เซียะถงอี้ -> maternal aunt -> พระเอก",
+                                        "ctx": {
+                                            "class_name": "Relationship"
+                                        }
+                                    },
+                                    {
+                                        "type": "model_type",
+                                        "loc": [
+                                            "relationships",
+                                            8
+                                        ],
+                                        "msg": "Input should be an object",
+                                        "input": "พระเอก -> nephew -> เซียะถงอี้",
+                                        "ctx": {
+                                            "class_name": "Relationship"
+                                        }
+                                    },
+                                    {
+                                        "type": "model_type",
+                                        "loc": [
+                                            "relationships",
+                                            9
+                                        ],
+                                        "msg": "Input should be an object",
+                                        "input": "เซียะถงอี้ -> sister -> จางม่านจือ",
+                                        "ctx": {
+                                            "class_name": "Relationship"
+                                        }
+                                    },
+                                    {
+                                        "type": "model_type",
+                                        "loc": [
+                                            "relationships",
+                                            10
+                                        ],
+                                        "msg": "Input should be an object",
+                                        "input": "จางม่านจือ -> sister -> เซียะถงอี้",
+                                        "ctx": {
+                                            "class_name": "Relationship"
+                                        }
+                                    },
+                                    {
+                                        "type": "model_type",
+                                        "loc": [
+                                            "relationships",
+                                            11
+                                        ],
+                                        "msg": "Input should be an object",
+                                        "input": "เซียะถงอี้ -> introduced -> แม่นางเส้าสื่อเฉียน",
+                                        "ctx": {
+                                            "class_name": "Relationship"
+                                        }
+                                    },
+                                    {
+                                        "type": "model_type",
+                                        "loc": [
+                                            "relationships",
+                                            12
+                                        ],
+                                        "msg": "Input should be an object",
+                                        "input": "เซียะถงอี้ -> introduced -> พระเอก",
+                                        "ctx": {
+                                            "class_name": "Relationship"
+                                        }
+                                    },
+                                    {
+                                        "type": "model_type",
+                                        "loc": [
+                                            "party_members",
+                                            0
+                                        ],
+                                        "msg": "Input should be an object",
+                                        "input": "จางฟู่เหยิน",
+                                        "ctx": {
+                                            "class_name": "PartyMember"
+                                        }
+                                    },
+                                    {
+                                        "type": "model_type",
+                                        "loc": [
+                                            "party_members",
+                                            1
+                                        ],
+                                        "msg": "Input should be an object",
+                                        "input": "แม่นางเส้าสื่อเฉียน",
+                                        "ctx": {
+                                            "class_name": "PartyMember"
+                                        }
+                                    }
+                                ],
+                                "tool_name": "final_result",
+                                "tool_call_id": "tool_0_final_result",
+                                "timestamp": "2025-05-12T08:03:28.497397Z",
+                                "part_kind": "retry-prompt"
+                            }
+                        ],
+                        "instructions": null,
+                        "kind": "request"
+                    },
+                    {
+                        "parts": [
+                            {
+                                "content": "",
+                                "part_kind": "text"
+                            },
+                            {
+                                "tool_name": "final_result",
+                                "args": "{\"party_members\":[],\"relationships\":[]}",
+                                "tool_call_id": "tool_0_final_result",
+                                "part_kind": "tool-call"
+                            }
+                        ],
+                        "model_name": "google/gemini-2.5-flash-preview:thinking",
+                        "timestamp": "2025-05-12T08:03:28Z",
+                        "kind": "response"
+                    },
+                    {
+                        "parts": [
+                            {
+                                "tool_name": "final_result",
+                                "content": "Final result processed.",
+                                "tool_call_id": "tool_0_final_result",
+                                "timestamp": "2025-05-12T08:04:30.135158Z",
+                                "part_kind": "tool-return"
+                            }
+                        ],
+                        "instructions": null,
+                        "kind": "request"
+                    }
+                ],
+                "usage": {
+                    "requests": 2,
+                    "request_tokens": 1619,
+                    "response_tokens": 15548,
+                    "total_tokens": 17167,
+                    "details": null
+                },
+                "retries": 1,
+                "run_step": 2
+            },
+            "_new_message_index": 0,
+            "_traceparent_value": null
+        }
+    },
+    "score": 0.0,
+    "error": null
+}

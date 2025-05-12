@@ -1,0 +1,6 @@
+{
+    "model": "qwen/qwen-max",
+    "result": null,
+    "score": 0.0,
+    "error": "UnexpectedModelBehavior('Exceeded maximum retries (5) for result validation')"
+}
