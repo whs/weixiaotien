@@ -40,7 +40,7 @@ def main():
                 "Req / In Tok / Out Tok": "DNF",
             })
         else:
-            usage = item.result.output.usage()
+            usage = item.get_raw_output().usage()
             cost = None
             if item.cost is not None:
                 cost = ((usage.requests * item.cost.request_cost_1k/1000)

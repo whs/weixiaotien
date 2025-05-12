@@ -5,11 +5,11 @@ import re
 
 from pydantic import BaseModel
 from pydantic_ai import Agent
-from pydantic_ai.models.gemini import GeminiModel
+from pydantic_ai.agent import AgentRunResult
 from pydantic_ai.models.openai import OpenAIModel
 from pydantic_ai.providers.openai import OpenAIProvider
 
-from evaluator import evaluate, Result
+from evaluator import Result, prompt, Output, grade
 
 CURRENT_TEST_VERSION = 2
 
@@ -29,6 +29,14 @@ class ResultData(BaseModel):
     score: float
     error: Optional[str] = None
     cost: Optional[Cost] = None
+    provider: Optional[str] = None
+    pydantic_output: Optional[AgentRunResult[Output]] = None
+
+    def get_raw_output(self) -> Optional[AgentRunResult[Output]]:
+        if self.pydantic_output:
+            return self.pydantic_output
+
+        return self.result.output
 
 def evaluate_model(model):
     agent = Agent(model, retries=5)
@@ -36,20 +44,23 @@ def evaluate_model(model):
     out_file = Path("result") / (slugify(model.model_name) + ".json")
 
     with out_file.open("w") as fp:
-        result_data = ResultData(version=CURRENT_TEST_VERSION, model=model.model_name, result=None, error=None, score=0)
+        result_data = ResultData(version=CURRENT_TEST_VERSION, model=model.model_name, result=None, error=None, score=0, pydantic_output=None)
         try:
-            out = evaluate(agent)
-            result_data.result = out
-            result_data.score = out.score
+            output = agent.run_sync(prompt, output_type=Output)
+            result = grade(output.output)
+            result_data.result = result
+            result_data.score = result.score
+            result_data.pydantic_output = output
             fp.write(result_data.model_dump_json(indent=4))
 
-            print(f"Found relationship: {len(out.valid_relationships)} + {len(out.valid_optional_relationships)}")
-            print(f"Found party members: {len(out.valid_party_member_list)}")
-            print(f"Score: {out.score}")
+            print(f"Found relationship: {len(result.valid_relationships)} + {len(result.valid_optional_relationships)}")
+            print(f"Found party members: {len(result.valid_party_member_list)}")
+            print(f"Score: {result.score}")
         except Exception as e:
             result_data.error = repr(e)
             fp.write(result_data.model_dump_json(indent=4))
             raise e
+
 
 def main():
     ollama = OpenAIProvider(base_url='http://localhost:11434/v1')
@@ -91,6 +102,7 @@ def main():
         print(model.model_name)
         evaluate_model(model)
         print("\n")
+
 
 if __name__ == "__main__":
     main()

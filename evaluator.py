@@ -1,9 +1,8 @@
 import dataclasses
 from enum import Enum
-from typing import Any
+from typing import Any, Optional
 
 from pydantic import BaseModel, Field
-from pydantic_ai import Agent
 from pydantic_ai.agent import AgentRunResult
 
 prompt = """
@@ -113,7 +112,8 @@ class Result:
     valid_party_member_list: list[PartyMember]
     invalid_party_member_list: list[PartyMember]
     missing_party_members: list[PartyMember]
-    output: AgentRunResult[Output]
+    # Deprecated
+    output: Optional[AgentRunResult[Output]]
 
     @property
     def score(self) -> float:
@@ -137,13 +137,6 @@ class Result:
         # Party member = 20% score
         return (valid_relationship_score * invalid_relationship_score * 0.8) + (party_member_list_score * invalid_party_member_list_score * 0.2)
 
-def evaluate(agent: Agent):
-    """Evaluate agent and return result."""
-    result = agent.run_sync(prompt, output_type=Output)
-    out = grade(result.output)
-    out.output = result
-
-    return out
 
 def grade(output: Output) -> Result:
     out = Result(
