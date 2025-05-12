@@ -1,6 +1,8 @@
 {
+    "version": 2,
     "model": "meta-llama/llama-4-maverick",
     "result": null,
     "score": 0.0,
-    "error": "UnexpectedModelBehavior('Exceeded maximum retries (5) for result validation')"
+    "error": "UnexpectedModelBehavior('Received empty model response')",
+    "cost": null
 }

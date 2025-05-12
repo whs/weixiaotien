@@ -59,7 +59,7 @@ def main():
         # OpenAIModel(model_name="PetrosStav/gemma3-tools:27b", provider=ollama),
         # OpenAIModel(model_name="hf.co/mradermacher/openthaigpt1.5-72b-instruct-i1-GGUF:IQ2_S", provider=ollama),
         # OpenAIModel(model_name="hf.co/mradermacher/openthaigpt1.5-14b-instruct-GGUF:Q8_0", provider=ollama),
-        OpenAIModel(model_name="hf.co/JulienElkaim/Tsunami-1.0-14B-Instruct-Q4_K_M-GGUF:Q4_K_M", provider=ollama),
+        # OpenAIModel(model_name="hf.co/JulienElkaim/Tsunami-1.0-14B-Instruct-Q4_K_M-GGUF:Q4_K_M", provider=ollama),
         # OpenAIModel(model_name="hf.co/tensorblock/OpenThaiLLM-Prebuilt-7B-GGUF:Q8_0", provider=ollama),
 
         # Public models
@@ -83,7 +83,7 @@ def main():
         # OpenAIModel(model_name="openai/gpt-4o-2024-11-20", provider=openrouter),
         # OpenAIModel(model_name="openai/o4-mini", provider=openrouter), # API error
         # OpenAIModel(model_name="qwen/qwen-max", provider=openrouter), # Fail
-        # OpenAIModel(model_name="qwen/qwen3-235b-a22b", provider=openrouter),
+        OpenAIModel(model_name="qwen/qwen3-235b-a22b", provider=openrouter),
         # OpenAIModel(model_name="x-ai/grok-3-beta", provider=openrouter), # API error
     ]
 

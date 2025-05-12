@@ -1,6 +1,8 @@
 {
+    "version": 2,
     "model": "openai/o4-mini",
     "result": null,
     "score": 0.0,
-    "error": "TypeError(\"'NoneType' object cannot be interpreted as an integer\")"
+    "error": "TypeError(\"'NoneType' object cannot be interpreted as an integer\")",
+    "cost": null
 }
