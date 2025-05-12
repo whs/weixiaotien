@@ -159,5 +159,10 @@
         }
     },
     "score": 0.7,
-    "error": null
+    "error": null,
+    "cost": {
+        "request_cost_1k": 0,
+        "input_token_1m": 0.14,
+        "output_token_1m": 2.0
+    }
 }

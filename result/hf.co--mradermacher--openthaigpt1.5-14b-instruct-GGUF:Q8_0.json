@@ -1,0 +1,6 @@
+{
+    "model": "OpenThaiGPT 1.5 14B Instruct:Q8_0",
+    "result": null,
+    "score": 0.0,
+    "error": "UnexpectedModelBehavior('Exceeded maximum retries (5) for result validation')"
+}

@@ -13,11 +13,18 @@ from evaluator import evaluate, Result
 def slugify(i: str) -> str:
     return "--".join(re.findall("[A-Za-z0-9._:-]+", i))
 
+# This is for loading of result file - it is NOT automatically put in
+class Cost(BaseModel):
+    request_cost_1k: float
+    input_token_1m: float
+    output_token_1m: float
+
 class ResultData(BaseModel):
     model: str
     result: Union[Result, None]
     score: float
-    error: Optional[str]
+    error: Optional[str] = None
+    cost: Optional[Cost] = None
 
 def evaluate_model(model):
     agent = Agent(model, retries=5)
@@ -45,8 +52,11 @@ def main():
     openrouter = OpenAIProvider(base_url='https://openrouter.ai/api/v1', api_key=os.environ.get("OPENROUTER_KEY", ""))
     models = [
         # Thai LLMs on Ollama
-        OpenAIModel(model_name="PetrosStav/gemma3-tools:27b", provider=ollama),
+        # OpenAIModel(model_name="PetrosStav/gemma3-tools:27b", provider=ollama),
         # OpenAIModel(model_name="hf.co/mradermacher/openthaigpt1.5-72b-instruct-i1-GGUF:IQ2_S", provider=ollama),
+        # OpenAIModel(model_name="hf.co/mradermacher/openthaigpt1.5-14b-instruct-GGUF:Q8_0", provider=ollama),
+        # OpenAIModel(model_name="hf.co/JulienElkaim/Tsunami-1.0-14B-Instruct-Q4_K_M-GGUF:Q4_K_M", provider=ollama),
+        OpenAIModel(model_name="hf.co/tensorblock/OpenThaiLLM-Prebuilt-7B-GGUF:Q8_0", provider=ollama),
 
         # Public models
         # OpenAIModel(model_name="google/gemini-2.5-pro-preview", provider=openrouter), # ???
@@ -66,6 +76,10 @@ def main():
         # OpenAIModel(model_name="qwen/qwen2.5-vl-72b-instruct", provider=openrouter), # No tool use
         # OpenAIModel(model_name="meta-llama/llama-4-maverick", provider=openrouter), # Fail
         # OpenAIModel(model_name="meta-llama/llama-3.3-70b-instruct", provider=openrouter),
+        # OpenAIModel(model_name="anthropic/claude-3.5-haiku-20241022", provider=openrouter),
+        # OpenAIModel(model_name="anthropic/claude-3.5-sonnet-20240620", provider=openrouter),
+        # OpenAIModel(model_name="anthropic/claude-3.5-haiku", provider=openrouter),
+        # OpenAIModel(model_name="anthropic/claude-3.5-sonnet", provider=openrouter),
     ]
 
     for model in models:

@@ -1,0 +1,7 @@
+{
+    "model": "hf.co/tensorblock/OpenThaiLLM-Prebuilt-7B-GGUF:Q8_0",
+    "result": null,
+    "score": 0.0,
+    "error": "UnexpectedModelBehavior('Exceeded maximum retries (5) for result validation')",
+    "cost": null
+}
