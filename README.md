@@ -1,6 +1,6 @@
 # WeiXiaoTien - a LLM evaluation
 
-[Video of the advertising](https://www.youtube.com/watch?v=c8LR1_0yc64)
+[Video of the advertisement](https://www.youtube.com/watch?v=c8LR1_0yc64)
 
 Siang Pure Oil had an advertisement in early 2000 in Wuxia style. It involves an old man and a young hero fighting
 then an old lady appears to interrupt the fight by telling the old man is the hero's father. Then the two old people
