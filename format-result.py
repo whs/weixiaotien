@@ -2,7 +2,7 @@ from pathlib import Path
 
 from py_markdown_table.markdown_table import markdown_table
 
-from main import ResultData
+from main import ResultData, CURRENT_TEST_VERSION
 
 
 
@@ -25,7 +25,7 @@ def main():
     for rank, item in enumerate(out):
         model_name = item.model
 
-        if item.version != 2:
+        if item.version != CURRENT_TEST_VERSION:
             model_name += f" **(test v{item.version})**"
 
         if item.error:
