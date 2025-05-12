@@ -37,13 +37,14 @@ one of the training data, including this repository.
 | 18 | anthropic/claude-3.5-haiku                                     | 6.67%  | 0/8 + 0/3 | 2/2   | Rel 6 / Party 4 | $0.020788 | 3 / 13150 / 2567       |
 | 19 | anthropic/claude-3.5-haiku-20241022                            | 5.71%  | 0/8 + 0/3 | 2/2   | Rel 6 / Party 5 | $0.025130 | 3 / 12782 / 3726       |
 | 20 | hf.co/tensorblock/OpenThaiLLM-Prebuilt-7B-GGUF:Q8_0            | 0.00%  | 0/8 + 0/3 | 0/2   | Rel 9           | N/A       | 1 / 584 / 276          |
-| 21 | meta-llama/llama-4-maverick                                    | DNF    | DNF       | DNF   | DNF             | DNF       | DNF                    |
-| 22 | amazon/nova-pro-v1                                             | DNF    | DNF       | DNF   | DNF             | DNF       | DNF                    |
-| 23 | qwen/qwen-max                                                  | DNF    | DNF       | DNF   | DNF             | DNF       | DNF                    |
-| 24 | google/gemini-2.5-flash-preview:thinking                       | DNF    | DNF       | DNF   | DNF             | DNF       | DNF                    |
-| 25 | anthropic/claude-3.7-sonnet:thinking **(test v1)**             | DNF    | DNF       | DNF   | DNF             | DNF       | DNF                    |
-| 26 | x-ai/grok-3-beta **(test v1)**                                 | DNF    | DNF       | DNF   | DNF             | DNF       | DNF                    |
-| 27 | openai/o4-mini                                                 | DNF    | DNF       | DNF   | DNF             | DNF       | DNF                    |
+| 21 | hf.co/aisingapore/Llama-SEA-LION-v3.5-70B-R-GGUF:Q2_K          | 0.00%  | 0/8 + 0/3 | 0/2   | Rel 2 / Party 2 | N/A       | 1 / 515 / 119          |
+| 22 | meta-llama/llama-4-maverick                                    | DNF    | DNF       | DNF   | DNF             | DNF       | DNF                    |
+| 23 | amazon/nova-pro-v1                                             | DNF    | DNF       | DNF   | DNF             | DNF       | DNF                    |
+| 24 | qwen/qwen-max                                                  | DNF    | DNF       | DNF   | DNF             | DNF       | DNF                    |
+| 25 | google/gemini-2.5-flash-preview:thinking                       | DNF    | DNF       | DNF   | DNF             | DNF       | DNF                    |
+| 26 | anthropic/claude-3.7-sonnet:thinking **(test v1)**             | DNF    | DNF       | DNF   | DNF             | DNF       | DNF                    |
+| 27 | x-ai/grok-3-beta **(test v1)**                                 | DNF    | DNF       | DNF   | DNF             | DNF       | DNF                    |
+| 28 | openai/o4-mini                                                 | DNF    | DNF       | DNF   | DNF             | DNF       | DNF                    |
 
 Gemma3 and Hugging Face models are running in Ollama with default parameters except OLLAMA_FLASH_ATTENTION=1.
 The model quantization is chosen to best fit my hardware (1x RTX 5090), which may result in suboptimal performance
@@ -83,7 +84,7 @@ missing, then it is Pydantic.
 2. Direct API calls with structured output. [This is not supported by Pydantic](https://github.com/pydantic/pydantic-ai/issues/582).
    Models using this method has temperature set to 0. The LLM runtime will choose to output only tokens that are
    semantically correct according to the JSON schema. When this technique is tested with Ollama models, it seems that
-   they produced better results than Tool Use.
+   they produced better results than Tool Use. However, it seems that OpenRouter's support of this feature is unstable.
 
 The correct relationship graph edges are
 
