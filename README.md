@@ -15,36 +15,35 @@ one of the training data, including this repository.
 
 ## Result
 
-| #  | Model name                                                     | Score  | Relationships | Party members | Invalid         | Cost      | Req / In Tok / Out Tok |
-|----|----------------------------------------------------------------|--------|---------------|---------------|-----------------|-----------|------------------------|
-| 1  | openai/gpt-4.5-preview                                         | 85.45% | 8/8 + 1/3     | 2/2           | Rel 2           | $0.119250 | 1 / 818 / 386          |
-| 2  | anthropic/claude-3.5-sonnet-20240620                           | 70.00% | 5/8 + 1/3     | 2/2           |                 | $0.036702 | 2 / 5584 / 1330        |
-| 3  | qwen/qwen3-235b-a22b                                           | 70.00% | 5/8 + 0/3     | 2/2           |                 | $0.016758 | 1 / 1070 / 8304        |
-| 4  | gemini-2.5-pro-preview-05-06                                   | 66.67% | 6/8 + 1/3     | 2/2           | Rel 2           | $0.004084 | 3 / 1963 / 163         |
-| 5  | anthropic/claude-3.7-sonnet                                    | 62.86% | 5/8 + 1/3     | 2/2           | Rel 1           | $0.039756 | 2 / 5777 / 1495        |
-| 6  | anthropic/claude-3.5-sonnet                                    | 53.33% | 4/8 + 1/3     | 2/2           | Rel 1           | $0.007182 | 1 / 2169 / 45          |
-| 7  | gemini-2.5-flash-preview-04-17                                 | 52.00% | 4/8 + 0/3     | 2/2           | Rel 1           | $0.000356 | 3 / 1963 / 103         |
-| 8  | openai/gpt-4.1                                                 | 45.00% | 5/8 + 1/3     | 2/2           | Rel 6           | $0.009214 | 2 / 2087 / 630         |
-| 9  | deepseek/deepseek-r1                                           | 35.00% | 2/8 + 1/3     | 2/2           | Rel 1           | $0.038317 | 4 / 7725 / 15805       |
-| 10 | gemini-2.0-flash                                               | 26.67% | 2/8 + 0/3     | 2/2           | Rel 4           | $0.000380 | 3 / 1963 / 142         |
-| 11 | openai/gpt-4o-2024-11-20                                       | 26.00% | 2/8 + 1/3     | 2/2           | Rel 7           | $0.005885 | 1 / 818 / 384          |
-| 12 | OpenThaiGPT 1.5 72B Instruct i1 iq2_S                          | 20.00% | 0/8 + 0/3     | 2/2           | Rel 1           | N/A       | 5 / 11409 / 852        |
-| 13 | anthropic/claude-3.5-haiku-20241022                            | 9.17%  | 1/8 + 0/3     | 2/2           | Rel 3 / Party 4 | $0.032990 | 4 / 21083 / 4031       |
-| 14 | anthropic/claude-3.5-haiku                                     | 6.67%  | 0/8 + 1/3     | 2/2           | Rel 4 / Party 4 | $0.009316 | 2 / 7135 / 902         |
-| 15 | PetrosStav/gemma3-tools:27b                                    | 5.71%  | 0/8 + 0/3     | 2/2           | Rel 9 / Party 5 | N/A       | 2 / 4130 / 953         |
-| 16 | meta-llama/llama-3.3-70b-instruct                              | 3.33%  | 1/8 + 1/3     | 0/2           | Rel 4 / Party 4 | $0.001534 | 3 / 8420 / 2219        |
-| 17 | hf.co/JulienElkaim/Tsunami-1.0-14B-Instruct-Q4_K_M-GGUF:Q4_K_M | 3.33%  | 1/8 + 1/3     | 0/2           | Rel 4 / Party 2 | N/A       | 3 / 3282 / 613         |
-| 18 | google/gemini-2.5-flash-preview:thinking                       | 0.00%  | 0/8 + 0/3     | 0/2           |                 | $0.054661 | 2 / 1619 / 15548       |
-| 19 | meta-llama/llama-4-maverick                                    | DNF    | DNF           | DNF           | DNF             | DNF       | DNF                    |
-| 20 | amazon/nova-pro-v1                                             | DNF    | DNF           | DNF           | DNF             | DNF       | DNF                    |
-| 21 | hf.co/tensorblock/OpenThaiLLM-Prebuilt-7B-GGUF:Q8_0            | DNF    | DNF           | DNF           | DNF             | DNF       | DNF                    |
-| 22 | qwen/qwen-max                                                  | DNF    | DNF           | DNF           | DNF             | DNF       | DNF                    |
-| 23 | anthropic/claude-3.7-sonnet:thinking                           | DNF    | DNF           | DNF           | DNF             | DNF       | DNF                    |
-| 24 | qwen/qwen2.5-vl-72b-instruct                                   | DNF    | DNF           | DNF           | DNF             | DNF       | DNF                    |
-| 25 | x-ai/grok-3-beta                                               | DNF    | DNF           | DNF           | DNF             | DNF       | DNF                    |
-| 26 | deepseek/deepseek-chat-v3-0324                                 | DNF    | DNF           | DNF           | DNF             | DNF       | DNF                    |
-| 27 | openai/o4-mini                                                 | DNF    | DNF           | DNF           | DNF             | DNF       | DNF                    |
-| 28 | OpenThaiGPT 1.5 14B Instruct:Q8_0                              | DNF    | DNF           | DNF           | DNF             | DNF       | DNF                    |
+| #  | Model name                                                                   | Score  | Rel       | Party | Invalid         | Cost      | Req / In Tok / Out Tok |
+|----|------------------------------------------------------------------------------|--------|-----------|-------|-----------------|-----------|------------------------|
+| 1  | openai/gpt-4.5-preview **(test v1)**                                         | 85.45% | 8/8 + 1/3 | 2/2   | Rel 2           | $0.119250 | 1 / 818 / 386          |
+| 2  | gemini-2.5-pro-preview-05-06 **(test v1)**                                   | 85.45% | 8/8 + 1/3 | 2/2   | Rel 2           | $0.004367 | 3 / 1966 / 191         |
+| 3  | gemini-2.5-flash-preview-04-17                                               | 80.00% | 6/8 + 1/3 | 2/2   |                 | $0.000376 | 3 / 1966 / 135         |
+| 4  | anthropic/claude-3.5-sonnet-20240620 **(test v1)**                           | 70.00% | 5/8 + 1/3 | 2/2   |                 | $0.036702 | 2 / 5584 / 1330        |
+| 5  | qwen/qwen3-235b-a22b **(test v1)**                                           | 70.00% | 5/8 + 0/3 | 2/2   |                 | $0.016758 | 1 / 1070 / 8304        |
+| 6  | anthropic/claude-3.7-sonnet **(test v1)**                                    | 62.86% | 5/8 + 1/3 | 2/2   | Rel 1           | $0.039756 | 2 / 5777 / 1495        |
+| 7  | anthropic/claude-3.5-sonnet **(test v1)**                                    | 53.33% | 4/8 + 1/3 | 2/2   | Rel 1           | $0.007182 | 1 / 2169 / 45          |
+| 8  | openai/gpt-4.1 **(test v1)**                                                 | 45.00% | 5/8 + 1/3 | 2/2   | Rel 6           | $0.009214 | 2 / 2087 / 630         |
+| 9  | deepseek/deepseek-r1 **(test v1)**                                           | 35.00% | 2/8 + 1/3 | 2/2   | Rel 1           | $0.038317 | 4 / 7725 / 15805       |
+| 10 | openai/gpt-4o-2024-11-20 **(test v1)**                                       | 26.00% | 2/8 + 1/3 | 2/2   | Rel 7           | $0.005885 | 1 / 818 / 384          |
+| 11 | gemini-2.0-flash                                                             | 22.50% | 1/8 + 0/3 | 2/2   | Rel 3           | $0.000364 | 3 / 1966 / 115         |
+| 12 | OpenThaiGPT 1.5 72B Instruct i1 iq2_S **(test v1)**                          | 20.00% | 0/8 + 0/3 | 2/2   | Rel 1           | N/A       | 5 / 11409 / 852        |
+| 13 | anthropic/claude-3.5-haiku-20241022 **(test v1)**                            | 9.17%  | 1/8 + 0/3 | 2/2   | Rel 3 / Party 4 | $0.032990 | 4 / 21083 / 4031       |
+| 14 | hf.co/mradermacher/openthaigpt1.5-14b-instruct-GGUF:Q8_0                     | 8.00%  | 0/8 + 0/3 | 2/2   | Rel 4 / Party 3 | N/A       | 2 / 2209 / 500         |
+| 15 | anthropic/claude-3.5-haiku **(test v1)**                                     | 6.67%  | 0/8 + 1/3 | 2/2   | Rel 4 / Party 4 | $0.009316 | 2 / 7135 / 902         |
+| 16 | meta-llama/llama-3.3-70b-instruct **(test v1)**                              | 3.33%  | 1/8 + 1/3 | 0/2   | Rel 4 / Party 4 | $0.001534 | 3 / 8420 / 2219        |
+| 17 | hf.co/JulienElkaim/Tsunami-1.0-14B-Instruct-Q4_K_M-GGUF:Q4_K_M **(test v1)** | 3.33%  | 1/8 + 1/3 | 0/2   | Rel 4 / Party 2 | N/A       | 3 / 3282 / 613         |
+| 18 | google/gemini-2.5-flash-preview:thinking **(test v1)**                       | 0.00%  | 0/8 + 0/3 | 0/2   |                 | $0.054661 | 2 / 1619 / 15548       |
+| 19 | meta-llama/llama-4-maverick **(test v1)**                                    | DNF    | DNF       | DNF   | DNF             | DNF       | DNF                    |
+| 20 | amazon/nova-pro-v1 **(test v1)**                                             | DNF    | DNF       | DNF   | DNF             | DNF       | DNF                    |
+| 21 | hf.co/tensorblock/OpenThaiLLM-Prebuilt-7B-GGUF:Q8_0 **(test v1)**            | DNF    | DNF       | DNF   | DNF             | DNF       | DNF                    |
+| 22 | qwen/qwen-max **(test v1)**                                                  | DNF    | DNF       | DNF   | DNF             | DNF       | DNF                    |
+| 23 | anthropic/claude-3.7-sonnet:thinking **(test v1)**                           | DNF    | DNF       | DNF   | DNF             | DNF       | DNF                    |
+| 24 | qwen/qwen2.5-vl-72b-instruct **(test v1)**                                   | DNF    | DNF       | DNF   | DNF             | DNF       | DNF                    |
+| 25 | x-ai/grok-3-beta **(test v1)**                                               | DNF    | DNF       | DNF   | DNF             | DNF       | DNF                    |
+| 26 | deepseek/deepseek-chat-v3-0324 **(test v1)**                                 | DNF    | DNF       | DNF   | DNF             | DNF       | DNF                    |
+| 27 | openai/o4-mini **(test v1)**                                                 | DNF    | DNF       | DNF   | DNF             | DNF       | DNF                    |
 
 Gemma3 and Hugging Face models are running in Ollama with default parameters except OLLAMA_FLASH_ATTENTION=1.
 The model quantization is chosen to best fit my hardware (1x RTX 5090), which may result in suboptimal performance

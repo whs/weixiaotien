@@ -33,7 +33,7 @@ then it should be repeated for each directions.
 
 class Character(str, Enum):
     hero = "พระเอก"
-    weixiaotien = "เว่ยเส้นเทียน"
+    weixiaotien = "เว่ยเส้าเทียน"
     lixiashui = "หลี่เซียซุย"
     zhangfuyuan = "จางฟู่เหยิน"
     zhangmanzhi = "จางม่านจือ"

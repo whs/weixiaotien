@@ -3,14 +3,24 @@
     "result": {
         "valid_relationships": [
             {
-                "a": "เว่ยเส้นเทียน",
+                "a": "เว่ยเส้าเทียน",
+                "relation": "father",
+                "b": "พระเอก"
+            },
+            {
+                "a": "พระเอก",
+                "relation": "son",
+                "b": "เว่ยเส้าเทียน"
+            },
+            {
+                "a": "เว่ยเส้าเทียน",
                 "relation": "friend",
                 "b": "จางฟู่เหยิน"
             },
             {
                 "a": "จางฟู่เหยิน",
                 "relation": "friend",
-                "b": "เว่ยเส้นเทียน"
+                "b": "เว่ยเส้าเทียน"
             },
             {
                 "a": "จางฟู่เหยิน",
@@ -52,18 +62,7 @@
                 "b": "จางฟู่เหยิน"
             }
         ],
-        "missing_relationships": [
-            {
-                "a": "เว่ยเส้นเทียน",
-                "relation": "father",
-                "b": "พระเอก"
-            },
-            {
-                "a": "พระเอก",
-                "relation": "son",
-                "b": "เว่ยเส้นเทียน"
-            }
-        ],
+        "missing_relationships": [],
         "valid_party_member_list": [
             {
                 "name": "จางฟู่เหยิน",
@@ -80,14 +79,24 @@
             "output": {
                 "relationships": [
                     {
-                        "a": "เว่ยเส้นเทียน",
+                        "a": "เว่ยเส้าเทียน",
+                        "relation": "father",
+                        "b": "พระเอก"
+                    },
+                    {
+                        "a": "พระเอก",
+                        "relation": "son",
+                        "b": "เว่ยเส้าเทียน"
+                    },
+                    {
+                        "a": "เว่ยเส้าเทียน",
                         "relation": "friend",
                         "b": "จางฟู่เหยิน"
                     },
                     {
                         "a": "จางฟู่เหยิน",
                         "relation": "friend",
-                        "b": "เว่ยเส้นเทียน"
+                        "b": "เว่ยเส้าเทียน"
                     },
                     {
                         "a": "จางฟู่เหยิน",
@@ -143,7 +152,7 @@
                         "parts": [
                             {
                                 "content": "\nFrom this dialogue, create a relationship graph of all individuals involved. Return as JSON per schema.\nIf the relationship enum is missing, skip the relationship. All relationships are directional - if it is mutual\nthen it should be repeated for each directions.\n\nพระเอก: เว่ยเส้าเทียน วันนี้เป็นวันตายของเจ้า\nเว่ยเส้าเทียน: โอหัง แน่จริงก็เข้ามา\nพระเอก: ตายซะ!\nหลี่เซียซุย : ช้าก่อน! เว่ยเส้าเทียนคือพ่อของเจ้า!\nหลี่เซียซุย: ซึ่งเป็นสหายรัก ของจางฟู่เหยินหัวหน้าพรรคกิเลนขาว ที่เก็บเจ้ามาเลี้ยงเมื่อ 22 ปีก่อน\nซึ่งจริงๆแล้วก่อนที่จะเจอเจ้า แม่นางเส้าสื่อเฉียน แม่นาง 14\nเว่ยเส้าเทียน: แห่งพรรคกิเลนขาว ซึ่งได้พบเจ้าข้างหนองน้ำ ใกล้เมืองเหลียงคุน ซึ่งเป็นที่ๆ เซียะถงอี้ น้าสาวพี่แม่ได้แนะนำให้พบ\nหลี่เซียซุย: ข้าหลี่เซียซุย ก่อนที่จะเจอเจ้า\nเว่ยเส้าเทียน: ซึ่งอันที่จริงแล้ว ข้าเองก็ไม่เคยรู้มาก่อนว่าเจ้า เป็นลูกของ\nหลี่เซียซุย: จางฟู่เหยิน\nเว่ยเส้าเทียน: จนข้านึกขึ้นได้ จึงว่า\nหลี่เซียซุย: จางม่านจือ แม่เจ้า\nเว่ยเส้าเทียน: ได้พาข้าไปพบ\nหลี่เซียซุย: พี่สาวแม่ของเจ้า\nเว่ยเส้าเทียน: ซึ่งน้าสาวพี่แม่ของเจ้า ได้พาข้าไปรู้จักกับหลี่เซียซุย\nหลี่เซียซุย: น้าสาวพี่ของแม่เจ้า\nเว่ยเส้าเทียน: ก่อนที่จะเจอเจ้า\nหลี่เซียซุย: เมื่อ 22 ปีก่อน\n",
-                                "timestamp": "2025-05-12T10:27:23.267284Z",
+                                "timestamp": "2025-05-12T10:51:33.899787Z",
                                 "part_kind": "user-prompt"
                             }
                         ],
@@ -155,12 +164,12 @@
                             {
                                 "tool_name": "final_result",
                                 "args": {},
-                                "tool_call_id": "pyd_ai_c2fab33ed1ef492ba6826237e28be278",
+                                "tool_call_id": "pyd_ai_3dd0704dd3a3455aa9ebd6009ede8c28",
                                 "part_kind": "tool-call"
                             }
                         ],
                         "model_name": "gemini-2.5-pro-preview-05-06",
-                        "timestamp": "2025-05-12T10:29:04.658406Z",
+                        "timestamp": "2025-05-12T10:53:28.068033Z",
                         "kind": "response"
                     },
                     {
@@ -185,8 +194,8 @@
                                     }
                                 ],
                                 "tool_name": "final_result",
-                                "tool_call_id": "pyd_ai_c2fab33ed1ef492ba6826237e28be278",
-                                "timestamp": "2025-05-12T10:29:04.658634Z",
+                                "tool_call_id": "pyd_ai_3dd0704dd3a3455aa9ebd6009ede8c28",
+                                "timestamp": "2025-05-12T10:53:28.068295Z",
                                 "part_kind": "retry-prompt"
                             }
                         ],
@@ -198,12 +207,12 @@
                             {
                                 "tool_name": "final_result",
                                 "args": {},
-                                "tool_call_id": "pyd_ai_da95455814054a76bc1196ee115dd2fd",
+                                "tool_call_id": "pyd_ai_6375486c3e514293a9e396d5b3737809",
                                 "part_kind": "tool-call"
                             }
                         ],
                         "model_name": "gemini-2.5-pro-preview-05-06",
-                        "timestamp": "2025-05-12T10:32:25.723548Z",
+                        "timestamp": "2025-05-12T10:55:27.564339Z",
                         "kind": "response"
                     },
                     {
@@ -228,8 +237,8 @@
                                     }
                                 ],
                                 "tool_name": "final_result",
-                                "tool_call_id": "pyd_ai_da95455814054a76bc1196ee115dd2fd",
-                                "timestamp": "2025-05-12T10:32:25.723741Z",
+                                "tool_call_id": "pyd_ai_6375486c3e514293a9e396d5b3737809",
+                                "timestamp": "2025-05-12T10:55:27.564546Z",
                                 "part_kind": "retry-prompt"
                             }
                         ],
@@ -243,68 +252,78 @@
                                 "args": {
                                     "relationships": [
                                         {
-                                            "b": "จางฟู่เหยิน",
-                                            "a": "เว่ยเส้นเทียน",
-                                            "relation": "friend"
+                                            "b": "พระเอก",
+                                            "relation": "father",
+                                            "a": "เว่ยเส้าเทียน"
+                                        },
+                                        {
+                                            "a": "พระเอก",
+                                            "b": "เว่ยเส้าเทียน",
+                                            "relation": "son"
+                                        },
+                                        {
+                                            "a": "เว่ยเส้าเทียน",
+                                            "relation": "friend",
+                                            "b": "จางฟู่เหยิน"
                                         },
                                         {
                                             "relation": "friend",
-                                            "b": "เว่ยเส้นเทียน",
+                                            "b": "เว่ยเส้าเทียน",
                                             "a": "จางฟู่เหยิน"
                                         },
                                         {
                                             "b": "พระเอก",
-                                            "relation": "adopted",
-                                            "a": "จางฟู่เหยิน"
+                                            "a": "จางฟู่เหยิน",
+                                            "relation": "adopted"
                                         },
                                         {
-                                            "b": "พระเอก",
                                             "a": "เส้าสื่อเฉียน",
-                                            "relation": "found"
+                                            "relation": "found",
+                                            "b": "พระเอก"
                                         },
                                         {
+                                            "a": "จางฟู่เหยิน",
                                             "relation": "father",
-                                            "b": "พระเอก",
-                                            "a": "จางฟู่เหยิน"
+                                            "b": "พระเอก"
                                         },
                                         {
                                             "a": "พระเอก",
-                                            "b": "จางฟู่เหยิน",
-                                            "relation": "son"
+                                            "relation": "son",
+                                            "b": "จางฟู่เหยิน"
                                         },
                                         {
+                                            "a": "จางม่านจือ",
                                             "relation": "mother",
-                                            "b": "พระเอก",
-                                            "a": "จางม่านจือ"
+                                            "b": "พระเอก"
                                         },
                                         {
+                                            "relation": "son",
                                             "b": "จางม่านจือ",
-                                            "a": "พระเอก",
-                                            "relation": "son"
+                                            "a": "พระเอก"
                                         },
                                         {
                                             "relation": "aunt",
-                                            "a": "เซียะถงอี้",
-                                            "b": "พระเอก"
+                                            "b": "พระเอก",
+                                            "a": "เซียะถงอี้"
                                         }
                                     ],
                                     "party_members": [
                                         {
-                                            "name": "จางฟู่เหยิน",
-                                            "title": "หัวหน้าพรรค"
+                                            "title": "หัวหน้าพรรค",
+                                            "name": "จางฟู่เหยิน"
                                         },
                                         {
-                                            "title": "แม่นาง 14",
-                                            "name": "เส้าสื่อเฉียน"
+                                            "name": "เส้าสื่อเฉียน",
+                                            "title": "แม่นาง 14"
                                         }
                                     ]
                                 },
-                                "tool_call_id": "pyd_ai_ed23de8fc6d042de921373678a422236",
+                                "tool_call_id": "pyd_ai_7cefc40a47634cf8bebf72eea817b9d3",
                                 "part_kind": "tool-call"
                             }
                         ],
                         "model_name": "gemini-2.5-pro-preview-05-06",
-                        "timestamp": "2025-05-12T10:34:00.378293Z",
+                        "timestamp": "2025-05-12T10:56:22.281085Z",
                         "kind": "response"
                     },
                     {
@@ -312,8 +331,8 @@
                             {
                                 "tool_name": "final_result",
                                 "content": "Final result processed.",
-                                "tool_call_id": "pyd_ai_ed23de8fc6d042de921373678a422236",
-                                "timestamp": "2025-05-12T10:34:00.378606Z",
+                                "tool_call_id": "pyd_ai_7cefc40a47634cf8bebf72eea817b9d3",
+                                "timestamp": "2025-05-12T10:56:22.281383Z",
                                 "part_kind": "tool-return"
                             }
                         ],
@@ -323,9 +342,9 @@
                 ],
                 "usage": {
                     "requests": 3,
-                    "request_tokens": 1963,
-                    "response_tokens": 163,
-                    "total_tokens": 44954,
+                    "request_tokens": 1966,
+                    "response_tokens": 191,
+                    "total_tokens": 33442,
                     "details": null
                 },
                 "retries": 2,
@@ -335,7 +354,7 @@
             "_traceparent_value": null
         }
     },
-    "score": 0.6666666666666667,
+    "score": 0.8545454545454545,
     "error": null,
     "cost": {
         "request_cost_1k": 0,

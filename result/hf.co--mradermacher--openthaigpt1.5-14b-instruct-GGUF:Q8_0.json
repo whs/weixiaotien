@@ -1,6 +1,275 @@
 {
-    "model": "OpenThaiGPT 1.5 14B Instruct:Q8_0",
-    "result": null,
-    "score": 0.0,
-    "error": "UnexpectedModelBehavior('Exceeded maximum retries (5) for result validation')"
+    "version": 2,
+    "model": "hf.co/mradermacher/openthaigpt1.5-14b-instruct-GGUF:Q8_0",
+    "result": {
+        "valid_relationships": [],
+        "valid_optional_relationships": [],
+        "invalid_relationships": [
+            {
+                "a": "พระเอก",
+                "relation": "found",
+                "b": "เว่ยเส้าเทียน"
+            },
+            {
+                "a": "หลี่เซียซุย",
+                "relation": "friend",
+                "b": "จางฟู่เหยิน"
+            },
+            {
+                "a": "จางม่านจือ",
+                "relation": "found",
+                "b": "พระเอก"
+            },
+            {
+                "a": "เส้าสื่อเฉียน",
+                "relation": "aunt of mother's sister's mother",
+                "b": "เว่ยเส้าเทียน"
+            }
+        ],
+        "missing_relationships": [
+            {
+                "a": "เว่ยเส้าเทียน",
+                "relation": "friend",
+                "b": "จางฟู่เหยิน"
+            },
+            {
+                "a": "จางฟู่เหยิน",
+                "relation": "friend",
+                "b": "เว่ยเส้าเทียน"
+            },
+            {
+                "a": "เว่ยเส้าเทียน",
+                "relation": "father",
+                "b": "พระเอก"
+            },
+            {
+                "a": "จางม่านจือ",
+                "relation": "mother",
+                "b": "พระเอก"
+            },
+            {
+                "a": "พระเอก",
+                "relation": "son",
+                "b": "เว่ยเส้าเทียน"
+            },
+            {
+                "a": "พระเอก",
+                "relation": "son",
+                "b": "จางม่านจือ"
+            },
+            {
+                "a": "เส้าสื่อเฉียน",
+                "relation": "found",
+                "b": "พระเอก"
+            },
+            {
+                "a": "จางฟู่เหยิน",
+                "relation": "adopted",
+                "b": "พระเอก"
+            }
+        ],
+        "valid_party_member_list": [
+            {
+                "name": "จางฟู่เหยิน",
+                "title": "หัวหน้าพรรค"
+            },
+            {
+                "name": "เส้าสื่อเฉียน",
+                "title": "แม่นาง 14"
+            }
+        ],
+        "invalid_party_member_list": [
+            {
+                "name": "เว่ยเส้าเทียน",
+                "title": "หัวหน้าพรรค"
+            },
+            {
+                "name": "หลี่เซียซุย",
+                "title": "แม่นาง 14"
+            },
+            {
+                "name": "จางม่านจือ",
+                "title": "แม่นาง 14"
+            }
+        ],
+        "missing_party_members": [],
+        "output": {
+            "output": {
+                "relationships": [
+                    {
+                        "a": "พระเอก",
+                        "relation": "found",
+                        "b": "เว่ยเส้าเทียน"
+                    },
+                    {
+                        "a": "หลี่เซียซุย",
+                        "relation": "friend",
+                        "b": "จางฟู่เหยิน"
+                    },
+                    {
+                        "a": "จางม่านจือ",
+                        "relation": "found",
+                        "b": "พระเอก"
+                    },
+                    {
+                        "a": "เส้าสื่อเฉียน",
+                        "relation": "aunt of mother's sister's mother",
+                        "b": "เว่ยเส้าเทียน"
+                    }
+                ],
+                "party_members": [
+                    {
+                        "name": "เว่ยเส้าเทียน",
+                        "title": "หัวหน้าพรรค"
+                    },
+                    {
+                        "name": "หลี่เซียซุย",
+                        "title": "แม่นาง 14"
+                    },
+                    {
+                        "name": "จางฟู่เหยิน",
+                        "title": "หัวหน้าพรรค"
+                    },
+                    {
+                        "name": "จางม่านจือ",
+                        "title": "แม่นาง 14"
+                    },
+                    {
+                        "name": "เส้าสื่อเฉียน",
+                        "title": "แม่นาง 14"
+                    }
+                ]
+            },
+            "_output_tool_name": "final_result",
+            "_state": {
+                "message_history": [
+                    {
+                        "parts": [
+                            {
+                                "content": "\nFrom this dialogue, create a relationship graph of all individuals involved. Return as JSON per schema.\nIf the relationship enum is missing, skip the relationship. All relationships are directional - if it is mutual\nthen it should be repeated for each directions.\n\nพระเอก: เว่ยเส้าเทียน วันนี้เป็นวันตายของเจ้า\nเว่ยเส้าเทียน: โอหัง แน่จริงก็เข้ามา\nพระเอก: ตายซะ!\nหลี่เซียซุย : ช้าก่อน! เว่ยเส้าเทียนคือพ่อของเจ้า!\nหลี่เซียซุย: ซึ่งเป็นสหายรัก ของจางฟู่เหยินหัวหน้าพรรคกิเลนขาว ที่เก็บเจ้ามาเลี้ยงเมื่อ 22 ปีก่อน\nซึ่งจริงๆแล้วก่อนที่จะเจอเจ้า แม่นางเส้าสื่อเฉียน แม่นาง 14\nเว่ยเส้าเทียน: แห่งพรรคกิเลนขาว ซึ่งได้พบเจ้าข้างหนองน้ำ ใกล้เมืองเหลียงคุน ซึ่งเป็นที่ๆ เซียะถงอี้ น้าสาวพี่แม่ได้แนะนำให้พบ\nหลี่เซียซุย: ข้าหลี่เซียซุย ก่อนที่จะเจอเจ้า\nเว่ยเส้าเทียน: ซึ่งอันที่จริงแล้ว ข้าเองก็ไม่เคยรู้มาก่อนว่าเจ้า เป็นลูกของ\nหลี่เซียซุย: จางฟู่เหยิน\nเว่ยเส้าเทียน: จนข้านึกขึ้นได้ จึงว่า\nหลี่เซียซุย: จางม่านจือ แม่เจ้า\nเว่ยเส้าเทียน: ได้พาข้าไปพบ\nหลี่เซียซุย: พี่สาวแม่ของเจ้า\nเว่ยเส้าเทียน: ซึ่งน้าสาวพี่แม่ของเจ้า ได้พาข้าไปรู้จักกับหลี่เซียซุย\nหลี่เซียซุย: น้าสาวพี่ของแม่เจ้า\nเว่ยเส้าเทียน: ก่อนที่จะเจอเจ้า\nหลี่เซียซุย: เมื่อ 22 ปีก่อน\n",
+                                "timestamp": "2025-05-12T11:01:31.336906Z",
+                                "part_kind": "user-prompt"
+                            }
+                        ],
+                        "instructions": null,
+                        "kind": "request"
+                    },
+                    {
+                        "parts": [
+                            {
+                                "content": "",
+                                "part_kind": "text"
+                            },
+                            {
+                                "tool_name": "final_result",
+                                "args": "{\"party_members\":[{\"name\":\"พระเอก\",\"title\":null},{\"name\":\"เว่ยเส้าเทียน\",\"title\":\"หัวหน้าพรรค\"},{\"name\":\"หลี่เซียซุย\",\"title\":\"แม่นาง 14\"},{\"name\":\"จางฟู่เหยิน\",\"title\":\"หัวหน้าพรรค\"},{\"name\":\"จางม่านจือ\",\"title\":null},{\"name\":\"เส้าสื่อเฉียน\",\"title\":\"แม่สาว\"}],\"relationships\":[{\"a\":\"เว่ยเส้าเทียน\",\"b\":\"พระเอก\",\"relation\":\"father\"},{\"a\":\"จางฟู่เหยิน\",\"b\":\"หลี่เซียซุย\",\"relation\":\"found\"},{\"a\":\"หลี่เซียซุย\",\"b\":\"เว่ยเส้าเทียน\",\"relation\":\"friend\"},{\"a\":\"จางม่านจือ\",\"b\":\"พระเอก\",\"relation\":\"mother\"}]}",
+                                "tool_call_id": "call_s301n301",
+                                "part_kind": "tool-call"
+                            }
+                        ],
+                        "model_name": "hf.co/mradermacher/openthaigpt1.5-14b-instruct-GGUF:Q8_0",
+                        "timestamp": "2025-05-12T11:03:19Z",
+                        "kind": "response"
+                    },
+                    {
+                        "parts": [
+                            {
+                                "content": [
+                                    {
+                                        "type": "enum",
+                                        "loc": [
+                                            "party_members",
+                                            0,
+                                            "title"
+                                        ],
+                                        "msg": "Input should be 'หัวหน้าพรรค' or 'แม่นาง 14'",
+                                        "input": null,
+                                        "ctx": {
+                                            "expected": "'หัวหน้าพรรค' or 'แม่นาง 14'"
+                                        }
+                                    },
+                                    {
+                                        "type": "enum",
+                                        "loc": [
+                                            "party_members",
+                                            4,
+                                            "title"
+                                        ],
+                                        "msg": "Input should be 'หัวหน้าพรรค' or 'แม่นาง 14'",
+                                        "input": null,
+                                        "ctx": {
+                                            "expected": "'หัวหน้าพรรค' or 'แม่นาง 14'"
+                                        }
+                                    },
+                                    {
+                                        "type": "enum",
+                                        "loc": [
+                                            "party_members",
+                                            5,
+                                            "title"
+                                        ],
+                                        "msg": "Input should be 'หัวหน้าพรรค' or 'แม่นาง 14'",
+                                        "input": "แม่สาว",
+                                        "ctx": {
+                                            "expected": "'หัวหน้าพรรค' or 'แม่นาง 14'"
+                                        }
+                                    }
+                                ],
+                                "tool_name": "final_result",
+                                "tool_call_id": "call_s301n301",
+                                "timestamp": "2025-05-12T11:03:19.641957Z",
+                                "part_kind": "retry-prompt"
+                            }
+                        ],
+                        "instructions": null,
+                        "kind": "request"
+                    },
+                    {
+                        "parts": [
+                            {
+                                "content": "",
+                                "part_kind": "text"
+                            },
+                            {
+                                "tool_name": "final_result",
+                                "args": "{\"party_members\":[{\"name\":\"เว่ยเส้าเทียน\",\"title\":\"หัวหน้าพรรค\"},{\"name\":\"หลี่เซียซุย\",\"title\":\"แม่นาง 14\"},{\"name\":\"จางฟู่เหยิน\",\"title\":\"หัวหน้าพรรค\"},{\"name\":\"จางม่านจือ\",\"title\":\"แม่นาง 14\"},{\"name\":\"เส้าสื่อเฉียน\",\"title\":\"แม่นาง 14\"}],\"relationships\":[{\"a\":\"พระเอก\",\"b\":\"เว่ยเส้าเทียน\",\"relation\":\"found\"},{\"a\":\"หลี่เซียซุย\",\"b\":\"จางฟู่เหยิน\",\"relation\":\"friend\"},{\"a\":\"จางม่านจือ\",\"b\":\"พระเอก\",\"relation\":\"found\"},{\"a\":\"เส้าสื่อเฉียน\",\"b\":\"เว่ยเส้าเทียน\",\"relation\":\"aunt of mother's sister's mother\"}]}",
+                                "tool_call_id": "call_1mwl1nda",
+                                "part_kind": "tool-call"
+                            }
+                        ],
+                        "model_name": "hf.co/mradermacher/openthaigpt1.5-14b-instruct-GGUF:Q8_0",
+                        "timestamp": "2025-05-12T11:03:23Z",
+                        "kind": "response"
+                    },
+                    {
+                        "parts": [
+                            {
+                                "tool_name": "final_result",
+                                "content": "Final result processed.",
+                                "tool_call_id": "call_1mwl1nda",
+                                "timestamp": "2025-05-12T11:03:23.106503Z",
+                                "part_kind": "tool-return"
+                            }
+                        ],
+                        "instructions": null,
+                        "kind": "request"
+                    }
+                ],
+                "usage": {
+                    "requests": 2,
+                    "request_tokens": 2209,
+                    "response_tokens": 500,
+                    "total_tokens": 2709,
+                    "details": null
+                },
+                "retries": 1,
+                "run_step": 2
+            },
+            "_new_message_index": 0,
+            "_traceparent_value": null
+        }
+    },
+    "score": 0.08000000000000002,
+    "error": null,
+    "cost": null
 }

@@ -21,6 +21,7 @@ class Cost(BaseModel):
     output_token_1m: float
 
 class ResultData(BaseModel):
+    version: int = 1
     model: str
     result: Union[Result, None]
     score: float
@@ -33,7 +34,7 @@ def evaluate_model(model):
     out_file = Path("result") / (slugify(model.model_name) + ".json")
 
     with out_file.open("w") as fp:
-        result_data = ResultData(model=model.model_name, result=None, error=None, score=0)
+        result_data = ResultData(version=2, model=model.model_name, result=None, error=None, score=0)
         try:
             out = evaluate(agent)
             result_data.result = out
@@ -53,17 +54,16 @@ def main():
     openrouter = OpenAIProvider(base_url='https://openrouter.ai/api/v1', api_key=os.environ.get("OPENROUTER_KEY", ""))
     models = [
         # Thai LLMs on Ollama
-        # OpenAIModel(model_name="PetrosStav/gemma3-tools:27b", provider=ollama),
-        # OpenAIModel(model_name="hf.co/mradermacher/openthaigpt1.5-72b-instruct-i1-GGUF:IQ2_S", provider=ollama),
+        OpenAIModel(model_name="PetrosStav/gemma3-tools:27b", provider=ollama),
+        OpenAIModel(model_name="hf.co/mradermacher/openthaigpt1.5-72b-instruct-i1-GGUF:IQ2_S", provider=ollama),
         # OpenAIModel(model_name="hf.co/mradermacher/openthaigpt1.5-14b-instruct-GGUF:Q8_0", provider=ollama),
-        # OpenAIModel(model_name="hf.co/JulienElkaim/Tsunami-1.0-14B-Instruct-Q4_K_M-GGUF:Q4_K_M", provider=ollama),
+        OpenAIModel(model_name="hf.co/JulienElkaim/Tsunami-1.0-14B-Instruct-Q4_K_M-GGUF:Q4_K_M", provider=ollama),
         # OpenAIModel(model_name="hf.co/tensorblock/OpenThaiLLM-Prebuilt-7B-GGUF:Q8_0", provider=ollama),
 
         # Public models
         # OpenAIModel(model_name="google/gemini-2.5-pro-preview", provider=openrouter), # ???
         # OpenAIModel(model_name="x-ai/grok-3-beta", provider=openrouter), # API error
         # OpenAIModel(model_name="openai/gpt-4.5-preview", provider=openrouter),
-        # OpenAIModel(model_name="google/gemini-2.5-flash-preview", provider=openrouter), # Fail
         # OpenAIModel(model_name="google/gemini-2.5-flash-preview:thinking", provider=openrouter),
         # OpenAIModel(model_name="deepseek/deepseek-chat-v3-0324", provider=openrouter),
         # OpenAIModel(model_name="openai/gpt-4.1", provider=openrouter),
@@ -83,7 +83,7 @@ def main():
         # GeminiModel('gemini-2.0-flash', provider='google-vertex'),
         # GeminiModel('gemini-2.5-flash-preview-04-17', provider='google-vertex'),
         # GeminiModel('gemini-2.5-pro-preview-05-06', provider='google-vertex'),
-        OpenAIModel(model_name="amazon/nova-pro-v1", provider=openrouter),
+        # OpenAIModel(model_name="amazon/nova-pro-v1", provider=openrouter), # Fail
     ]
 
     for model in models:

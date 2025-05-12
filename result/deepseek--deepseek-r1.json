@@ -3,7 +3,7 @@
     "result": {
         "valid_relationships": [
             {
-                "a": "เว่ยเส้นเทียน",
+                "a": "เว่ยเส้าเทียน",
                 "relation": "father",
                 "b": "พระเอก"
             },
@@ -29,19 +29,19 @@
         ],
         "missing_relationships": [
             {
-                "a": "เว่ยเส้นเทียน",
+                "a": "เว่ยเส้าเทียน",
                 "relation": "friend",
                 "b": "จางฟู่เหยิน"
             },
             {
                 "a": "จางฟู่เหยิน",
                 "relation": "friend",
-                "b": "เว่ยเส้นเทียน"
+                "b": "เว่ยเส้าเทียน"
             },
             {
                 "a": "พระเอก",
                 "relation": "son",
-                "b": "เว่ยเส้นเทียน"
+                "b": "เว่ยเส้าเทียน"
             },
             {
                 "a": "พระเอก",
@@ -75,7 +75,7 @@
             "output": {
                 "relationships": [
                     {
-                        "a": "เว่ยเส้นเทียน",
+                        "a": "เว่ยเส้าเทียน",
                         "relation": "father",
                         "b": "พระเอก"
                     },
@@ -176,7 +176,7 @@
                             },
                             {
                                 "tool_name": "final_result",
-                                "args": "{\n  \"party_members\": [\n    {\n      \"name\": \"จางฟู่เหยิน\",\n      \"title\": \"หัวหน้าพรรค\"\n    },\n    {\n      \"name\": \"เส้าสื่อเฉียน\",\n      \"title\": \"แม่นาง 14\"\n    }\n  ],\n  \"relationships\": [\n    {\n      \"a\": \"เว่ยเส้นเทียน\",\n      \"b\": \"พระเอก\",\n      \"relation\": \"father\"\n    },\n    {\n      \"a\": \"จางม่านจือ\",\n      \"b\": \"พระเอก\",\n      \"relation\": \"mother\"\n    },\n    {\n      \"a\": \"เซียะถงอี้\",\n      \"b\": \"จางม่านจือ\",\n      \"relation\": \"aunt\"\n    },\n    {\n      \"a\": \"จางฟู่เหยิน\",\n      \"b\": \"พระเอก\",\n      \"relation\": \"found\"\n    },\n    {\n      \"a\": \"เว่ยเส้นเทียน\",\n      \"b\": \"จางม่านจือ\",\n      \"relation\": \"spouse\"\n    },\n    {\n      \"a\": \"จางม่านจือ\",\n      \"b\": \"เว่ยเส้นเทียน\",\n      \"relation\": \"spouse\"\n    }\n  ]\n}",
+                                "args": "{\n  \"party_members\": [\n    {\n      \"name\": \"จางฟู่เหยิน\",\n      \"title\": \"หัวหน้าพรรค\"\n    },\n    {\n      \"name\": \"เส้าสื่อเฉียน\",\n      \"title\": \"แม่นาง 14\"\n    }\n  ],\n  \"relationships\": [\n    {\n      \"a\": \"เว่ยเส้าเทียน\",\n      \"b\": \"พระเอก\",\n      \"relation\": \"father\"\n    },\n    {\n      \"a\": \"จางม่านจือ\",\n      \"b\": \"พระเอก\",\n      \"relation\": \"mother\"\n    },\n    {\n      \"a\": \"เซียะถงอี้\",\n      \"b\": \"จางม่านจือ\",\n      \"relation\": \"aunt\"\n    },\n    {\n      \"a\": \"จางฟู่เหยิน\",\n      \"b\": \"พระเอก\",\n      \"relation\": \"found\"\n    },\n    {\n      \"a\": \"เว่ยเส้าเทียน\",\n      \"b\": \"จางม่านจือ\",\n      \"relation\": \"spouse\"\n    },\n    {\n      \"a\": \"จางม่านจือ\",\n      \"b\": \"เว่ยเส้าเทียน\",\n      \"relation\": \"spouse\"\n    }\n  ]\n}",
                                 "tool_call_id": "call_6rqw90d3msksrcd3uktuyalf",
                                 "part_kind": "tool-call"
                             }
@@ -233,7 +233,7 @@
                             },
                             {
                                 "tool_name": "final_result",
-                                "args": "{\n  \"party_members\": [\n    {\n      \"name\": \"จางฟู่เหยิน\",\n      \"title\": \"หัวหน้าพรรค\"\n    },\n    {\n      \"name\": \"เส้าสื่อเฉียน\",\n      \"title\": \"แม่นาง 14\"\n    }\n  ],\n  \"relationships\": [\n    {\n      \"a\": \"เว่ยเส้นเทียน\",\n      \"b\": \"พระเอก\",\n      \"relation\": \"father\"\n    },\n    {\n      \"a\": \"จางม่านจือ\",\n      \"b\": \"พระเอก\",\n      \"relation\": \"mother\"\n    },\n    {\n      \"a\": \"เซียะถงอี้\",\n      \"b\": \"จางม่านจือ\",\n      \"relation\": \"aunt\"\n    },\n    {\n      \"a\": \"จางฟู่เหยิน\",\n      \"b\": \"พระเอก\",\n      \"relation\": \"found\"\n    }\n  ]\n}",
+                                "args": "{\n  \"party_members\": [\n    {\n      \"name\": \"จางฟู่เหยิน\",\n      \"title\": \"หัวหน้าพรรค\"\n    },\n    {\n      \"name\": \"เส้าสื่อเฉียน\",\n      \"title\": \"แม่นาง 14\"\n    }\n  ],\n  \"relationships\": [\n    {\n      \"a\": \"เว่ยเส้าเทียน\",\n      \"b\": \"พระเอก\",\n      \"relation\": \"father\"\n    },\n    {\n      \"a\": \"จางม่านจือ\",\n      \"b\": \"พระเอก\",\n      \"relation\": \"mother\"\n    },\n    {\n      \"a\": \"เซียะถงอี้\",\n      \"b\": \"จางม่านจือ\",\n      \"relation\": \"aunt\"\n    },\n    {\n      \"a\": \"จางฟู่เหยิน\",\n      \"b\": \"พระเอก\",\n      \"relation\": \"found\"\n    }\n  ]\n}",
                                 "tool_call_id": "call_lw6gr9a10amf9z5197cercfd",
                                 "part_kind": "tool-call"
                             }

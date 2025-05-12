@@ -10,9 +10,11 @@ def main():
     out: list[ResultData] = []
 
     for file in Path("result").iterdir():
+
         try:
             result = ResultData.model_validate_json(file.open().read())
-        except:
+        except Exception as exc:
+            print(f"Failed to load {file.name}: {repr(exc)}")
             continue
         out.append(result)
 
@@ -21,13 +23,18 @@ def main():
     formatted = []
 
     for rank, item in enumerate(out):
+        model_name = item.model
+
+        if item.version != 2:
+            model_name += f" **(test v{item.version})**"
+
         if item.error:
             formatted.append({
                 "#": rank+1,
-                "Model name": item.model,
+                "Model name": model_name,
                 "Score": "DNF",
-                "Relationships": "DNF",
-                "Party members": "DNF",
+                "Rel": "DNF",
+                "Party": "DNF",
                 "Invalid": "DNF",
                 "Cost": "DNF",
                 "Req / In Tok / Out Tok": "DNF",
@@ -48,10 +55,10 @@ def main():
 
             formatted.append({
                 "#": rank+1,
-                "Model name": item.model,
+                "Model name": model_name,
                 "Score": "{:.2f}%".format(item.score * 100),
-                "Relationships": f"{len(item.result.valid_relationships)}/8 + {len(item.result.valid_optional_relationships)}/3",
-                "Party members": f"{len(item.result.valid_party_member_list)}/2",
+                "Rel": f"{len(item.result.valid_relationships)}/8 + {len(item.result.valid_optional_relationships)}/3",
+                "Party": f"{len(item.result.valid_party_member_list)}/2",
                 "Invalid": " / ".join(invalid),
                 "Cost": "${:.6f}".format(cost) if cost is not None else "N/A",
                 "Req / In Tok / Out Tok": f"{usage.requests} / {usage.request_tokens} / {usage.response_tokens}",
