@@ -3,6 +3,42 @@
     "model": "meta-llama/llama-4-maverick",
     "result": null,
     "score": 0.0,
-    "error": "UnexpectedModelBehavior('Received empty model response')",
-    "cost": null
+    "error": "1 validation error for Output\n  Invalid JSON: expected value at line 1 column 1 [type=json_invalid, input_value='To create a relationship...schema or requirements.', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/json_invalid",
+    "cost": null,
+    "provider": "openrouter_structured",
+    "pydantic_output": null,
+    "openai_response": {
+        "id": "gen-1747071129-VMkTkdLJo1SIT3WmgKlH",
+        "provider": "Fireworks",
+        "model": "meta-llama/llama-4-maverick",
+        "object": "chat.completion",
+        "created": 1747071129,
+        "choices": [
+            {
+                "logprobs": null,
+                "finish_reason": "stop",
+                "native_finish_reason": "stop",
+                "index": 0,
+                "message": {
+                    "role": "assistant",
+                    "content": "To create a relationship graph from the given dialogue, we first need to identify the individuals involved and their relationships as described. The individuals mentioned are:\n\n1. พระเอก (Protagonist, whose name is not given)\n2. เว่ยเส้าเทียน (Wei Shao Tian)\n3. หลี่เซียซุย (Li Xie Sui)\n4. จางฟู่เหยิน (Zhang Fu Yin)\n5. แม่นางเส้าสื่อเฉียน (Lady Shao Shi Qian, referred to as \"แม่นาง 14\")\n6. เซียะถงอี้ (Xie Tong Yi, referred to as \"น้าสาวพี่แม่\" or mother's older sister)\n7. จางม่านจือ (Zhang Man Zhi, mother of พระเอก)\n\nFrom the dialogue, we can extract the following relationships:\n\n1. พระเอก is the child of เว่ยเส้าเทียน.\n2. หลี่เซียซุย is telling a story about the past involving เว่ยเส้าเทียน and พระเอก, indicating a relationship or knowledge about both, but the exact nature isn't directly stated.\n3. เว่ยเส้าเทียน is the father of พระเอก.\n4. จางฟู่เหยิน is a sundry of หลี่เซียซุย and is the head of the White Kirin Party.\n5. จางฟู่เหยิน adopted พระเอก 22 years ago.\n6. แม่นางเส้าสื่อเฉียน is associated with the White Kirin Party.\n7. เซียะถงอี้ (Xie Tong Yi) is the mother's older sister (น้าสาวพี่แม่) who introduced เว่ยเส้าเทียน to แม่นางเส้าสื่อเฉียน.\n8. จางม่านจือ is the mother of พระเอก and the sister of จางฟู่เหยิน.\n\nLet's represent these relationships in a JSON format as per the given schema. The schema seems to expect a JSON object with individuals as nodes and their relationships as edges. The relationship enum is crucial, and we will only include relationships that are explicitly mentioned.\n\n```json\n{\n  \"nodes\": [\n    {\"id\": \"พระเอก\", \"name\": \"Protagonist\"},\n    {\"id\": \"เว่ยเส้าเทียน\", \"name\": \"Wei Shao Tian\"},\n    {\"id\": \"หลี่เซียซุย\", \"name\": \"Li Xie Sui\"},\n    {\"id\": \"จางฟู่เหยิน\", \"name\": \"Zhang Fu Yin\"},\n    {\"id\": \"แม่นางเส้าสื่อเฉียน\", \"name\": \"Lady Shao Shi Qian\"},\n    {\"id\": \"เซียะถงอี้\", \"name\": \"Xie Tong Yi\"},\n    {\"id\": \"จางม่านจือ\", \"name\": \"Zhang Man Zhi\"}\n  ],\n  \"edges\": [\n    {\"source\": \"พระเอก\", \"target\": \"เว่ยเส้าเทียน\", \"relation\": \"CHILD_OF\"},\n    {\"source\": \"เว่ยเส้าเทียน\", \"target\": \"พระเอก\", \"relation\": \"PARENT_OF\"},\n    {\"source\": \"จางฟู่เหยิน\", \"target\": \"พระเอก\", \"relation\": \"ADOPTIVE_PARENT_OF\"},\n    {\"source\": \"หลี่เซียซุย\", \"target\": \"จางฟู่เหยิน\", \"relation\": \"ALLY_OR_FRIEND\"},\n    {\"source\": \"เซียะถงอี้\", \"target\": \"แม่นางเส้าสื่อเฉียน\", \"relation\": \"INTRODUCED_TO\"},\n    {\"source\": \"จางม่านจือ\", \"target\": \"พระเอก\", \"relation\": \"PARENT_OF\"},\n    {\"source\": \"จางฟู่เหยิน\", \"target\": \"จางม่านจือ\", \"relation\": \"SIBLING_OF\"},\n    {\"source\": \"จางม่านจือ\", \"target\": \"จางฟู่เหยิน\", \"relation\": \"SIBLING_OF\"}\n  ]\n}\n```\n\nNote that some relationships are inferred based on the context (e.g., \"ALLY_OR_FRIEND\" between หลี่เซียซุย and จางฟู่เหยิน, \"INTRODUCED_TO\" between เซียะถงอี้ and แม่นางเส้าสื่อเฉียน), as the exact nature of some interactions isn't explicitly defined in the dialogue. The \"relation\" enum is not standardized here; you might need to adjust it according to your specific schema or requirements.",
+                    "refusal": null,
+                    "reasoning": null
+                }
+            }
+        ],
+        "usage": {
+            "prompt_tokens": 449,
+            "completion_tokens": 952,
+            "total_tokens": 1401,
+            "cost": 0.00093654,
+            "prompt_tokens_details": {
+                "cached_tokens": 0
+            },
+            "completion_tokens_details": {
+                "reasoning_tokens": 0
+            }
+        }
+    },
+    "ollama_response": null
 }

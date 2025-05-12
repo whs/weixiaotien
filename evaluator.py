@@ -1,6 +1,6 @@
 import dataclasses
 from enum import Enum
-from typing import Any, Optional
+from typing import Optional
 
 from pydantic import BaseModel, Field
 from pydantic_ai.agent import AgentRunResult
@@ -120,14 +120,14 @@ class Result:
         # Valid relationship score: % of the expected results found
         valid_relationship_score = float(len(self.valid_relationships)) / float(len(expected_result))
         # Invalid relationship score: % of the result that is valid
-        output_relationship_count = len(self.output.output.relationships)
+        output_relationship_count = len(self.valid_relationships) + len(self.valid_optional_relationships) + len(self.invalid_relationships)
         if output_relationship_count > 0:
             invalid_relationship_score = 1 - (float(len(self.invalid_relationships)) / float(output_relationship_count))
         else:
             invalid_relationship_score = 0
 
         party_member_list_score = float(len(self.valid_party_member_list)) / float(len(party_member_list))
-        output_party_members_count = len(self.output.output.party_members)
+        output_party_members_count = len(self.valid_party_member_list) + len(self.invalid_party_member_list)
         if output_party_members_count > 0:
             invalid_party_member_list_score = 1 - (float(len(self.invalid_party_member_list)) / float(output_party_members_count))
         else:
@@ -192,6 +192,3 @@ def grade(output: Output) -> Result:
     out.missing_relationships = expected_result_remaining
     out.missing_party_members = party_member_remaining
     return out
-
-def json_schema() -> dict[str, Any]:
-    return Output.model_json_schema()

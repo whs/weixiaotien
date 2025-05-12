@@ -7,4 +7,5 @@ requires-python = ">=3.13"
 dependencies = [
     "py-markdown-table>=1.3.0",
     "pydantic-ai-slim[openai,vertexai]>=0.1.11",
+    "requests>=2.32.3",
 ]

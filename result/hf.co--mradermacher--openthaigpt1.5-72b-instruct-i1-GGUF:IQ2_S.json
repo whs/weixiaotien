@@ -1,8 +1,129 @@
 {
     "version": 2,
     "model": "hf.co/mradermacher/openthaigpt1.5-72b-instruct-i1-GGUF:IQ2_S",
-    "result": null,
-    "score": 0.0,
-    "error": "UnexpectedModelBehavior('Exceeded maximum retries (5) for result validation')",
-    "cost": null
+    "result": {
+        "valid_relationships": [
+            {
+                "a": "เว่ยเส้าเทียน",
+                "relation": "father",
+                "b": "พระเอก"
+            },
+            {
+                "a": "จางฟู่เหยิน",
+                "relation": "adopted",
+                "b": "พระเอก"
+            },
+            {
+                "a": "จางม่านจือ",
+                "relation": "mother",
+                "b": "พระเอก"
+            }
+        ],
+        "valid_optional_relationships": [],
+        "invalid_relationships": [
+            {
+                "a": "พระเอก",
+                "relation": "adopted",
+                "b": "เว่ยเส้าเทียน"
+            },
+            {
+                "a": "หลี่เซียซุย",
+                "relation": "son",
+                "b": "เว่ยเส้าเทียน"
+            },
+            {
+                "a": "เว่ยเส้าเทียน",
+                "relation": "son",
+                "b": "จางฟู่เหยิน"
+            },
+            {
+                "a": "หลี่เซียซุย",
+                "relation": "son",
+                "b": "จางฟู่เหยิน"
+            },
+            {
+                "a": "เว่ยเส้าเทียน",
+                "relation": "son",
+                "b": "จางม่านจือ"
+            },
+            {
+                "a": "หลี่เซียซุย",
+                "relation": "son",
+                "b": "จางม่านจือ"
+            },
+            {
+                "a": "หลี่เซียซุย",
+                "relation": "friend",
+                "b": "จางฟู่เหยิน"
+            }
+        ],
+        "missing_relationships": [
+            {
+                "a": "เว่ยเส้าเทียน",
+                "relation": "friend",
+                "b": "จางฟู่เหยิน"
+            },
+            {
+                "a": "จางฟู่เหยิน",
+                "relation": "friend",
+                "b": "เว่ยเส้าเทียน"
+            },
+            {
+                "a": "พระเอก",
+                "relation": "son",
+                "b": "เว่ยเส้าเทียน"
+            },
+            {
+                "a": "พระเอก",
+                "relation": "son",
+                "b": "จางม่านจือ"
+            },
+            {
+                "a": "เส้าสื่อเฉียน",
+                "relation": "found",
+                "b": "พระเอก"
+            }
+        ],
+        "valid_party_member_list": [
+            {
+                "name": "จางฟู่เหยิน",
+                "title": "หัวหน้าพรรค"
+            }
+        ],
+        "invalid_party_member_list": [
+            {
+                "name": "เว่ยเส้าเทียน",
+                "title": "หัวหน้าพรรค"
+            }
+        ],
+        "missing_party_members": [
+            {
+                "name": "เส้าสื่อเฉียน",
+                "title": "แม่นาง 14"
+            }
+        ],
+        "output": null
+    },
+    "score": 0.14,
+    "error": null,
+    "cost": null,
+    "provider": "ollama_structured",
+    "pydantic_output": null,
+    "openai_response": null,
+    "ollama_response": {
+        "model": "hf.co/mradermacher/openthaigpt1.5-72b-instruct-i1-GGUF:IQ2_S",
+        "created_at": "2025-05-12T17:10:55.384345436Z",
+        "message": {
+            "role": "assistant",
+            "content": "{\n\"relationships\": [\n    {\n      \"a\": \"พระเอก\",\n      \"relation\": \"adopted\",\n      \"b\": \"เว่ยเส้าเทียน\"\n    },\n    {\n      \"a\": \"หลี่เซียซุย\",\n      \"relation\": \"son\",\n      \"b\": \"เว่ยเส้าเทียน\"\n    },\n    {\n      \"a\": \"เว่ยเส้าเทียน\",\n      \"relation\": \"father\",\n      \"b\": \"พระเอก\"\n    },\n    {\n      \"a\": \"จางฟู่เหยิน\",\n      \"relation\": \"adopted\",\n      \"b\": \"พระเอก\"\n    },{\n      \"a\": \"จางม่านจือ\",\n      \"relation\": \"mother\",\n      \"b\": \"พระเอก\"\n    },\n    {\n      \"a\": \"เว่ยเส้าเทียน\",\n      \"relation\": \"son\",\n      \"b\": \"จางฟู่เหยิน\"\n    },\n    {\n      \"a\": \"หลี่เซียซุย\",\n      \"relation\": \"son\",\n      \"b\": \"จางฟู่เหยิน\"\n    },{\n      \"a\": \"เว่ยเส้าเทียน\",\n      \"relation\": \"son\",\n      \"b\": \"จางม่านจือ\"\n    },\n  {\n      \"a\": \"หลี่เซียซุย\",\n      \"relation\": \"son\",\n      \"b\": \"จางม่านจือ\"\n    },\n   { \"a\": \"หลี่เซียซุย\", \"relation\": \"friend\", \"b\": \"จางฟู่เหยิน\" }\n  ]\n  , \"party_members\": [\n     {\n       \"name\":\"เว่ยเส้าเทียน\",\n       \"title\": \"หัวหน้าพรรค\"\n     },\n      {\n        \"name\":\"จางฟู่เหยิน\",\n        \"title\": \"หัวหน้าพรรค\"\n      }\n    ]}"
+        },
+        "done_reason": "stop",
+        "done": true,
+        "total_duration": 26299974285,
+        "load_duration": 14699599165,
+        "prompt_eval_count": 584,
+        "prompt_eval_duration": 556435090,
+        "eval_count": 421,
+        "eval_duration": 11042928372
+    }
 }

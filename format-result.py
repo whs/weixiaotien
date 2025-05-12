@@ -29,6 +29,7 @@ def main():
             model_name += f" **(test v{item.version})**"
 
         if item.error:
+            # TODO: Even in errors sometimes we can have more info
             formatted.append({
                 "#": rank+1,
                 "Model name": model_name,
@@ -40,12 +41,24 @@ def main():
                 "Req / In Tok / Out Tok": "DNF",
             })
         else:
-            usage = item.get_raw_output().usage()
             cost = None
-            if item.cost is not None:
-                cost = ((usage.requests * item.cost.request_cost_1k/1000)
-                        + (usage.request_tokens * item.cost.input_token_1m/float(1e6))
-                        + (usage.response_tokens * item.cost.output_token_1m/float(1e6)))
+            request_count = 0
+            request_tokens = 0
+            response_tokens = 0
+
+            if item.provider is None or "pydantic" in item.provider:
+                usage = item.get_raw_output().usage()
+                if item.cost is not None:
+                    cost = ((usage.requests * item.cost.request_cost_1k/1000)
+                            + (usage.request_tokens * item.cost.input_token_1m/float(1e6))
+                            + (usage.response_tokens * item.cost.output_token_1m/float(1e6)))
+                request_count = usage.requests
+                request_tokens = usage.request_tokens
+                response_tokens = usage.response_tokens
+            if item.ollama_response:
+                request_count = 1
+                request_tokens = item.ollama_response['prompt_eval_count']
+                response_tokens = item.ollama_response['eval_count']
 
             invalid = []
             if len(item.result.invalid_relationships) > 0:
@@ -61,7 +74,7 @@ def main():
                 "Party": f"{len(item.result.valid_party_member_list)}/2",
                 "Invalid": " / ".join(invalid),
                 "Cost": "${:.6f}".format(cost) if cost is not None else "N/A",
-                "Req / In Tok / Out Tok": f"{usage.requests} / {usage.request_tokens} / {usage.response_tokens}",
+                "Req / In Tok / Out Tok": f"{request_count} / {request_tokens} / {response_tokens}",
             })
 
     print(markdown_table(formatted).set_params(row_sep="markdown", padding_weight="right", padding_width=1, quote=False).get_markdown())
