@@ -1,5 +1,5 @@
 {
-    "version": 2,
+    "version": 3,
     "model": "meta-llama/llama-3.3-70b-instruct",
     "result": {
         "valid_relationships": [
@@ -10,47 +10,73 @@
             },
             {
                 "a": "เว่ยเส้าเทียน",
+                "relation": "father",
+                "b": "พระเอก"
+            },
+            {
+                "a": "เว่ยเส้าเทียน",
                 "relation": "friend",
                 "b": "จางฟู่เหยิน"
             },
-            {
-                "a": "จางฟู่เหยิน",
-                "relation": "adopted",
-                "b": "พระเอก"
-            },
-            {
-                "a": "จางม่านจือ",
-                "relation": "mother",
-                "b": "พระเอก"
-            }
-        ],
-        "valid_optional_relationships": [],
-        "invalid_relationships": [
-            {
-                "a": "เว่ยเส้าเทียน",
-                "relation": "son",
-                "b": "พระเอก"
-            }
-        ],
-        "missing_relationships": [
             {
                 "a": "จางฟู่เหยิน",
                 "relation": "friend",
                 "b": "เว่ยเส้าเทียน"
             },
             {
-                "a": "เว่ยเส้าเทียน",
-                "relation": "father",
+                "a": "จางม่านจือ",
+                "relation": "mother",
                 "b": "พระเอก"
             },
             {
                 "a": "พระเอก",
                 "relation": "son",
                 "b": "จางม่านจือ"
+            }
+        ],
+        "valid_optional_relationships": [
+            {
+                "a": "เซียะถงอี้",
+                "relation": "aunt of mother's sister's mother",
+                "b": "พระเอก"
+            }
+        ],
+        "invalid_relationships": [
+            {
+                "a": "จางฟู่เหยิน",
+                "relation": "father",
+                "b": "พระเอก"
             },
+            {
+                "a": "พระเอก",
+                "relation": "son",
+                "b": "จางฟู่เหยิน"
+            },
+            {
+                "a": "หลี่เซียซุย",
+                "relation": "friend",
+                "b": "จางฟู่เหยิน"
+            },
+            {
+                "a": "จางฟู่เหยิน",
+                "relation": "friend",
+                "b": "หลี่เซียซุย"
+            },
+            {
+                "a": "เว่ยเส้าเทียน",
+                "relation": "found",
+                "b": "พระเอก"
+            }
+        ],
+        "missing_relationships": [
             {
                 "a": "เส้าสื่อเฉียน",
                 "relation": "found",
+                "b": "พระเอก"
+            },
+            {
+                "a": "จางฟู่เหยิน",
+                "relation": "adopted",
                 "b": "พระเอก"
             }
         ],
@@ -58,257 +84,60 @@
             {
                 "name": "จางฟู่เหยิน",
                 "title": "หัวหน้าพรรค"
-            }
-        ],
-        "invalid_party_member_list": [
-            {
-                "name": "พระเอก",
-                "title": "หัวหน้าพรรค"
             },
-            {
-                "name": "เว่ยเส้าเทียน",
-                "title": "แม่นาง 14"
-            },
-            {
-                "name": "จางม่านจือ",
-                "title": "แม่นาง 14"
-            },
-            {
-                "name": "จางม่านจือ",
-                "title": "หัวหน้าพรรค"
-            }
-        ],
-        "missing_party_members": [
             {
                 "name": "เส้าสื่อเฉียน",
                 "title": "แม่นาง 14"
             }
         ],
-        "output": {
-            "output": {
-                "relationships": [
-                    {
-                        "a": "พระเอก",
-                        "relation": "son",
-                        "b": "เว่ยเส้าเทียน"
-                    },
-                    {
-                        "a": "เว่ยเส้าเทียน",
-                        "relation": "friend",
-                        "b": "จางฟู่เหยิน"
-                    },
-                    {
-                        "a": "จางฟู่เหยิน",
-                        "relation": "adopted",
-                        "b": "พระเอก"
-                    },
-                    {
-                        "a": "จางม่านจือ",
-                        "relation": "mother",
-                        "b": "พระเอก"
-                    },
-                    {
-                        "a": "เว่ยเส้าเทียน",
-                        "relation": "son",
-                        "b": "พระเอก"
-                    }
-                ],
-                "party_members": [
-                    {
-                        "name": "พระเอก",
-                        "title": "หัวหน้าพรรค"
-                    },
-                    {
-                        "name": "เว่ยเส้าเทียน",
-                        "title": "แม่นาง 14"
-                    },
-                    {
-                        "name": "จางฟู่เหยิน",
-                        "title": "หัวหน้าพรรค"
-                    },
-                    {
-                        "name": "จางม่านจือ",
-                        "title": "แม่นาง 14"
-                    },
-                    {
-                        "name": "จางม่านจือ",
-                        "title": "หัวหน้าพรรค"
-                    }
-                ]
-            },
-            "_output_tool_name": "final_result",
-            "_state": {
-                "message_history": [
-                    {
-                        "parts": [
-                            {
-                                "content": "\nFrom this dialogue, create a relationship graph of all individuals involved. Return as JSON per schema.\nIf the relationship enum is missing, skip the relationship. All relationships are directional - if it is mutual\nthen it should be repeated for each directions.\n\nพระเอก: เว่ยเส้าเทียน วันนี้เป็นวันตายของเจ้า\nเว่ยเส้าเทียน: โอหัง แน่จริงก็เข้ามา\nพระเอก: ตายซะ!\nหลี่เซียซุย : ช้าก่อน! เว่ยเส้าเทียนคือพ่อของเจ้า!\nหลี่เซียซุย: ซึ่งเป็นสหายรัก ของจางฟู่เหยินหัวหน้าพรรคกิเลนขาว ที่เก็บเจ้ามาเลี้ยงเมื่อ 22 ปีก่อน\nซึ่งจริงๆแล้วก่อนที่จะเจอเจ้า แม่นางเส้าสื่อเฉียน แม่นาง 14\nเว่ยเส้าเทียน: แห่งพรรคกิเลนขาว ซึ่งได้พบเจ้าข้างหนองน้ำ ใกล้เมืองเหลียงคุน ซึ่งเป็นที่ๆ เซียะถงอี้ น้าสาวพี่แม่ได้แนะนำให้พบ\nหลี่เซียซุย: ข้าหลี่เซียซุย ก่อนที่จะเจอเจ้า\nเว่ยเส้าเทียน: ซึ่งอันที่จริงแล้ว ข้าเองก็ไม่เคยรู้มาก่อนว่าเจ้า เป็นลูกของ\nหลี่เซียซุย: จางฟู่เหยิน\nเว่ยเส้าเทียน: จนข้านึกขึ้นได้ จึงว่า\nหลี่เซียซุย: จางม่านจือ แม่เจ้า\nเว่ยเส้าเทียน: ได้พาข้าไปพบ\nหลี่เซียซุย: พี่สาวแม่ของเจ้า\nเว่ยเส้าเทียน: ซึ่งน้าสาวพี่แม่ของเจ้า ได้พาข้าไปรู้จักกับหลี่เซียซุย\nหลี่เซียซุย: น้าสาวพี่ของแม่เจ้า\nเว่ยเส้าเทียน: ก่อนที่จะเจอเจ้า\nหลี่เซียซุย: เมื่อ 22 ปีก่อน\n",
-                                "timestamp": "2025-05-12T11:56:02.045353Z",
-                                "part_kind": "user-prompt"
-                            }
-                        ],
-                        "instructions": null,
-                        "kind": "request"
-                    },
-                    {
-                        "parts": [
-                            {
-                                "content": "",
-                                "part_kind": "text"
-                            },
-                            {
-                                "tool_name": "final_result",
-                                "args": "{\"relationships\": [{\"a\": \"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\", \"relation\": \"father\", \"b\": \"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"}, {\"a\": \"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\", \"relation\": \"found\", \"b\": \"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"}, {\"a\": \"\\u0e1c\\u0e21\", \"relation\": \"friend\", \"b\": \"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"}, {\"a\": \"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\", \"relation\": \"friend\", \"b\": \"\\u0e2b\\u0e25\\u0e35\\u0e48\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e0b\\u0e38\\u0e22\"}, {\"a\": \"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\", \"relation\": \"mother\", \"b\": \"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"}, {\"a\": \"\\u0e2b\\u0e25\\u0e35\\u0e48\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e0b\\u0e38\\u0e22\", \"relation\": \"aunt of mother's sister's mother\", \"b\": \"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"}], \"party_members\": [{\"name\": \"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\", \"title\": \"\\u0e1e\\u0e48\\u0e2d\\u0e02\\u0e2d\\u0e07\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"}, {\"name\": \"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\", \"title\": \"\\u0e25\\u0e39\\u0e01\\u0e02\\u0e2d\\u0e07\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"}, {\"name\": \"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\", \"title\": \"\\u0e41\\u0e21\\u0e48\\u0e02\\u0e2d\\u0e07\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"}, {\"name\": \"\\u0e2b\\u0e25\\u0e35\\u0e48\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e0b\\u0e38\\u0e22\", \"title\": \"\\u0e2a\\u0e2b\\u0e32\\u0e22\\u0e23\\u0e31\\u0e01\\u0e02\\u0e2d\\u0e07\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\"}, {\"name\": \"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\", \"title\": \"\\u0e1e\\u0e35\\u0e48\\u0e2a\\u0e32\\u0e27\\u0e41\\u0e21\\u0e48\\u0e02\\u0e2d\\u0e07\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"}]}",
-                                "tool_call_id": "call_CAk6r4ib1a9RpImDv3vG1rqT",
-                                "part_kind": "tool-call"
-                            }
-                        ],
-                        "model_name": "meta-llama/llama-3.3-70b-instruct",
-                        "timestamp": "2025-05-12T11:56:04Z",
-                        "kind": "response"
-                    },
-                    {
-                        "parts": [
-                            {
-                                "content": [
-                                    {
-                                        "type": "enum",
-                                        "loc": [
-                                            "relationships",
-                                            2,
-                                            "a"
-                                        ],
-                                        "msg": "Input should be 'พระเอก', 'เว่ยเส้าเทียน', 'หลี่เซียซุย', 'จางฟู่เหยิน', 'จางม่านจือ', 'เส้าสื่อเฉียน' or 'เซียะถงอี้'",
-                                        "input": "ผม",
-                                        "ctx": {
-                                            "expected": "'พระเอก', 'เว่ยเส้าเทียน', 'หลี่เซียซุย', 'จางฟู่เหยิน', 'จางม่านจือ', 'เส้าสื่อเฉียน' or 'เซียะถงอี้'"
-                                        }
-                                    },
-                                    {
-                                        "type": "enum",
-                                        "loc": [
-                                            "party_members",
-                                            0,
-                                            "title"
-                                        ],
-                                        "msg": "Input should be 'หัวหน้าพรรค' or 'แม่นาง 14'",
-                                        "input": "พ่อของพระเอก",
-                                        "ctx": {
-                                            "expected": "'หัวหน้าพรรค' or 'แม่นาง 14'"
-                                        }
-                                    },
-                                    {
-                                        "type": "enum",
-                                        "loc": [
-                                            "party_members",
-                                            1,
-                                            "title"
-                                        ],
-                                        "msg": "Input should be 'หัวหน้าพรรค' or 'แม่นาง 14'",
-                                        "input": "ลูกของเว่ยเส้าเทียน",
-                                        "ctx": {
-                                            "expected": "'หัวหน้าพรรค' or 'แม่นาง 14'"
-                                        }
-                                    },
-                                    {
-                                        "type": "enum",
-                                        "loc": [
-                                            "party_members",
-                                            2,
-                                            "title"
-                                        ],
-                                        "msg": "Input should be 'หัวหน้าพรรค' or 'แม่นาง 14'",
-                                        "input": "แม่ของพระเอก",
-                                        "ctx": {
-                                            "expected": "'หัวหน้าพรรค' or 'แม่นาง 14'"
-                                        }
-                                    },
-                                    {
-                                        "type": "enum",
-                                        "loc": [
-                                            "party_members",
-                                            3,
-                                            "title"
-                                        ],
-                                        "msg": "Input should be 'หัวหน้าพรรค' or 'แม่นาง 14'",
-                                        "input": "สหายรักของจางฟู่เหยิน",
-                                        "ctx": {
-                                            "expected": "'หัวหน้าพรรค' or 'แม่นาง 14'"
-                                        }
-                                    },
-                                    {
-                                        "type": "enum",
-                                        "loc": [
-                                            "party_members",
-                                            4,
-                                            "title"
-                                        ],
-                                        "msg": "Input should be 'หัวหน้าพรรค' or 'แม่นาง 14'",
-                                        "input": "พี่สาวแม่ของพระเอก",
-                                        "ctx": {
-                                            "expected": "'หัวหน้าพรรค' or 'แม่นาง 14'"
-                                        }
-                                    }
-                                ],
-                                "tool_name": "final_result",
-                                "tool_call_id": "call_CAk6r4ib1a9RpImDv3vG1rqT",
-                                "timestamp": "2025-05-12T11:56:14.247630Z",
-                                "part_kind": "retry-prompt"
-                            }
-                        ],
-                        "instructions": null,
-                        "kind": "request"
-                    },
-                    {
-                        "parts": [
-                            {
-                                "content": "",
-                                "part_kind": "text"
-                            },
-                            {
-                                "tool_name": "final_result",
-                                "args": "{\"relationships\": [{\"a\": \"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\", \"relation\": \"son\", \"b\": \"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"}, {\"a\": \"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\", \"relation\": \"friend\", \"b\": \"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\"}, {\"a\": \"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\", \"relation\": \"adopted\", \"b\": \"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"}, {\"a\": \"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\", \"relation\": \"mother\", \"b\": \"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"}, {\"a\": \"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\", \"relation\": \"son\", \"b\": \"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"}], \"party_members\": [{\"name\": \"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\", \"title\": \"\\u0e2b\\u0e31\\u0e27\\u0e2b\\u0e19\\u0e49\\u0e32\\u0e1e\\u0e23\\u0e23\\u0e04\"}, {\"name\": \"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\", \"title\": \"\\u0e41\\u0e21\\u0e48\\u0e19\\u0e32\\u0e07 14\"}, {\"name\": \"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\", \"title\": \"\\u0e2b\\u0e31\\u0e27\\u0e2b\\u0e19\\u0e49\\u0e32\\u0e1e\\u0e23\\u0e23\\u0e04\"}, {\"name\": \"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\", \"title\": \"\\u0e41\\u0e21\\u0e48\\u0e19\\u0e32\\u0e07 14\"}, {\"name\": \"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\", \"title\": \"\\u0e2b\\u0e31\\u0e27\\u0e2b\\u0e19\\u0e49\\u0e32\\u0e1e\\u0e23\\u0e23\\u0e04\"}]}",
-                                "tool_call_id": "call_LKdgXpqAj81fY03CJfD1Hrq7",
-                                "part_kind": "tool-call"
-                            }
-                        ],
-                        "model_name": "meta-llama/llama-3.3-70b-instruct",
-                        "timestamp": "2025-05-12T11:56:15Z",
-                        "kind": "response"
-                    },
-                    {
-                        "parts": [
-                            {
-                                "tool_name": "final_result",
-                                "content": "Final result processed.",
-                                "tool_call_id": "call_LKdgXpqAj81fY03CJfD1Hrq7",
-                                "timestamp": "2025-05-12T11:56:46.789736Z",
-                                "part_kind": "tool-return"
-                            }
-                        ],
-                        "instructions": null,
-                        "kind": "request"
-                    }
-                ],
-                "usage": {
-                    "requests": 2,
-                    "request_tokens": 4623,
-                    "response_tokens": 1232,
-                    "total_tokens": 5855,
-                    "details": null
-                },
-                "retries": 1,
-                "run_step": 2
-            },
-            "_new_message_index": 0,
-            "_traceparent_value": null
-        }
+        "invalid_party_member_list": [],
+        "missing_party_members": []
     },
-    "score": 0.3400000000000001,
+    "score": 0.55,
     "error": null,
-    "cost": {
-        "request_cost_1k": 0,
-        "input_token_1m": 0.09,
-        "output_token_1m": 0.35
+    "cost": null,
+    "provider": "openrouter_structured",
+    "openai_response": {
+        "id": "gen-1748074726-YhqYT1vBGL9IVWqrwvOb",
+        "choices": [
+            {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                    "content": "{\"think_relationship\": \"พระเอก เป็นลูกของเว่ยเส้าเทียน และจางม่านจือ, เว่ยเส้าเทียน เป็นพ่อของพระเอก และเป็นสหายรักของจางฟู่เหยิน, จางฟู่เหยิน เป็นหัวหน้าพรรคกิเลนขาว และเป็นพ่อของพระเอก, หลี่เซียซุย เป็นสหายรักของจางฟู่เหยิน และเป็นคนพบพระเอก, เส้าสื่อเฉียน เป็นแม่นาง 14 ของพรรคกิเลนขาว, เซียะถงอี้ เป็นน้าสาวพี่แม่ของพระเอก\", \"relationships\": [{\"a\": \"พระเอก\", \"relation\": \"son\", \"b\": \"เว่ยเส้าเทียน\"}, {\"a\": \"เว่ยเส้าเทียน\", \"relation\": \"father\", \"b\": \"พระเอก\"}, {\"a\": \"เว่ยเส้าเทียน\", \"relation\": \"friend\", \"b\": \"จางฟู่เหยิน\"}, {\"a\": \"จางฟู่เหยิน\", \"relation\": \"friend\", \"b\": \"เว่ยเส้าเทียน\"}, {\"a\": \"จางฟู่เหยิน\", \"relation\": \"father\", \"b\": \"พระเอก\"}, {\"a\": \"พระเอก\", \"relation\": \"son\", \"b\": \"จางฟู่เหยิน\"}, {\"a\": \"หลี่เซียซุย\", \"relation\": \"friend\", \"b\": \"จางฟู่เหยิน\"}, {\"a\": \"จางฟู่เหยิน\", \"relation\": \"friend\", \"b\": \"หลี่เซียซุย\"}, {\"a\": \"เว่ยเส้าเทียน\", \"relation\": \"found\", \"b\": \"พระเอก\"}, {\"a\": \"เซียะถงอี้\", \"relation\": \"aunt of mother's sister's mother\", \"b\": \"พระเอก\"}, {\"a\": \"จางม่านจือ\", \"relation\": \"mother\", \"b\": \"พระเอก\"}, {\"a\": \"พระเอก\", \"relation\": \"son\", \"b\": \"จางม่านจือ\"}], \"think_party\": \"จางฟู่เหยิน เป็นหัวหน้าพรรคกิเลนขาว, เส้าสื่อเฉียน เป็นแม่นาง 14 ของพรรคกิเลนขาว\", \"party_members\": [{\"name\": \"จางฟู่เหยิน\", \"title\": \"หัวหน้าพรรค\"}, {\"name\": \"เส้าสื่อเฉียน\", \"title\": \"แม่นาง 14\"}]}",
+                    "refusal": null,
+                    "role": "assistant",
+                    "annotations": null,
+                    "audio": null,
+                    "function_call": null,
+                    "tool_calls": null,
+                    "reasoning": null
+                },
+                "native_finish_reason": "stop"
+            }
+        ],
+        "created": 1748074747,
+        "model": "meta-llama/llama-3.3-70b-instruct",
+        "object": "chat.completion",
+        "service_tier": null,
+        "system_fingerprint": null,
+        "usage": {
+            "completion_tokens": 571,
+            "prompt_tokens": 1255,
+            "total_tokens": 1826,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": null,
+                "audio_tokens": null,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": null
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": null,
+                "cached_tokens": 0
+            },
+            "cost": 0.0016434
+        },
+        "provider": "Fireworks"
     }
 }

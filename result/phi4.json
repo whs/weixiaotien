@@ -1,24 +1,18 @@
 {
     "version": 3,
-    "model": "hf.co/tensorblock/OpenThaiLLM-Prebuilt-7B-GGUF:Q8_0",
+    "model": "phi4",
     "result": {
-        "valid_relationships": [
-            {
-                "a": "จางฟู่เหยิน",
-                "relation": "friend",
-                "b": "เว่ยเส้าเทียน"
-            }
-        ],
+        "valid_relationships": [],
         "valid_optional_relationships": [],
         "invalid_relationships": [
             {
-                "a": "พระเอก",
-                "relation": "friend",
+                "a": "หลี่เซียซุย",
+                "relation": "father",
                 "b": "เว่ยเส้าเทียน"
             },
             {
-                "a": "หลี่เซียซุย",
-                "relation": "friend",
+                "a": "จางฟู่เหยิน",
+                "relation": "found",
                 "b": "เว่ยเส้าเทียน"
             },
             {
@@ -28,13 +22,23 @@
             },
             {
                 "a": "เส้าสื่อเฉียน",
-                "relation": "aunt",
+                "relation": "aunt of mother's sister's mother",
                 "b": "เว่ยเส้าเทียน"
             },
             {
                 "a": "เซียะถงอี้",
-                "relation": "aunt of mother's sister's mother",
+                "relation": "aunt",
                 "b": "เว่ยเส้าเทียน"
+            },
+            {
+                "a": "จางม่านจือ",
+                "relation": "son",
+                "b": "หลี่เซียซุย"
+            },
+            {
+                "a": "เส้าสื่อเฉียน",
+                "relation": "son",
+                "b": "หลี่เซียซุย"
             }
         ],
         "missing_relationships": [
@@ -42,6 +46,11 @@
                 "a": "เว่ยเส้าเทียน",
                 "relation": "friend",
                 "b": "จางฟู่เหยิน"
+            },
+            {
+                "a": "จางฟู่เหยิน",
+                "relation": "friend",
+                "b": "เว่ยเส้าเทียน"
             },
             {
                 "a": "เว่ยเส้าเทียน",
@@ -78,28 +87,29 @@
             {
                 "name": "จางฟู่เหยิน",
                 "title": "หัวหน้าพรรค"
-            },
+            }
+        ],
+        "invalid_party_member_list": [],
+        "missing_party_members": [
             {
                 "name": "เส้าสื่อเฉียน",
                 "title": "แม่นาง 14"
             }
-        ],
-        "invalid_party_member_list": [],
-        "missing_party_members": []
+        ]
     },
-    "score": 0.21666666666666667,
+    "score": 0.1,
     "error": null,
     "cost": null,
     "provider": "ollama_structured",
     "openai_response": {
-        "id": "chatcmpl-753",
+        "id": "chatcmpl-421",
         "choices": [
             {
                 "finish_reason": "stop",
                 "index": 0,
                 "logprobs": null,
                 "message": {
-                    "content": "{\n    \"think_relationship\": null,\n    \"relationships\": [\n        {\n            \"a\": \"พระเอก\",\n            \"relation\": \"friend\",\n            \"b\": \"เว่ยเส้าเทียน\"\n        },\n        {\n            \"a\": \"หลี่เซียซุย\",\n            \"relation\": \"friend\",\n            \"b\": \"เว่ยเส้าเทียน\"\n        },\n        {\n            \"a\": \"จางฟู่เหยิน\",\n            \"relation\": \"friend\",\n            \"b\": \"เว่ยเส้าเทียน\"\n        },\n        {\n            \"a\": \"จางม่านจือ\",\n            \"relation\": \"mother\",\n            \"b\": \"เว่ยเส้าเทียน\"\n        },\n        {\n            \"a\": \"เส้าสื่อเฉียน\",\n            \"relation\": \"aunt\",\n            \"b\": \"เว่ยเส้าเทียน\"\n        },\n        {\n            \"a\": \"เซียะถงอี้\",\n            \"relation\": \"aunt of mother's sister's mother\",\n            \"b\": \"เว่ยเส้าเทียน\"\n        }\n    ],\n    \"think_party\": null,\n    \"party_members\": [\n        {\n            \"name\": \"จางฟู่เหยิน\",\n            \"title\": \"หัวหน้าพรรค\"\n        },\n        {\n            \"name\": \"เส้าสื่อเฉียน\",\n            \"title\": \"แม่นาง 14\"\n        }\n    ]\n}\n\n",
+                    "content": "{\n  \"think_relationship\": \"พระเอก, เว่ยเส้าเทียน, หลี่เซียซุย, จางฟู่เหยิน, จางม่านจือ, เส้าสื่อเฉียน, เซียะถงอี้\",\n  \"relationships\": [\n    {\n      \"a\": \"หลี่เซียซุย\",\n      \"relation\": \"father\",\n      \"b\": \"เว่ยเส้าเทียน\"\n    },\n    {\n      \"a\": \"จางฟู่เหยิน\",\n      \"relation\": \"found\",\n      \"b\": \"เว่ยเส้าเทียน\"\n    },\n    {\n      \"a\": \"จางม่านจือ\",\n      \"relation\": \"mother\",\n      \"b\": \"เว่ยเส้าเทียน\"\n    },\n    {\n      \"a\": \"เส้าสื่อเฉียน\",\n      \"relation\": \"aunt of mother's sister's mother\",\n      \"b\": \"เว่ยเส้าเทียน\"\n    },\n    {\n      \"a\": \"เซียะถงอี้\",\n      \"relation\": \"aunt\",\n      \"b\": \"เว่ยเส้าเทียน\"\n    },\n    {\n      \"a\": \"จางม่านจือ\",\n      \"relation\": \"son\",\n      \"b\": \"หลี่เซียซุย\"\n    },\n    {\n      \"a\": \"เส้าสื่อเฉียน\",\n      \"relation\": \"son\",\n      \"b\": \"หลี่เซียซุย\"\n    }\n  ],\n  \"think_party\": \"จางฟู่เหยิน เป็นหัวหน้าพรรคกิเลนขาว\",\n  \"party_members\": [\n    {\n      \"name\": \"จางฟู่เหยิน\",\n      \"title\": \"หัวหน้าพรรค\"\n    }\n  ]\n}",
                     "refusal": null,
                     "role": "assistant",
                     "annotations": null,
@@ -109,15 +119,15 @@
                 }
             }
         ],
-        "created": 1748073961,
-        "model": "hf.co/tensorblock/OpenThaiLLM-Prebuilt-7B-GGUF:Q8_0",
+        "created": 1748074246,
+        "model": "phi4",
         "object": "chat.completion",
         "service_tier": null,
         "system_fingerprint": "fp_ollama",
         "usage": {
-            "completion_tokens": 313,
-            "prompt_tokens": 1296,
-            "total_tokens": 1609,
+            "completion_tokens": 497,
+            "prompt_tokens": 1634,
+            "total_tokens": 2131,
             "completion_tokens_details": null,
             "prompt_tokens_details": null
         }

@@ -1,47 +1,29 @@
 {
-    "version": 2,
+    "version": 3,
     "model": "hf.co/JulienElkaim/Tsunami-1.0-14B-Instruct-Q4_K_M-GGUF:Q4_K_M",
     "result": {
-        "valid_relationships": [],
-        "valid_optional_relationships": [],
-        "invalid_relationships": [
-            {
-                "a": "พระเอก",
-                "relation": "found",
-                "b": "เว่ยเส้าเทียน"
-            },
-            {
-                "a": "หลี่เซียซุย",
-                "relation": "friend",
-                "b": "จางฟู่เหยิน"
-            },
+        "valid_relationships": [
             {
                 "a": "เว่ยเส้าเทียน",
-                "relation": "father",
-                "b": "หลี่เซียซุย"
-            },
-            {
-                "a": "เส้าสื่อเฉียน",
-                "relation": "mother",
+                "relation": "friend",
                 "b": "จางฟู่เหยิน"
-            },
+            }
+        ],
+        "valid_optional_relationships": [
             {
                 "a": "เซียะถงอี้",
                 "relation": "aunt of mother's sister's mother",
-                "b": "เว่ยเส้าเทียน"
-            },
+                "b": "พระเอก"
+            }
+        ],
+        "invalid_relationships": [
             {
-                "a": "เซียะถงอี้",
-                "relation": "aunt of mother's sister's mother",
-                "b": "หลี่เซียซุย"
+                "a": "หลี่เซียซุย",
+                "relation": "father",
+                "b": "พระเอก"
             }
         ],
         "missing_relationships": [
-            {
-                "a": "เว่ยเส้าเทียน",
-                "relation": "friend",
-                "b": "จางฟู่เหยิน"
-            },
             {
                 "a": "จางฟู่เหยิน",
                 "relation": "friend",
@@ -89,112 +71,41 @@
             }
         ],
         "invalid_party_member_list": [],
-        "missing_party_members": [],
-        "output": {
-            "output": {
-                "relationships": [
-                    {
-                        "a": "พระเอก",
-                        "relation": "found",
-                        "b": "เว่ยเส้าเทียน"
-                    },
-                    {
-                        "a": "หลี่เซียซุย",
-                        "relation": "friend",
-                        "b": "จางฟู่เหยิน"
-                    },
-                    {
-                        "a": "เว่ยเส้าเทียน",
-                        "relation": "father",
-                        "b": "หลี่เซียซุย"
-                    },
-                    {
-                        "a": "เส้าสื่อเฉียน",
-                        "relation": "mother",
-                        "b": "จางฟู่เหยิน"
-                    },
-                    {
-                        "a": "เซียะถงอี้",
-                        "relation": "aunt of mother's sister's mother",
-                        "b": "เว่ยเส้าเทียน"
-                    },
-                    {
-                        "a": "เซียะถงอี้",
-                        "relation": "aunt of mother's sister's mother",
-                        "b": "หลี่เซียซุย"
-                    }
-                ],
-                "party_members": [
-                    {
-                        "name": "จางฟู่เหยิน",
-                        "title": "หัวหน้าพรรค"
-                    },
-                    {
-                        "name": "เส้าสื่อเฉียน",
-                        "title": "แม่นาง 14"
-                    }
-                ]
-            },
-            "_output_tool_name": "final_result",
-            "_state": {
-                "message_history": [
-                    {
-                        "parts": [
-                            {
-                                "content": "\nFrom this dialogue, create a relationship graph of all individuals involved. Return as JSON per schema.\nIf the relationship enum is missing, skip the relationship. All relationships are directional - if it is mutual\nthen it should be repeated for each directions.\n\nพระเอก: เว่ยเส้าเทียน วันนี้เป็นวันตายของเจ้า\nเว่ยเส้าเทียน: โอหัง แน่จริงก็เข้ามา\nพระเอก: ตายซะ!\nหลี่เซียซุย : ช้าก่อน! เว่ยเส้าเทียนคือพ่อของเจ้า!\nหลี่เซียซุย: ซึ่งเป็นสหายรัก ของจางฟู่เหยินหัวหน้าพรรคกิเลนขาว ที่เก็บเจ้ามาเลี้ยงเมื่อ 22 ปีก่อน\nซึ่งจริงๆแล้วก่อนที่จะเจอเจ้า แม่นางเส้าสื่อเฉียน แม่นาง 14\nเว่ยเส้าเทียน: แห่งพรรคกิเลนขาว ซึ่งได้พบเจ้าข้างหนองน้ำ ใกล้เมืองเหลียงคุน ซึ่งเป็นที่ๆ เซียะถงอี้ น้าสาวพี่แม่ได้แนะนำให้พบ\nหลี่เซียซุย: ข้าหลี่เซียซุย ก่อนที่จะเจอเจ้า\nเว่ยเส้าเทียน: ซึ่งอันที่จริงแล้ว ข้าเองก็ไม่เคยรู้มาก่อนว่าเจ้า เป็นลูกของ\nหลี่เซียซุย: จางฟู่เหยิน\nเว่ยเส้าเทียน: จนข้านึกขึ้นได้ จึงว่า\nหลี่เซียซุย: จางม่านจือ แม่เจ้า\nเว่ยเส้าเทียน: ได้พาข้าไปพบ\nหลี่เซียซุย: พี่สาวแม่ของเจ้า\nเว่ยเส้าเทียน: ซึ่งน้าสาวพี่แม่ของเจ้า ได้พาข้าไปรู้จักกับหลี่เซียซุย\nหลี่เซียซุย: น้าสาวพี่ของแม่เจ้า\nเว่ยเส้าเทียน: ก่อนที่จะเจอเจ้า\nหลี่เซียซุย: เมื่อ 22 ปีก่อน\n",
-                                "timestamp": "2025-05-12T11:30:11.183178Z",
-                                "part_kind": "user-prompt"
-                            }
-                        ],
-                        "instructions": null,
-                        "kind": "request"
-                    },
-                    {
-                        "parts": [
-                            {
-                                "content": "",
-                                "part_kind": "text"
-                            },
-                            {
-                                "tool_name": "final_result",
-                                "args": "{\"party_members\":[{\"name\":\"จางฟู่เหยิน\",\"title\":\"หัวหน้าพรรค\"},{\"name\":\"เส้าสื่อเฉียน\",\"title\":\"แม่นาง 14\"}],\"relationships\":[{\"a\":\"พระเอก\",\"b\":\"เว่ยเส้าเทียน\",\"relation\":\"found\"},{\"a\":\"หลี่เซียซุย\",\"b\":\"จางฟู่เหยิน\",\"relation\":\"friend\"},{\"a\":\"เว่ยเส้าเทียน\",\"b\":\"หลี่เซียซุย\",\"relation\":\"father\"},{\"a\":\"เส้าสื่อเฉียน\",\"b\":\"จางฟู่เหยิน\",\"relation\":\"mother\"},{\"a\":\"เซียะถงอี้\",\"b\":\"เว่ยเส้าเทียน\",\"relation\":\"aunt of mother's sister's mother\"},{\"a\":\"เซียะถงอี้\",\"b\":\"หลี่เซียซุย\",\"relation\":\"aunt of mother's sister's mother\"}]}",
-                                "tool_call_id": "call_z4iqif6r",
-                                "part_kind": "tool-call"
-                            }
-                        ],
-                        "model_name": "hf.co/JulienElkaim/Tsunami-1.0-14B-Instruct-Q4_K_M-GGUF:Q4_K_M",
-                        "timestamp": "2025-05-12T11:31:17Z",
-                        "kind": "response"
-                    },
-                    {
-                        "parts": [
-                            {
-                                "tool_name": "final_result",
-                                "content": "Final result processed.",
-                                "tool_call_id": "call_z4iqif6r",
-                                "timestamp": "2025-05-12T11:31:17.931643Z",
-                                "part_kind": "tool-return"
-                            }
-                        ],
-                        "instructions": null,
-                        "kind": "request"
-                    }
-                ],
-                "usage": {
-                    "requests": 1,
-                    "request_tokens": 996,
-                    "response_tokens": 258,
-                    "total_tokens": 1254,
-                    "details": null
-                },
-                "retries": 0,
-                "run_step": 1
-            },
-            "_new_message_index": 0,
-            "_traceparent_value": null
-        }
+        "missing_party_members": []
     },
-    "score": 0.2,
+    "score": 0.2666666666666667,
     "error": null,
-    "cost": null
+    "cost": null,
+    "provider": "ollama_structured",
+    "openai_response": {
+        "id": "chatcmpl-564",
+        "choices": [
+            {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                    "content": "{\n  \"think_relationship\": \"1. หลี่เซียซุยเป็นพ่อของพระเอก\\n2. เว่ยเส้าเทียนเป็นสหายรักของจางฟู่เหยิน\\n3. จางฟู่เหยินเป็นหัวหน้าพรรคกิเลนขาว\\n4. เส้าสื่อเฉียนเป็นแม่นาง 14 ของพรรคกิเลนขาว\\n5. เซียะถงอี้เป็นน้องสาวพี่แม่ของพระเอก\",\n  \"relationships\": [\n    {\n      \"a\": \"หลี่เซียซุย\",\n      \"relation\": \"father\",\n      \"b\": \"พระเอก\"\n    },\n    {\n      \"a\": \"เว่ยเส้าเทียน\",\n      \"relation\": \"friend\",\n      \"b\": \"จางฟู่เหยิน\"\n    },\n    {\n      \"a\": \"เซียะถงอี้\",\n      \"relation\": \"aunt of mother's sister's mother\",\n      \"b\": \"พระเอก\"\n    }\n  ],\n  \"think_party\": \"1. จางฟู่เหยินเป็นหัวหน้าพรรคกิเลนขาว\\n2. เส้าสื่อเฉียนเป็นแม่นาง 14 ของพรรคกิเลนขาว\",\n  \"party_members\": [\n    {\n      \"name\": \"จางฟู่เหยิน\",\n      \"title\": \"หัวหน้าพรรค\"\n    },\n    {\n      \"name\": \"เส้าสื่อเฉียน\",\n      \"title\": \"แม่นาง 14\"\n    }\n  ]\n}",
+                    "refusal": null,
+                    "role": "assistant",
+                    "annotations": null,
+                    "audio": null,
+                    "function_call": null,
+                    "tool_calls": null
+                }
+            }
+        ],
+        "created": 1748074161,
+        "model": "hf.co/JulienElkaim/Tsunami-1.0-14B-Instruct-Q4_K_M-GGUF:Q4_K_M",
+        "object": "chat.completion",
+        "service_tier": null,
+        "system_fingerprint": "fp_ollama",
+        "usage": {
+            "completion_tokens": 361,
+            "prompt_tokens": 1296,
+            "total_tokens": 1657,
+            "completion_tokens_details": null,
+            "prompt_tokens_details": null
+        }
+    }
 }

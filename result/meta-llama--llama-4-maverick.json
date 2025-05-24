@@ -1,44 +1,123 @@
 {
-    "version": 2,
+    "version": 3,
     "model": "meta-llama/llama-4-maverick",
-    "result": null,
-    "score": 0.0,
-    "error": "1 validation error for Output\n  Invalid JSON: expected value at line 1 column 1 [type=json_invalid, input_value='To create a relationship...schema or requirements.', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/json_invalid",
-    "cost": null,
-    "provider": "openrouter_structured",
-    "pydantic_output": null,
-    "openai_response": {
-        "id": "gen-1747071129-VMkTkdLJo1SIT3WmgKlH",
-        "provider": "Fireworks",
-        "model": "meta-llama/llama-4-maverick",
-        "object": "chat.completion",
-        "created": 1747071129,
-        "choices": [
+    "result": {
+        "valid_relationships": [
             {
-                "logprobs": null,
-                "finish_reason": "stop",
-                "native_finish_reason": "stop",
-                "index": 0,
-                "message": {
-                    "role": "assistant",
-                    "content": "To create a relationship graph from the given dialogue, we first need to identify the individuals involved and their relationships as described. The individuals mentioned are:\n\n1. พระเอก (Protagonist, whose name is not given)\n2. เว่ยเส้าเทียน (Wei Shao Tian)\n3. หลี่เซียซุย (Li Xie Sui)\n4. จางฟู่เหยิน (Zhang Fu Yin)\n5. แม่นางเส้าสื่อเฉียน (Lady Shao Shi Qian, referred to as \"แม่นาง 14\")\n6. เซียะถงอี้ (Xie Tong Yi, referred to as \"น้าสาวพี่แม่\" or mother's older sister)\n7. จางม่านจือ (Zhang Man Zhi, mother of พระเอก)\n\nFrom the dialogue, we can extract the following relationships:\n\n1. พระเอก is the child of เว่ยเส้าเทียน.\n2. หลี่เซียซุย is telling a story about the past involving เว่ยเส้าเทียน and พระเอก, indicating a relationship or knowledge about both, but the exact nature isn't directly stated.\n3. เว่ยเส้าเทียน is the father of พระเอก.\n4. จางฟู่เหยิน is a sundry of หลี่เซียซุย and is the head of the White Kirin Party.\n5. จางฟู่เหยิน adopted พระเอก 22 years ago.\n6. แม่นางเส้าสื่อเฉียน is associated with the White Kirin Party.\n7. เซียะถงอี้ (Xie Tong Yi) is the mother's older sister (น้าสาวพี่แม่) who introduced เว่ยเส้าเทียน to แม่นางเส้าสื่อเฉียน.\n8. จางม่านจือ is the mother of พระเอก and the sister of จางฟู่เหยิน.\n\nLet's represent these relationships in a JSON format as per the given schema. The schema seems to expect a JSON object with individuals as nodes and their relationships as edges. The relationship enum is crucial, and we will only include relationships that are explicitly mentioned.\n\n```json\n{\n  \"nodes\": [\n    {\"id\": \"พระเอก\", \"name\": \"Protagonist\"},\n    {\"id\": \"เว่ยเส้าเทียน\", \"name\": \"Wei Shao Tian\"},\n    {\"id\": \"หลี่เซียซุย\", \"name\": \"Li Xie Sui\"},\n    {\"id\": \"จางฟู่เหยิน\", \"name\": \"Zhang Fu Yin\"},\n    {\"id\": \"แม่นางเส้าสื่อเฉียน\", \"name\": \"Lady Shao Shi Qian\"},\n    {\"id\": \"เซียะถงอี้\", \"name\": \"Xie Tong Yi\"},\n    {\"id\": \"จางม่านจือ\", \"name\": \"Zhang Man Zhi\"}\n  ],\n  \"edges\": [\n    {\"source\": \"พระเอก\", \"target\": \"เว่ยเส้าเทียน\", \"relation\": \"CHILD_OF\"},\n    {\"source\": \"เว่ยเส้าเทียน\", \"target\": \"พระเอก\", \"relation\": \"PARENT_OF\"},\n    {\"source\": \"จางฟู่เหยิน\", \"target\": \"พระเอก\", \"relation\": \"ADOPTIVE_PARENT_OF\"},\n    {\"source\": \"หลี่เซียซุย\", \"target\": \"จางฟู่เหยิน\", \"relation\": \"ALLY_OR_FRIEND\"},\n    {\"source\": \"เซียะถงอี้\", \"target\": \"แม่นางเส้าสื่อเฉียน\", \"relation\": \"INTRODUCED_TO\"},\n    {\"source\": \"จางม่านจือ\", \"target\": \"พระเอก\", \"relation\": \"PARENT_OF\"},\n    {\"source\": \"จางฟู่เหยิน\", \"target\": \"จางม่านจือ\", \"relation\": \"SIBLING_OF\"},\n    {\"source\": \"จางม่านจือ\", \"target\": \"จางฟู่เหยิน\", \"relation\": \"SIBLING_OF\"}\n  ]\n}\n```\n\nNote that some relationships are inferred based on the context (e.g., \"ALLY_OR_FRIEND\" between หลี่เซียซุย and จางฟู่เหยิน, \"INTRODUCED_TO\" between เซียะถงอี้ and แม่นางเส้าสื่อเฉียน), as the exact nature of some interactions isn't explicitly defined in the dialogue. The \"relation\" enum is not standardized here; you might need to adjust it according to your specific schema or requirements.",
-                    "refusal": null,
-                    "reasoning": null
-                }
+                "a": "พระเอก",
+                "relation": "son",
+                "b": "เว่ยเส้าเทียน"
+            },
+            {
+                "a": "พระเอก",
+                "relation": "son",
+                "b": "จางม่านจือ"
+            },
+            {
+                "a": "เว่ยเส้าเทียน",
+                "relation": "friend",
+                "b": "จางฟู่เหยิน"
+            },
+            {
+                "a": "จางฟู่เหยิน",
+                "relation": "friend",
+                "b": "เว่ยเส้าเทียน"
+            },
+            {
+                "a": "เว่ยเส้าเทียน",
+                "relation": "father",
+                "b": "พระเอก"
+            },
+            {
+                "a": "จางม่านจือ",
+                "relation": "mother",
+                "b": "พระเอก"
+            },
+            {
+                "a": "เส้าสื่อเฉียน",
+                "relation": "found",
+                "b": "พระเอก"
             }
         ],
-        "usage": {
-            "prompt_tokens": 449,
-            "completion_tokens": 952,
-            "total_tokens": 1401,
-            "cost": 0.00093654,
-            "prompt_tokens_details": {
-                "cached_tokens": 0
-            },
-            "completion_tokens_details": {
-                "reasoning_tokens": 0
+        "valid_optional_relationships": [
+            {
+                "a": "เซียะถงอี้",
+                "relation": "aunt",
+                "b": "พระเอก"
             }
-        }
+        ],
+        "invalid_relationships": [
+            {
+                "a": "หลี่เซียซุย",
+                "relation": "aunt of mother's sister's mother",
+                "b": "พระเอก"
+            },
+            {
+                "a": "จางม่านจือ",
+                "relation": "son",
+                "b": "เซียะถงอี้"
+            }
+        ],
+        "missing_relationships": [
+            {
+                "a": "จางฟู่เหยิน",
+                "relation": "adopted",
+                "b": "พระเอก"
+            }
+        ],
+        "valid_party_member_list": [
+            {
+                "name": "จางฟู่เหยิน",
+                "title": "หัวหน้าพรรค"
+            },
+            {
+                "name": "เส้าสื่อเฉียน",
+                "title": "แม่นาง 14"
+            }
+        ],
+        "invalid_party_member_list": [],
+        "missing_party_members": []
     },
-    "ollama_response": null
+    "score": 0.76,
+    "error": null,
+    "cost": {
+        "request_cost_1k": 0,
+        "input_token_1m": 0.22,
+        "output_token_1m": 0.88
+    },
+    "provider": "openrouter_structured",
+    "openai_response": {
+        "id": "gen-1748073167-un3Gp3jwkBAK7GzbDK4G",
+        "choices": [
+            {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                    "content": "{\"think_relationship\": \"พระเอก: เว่ยเส้าเทียน วันนี้เป็นวันตายของเจ้า\\nเว่ยเส้าเทียน: โอหัง แน่จริงก็เข้ามา\\nพระเอก: ตายซะ!\\nหลี่เซียซุย : ช้าก่อน! เว่ยเส้าเทียนคือพ่อของเจ้า!\\nหลี่เซียซุย: ซึ่งเป็นสหายรัก ของจางฟู่เหยินหัวหน้าพรรคกิเลนขาว ที่เก็บเจ้ามาเลี้ยงเมื่อ 22 ปีก่อน\\nซึ่งจริงๆแล้วก่อนที่จะเจอเจ้า แม่นางเส้าสื่อเฉียน แม่นาง 14\\nเว่ยเส้าเทียน: แห่งพรรคกิเลนขาว ซึ่งได้พบเจ้าข้างหนองน้ำ ใกล้เมืองเหลียงคุน ซึ่งเป็นที่ๆ เซียะถงอี้ น้าสาวพี่แม่ได้แนะนำให้พบ\\nหลี่เซียซุย: ข้าหลี่เซียซุย ก่อนที่จะเจอเจ้า\\nเว่ยเส้าเทียน: ซึ่งอันที่จริงแล้ว ข้าเองก็ไม่เคยรู้มาก่อนว่าเจ้า เป็นลูกของ\\nหลี่เซียซุย: จางฟู่เหยิน\\nเว่ยเส้าเทียน: จนข้านึกขึ้นได้ จึงว่า\\nหลี่เซียซุย: จางม่านจือ แม่เจ้า\\nเว่ยเส้าเทียน: ได้พาข้าไปพบ\\nหลี่เซียซุย: พี่สาวแม่ของเจ้า\\nเว่ยเส้าเทียน: ซึ่งน้าสาวพี่แม่ของเจ้า ได้พาข้าไปรู้จักกับหลี่เซียซุย\\nหลี่เซียซุย: น้าสาวพี่ของแม่เจ้า\\nเว่ยเส้าเทียน: ก่อนที่จะเจอเจ้า\\nหลี่เซียซุย: เมื่อ 22 ปีก่อน\", \"relationships\": [{\"a\": \"พระเอก\", \"relation\": \"son\", \"b\": \"เว่ยเส้าเทียน\"}, {\"a\": \"พระเอก\", \"relation\": \"son\", \"b\": \"จางม่านจือ\"}, {\"a\": \"เว่ยเส้าเทียน\", \"relation\": \"friend\", \"b\": \"จางฟู่เหยิน\"}, {\"a\": \"จางฟู่เหยิน\", \"relation\": \"friend\", \"b\": \"เว่ยเส้าเทียน\"}, {\"a\": \"เว่ยเส้าเทียน\", \"relation\": \"father\", \"b\": \"พระเอก\"}, {\"a\": \"จางม่านจือ\", \"relation\": \"mother\", \"b\": \"พระเอก\"}, {\"a\": \"เส้าสื่อเฉียน\", \"relation\": \"found\", \"b\": \"พระเอก\"}, {\"a\": \"เซียะถงอี้\", \"relation\": \"aunt\", \"b\": \"พระเอก\"}, {\"a\": \"หลี่เซียซุย\", \"relation\": \"aunt of mother's sister's mother\", \"b\": \"พระเอก\"}, {\"a\": \"จางม่านจือ\", \"relation\": \"son\", \"b\": \"เซียะถงอี้\"}], \"think_party\": \"พระเอก: เว่ยเส้าเทียน วันนี้เป็นวันตายของเจ้า\\nเว่ยเส้าเทียน: โอหัง แน่จริงก็เข้ามา\\nพระเอก: ตายซะ!\\nหลี่เซียซุย : ช้าก่อน! เว่ยเส้าเทียนคือพ่อของเจ้า!\\nหลี่เซียซุย: ซึ่งเป็นสหายรัก ของจางฟู่เหยินหัวหน้าพรรคกิเลนขาว ที่เก็บเจ้ามาเลี้ยงเมื่อ 22 ปีก่อน\\nซึ่งจริงๆแล้วก่อนที่จะเจอเจ้า แม่นางเส้าสื่อเฉียน แม่นาง 14\\nเว่ยเส้าเทียน: แห่งพรรคกิเลนขาว ซึ่งได้พบเจ้าข้างหนองน้ำ ใกล้เมืองเหลียงคุน ซึ่งเป็นที่ๆ เซียะถงอี้ น้าสาวพี่แม่ได้แนะนำให้พบ\\nหลี่เซียซุย: ข้าหลี่เซียซุย ก่อนที่จะเจอเจ้า\\nเว่ยเส้าเทียน: ซึ่งอันที่จริงแล้ว ข้าเองก็ไม่เคยรู้มาก่อนว่าเจ้า เป็นลูกของ\\nหลี่เซียซุย: จางฟู่เหยิน\\nเว่ยเส้าเทียน: จนข้านึกขึ้นได้ จึงว่า\\nหลี่เซียซุย: จางม่านจือ แม่เจ้า\\nเว่ยเส้าเทียน: ได้พาข้าไปพบ\\nหลี่เซียซุย: พี่สาวแม่ของเจ้า\\nเว่ยเส้าเทียน: ซึ่งน้าสาวพี่แม่ของเจ้า ได้พาข้าไปรู้จักกับหลี่เซียซุย\\nหลี่เซียซุย: น้าสาวพี่ของแม่เจ้า\\nเว่ยเส้าเทียน: ก่อนที่จะเจอเจ้า\\nหลี่เซียซุย: เมื่อ 22 ปีก่อน\", \"party_members\": [{\"name\": \"จางฟู่เหยิน\", \"title\": \"หัวหน้าพรรค\"}, {\"name\": \"เส้าสื่อเฉียน\", \"title\": \"แม่นาง 14\"}]}",
+                    "refusal": null,
+                    "role": "assistant",
+                    "annotations": null,
+                    "audio": null,
+                    "function_call": null,
+                    "tool_calls": null,
+                    "reasoning": null
+                },
+                "native_finish_reason": "stop"
+            }
+        ],
+        "created": 1748073176,
+        "model": "meta-llama/llama-4-maverick",
+        "object": "chat.completion",
+        "service_tier": null,
+        "system_fingerprint": null,
+        "usage": {
+            "completion_tokens": 1113,
+            "prompt_tokens": 1153,
+            "total_tokens": 2266,
+            "completion_tokens_details": null,
+            "prompt_tokens_details": null
+        },
+        "provider": "Fireworks"
+    }
 }

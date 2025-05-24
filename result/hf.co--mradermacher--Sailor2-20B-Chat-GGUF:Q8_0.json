@@ -1,39 +1,30 @@
 {
-    "version": 2,
+    "version": 3,
     "model": "hf.co/mradermacher/Sailor2-20B-Chat-GGUF:Q8_0",
     "result": {
-        "valid_relationships": [],
-        "valid_optional_relationships": [],
-        "invalid_relationships": [
-            {
-                "a": "พระเอก",
-                "relation": "friend",
-                "b": "จางฟู่เหยิน"
-            },
+        "valid_relationships": [
             {
                 "a": "เว่ยเส้าเทียน",
                 "relation": "father",
-                "b": "หลี่เซียซุย"
-            },
+                "b": "พระเอก"
+            }
+        ],
+        "valid_optional_relationships": [],
+        "invalid_relationships": [
             {
                 "a": "จางฟู่เหยิน",
-                "relation": "adopted",
-                "b": "หลี่เซียซุย"
-            },
-            {
-                "a": "เว่ยเส้าเทียน",
                 "relation": "friend",
-                "b": "จางม่านจือ"
+                "b": "หลี่เซียซุย"
             },
             {
-                "a": "จางฟู่เหยิน",
-                "relation": "son",
-                "b": "หลี่เซียซุย"
+                "a": "หลี่เซียซุย",
+                "relation": "adopted",
+                "b": "เว่ยเส้าเทียน"
             },
             {
                 "a": "เส้าสื่อเฉียน",
                 "relation": "mother",
-                "b": "เว่ยเส้าเทียน"
+                "b": "พระเอก"
             },
             {
                 "a": "จางม่านจือ",
@@ -42,7 +33,7 @@
             },
             {
                 "a": "เซียะถงอี้",
-                "relation": "aunt",
+                "relation": "aunt of mother's sister's mother",
                 "b": "เว่ยเส้าเทียน"
             }
         ],
@@ -56,11 +47,6 @@
                 "a": "จางฟู่เหยิน",
                 "relation": "friend",
                 "b": "เว่ยเส้าเทียน"
-            },
-            {
-                "a": "เว่ยเส้าเทียน",
-                "relation": "father",
-                "b": "พระเอก"
             },
             {
                 "a": "จางม่านจือ",
@@ -96,10 +82,6 @@
         ],
         "invalid_party_member_list": [
             {
-                "name": "พระเอก",
-                "title": "หัวหน้าพรรค"
-            },
-            {
                 "name": "หลี่เซียซุย",
                 "title": "แม่นาง 14"
             }
@@ -109,29 +91,41 @@
                 "name": "เส้าสื่อเฉียน",
                 "title": "แม่นาง 14"
             }
-        ],
-        "output": null
+        ]
     },
-    "score": 0.03333333333333334,
+    "score": 0.06666666666666667,
     "error": null,
     "cost": null,
     "provider": "ollama_structured",
-    "pydantic_output": null,
-    "openai_response": null,
-    "ollama_response": {
+    "openai_response": {
+        "id": "chatcmpl-609",
+        "choices": [
+            {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                    "content": "{ \"think_relationship\": \"Identifying relationships between characters based on the dialogue.\", \"relationships\": [\n    {\"a\": \"เว่ยเส้าเทียน\", \"relation\": \"father\", \"b\": \"พระเอก\"},\n    {\"a\": \"จางฟู่เหยิน\", \"relation\": \"friend\", \"b\": \"หลี่เซียซุย\"},\n    {\"a\": \"หลี่เซียซุย\", \"relation\": \"adopted\", \"b\": \"เว่ยเส้าเทียน\"},\n    {\"a\": \"เส้าสื่อเฉียน\", \"relation\": \"mother\", \"b\": \"พระเอก\"},\n    {\"a\": \"จางม่านจือ\", \"relation\": \"son\", \"b\": \"หลี่เซียซุย\"},\n    {\"a\": \"เซียะถงอี้\", \"relation\": \"aunt of mother's sister's mother\", \"b\": \"เว่ยเส้าเทียน\"}\n  ],\n  \"think_party\": \"Identifying members and their positions in the White Kirin Party.\",\n  \"party_members\": [\n    {\"name\": \"จางฟู่เหยิน\", \"title\": \"หัวหน้าพรรค\"},\n    {\"name\": \"หลี่เซียซุย\", \"title\": \"แม่นาง 14\"}\n  ]\n}",
+                    "refusal": null,
+                    "role": "assistant",
+                    "annotations": null,
+                    "audio": null,
+                    "function_call": null,
+                    "tool_calls": null
+                }
+            }
+        ],
+        "created": 1748074083,
         "model": "hf.co/mradermacher/Sailor2-20B-Chat-GGUF:Q8_0",
-        "created_at": "2025-05-12T17:53:32.796121414Z",
-        "message": {
-            "role": "assistant",
-            "content": "{\n  \"relationships\": [\n    {\n      \"a\": \"พระเอก\",\n      \"relation\": \"friend\",\n      \"b\": \"จางฟู่เหยิน\"\n    },\n    {\n      \"a\": \"เว่ยเส้าเทียน\",\n      \"relation\": \"father\",\n      \"b\": \"หลี่เซียซุย\"\n    },\n    {\n      \"a\": \"จางฟู่เหยิน\",\n      \"relation\": \"adopted\",\n      \"b\": \"หลี่เซียซุย\"\n    },\n    {\n      \"a\": \"เว่ยเส้าเทียน\",\n      \"relation\": \"friend\",\n      \"b\": \"จางม่านจือ\"\n    },\n    {\n      \"a\": \"จางฟู่เหยิน\",\n      \"relation\": \"son\",\n      \"b\": \"หลี่เซียซุย\"\n    },\n    {\n      \"a\": \"เส้าสื่อเฉียน\",\n      \"relation\": \"mother\",\n      \"b\": \"เว่ยเส้าเทียน\"\n    },\n    {\n      \"a\": \"จางม่านจือ\",\n      \"relation\": \"son\",\n      \"b\": \"หลี่เซียซุย\"\n    },\n    {\n      \"a\": \"เซียะถงอี้\",\n      \"relation\": \"aunt\",\n      \"b\": \"เว่ยเส้าเทียน\"\n    }\n  ]\n  , \"party_members\": [\n     {\"name\":\"พระเอก\", \"title\":\"หัวหน้าพรรค\"},\n     {\"name\":\"จางฟู่เหยิน\", \"title\":\"หัวหน้าพรรค\"},\n     {\"name\":\"หลี่เซียซุย\", \"title\":\"แม่นาง 14\"}\n   ]\n}"
-        },
-        "done_reason": "stop",
-        "done": true,
-        "total_duration": 7774368305,
-        "load_duration": 643249710,
-        "prompt_eval_count": 584,
-        "prompt_eval_duration": 325483163,
-        "eval_count": 384,
-        "eval_duration": 6803382745
+        "object": "chat.completion",
+        "service_tier": null,
+        "system_fingerprint": "fp_ollama",
+        "usage": {
+            "completion_tokens": 282,
+            "prompt_tokens": 1296,
+            "total_tokens": 1578,
+            "completion_tokens_details": null,
+            "prompt_tokens_details": null
+        }
     }
 }

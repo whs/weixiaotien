@@ -1,94 +1,59 @@
 {
-    "version": 2,
+    "version": 3,
     "model": "hf.co/scb10x/typhoon2.1-gemma3-12b-gguf:Q4_K_M",
     "result": {
         "valid_relationships": [
             {
-                "a": "เว่ยเส้าเทียน",
-                "relation": "father",
+                "a": "จางม่านจือ",
+                "relation": "mother",
                 "b": "พระเอก"
             },
             {
-                "a": "จางม่านจือ",
-                "relation": "mother",
+                "a": "เว่ยเส้าเทียน",
+                "relation": "friend",
+                "b": "จางฟู่เหยิน"
+            },
+            {
+                "a": "จางฟู่เหยิน",
+                "relation": "adopted",
+                "b": "พระเอก"
+            },
+            {
+                "a": "เว่ยเส้าเทียน",
+                "relation": "father",
                 "b": "พระเอก"
             }
         ],
         "valid_optional_relationships": [
             {
                 "a": "เซียะถงอี้",
-                "relation": "aunt",
+                "relation": "aunt of mother's sister's mother",
                 "b": "พระเอก"
             }
         ],
         "invalid_relationships": [
-            {
-                "a": "พระเอก",
-                "relation": "father",
-                "b": "เว่ยเส้าเทียน"
-            },
             {
                 "a": "เว่ยเส้าเทียน",
                 "relation": "father",
                 "b": "จางม่านจือ"
             },
             {
-                "a": "จางฟู่เหยิน",
-                "relation": "father",
-                "b": "เว่ยเส้าเทียน"
-            },
-            {
-                "a": "เว่ยเส้าเทียน",
-                "relation": "father",
-                "b": "จางฟู่เหยิน"
-            },
-            {
-                "a": "จางฟู่เหยิน",
-                "relation": "friend",
-                "b": "หลี่เซียซุย"
-            },
-            {
-                "a": "หลี่เซียซุย",
-                "relation": "friend",
-                "b": "จางฟู่เหยิน"
-            },
-            {
-                "a": "จางฟู่เหยิน",
-                "relation": "mother",
-                "b": "เส้าสื่อเฉียน"
-            },
-            {
-                "a": "เส้าสื่อเฉียน",
-                "relation": "mother",
-                "b": "เว่ยเส้าเทียน"
-            },
-            {
-                "a": "เว่ยเส้าเทียน",
-                "relation": "father",
-                "b": "เส้าสื่อเฉียน"
-            },
-            {
-                "a": "พระเอก",
-                "relation": "aunt",
-                "b": "เซียะถงอี้"
-            },
-            {
                 "a": "หลี่เซียซุย",
                 "relation": "aunt",
                 "b": "พระเอก"
             },
             {
-                "a": "พระเอก",
-                "relation": "aunt",
+                "a": "เส้าสื่อเฉียน",
+                "relation": "mother",
                 "b": "หลี่เซียซุย"
+            },
+            {
+                "a": "จางฟู่เหยิน",
+                "relation": "adopted",
+                "b": "พระเอก"
             }
         ],
         "missing_relationships": [
-            {
-                "a": "เว่ยเส้าเทียน",
-                "relation": "friend",
-                "b": "จางฟู่เหยิน"
-            },
             {
                 "a": "จางฟู่เหยิน",
                 "relation": "friend",
@@ -108,73 +73,54 @@
                 "a": "เส้าสื่อเฉียน",
                 "relation": "found",
                 "b": "พระเอก"
-            },
-            {
-                "a": "จางฟู่เหยิน",
-                "relation": "adopted",
-                "b": "พระเอก"
             }
         ],
         "valid_party_member_list": [
+            {
+                "name": "จางฟู่เหยิน",
+                "title": "หัวหน้าพรรค"
+            },
             {
                 "name": "เส้าสื่อเฉียน",
                 "title": "แม่นาง 14"
             }
         ],
-        "invalid_party_member_list": [
-            {
-                "name": "พระเอก",
-                "title": "แม่นาง 14"
-            },
-            {
-                "name": "เว่ยเส้าเทียน",
-                "title": "แม่นาง 14"
-            },
-            {
-                "name": "หลี่เซียซุย",
-                "title": "แม่นาง 14"
-            },
-            {
-                "name": "จางฟู่เหยิน",
-                "title": "แม่นาง 14"
-            },
-            {
-                "name": "จางม่านจือ",
-                "title": "แม่นาง 14"
-            },
-            {
-                "name": "เซียะถงอี้",
-                "title": "แม่นาง 14"
-            }
-        ],
-        "missing_party_members": [
-            {
-                "name": "จางฟู่เหยิน",
-                "title": "หัวหน้าพรรค"
-            }
-        ],
-        "output": null
+        "invalid_party_member_list": [],
+        "missing_party_members": []
     },
-    "score": 0.054285714285714284,
+    "score": 0.4222222222222223,
     "error": null,
     "cost": null,
     "provider": "ollama_structured",
-    "pydantic_output": null,
-    "openai_response": null,
-    "ollama_response": {
+    "openai_response": {
+        "id": "chatcmpl-823",
+        "choices": [
+            {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                    "content": "{\"think_relationship\": \"The relationships are as follows:\\n\\n1. เว่ยเส้าเทียน (Wei Shao Tian) is the father of จางม่านจือ (Zhang Man Zhi).\\n2. จางม่านจือ (Zhang Man Zhi) is the mother of พระเอก (Protagonist).\\n3. เว่ยเส้าเทียน (Wei Shao Tian) is a friend of จางฟู่เหยิน (Zhang Fu Yin).\\n4. จางฟู่เหยิน (Zhang Fu Yin) is the head of พรรคกิเลนขาว (White Kirin Party).\\n5. หลี่เซียซุย (Li Xia Sui) is the aunt of พระเอก (Protagonist).\\n6. เซียะถงอี้ (Xia Tong Yi) is the aunt of mother's sister of พระเอก (Protagonist).\\n7. เส้าสื่อเฉียน (Shao Shao Qian) is the mother of หลี่เซียซุย (Li Xia Sui).\\n8. จางฟู่เหยิน (Zhang Fu Yin) adopted พระเอก (Protagonist).\\n9. เว่ยเส้าเทียน (Wei Shao Tian) is the father of พระเอก (Protagonist).\\n10. หลี่เซียซุย (Li Xia Sui) is the aunt of พระเอก (Protagonist).\", \"relationships\": [{\"a\": \"เว่ยเส้าเทียน\", \"relation\": \"father\", \"b\": \"จางม่านจือ\"}, {\"a\": \"จางม่านจือ\", \"relation\": \"mother\", \"b\": \"พระเอก\"}, {\"a\": \"เว่ยเส้าเทียน\", \"relation\": \"friend\", \"b\": \"จางฟู่เหยิน\"}, {\"a\": \"จางฟู่เหยิน\", \"relation\": \"adopted\", \"b\": \"พระเอก\"}, {\"a\": \"เว่ยเส้าเทียน\", \"relation\": \"father\", \"b\": \"พระเอก\"}, {\"a\": \"หลี่เซียซุย\", \"relation\": \"aunt\", \"b\": \"พระเอก\"}, {\"a\": \"เซียะถงอี้\", \"relation\": \"aunt of mother's sister's mother\", \"b\": \"พระเอก\"}, {\"a\": \"เส้าสื่อเฉียน\", \"relation\": \"mother\", \"b\": \"หลี่เซียซุย\"}, {\"a\": \"จางฟู่เหยิน\", \"relation\": \"adopted\", \"b\": \"พระเอก\"}], \"think_party\": \"The party members are:\\n\\n1. จางฟู่เหยิน (Zhang Fu Yin) - หัวหน้าพรรค (Head of the Party).\\n2. เส้าสื่อเฉียน (Shao Shao Qian) - แม่นาง 14 (Maid 14).\", \"party_members\": [{\"name\": \"จางฟู่เหยิน\", \"title\": \"หัวหน้าพรรค\"}, {\"name\": \"เส้าสื่อเฉียน\", \"title\": \"แม่นาง 14\"}]}\n",
+                    "refusal": null,
+                    "role": "assistant",
+                    "annotations": null,
+                    "audio": null,
+                    "function_call": null,
+                    "tool_calls": null
+                }
+            }
+        ],
+        "created": 1748074126,
         "model": "hf.co/scb10x/typhoon2.1-gemma3-12b-gguf:Q4_K_M",
-        "created_at": "2025-05-12T17:56:03.071399553Z",
-        "message": {
-            "role": "assistant",
-            "content": "{\"relationships\": [\n    {\"a\": \"พระเอก\", \"relation\": \"father\", \"b\": \"เว่ยเส้าเทียน\"},\n    {\"a\": \"เว่ยเส้าเทียน\", \"relation\": \"father\", \"b\": \"พระเอก\"},\n    {\"a\": \"เว่ยเส้าเทียน\", \"relation\": \"father\", \"b\": \"จางม่านจือ\"},\n    {\"a\": \"จางม่านจือ\", \"relation\": \"mother\", \"b\": \"พระเอก\"},\n    {\"a\": \"จางฟู่เหยิน\", \"relation\": \"father\", \"b\": \"เว่ยเส้าเทียน\"},\n    {\"a\": \"เว่ยเส้าเทียน\", \"relation\": \"father\", \"b\": \"จางฟู่เหยิน\"},\n    {\"a\": \"จางฟู่เหยิน\", \"relation\": \"friend\", \"b\": \"หลี่เซียซุย\"},\n    {\"a\": \"หลี่เซียซุย\", \"relation\": \"friend\", \"b\": \"จางฟู่เหยิน\"},\n    {\"a\": \"จางฟู่เหยิน\", \"relation\": \"mother\", \"b\": \"เส้าสื่อเฉียน\"},\n    {\"a\": \"เส้าสื่อเฉียน\", \"relation\": \"mother\", \"b\": \"เว่ยเส้าเทียน\"},\n    {\"a\": \"เว่ยเส้าเทียน\", \"relation\": \"father\", \"b\": \"เส้าสื่อเฉียน\"},\n    {\"a\": \"เซียะถงอี้\", \"relation\": \"aunt\", \"b\": \"พระเอก\"},\n    {\"a\": \"พระเอก\", \"relation\": \"aunt\", \"b\": \"เซียะถงอี้\"},\n    {\"a\": \"หลี่เซียซุย\", \"relation\": \"aunt\", \"b\": \"พระเอก\"},\n    {\"a\": \"พระเอก\", \"relation\": \"aunt\", \"b\": \"หลี่เซียซุย\"}\n  ]\n  , \"party_members\": [\n    {\"name\": \"พระเอก\", \"title\": \"แม่นาง 14\"},\n    {\"name\": \"เว่ยเส้าเทียน\", \"title\": \"แม่นาง 14\"},\n    {\"name\": \"หลี่เซียซุย\", \"title\": \"แม่นาง 14\"},\n    {\"name\": \"จางฟู่เหยิน\", \"title\": \"แม่นาง 14\"},\n    {\"name\": \"จางม่านจือ\", \"title\": \"แม่นาง 14\"},\n    {\"name\": \"เส้าสื่อเฉียน\", \"title\": \"แม่นาง 14\"},\n    {\"name\": \"เซียะถงอี้\", \"title\": \"แม่นาง 14\"}\n  ]\n}\n"
-        },
-        "done_reason": "stop",
-        "done": true,
-        "total_duration": 21832190169,
-        "load_duration": 4551217795,
-        "prompt_eval_count": 417,
-        "prompt_eval_duration": 173702178,
-        "eval_count": 726,
-        "eval_duration": 17027536370
+        "object": "chat.completion",
+        "service_tier": null,
+        "system_fingerprint": "fp_ollama",
+        "usage": {
+            "completion_tokens": 631,
+            "prompt_tokens": 1137,
+            "total_tokens": 1768,
+            "completion_tokens_details": null,
+            "prompt_tokens_details": null
+        }
     }
 }

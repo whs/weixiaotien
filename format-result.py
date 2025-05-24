@@ -5,12 +5,10 @@ from py_markdown_table.markdown_table import markdown_table
 from main import ResultData, CURRENT_TEST_VERSION
 
 
-
 def main():
     out: list[ResultData] = []
 
     for file in Path("result").iterdir():
-
         try:
             result = ResultData.model_validate_json(file.open().read())
         except Exception as exc:
@@ -38,27 +36,23 @@ def main():
                 "Party": "DNF",
                 "Invalid": "DNF",
                 "Cost": "DNF",
-                "Req / In Tok / Out Tok": "DNF",
+                "In Tok / Out Tok": "DNF",
             })
         else:
             cost = None
-            request_count = 0
             request_tokens = 0
             response_tokens = 0
 
-            if item.provider is None or "pydantic" in item.provider:
-                usage = item.get_raw_output().usage()
-                if item.cost is not None:
-                    cost = ((usage.requests * item.cost.request_cost_1k/1000)
-                            + (usage.request_tokens * item.cost.input_token_1m/float(1e6))
-                            + (usage.response_tokens * item.cost.output_token_1m/float(1e6)))
-                request_count = usage.requests
-                request_tokens = usage.request_tokens
-                response_tokens = usage.response_tokens
-            if item.ollama_response:
-                request_count = 1
-                request_tokens = item.ollama_response['prompt_eval_count']
-                response_tokens = item.ollama_response['eval_count']
+            if item.openai_response:
+                request_tokens = item.openai_response.usage.prompt_tokens
+                response_tokens = item.openai_response.usage.completion_tokens
+
+                if item.openai_response.usage.completion_tokens_details and item.openai_response.usage.completion_tokens_details.reasoning_tokens:
+                    response_tokens += item.openai_response.usage.completion_tokens_details.reasoning_tokens
+
+                if "cost" in item.openai_response.usage.model_extra:
+                    # OpenRouter report the cost here
+                    cost = item.openai_response.usage.model_extra["cost"]
 
             invalid = []
             if len(item.result.invalid_relationships) > 0:
@@ -74,7 +68,7 @@ def main():
                 "Party": f"{len(item.result.valid_party_member_list)}/2",
                 "Invalid": " / ".join(invalid),
                 "Cost": "${:.6f}".format(cost) if cost is not None else "N/A",
-                "Req / In Tok / Out Tok": f"{request_count} / {request_tokens} / {response_tokens}",
+                "In Tok / Out Tok": f"{request_tokens} / {response_tokens}",
             })
 
     print(markdown_table(formatted).set_params(row_sep="markdown", padding_weight="right", padding_width=1, quote=False).get_markdown())

@@ -1,5 +1,5 @@
 {
-    "version": 2,
+    "version": 3,
     "model": "hf.co/aisingapore/Llama-SEA-LION-v3.5-70B-R-GGUF:Q2_K",
     "result": {
         "valid_relationships": [],
@@ -7,12 +7,32 @@
         "invalid_relationships": [
             {
                 "a": "พระเอก",
-                "relation": "mother",
+                "relation": "friend",
+                "b": "เว่ยเส้าเทียน"
+            },
+            {
+                "a": "พระเอก",
+                "relation": "father",
+                "b": "หลี่เซียซุย"
+            },
+            {
+                "a": "หลี่เซียซุย",
+                "relation": "adopted",
                 "b": "จางฟู่เหยิน"
             },
             {
+                "a": "จางฟู่เหยิน",
+                "relation": "found",
+                "b": "หลี่เซียซุย"
+            },
+            {
                 "a": "เว่ยเส้าเทียน",
-                "relation": "son",
+                "relation": "mother",
+                "b": "จางม่านจือ"
+            },
+            {
+                "a": "เว่ยเส้าเทียน",
+                "relation": "aunt of mother's sister's mother",
                 "b": "หลี่เซียซุย"
             }
         ],
@@ -58,12 +78,13 @@
                 "b": "พระเอก"
             }
         ],
-        "valid_party_member_list": [],
-        "invalid_party_member_list": [
+        "valid_party_member_list": [
             {
-                "name": "พระเอก",
-                "title": "แม่นาง 14"
-            },
+                "name": "จางฟู่เหยิน",
+                "title": "หัวหน้าพรรค"
+            }
+        ],
+        "invalid_party_member_list": [
             {
                 "name": "เว่ยเส้าเทียน",
                 "title": "แม่นาง 14"
@@ -71,36 +92,44 @@
         ],
         "missing_party_members": [
             {
-                "name": "จางฟู่เหยิน",
-                "title": "หัวหน้าพรรค"
-            },
-            {
                 "name": "เส้าสื่อเฉียน",
                 "title": "แม่นาง 14"
             }
-        ],
-        "output": null
+        ]
     },
-    "score": 0.0,
+    "score": 0.05,
     "error": null,
     "cost": null,
     "provider": "ollama_structured",
-    "pydantic_output": null,
-    "openai_response": null,
-    "ollama_response": {
+    "openai_response": {
+        "id": "chatcmpl-303",
+        "choices": [
+            {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                    "content": "{\"think_relationship\": \"พระเอก and เว่ยเส้าเทียน are friends. พระเอก is the father of หลี่เซียซุย. หลี่เซียซุย is the adopted son of จางฟู่เหยิน, who is the party leader of พรรคกิเลนขาว. จางม่านจือ is the mother of เว่ยเส้าเทียน. เว่ยเส้าเทียน is the aunt of หลี่เซียซุย's mother's sister's mother.\", \"relationships\": [{\"a\": \"พระเอก\", \"relation\": \"friend\", \"b\": \"เว่ยเส้าเทียน\"}, {\"a\": \"พระเอก\", \"relation\": \"father\", \"b\": \"หลี่เซียซุย\"}, {\"a\": \"หลี่เซียซุย\", \"relation\": \"adopted\", \"b\": \"จางฟู่เหยิน\"}, {\"a\": \"จางฟู่เหยิน\", \"relation\": \"found\", \"b\": \"หลี่เซียซุย\"}, {\"a\": \"เว่ยเส้าเทียน\", \"relation\": \"mother\", \"b\": \"จางม่านจือ\"}, {\"a\": \"เว่ยเส้าเทียน\", \"relation\": \"aunt of mother's sister's mother\", \"b\": \"หลี่เซียซุย\"}], \"think_party\": \"จางฟู่เหยิน is the party leader of พรรคกิเลนขาว.\", \"party_members\": [{\"name\": \"จางฟู่เหยิน\", \"title\": \"หัวหน้าพรรค\"}, {\"name\": \"เว่ยเส้าเทียน\", \"title\": \"แม่นาง 14\"}]} ",
+                    "refusal": null,
+                    "role": "assistant",
+                    "annotations": null,
+                    "audio": null,
+                    "function_call": null,
+                    "tool_calls": null
+                }
+            }
+        ],
+        "created": 1748074019,
         "model": "hf.co/aisingapore/Llama-SEA-LION-v3.5-70B-R-GGUF:Q2_K",
-        "created_at": "2025-05-12T17:44:56.862955276Z",
-        "message": {
-            "role": "assistant",
-            "content": "{\"relationships\": [{\"a\": \"พระเอก\", \"relation\": \"mother\", \"b\": \"จางฟู่เหยิน\"}, {\"a\": \"เว่ยเส้าเทียน\", \"relation\": \"son\", \"b\": \"หลี่เซียซุย\"}] , \"party_members\": [{\"name\": \"พระเอก\", \"title\": \"แม่นาง 14\"}, {\"name\": \"เว่ยเส้าเทียน\", \"title\": \"แม่นาง 14\"}]} "
-        },
-        "done_reason": "stop",
-        "done": true,
-        "total_duration": 41351684752,
-        "load_duration": 12680488116,
-        "prompt_eval_count": 515,
-        "prompt_eval_duration": 25385857993,
-        "eval_count": 119,
-        "eval_duration": 3282623981
+        "object": "chat.completion",
+        "service_tier": null,
+        "system_fingerprint": "fp_ollama",
+        "usage": {
+            "completion_tokens": 354,
+            "prompt_tokens": 1225,
+            "total_tokens": 1579,
+            "completion_tokens_details": null,
+            "prompt_tokens_details": null
+        }
     }
 }

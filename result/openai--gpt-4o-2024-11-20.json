@@ -1,8 +1,49 @@
 {
-    "version": 2,
+    "version": 3,
     "model": "openai/gpt-4o-2024-11-20",
     "result": {
         "valid_relationships": [
+            {
+                "a": "เว่ยเส้าเทียน",
+                "relation": "friend",
+                "b": "จางฟู่เหยิน"
+            },
+            {
+                "a": "จางฟู่เหยิน",
+                "relation": "adopted",
+                "b": "พระเอก"
+            },
+            {
+                "a": "จางม่านจือ",
+                "relation": "mother",
+                "b": "พระเอก"
+            }
+        ],
+        "valid_optional_relationships": [
+            {
+                "a": "เซียะถงอี้",
+                "relation": "aunt of mother's sister's mother",
+                "b": "พระเอก"
+            }
+        ],
+        "invalid_relationships": [
+            {
+                "a": "หลี่เซียซุย",
+                "relation": "father",
+                "b": "พระเอก"
+            }
+        ],
+        "missing_relationships": [
+            {
+                "a": "จางฟู่เหยิน",
+                "relation": "friend",
+                "b": "เว่ยเส้าเทียน"
+            },
+            {
+                "a": "เว่ยเส้าเทียน",
+                "relation": "father",
+                "b": "พระเอก"
+            },
             {
                 "a": "พระเอก",
                 "relation": "son",
@@ -14,53 +55,8 @@
                 "b": "จางม่านจือ"
             },
             {
-                "a": "จางฟู่เหยิน",
-                "relation": "friend",
-                "b": "เว่ยเส้าเทียน"
-            }
-        ],
-        "valid_optional_relationships": [],
-        "invalid_relationships": [
-            {
-                "a": "พระเอก",
-                "relation": "adopted",
-                "b": "จางฟู่เหยิน"
-            },
-            {
-                "a": "พระเอก",
-                "relation": "aunt of mother's sister's mother",
-                "b": "เซียะถงอี้"
-            },
-            {
-                "a": "พระเอก",
-                "relation": "aunt",
-                "b": "เส้าสื่อเฉียน"
-            }
-        ],
-        "missing_relationships": [
-            {
-                "a": "เว่ยเส้าเทียน",
-                "relation": "friend",
-                "b": "จางฟู่เหยิน"
-            },
-            {
-                "a": "เว่ยเส้าเทียน",
-                "relation": "father",
-                "b": "พระเอก"
-            },
-            {
-                "a": "จางม่านจือ",
-                "relation": "mother",
-                "b": "พระเอก"
-            },
-            {
                 "a": "เส้าสื่อเฉียน",
                 "relation": "found",
-                "b": "พระเอก"
-            },
-            {
-                "a": "จางฟู่เหยิน",
-                "relation": "adopted",
                 "b": "พระเอก"
             }
         ],
@@ -75,119 +71,53 @@
             }
         ],
         "invalid_party_member_list": [],
-        "missing_party_members": [],
-        "output": {
-            "output": {
-                "relationships": [
-                    {
-                        "a": "พระเอก",
-                        "relation": "son",
-                        "b": "เว่ยเส้าเทียน"
-                    },
-                    {
-                        "a": "พระเอก",
-                        "relation": "son",
-                        "b": "จางม่านจือ"
-                    },
-                    {
-                        "a": "พระเอก",
-                        "relation": "adopted",
-                        "b": "จางฟู่เหยิน"
-                    },
-                    {
-                        "a": "จางฟู่เหยิน",
-                        "relation": "friend",
-                        "b": "เว่ยเส้าเทียน"
-                    },
-                    {
-                        "a": "พระเอก",
-                        "relation": "aunt of mother's sister's mother",
-                        "b": "เซียะถงอี้"
-                    },
-                    {
-                        "a": "พระเอก",
-                        "relation": "aunt",
-                        "b": "เส้าสื่อเฉียน"
-                    }
-                ],
-                "party_members": [
-                    {
-                        "name": "จางฟู่เหยิน",
-                        "title": "หัวหน้าพรรค"
-                    },
-                    {
-                        "name": "เส้าสื่อเฉียน",
-                        "title": "แม่นาง 14"
-                    }
-                ]
-            },
-            "_output_tool_name": "final_result",
-            "_state": {
-                "message_history": [
-                    {
-                        "parts": [
-                            {
-                                "content": "\nFrom this dialogue, create a relationship graph of all individuals involved. Return as JSON per schema.\nIf the relationship enum is missing, skip the relationship. All relationships are directional - if it is mutual\nthen it should be repeated for each directions.\n\nพระเอก: เว่ยเส้าเทียน วันนี้เป็นวันตายของเจ้า\nเว่ยเส้าเทียน: โอหัง แน่จริงก็เข้ามา\nพระเอก: ตายซะ!\nหลี่เซียซุย : ช้าก่อน! เว่ยเส้าเทียนคือพ่อของเจ้า!\nหลี่เซียซุย: ซึ่งเป็นสหายรัก ของจางฟู่เหยินหัวหน้าพรรคกิเลนขาว ที่เก็บเจ้ามาเลี้ยงเมื่อ 22 ปีก่อน\nซึ่งจริงๆแล้วก่อนที่จะเจอเจ้า แม่นางเส้าสื่อเฉียน แม่นาง 14\nเว่ยเส้าเทียน: แห่งพรรคกิเลนขาว ซึ่งได้พบเจ้าข้างหนองน้ำ ใกล้เมืองเหลียงคุน ซึ่งเป็นที่ๆ เซียะถงอี้ น้าสาวพี่แม่ได้แนะนำให้พบ\nหลี่เซียซุย: ข้าหลี่เซียซุย ก่อนที่จะเจอเจ้า\nเว่ยเส้าเทียน: ซึ่งอันที่จริงแล้ว ข้าเองก็ไม่เคยรู้มาก่อนว่าเจ้า เป็นลูกของ\nหลี่เซียซุย: จางฟู่เหยิน\nเว่ยเส้าเทียน: จนข้านึกขึ้นได้ จึงว่า\nหลี่เซียซุย: จางม่านจือ แม่เจ้า\nเว่ยเส้าเทียน: ได้พาข้าไปพบ\nหลี่เซียซุย: พี่สาวแม่ของเจ้า\nเว่ยเส้าเทียน: ซึ่งน้าสาวพี่แม่ของเจ้า ได้พาข้าไปรู้จักกับหลี่เซียซุย\nหลี่เซียซุย: น้าสาวพี่ของแม่เจ้า\nเว่ยเส้าเทียน: ก่อนที่จะเจอเจ้า\nหลี่เซียซุย: เมื่อ 22 ปีก่อน\n",
-                                "timestamp": "2025-05-12T11:35:26.794307Z",
-                                "part_kind": "user-prompt"
-                            }
-                        ],
-                        "instructions": null,
-                        "kind": "request"
-                    },
-                    {
-                        "parts": [
-                            {
-                                "content": "",
-                                "part_kind": "text"
-                            },
-                            {
-                                "tool_name": "final_result",
-                                "args": "{\n  \"relationships\": [\n    { \"a\": \"พระเอก\", \"relation\": \"son\", \"b\": \"เว่ยเส้าเทียน\" },\n    { \"a\": \"พระเอก\", \"relation\": \"son\", \"b\": \"จางม่านจือ\" },\n    { \"a\": \"พระเอก\", \"relation\": \"adopted\", \"b\": \"จางฟู่เหยิน\" },\n    { \"a\": \"จางฟู่เหยิน\", \"relation\": \"friend\", \"b\": \"เว่ยเส้าเทียน\" },\n    { \"a\": \"พระเอก\", \"relation\": \"aunt of mother's sister's mother\", \"b\": \"เซียะถงอี้\" },\n    { \"a\": \"พระเอก\", \"relation\": \"aunt\", \"b\": \"เส้าสื่อเฉียน\" }\n  ],\n  \"party_members\": [\n    { \"name\": \"จางฟู่เหยิน\", \"title\": \"หัวหน้าพรรค\" },\n    { \"name\": \"เส้าสื่อเฉียน\", \"title\": \"แม่นาง 14\" }\n  ]\n}",
-                                "tool_call_id": "call_8jOc6teeEE79AK0u5uLaIiZ7",
-                                "part_kind": "tool-call"
-                            }
-                        ],
-                        "model_name": "openai/gpt-4o-2024-11-20",
-                        "timestamp": "2025-05-12T11:35:26Z",
-                        "kind": "response"
-                    },
-                    {
-                        "parts": [
-                            {
-                                "tool_name": "final_result",
-                                "content": "Final result processed.",
-                                "tool_call_id": "call_8jOc6teeEE79AK0u5uLaIiZ7",
-                                "timestamp": "2025-05-12T11:35:29.931035Z",
-                                "part_kind": "tool-return"
-                            }
-                        ],
-                        "instructions": null,
-                        "kind": "request"
-                    }
-                ],
-                "usage": {
-                    "requests": 1,
-                    "request_tokens": 818,
-                    "response_tokens": 259,
-                    "total_tokens": 1077,
-                    "details": {
-                        "reasoning_tokens": 0,
-                        "cached_tokens": 0
-                    }
-                },
-                "retries": 0,
-                "run_step": 1
-            },
-            "_new_message_index": 0,
-            "_traceparent_value": null
-        }
+        "missing_party_members": []
     },
-    "score": 0.35000000000000003,
+    "score": 0.44000000000000006,
     "error": null,
-    "cost": {
-        "request_cost_1k": 0,
-        "input_token_1m": 2.5,
-        "output_token_1m": 10.0
+    "cost": null,
+    "provider": "openrouter_structured",
+    "openai_response": {
+        "id": "gen-1748073742-0OZ5nvRIxcYizT4B6EJU",
+        "choices": [
+            {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                    "content": "{\"think_relationship\":\"Analyzing the dialogue, I identified the relationships between the characters.\",\"relationships\":[{\"a\":\"หลี่เซียซุย\",\"relation\":\"father\",\"b\":\"พระเอก\"},{\"a\":\"เว่ยเส้าเทียน\",\"relation\":\"friend\",\"b\":\"จางฟู่เหยิน\"},{\"a\":\"จางฟู่เหยิน\",\"relation\":\"adopted\",\"b\":\"พระเอก\"},{\"a\":\"จางม่านจือ\",\"relation\":\"mother\",\"b\":\"พระเอก\"},{\"a\":\"เซียะถงอี้\",\"relation\":\"aunt of mother's sister's mother\",\"b\":\"พระเอก\"}],\"think_party\":\"Analyzing the dialogue, I identified the members of the White Kirin Party.\",\"party_members\":[{\"name\":\"จางฟู่เหยิน\",\"title\":\"หัวหน้าพรรค\"},{\"name\":\"เส้าสื่อเฉียน\",\"title\":\"แม่นาง 14\"}]}",
+                    "refusal": null,
+                    "role": "assistant",
+                    "annotations": null,
+                    "audio": null,
+                    "function_call": null,
+                    "tool_calls": null,
+                    "reasoning": null
+                },
+                "native_finish_reason": "stop"
+            }
+        ],
+        "created": 1748073742,
+        "model": "openai/gpt-4o-2024-11-20",
+        "object": "chat.completion",
+        "service_tier": null,
+        "system_fingerprint": "fp_96f3e2b0dc",
+        "usage": {
+            "completion_tokens": 188,
+            "prompt_tokens": 1998,
+            "total_tokens": 2186,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": null,
+                "audio_tokens": null,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": null
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": null,
+                "cached_tokens": 0
+            },
+            "cost": 0.006875
+        },
+        "provider": "OpenAI"
     }
 }

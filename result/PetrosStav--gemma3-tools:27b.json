@@ -1,5 +1,5 @@
 {
-    "version": 2,
+    "version": 3,
     "model": "PetrosStav/gemma3-tools:27b",
     "result": {
         "valid_relationships": [
@@ -11,6 +11,11 @@
             {
                 "a": "จางฟู่เหยิน",
                 "relation": "adopted",
+                "b": "พระเอก"
+            },
+            {
+                "a": "เส้าสื่อเฉียน",
+                "relation": "found",
                 "b": "พระเอก"
             },
             {
@@ -29,7 +34,7 @@
         "invalid_relationships": [
             {
                 "a": "พระเอก",
-                "relation": "father",
+                "relation": "friend",
                 "b": "เว่ยเส้าเทียน"
             },
             {
@@ -38,54 +43,14 @@
                 "b": "จางฟู่เหยิน"
             },
             {
-                "a": "จางฟู่เหยิน",
+                "a": "เว่ยเส้าเทียน",
                 "relation": "friend",
                 "b": "หลี่เซียซุย"
             },
             {
-                "a": "พระเอก",
-                "relation": "adopted",
-                "b": "จางฟู่เหยิน"
-            },
-            {
-                "a": "เส้าสื่อเฉียน",
-                "relation": "mother",
-                "b": "พระเอก"
-            },
-            {
-                "a": "พระเอก",
-                "relation": "mother",
+                "a": "จางม่านจือ",
+                "relation": "friend",
                 "b": "เส้าสื่อเฉียน"
-            },
-            {
-                "a": "เว่ยเส้าเทียน",
-                "relation": "found",
-                "b": "พระเอก"
-            },
-            {
-                "a": "เว่ยเส้าเทียน",
-                "relation": "found",
-                "b": "พระเอก"
-            },
-            {
-                "a": "เซียะถงอี้",
-                "relation": "aunt",
-                "b": "พระเอก"
-            },
-            {
-                "a": "หลี่เซียซุย",
-                "relation": "found",
-                "b": "พระเอก"
-            },
-            {
-                "a": "พระเอก",
-                "relation": "mother",
-                "b": "จางม่านจือ"
-            },
-            {
-                "a": "เว่ยเส้าเทียน",
-                "relation": "found",
-                "b": "หลี่เซียซุย"
             }
         ],
         "missing_relationships": [
@@ -108,48 +73,54 @@
                 "a": "พระเอก",
                 "relation": "son",
                 "b": "จางม่านจือ"
-            },
-            {
-                "a": "เส้าสื่อเฉียน",
-                "relation": "found",
-                "b": "พระเอก"
             }
         ],
         "valid_party_member_list": [
             {
                 "name": "จางฟู่เหยิน",
                 "title": "หัวหน้าพรรค"
-            }
-        ],
-        "invalid_party_member_list": [],
-        "missing_party_members": [
+            },
             {
                 "name": "เส้าสื่อเฉียน",
                 "title": "แม่นาง 14"
             }
         ],
-        "output": null
+        "invalid_party_member_list": [],
+        "missing_party_members": []
     },
-    "score": 0.17500000000000002,
+    "score": 0.4222222222222223,
     "error": null,
     "cost": null,
     "provider": "ollama_structured",
-    "pydantic_output": null,
-    "openai_response": null,
-    "ollama_response": {
+    "openai_response": {
+        "id": "chatcmpl-918",
+        "choices": [
+            {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                    "content": "{\n  \"think_relationship\": \"The dialogue reveals several relationships. พระเอก threatens เว่ยเส้าเทียน. หลี่เซียซุย reveals that เว่ยเส้าเทียน is the father of พระเอก. หลี่เซียซุย and จางฟู่เหยิน are friends. จางฟู่เหยิน adopted พระเอก 22 years ago. เส้าสื่อเฉียน (แม่นาง 14) found พระเอก near a pond. เว่ยเส้าเทียน was introduced to หลี่เซียซุย by เส้าสื่อเฉียน. จางม่านจือ is the mother of พระเอก and sister of เส้าสื่อเฉียน. เซียะถงอี้ is the aunt of พระเอก's mother.\",\n  \"relationships\": [\n    {\n      \"a\": \"พระเอก\",\n      \"relation\": \"friend\",\n      \"b\": \"เว่ยเส้าเทียน\"\n    },\n    {\n      \"a\": \"เว่ยเส้าเทียน\",\n      \"relation\": \"father\",\n      \"b\": \"พระเอก\"\n    },\n    {\n      \"a\": \"หลี่เซียซุย\",\n      \"relation\": \"friend\",\n      \"b\": \"จางฟู่เหยิน\"\n    },\n    {\n      \"a\": \"จางฟู่เหยิน\",\n      \"relation\": \"adopted\",\n      \"b\": \"พระเอก\"\n    },\n    {\n      \"a\": \"เส้าสื่อเฉียน\",\n      \"relation\": \"found\",\n      \"b\": \"พระเอก\"\n    },\n    {\n      \"a\": \"เว่ยเส้าเทียน\",\n      \"relation\": \"friend\",\n      \"b\": \"หลี่เซียซุย\"\n    },\n    {\n      \"a\": \"จางม่านจือ\",\n      \"relation\": \"mother\",\n      \"b\": \"พระเอก\"\n    },\n    {\n      \"a\": \"จางม่านจือ\",\n      \"relation\": \"friend\",\n      \"b\": \"เส้าสื่อเฉียน\"\n    },\n    {\n      \"a\": \"เซียะถงอี้\",\n      \"relation\": \"aunt\",\n      \"b\": \"พระเอก\"\n    }\n  ],\n  \"think_party\": \"The dialogue explicitly mentions members of the 'พรรคกิเลนขาว' (White Kirin Party). จางฟู่เหยิน is the 'หัวหน้าพรรค' (leader) and เส้าสื่อเฉียน is 'แม่นาง 14'.\",\n  \"party_members\": [\n    {\n      \"name\": \"จางฟู่เหยิน\",\n      \"title\": \"หัวหน้าพรรค\"\n    },\n    {\n      \"name\": \"เส้าสื่อเฉียน\",\n      \"title\": \"แม่นาง 14\"\n    }\n  ]\n}\n",
+                    "refusal": null,
+                    "role": "assistant",
+                    "annotations": null,
+                    "audio": null,
+                    "function_call": null,
+                    "tool_calls": null
+                }
+            }
+        ],
+        "created": 1748073871,
         "model": "PetrosStav/gemma3-tools:27b",
-        "created_at": "2025-05-12T17:12:31.332762054Z",
-        "message": {
-            "role": "assistant",
-            "content": "{\n  \"relationships\": [\n    {\n      \"a\": \"พระเอก\",\n      \"relation\": \"father\",\n      \"b\": \"เว่ยเส้าเทียน\"\n    },\n    {\n      \"a\": \"เว่ยเส้าเทียน\",\n      \"relation\": \"father\",\n      \"b\": \"พระเอก\"\n    },\n    {\n      \"a\": \"หลี่เซียซุย\",\n      \"relation\": \"friend\",\n      \"b\": \"จางฟู่เหยิน\"\n    },\n    {\n      \"a\": \"จางฟู่เหยิน\",\n      \"relation\": \"friend\",\n      \"b\": \"หลี่เซียซุย\"\n    },\n    {\n      \"a\": \"จางฟู่เหยิน\",\n      \"relation\": \"adopted\",\n      \"b\": \"พระเอก\"\n    },\n    {\n      \"a\": \"พระเอก\",\n      \"relation\": \"adopted\",\n      \"b\": \"จางฟู่เหยิน\"\n    },\n    {\n      \"a\": \"เส้าสื่อเฉียน\",\n      \"relation\": \"mother\",\n      \"b\": \"พระเอก\"\n    },\n    {\n      \"a\": \"พระเอก\",\n      \"relation\": \"mother\",\n      \"b\": \"เส้าสื่อเฉียน\"\n    },\n    {\n      \"a\": \"เว่ยเส้าเทียน\",\n      \"relation\": \"found\",\n      \"b\": \"พระเอก\"\n    },\n    {\n      \"a\": \"เว่ยเส้าเทียน\",\n      \"relation\": \"found\",\n      \"b\": \"พระเอก\"\n    },\n    {\n      \"a\": \"เซียะถงอี้\",\n      \"relation\": \"aunt\",\n      \"b\": \"พระเอก\"\n    },\n    {\n      \"a\": \"เซียะถงอี้\",\n      \"relation\": \"aunt\",\n      \"b\": \"พระเอก\"\n    },\n    {\n      \"a\": \"หลี่เซียซุย\",\n      \"relation\": \"found\",\n      \"b\": \"พระเอก\"\n    },\n    {\n      \"a\": \"จางม่านจือ\",\n      \"relation\": \"mother\",\n      \"b\": \"พระเอก\"\n    },\n    {\n      \"a\": \"พระเอก\",\n      \"relation\": \"mother\",\n      \"b\": \"จางม่านจือ\"\n    },\n    {\n      \"a\": \"เว่ยเส้าเทียน\",\n      \"relation\": \"found\",\n      \"b\": \"หลี่เซียซุย\"\n    }\n  ],\n  \"party_members\": [\n    {\n      \"name\": \"จางฟู่เหยิน\",\n      \"title\": \"หัวหน้าพรรค\"\n    }\n  ]\n}"
-        },
-        "done_reason": "stop",
-        "done": true,
-        "total_duration": 23556820803,
-        "load_duration": 11395845344,
-        "prompt_eval_count": 1099,
-        "prompt_eval_duration": 411367377,
-        "eval_count": 641,
-        "eval_duration": 11643695292
+        "object": "chat.completion",
+        "service_tier": null,
+        "system_fingerprint": "fp_ollama",
+        "usage": {
+            "completion_tokens": 632,
+            "prompt_tokens": 1819,
+            "total_tokens": 2451,
+            "completion_tokens_details": null,
+            "prompt_tokens_details": null
+        }
     }
 }
