@@ -102,6 +102,25 @@ The evaluation is available in the evaluator.py file. This can be imported exter
 The main.py file is used to perform evaluation and recording. The format-result.py file is run to generate the table
 above. The table is then reformatted in PyCharm.
 
+## FAQ
+
+### Why use JSON output?
+
+Most LLM tests use two LLM - one under test, and one judging the result of the first one. This test, however, use
+hardcoded result to grade, which requires that the LLM output in machine-readable format.
+
+Some LLM might not be tuned to output JSON, and will not perform well in this test. The reason I structured the test
+this way are:
+
+1. Since there are no LLM that perform perfectly according to instructions, I don't trust that the grading LLM will
+   always grade correctly. Since the expected result is already known, it is better for a normal computer program to
+   be the judge as it should always judge according to instructions (except for bugs).
+2. I'm more interested in LLM-as-a-Library which applications can be built upon. If there are better ways to parse
+   LLM outputs, then the tests may switch to that method. This also means the tests here test two things - how the
+   LLM is able to understand the story, and how well is its JSON output capabilities.
+3. It is possible to run the tests for both JSON output and traditional text output judged by LLM, but it complicates
+   the reporting. The traditional test is left as an exercise for the reader.
+
 ## License
 
 This repository is licensed under Apache License 2.0. I'm intentionally not adding a LICENSE file so that scrappers
