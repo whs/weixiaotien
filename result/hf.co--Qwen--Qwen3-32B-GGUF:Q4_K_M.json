@@ -1,0 +1,121 @@
+{
+    "version": 3,
+    "model": "hf.co/Qwen/Qwen3-32B-GGUF:Q4_K_M",
+    "result": {
+        "valid_relationships": [
+            {
+                "a": "เว่ยเส้าเทียน",
+                "relation": "father",
+                "b": "พระเอก"
+            },
+            {
+                "a": "จางฟู่เหยิน",
+                "relation": "adopted",
+                "b": "พระเอก"
+            },
+            {
+                "a": "จางม่านจือ",
+                "relation": "mother",
+                "b": "พระเอก"
+            }
+        ],
+        "valid_optional_relationships": [
+            {
+                "a": "เซียะถงอี้",
+                "relation": "aunt",
+                "b": "พระเอก"
+            }
+        ],
+        "invalid_relationships": [
+            {
+                "a": "หลี่เซียซุย",
+                "relation": "friend",
+                "b": "จางฟู่เหยิน"
+            },
+            {
+                "a": "เส้าสื่อเฉียน",
+                "relation": "mother",
+                "b": "จางม่านจือ"
+            },
+            {
+                "a": "หลี่เซียซุย",
+                "relation": "aunt",
+                "b": "พระเอก"
+            }
+        ],
+        "missing_relationships": [
+            {
+                "a": "เว่ยเส้าเทียน",
+                "relation": "friend",
+                "b": "จางฟู่เหยิน"
+            },
+            {
+                "a": "จางฟู่เหยิน",
+                "relation": "friend",
+                "b": "เว่ยเส้าเทียน"
+            },
+            {
+                "a": "พระเอก",
+                "relation": "son",
+                "b": "เว่ยเส้าเทียน"
+            },
+            {
+                "a": "พระเอก",
+                "relation": "son",
+                "b": "จางม่านจือ"
+            },
+            {
+                "a": "เส้าสื่อเฉียน",
+                "relation": "found",
+                "b": "พระเอก"
+            }
+        ],
+        "valid_party_member_list": [
+            {
+                "name": "จางฟู่เหยิน",
+                "title": "หัวหน้าพรรค"
+            },
+            {
+                "name": "เส้าสื่อเฉียน",
+                "title": "แม่นาง 14"
+            }
+        ],
+        "invalid_party_member_list": [],
+        "missing_party_members": []
+    },
+    "score": 0.37142857142857144,
+    "error": null,
+    "cost": null,
+    "provider": "ollama_structured",
+    "openai_response": {
+        "id": "chatcmpl-97",
+        "choices": [
+            {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                    "content": "{\"think_relationship\": \"From the dialogue, I can identify several relationships between characters. First, there's a father-son relationship between เว่ยเส้าเทียน and พระเอก. Then, there's a friendship between หลี่เซียซุย and จางฟู่เหยิน. Also, there's an adoption relationship from จางฟู่เหยิน to พระเอก. Additionally, there are family relationships: เส้าสื่อเฉียน is the mother of จางม่านจือ, who is the mother of พระเอก. Then, จางม่านจือ is the sister of another character (not named), and that character's daughter is เซียะถงอี้, who is the aunt of พระเอก. Also, there's a relationship where หลี่เซียซุย is the aunt of พระเอก.\", \"relationships\": [{\"a\": \"เว่ยเส้าเทียน\", \"relation\": \"father\", \"b\": \"พระเอก\"}, {\"a\": \"หลี่เซียซุย\", \"relation\": \"friend\", \"b\": \"จางฟู่เหยิน\"}, {\"a\": \"จางฟู่เหยิน\", \"relation\": \"adopted\", \"b\": \"พระเอก\"}, {\"a\": \"เส้าสื่อเฉียน\", \"relation\": \"mother\", \"b\": \"จางม่านจือ\"}, {\"a\": \"จางม่านจือ\", \"relation\": \"mother\", \"b\": \"พระเอก\"}, {\"a\": \"เซียะถงอี้\", \"relation\": \"aunt\", \"b\": \"พระเอก\"}, {\"a\": \"หลี่เซียซุย\", \"relation\": \"aunt\", \"b\": \"พระเอก\"}], \"think_party\": \"From the dialogue, I can identify that จางฟู่เหยิน is the leader of the White Kirin Party and เส้าสื่อเฉียน is the 14th Fairy. These two characters are explicitly mentioned as members of the White Kirin Party with their respective positions.\", \"party_members\": [{\"name\": \"จางฟู่เหยิน\", \"title\": \"หัวหน้าพรรค\"}, {\"name\": \"เส้าสื่อเฉียน\", \"title\": \"แม่นาง 14\"}]}\n\n",
+                    "refusal": null,
+                    "role": "assistant",
+                    "annotations": null,
+                    "audio": null,
+                    "function_call": null,
+                    "tool_calls": null
+                }
+            }
+        ],
+        "created": 1749272198,
+        "model": "hf.co/Qwen/Qwen3-32B-GGUF:Q4_K_M",
+        "object": "chat.completion",
+        "service_tier": null,
+        "system_fingerprint": "fp_ollama",
+        "usage": {
+            "completion_tokens": 496,
+            "prompt_tokens": 1296,
+            "total_tokens": 1792,
+            "completion_tokens_details": null,
+            "prompt_tokens_details": null
+        }
+    }
+}

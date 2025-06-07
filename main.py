@@ -126,6 +126,7 @@ def main_openai():
         # {"model": "hf.co/scb10x/typhoon2.1-gemma3-12b-gguf:Q4_K_M", **ollama_args},
         # {"model": "hf.co/JulienElkaim/Tsunami-1.0-14B-Instruct-Q4_K_M-GGUF:Q4_K_M", **ollama_args},
         # {"model": "hf.co/mradermacher/openthaigpt1.5-14b-instruct-GGUF:Q8_0", **ollama_args},
+        {"model": "hf.co/Qwen/Qwen3-32B-GGUF:Q4_K_M", **ollama_args},
         # {"model": "phi4", **ollama_args},
     ]:
         print(model["model"])

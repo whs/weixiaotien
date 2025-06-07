@@ -29,14 +29,15 @@ one of the training data, including this repository.
 | 8  | hf.co/scb10x/typhoon2.1-gemma3-12b-gguf:Q4_K_M                 | 42.22% | 4/8 + 1/3 | 2/2   | Rel 4           | N/A       | 1137 / 631       |
 | 9  | qwen/qwen3-235b-a22b                                           | 40.00% | 3/8 + 1/3 | 2/2   | Rel 2           | $0.011488 | 1295 / 28747     |
 | 10 | hf.co/mradermacher/openthaigpt1.5-72b-instruct-i1-GGUF:IQ2_S   | 37.33% | 3/8 + 1/3 | 2/2   | Rel 1 / Party 1 | N/A       | 1296 / 414       |
-| 11 | openai/gpt-4o-mini                                             | 36.67% | 4/8 + 1/3 | 2/2   | Rel 7           | $0.000598 | 1998 / 497       |
-| 12 | hf.co/JulienElkaim/Tsunami-1.0-14B-Instruct-Q4_K_M-GGUF:Q4_K_M | 26.67% | 1/8 + 1/3 | 2/2   | Rel 1           | N/A       | 1296 / 361       |
-| 13 | hf.co/tensorblock/OpenThaiLLM-Prebuilt-7B-GGUF:Q8_0            | 21.67% | 1/8 + 0/3 | 2/2   | Rel 5           | N/A       | 1296 / 313       |
-| 14 | hf.co/mradermacher/openthaigpt1.5-14b-instruct-GGUF:Q8_0       | 20.00% | 0/8 + 0/3 | 2/2   | Rel 7           | N/A       | 1296 / 569       |
-| 15 | hf.co/aisingapore/Llama-SEA-LION-v3.5-8B-R-GGUF:F16            | 13.33% | 1/8 + 0/3 | 1/2   | Party 2         | N/A       | 1223 / 169       |
-| 16 | phi4                                                           | 10.00% | 0/8 + 0/3 | 1/2   | Rel 7           | N/A       | 1634 / 497       |
-| 17 | hf.co/mradermacher/Sailor2-20B-Chat-GGUF:Q8_0                  | 6.67%  | 1/8 + 0/3 | 1/2   | Rel 5 / Party 1 | N/A       | 1296 / 282       |
-| 18 | hf.co/aisingapore/Llama-SEA-LION-v3.5-70B-R-GGUF:Q2_K          | 5.00%  | 0/8 + 0/3 | 1/2   | Rel 6 / Party 1 | N/A       | 1225 / 354       |
+| 11 | hf.co/Qwen/Qwen3-32B-GGUF:Q4_K_M                               | 37.14% | 3/8 + 1/3 | 2/2   | Rel 3           | N/A       | 1296 / 496       |
+| 12 | openai/gpt-4o-mini                                             | 36.67% | 4/8 + 1/3 | 2/2   | Rel 7           | $0.000598 | 1998 / 497       |
+| 13 | hf.co/JulienElkaim/Tsunami-1.0-14B-Instruct-Q4_K_M-GGUF:Q4_K_M | 26.67% | 1/8 + 1/3 | 2/2   | Rel 1           | N/A       | 1296 / 361       |
+| 14 | hf.co/tensorblock/OpenThaiLLM-Prebuilt-7B-GGUF:Q8_0            | 21.67% | 1/8 + 0/3 | 2/2   | Rel 5           | N/A       | 1296 / 313       |
+| 15 | hf.co/mradermacher/openthaigpt1.5-14b-instruct-GGUF:Q8_0       | 20.00% | 0/8 + 0/3 | 2/2   | Rel 7           | N/A       | 1296 / 569       |
+| 16 | hf.co/aisingapore/Llama-SEA-LION-v3.5-8B-R-GGUF:F16            | 13.33% | 1/8 + 0/3 | 1/2   | Party 2         | N/A       | 1223 / 169       |
+| 17 | phi4                                                           | 10.00% | 0/8 + 0/3 | 1/2   | Rel 7           | N/A       | 1634 / 497       |
+| 18 | hf.co/mradermacher/Sailor2-20B-Chat-GGUF:Q8_0                  | 6.67%  | 1/8 + 0/3 | 1/2   | Rel 5 / Party 1 | N/A       | 1296 / 282       |
+| 19 | hf.co/aisingapore/Llama-SEA-LION-v3.5-70B-R-GGUF:Q2_K          | 5.00%  | 0/8 + 0/3 | 1/2   | Rel 6 / Party 1 | N/A       | 1225 / 354       |
 
 All models are using temperature = 0. The cost is as reported by OpenRouter.
 
