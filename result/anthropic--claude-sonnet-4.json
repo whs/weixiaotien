@@ -1,0 +1,176 @@
+{
+    "version": 3,
+    "model": "anthropic/claude-sonnet-4",
+    "result": {
+        "valid_relationships": [
+            {
+                "from_": "เว่ยเส้าเทียน",
+                "relation": "father",
+                "to": "พระเอก"
+            },
+            {
+                "from_": "เว่ยเส้าเทียน",
+                "relation": "friend",
+                "to": "จางฟู่เหยิน"
+            },
+            {
+                "from_": "พระเอก",
+                "relation": "son",
+                "to": "เว่ยเส้าเทียน"
+            },
+            {
+                "from_": "พระเอก",
+                "relation": "son",
+                "to": "จางม่านจือ"
+            },
+            {
+                "from_": "จางฟู่เหยิน",
+                "relation": "friend",
+                "to": "เว่ยเส้าเทียน"
+            },
+            {
+                "from_": "จางม่านจือ",
+                "relation": "mother",
+                "to": "พระเอก"
+            },
+            {
+                "from_": "เส้าสื่อเฉียน",
+                "relation": "found",
+                "to": "พระเอก"
+            }
+        ],
+        "valid_optional_relationships": [
+            {
+                "from_": "เซียะถงอี้",
+                "relation": "aunt",
+                "to": "พระเอก"
+            }
+        ],
+        "invalid_relationships": [
+            {
+                "from_": "พระเอก",
+                "relation": "son",
+                "to": "จางฟู่เหยิน"
+            },
+            {
+                "from_": "จางฟู่เหยิน",
+                "relation": "father",
+                "to": "พระเอก"
+            }
+        ],
+        "missing_relationships": [
+            {
+                "from_": "จางฟู่เหยิน",
+                "relation": "adopted",
+                "to": "พระเอก"
+            }
+        ],
+        "valid_party_member_list": [
+            {
+                "name": "จางฟู่เหยิน",
+                "title": "หัวหน้าพรรค"
+            },
+            {
+                "name": "เส้าสื่อเฉียน",
+                "title": "แม่นาง 14"
+            }
+        ],
+        "invalid_party_member_list": [],
+        "missing_party_members": []
+    },
+    "score": 0.76,
+    "error": null,
+    "provider": "openrouter",
+    "responses": [
+        {
+            "id": "gen-1749383416-ziDLfRgk6Zx9gbJYTAgv",
+            "choices": [
+                {
+                    "finish_reason": "stop",
+                    "index": 0,
+                    "logprobs": null,
+                    "message": {
+                        "content": "Based on the dialogue, here are the two pieces of information extracted:\n\n## 1. Relationship Graph\n\n**เว่ยเส้าเทียน:**\n- father → พระเอก\n- friend → จางฟู่เหยิน\n\n**พระเอก:**\n- son → เว่ยเส้าเทียน\n- son → จางฟู่เหยิน\n- son → จางม่านจือ\n\n**จางฟู่เหยิน:**\n- father → พระเอก\n- friend → เว่ยเส้าเทียน\n\n**จางม่านจือ:**\n- mother → พระเอก\n\n**เซียะถงอี้:**\n- aunt → พระเอก\n\n**เส้าสื่อเฉียน:**\n- found → พระเอก\n\n## 2. Members of พรรคกิเลนขาว and Their Positions\n\n| Character Name | Position |\n|----------------|----------|\n| จางฟู่เหยิน | หัวหน้าพรรค |\n| เส้าสื่อเฉียน | แม่นาง 14 |",
+                        "refusal": null,
+                        "role": "assistant",
+                        "annotations": null,
+                        "audio": null,
+                        "function_call": null,
+                        "tool_calls": null,
+                        "reasoning": null
+                    },
+                    "native_finish_reason": "stop"
+                }
+            ],
+            "created": 1749383416,
+            "model": "anthropic/claude-sonnet-4",
+            "object": "chat.completion",
+            "service_tier": null,
+            "system_fingerprint": null,
+            "usage": {
+                "completion_tokens": 311,
+                "prompt_tokens": 1121,
+                "total_tokens": 1432,
+                "completion_tokens_details": {
+                    "accepted_prediction_tokens": null,
+                    "audio_tokens": null,
+                    "reasoning_tokens": 0,
+                    "rejected_prediction_tokens": null
+                },
+                "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cached_tokens": 0
+                },
+                "cost": 0.008028,
+                "is_byok": false
+            },
+            "provider": "Google"
+        },
+        {
+            "id": "2025-06-08|04:50:23.663537-07|6.108.78.226|1846137133",
+            "choices": [
+                {
+                    "finish_reason": "stop",
+                    "index": 0,
+                    "logprobs": null,
+                    "message": {
+                        "content": null,
+                        "refusal": null,
+                        "role": "assistant",
+                        "annotations": null,
+                        "audio": null,
+                        "function_call": null,
+                        "tool_calls": [
+                            {
+                                "id": "output",
+                                "function": {
+                                    "arguments": "{\"party_members\":[{\"name\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"title\":\"\\u0e2b\\u0e31\\u0e27\\u0e2b\\u0e19\\u0e49\\u0e32\\u0e1e\\u0e23\\u0e23\\u0e04\"},{\"name\":\"\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e2a\\u0e37\\u0e48\\u0e2d\\u0e40\\u0e09\\u0e35\\u0e22\\u0e19\",\"title\":\"\\u0e41\\u0e21\\u0e48\\u0e19\\u0e32\\u0e07 14\"}],\"relationships\":[{\"from_\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\",\"relation\":\"father\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\",\"relation\":\"friend\",\"to\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\"},{\"from_\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\",\"relation\":\"son\",\"to\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\",\"relation\":\"son\",\"to\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\"},{\"from_\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\",\"relation\":\"son\",\"to\":\"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"relation\":\"father\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"relation\":\"friend\",\"to\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\",\"relation\":\"mother\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e30\\u0e16\\u0e07\\u0e2d\\u0e35\\u0e49\",\"relation\":\"aunt\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e2a\\u0e37\\u0e48\\u0e2d\\u0e40\\u0e09\\u0e35\\u0e22\\u0e19\",\"relation\":\"found\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"}]}",
+                                    "name": "output"
+                                },
+                                "type": "function"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "created": 1749383423,
+            "model": "google/gemini-2.5-pro-preview-06-05",
+            "object": "chat.completion",
+            "service_tier": null,
+            "system_fingerprint": "",
+            "usage": {
+                "completion_tokens": 180,
+                "prompt_tokens": 684,
+                "total_tokens": 1544,
+                "completion_tokens_details": {
+                    "accepted_prediction_tokens": null,
+                    "audio_tokens": null,
+                    "reasoning_tokens": 680,
+                    "rejected_prediction_tokens": null
+                },
+                "prompt_tokens_details": null
+            }
+        }
+    ],
+    "convertor": "google/gemini-2.5-pro-preview-06-05"
+}

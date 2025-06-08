@@ -17,35 +17,50 @@ one of the training data, including this repository.
 
 (Read notes before using the result!)
 
-| #  | Model name                                                     | Score  | Rel       | Party | Invalid          | Cost | In Tok / Out Tok |
-|----|----------------------------------------------------------------|--------|-----------|-------|------------------|------|------------------|
-| 1  | openai/gpt-4.5-preview                                         | 66.67% | 7/8 + 1/3 | 2/2   | Rel 4            | N/A  | 1408 / 1510      |
-| 2  | openai/chatgpt-4o-latest                                       | 65.00% | 8/8 + 1/3 | 2/2   | Rel 7            | N/A  | 1517 / 1607      |
-| 3  | openai/o3:flex                                                 | 64.44% | 8/8 + 2/3 | 2/2   | Rel 8            | N/A  | 1480 / 9632      |
-| 4  | phi4-reasoning                                                 | 63.33% | 5/8 + 1/3 | 2/2   | Party 1          | N/A  | 10640 / 13200    |
-| 5  | gemma3:27b                                                     | 40.00% | 4/8 + 0/3 | 2/2   | Rel 4            | N/A  | 1290 / 1057      |
-| 6  | openai/gpt-4.1                                                 | 38.79% | 7/8 + 1/3 | 2/2   | Rel 14 / Party 1 | N/A  | 1751 / 2185      |
-| 7  | llama3.1:8b                                                    | 35.00% | 6/8 + 0/3 | 1/2   | Rel 6 / Party 1  | N/A  | 1505 / 1396      |
-| 8  | hf.co/mradermacher/openthaigpt1.5-72b-instruct-i1-GGUF:IQ2_S   | 35.00% | 3/8 + 0/3 | 2/2   | Rel 3            | N/A  | 1470 / 1618      |
-| 9  | openai/gpt-4o                                                  | 31.25% | 3/8 + 0/3 | 2/2   | Rel 5            | N/A  | 1370 / 1285      |
-| 10 | hf.co/JulienElkaim/Tsunami-1.0-14B-Instruct-Q4_K_M-GGUF:Q4_K_M | 30.00% | 2/8 + 0/3 | 2/2   | Rel 2            | N/A  | 1367 / 765       |
-| 11 | hf.co/mradermacher/openthaigpt1.5-14b-instruct-GGUF:Q8_0       | 27.50% | 2/8 + 1/3 | 2/2   | Rel 5            | N/A  | 1439 / 1220      |
-| 12 | gemma3:12b                                                     | 23.33% | 2/8 + 0/3 | 2/2   | Rel 10           | N/A  | 1419 / 1515      |
-| 13 | openai/gpt-4.1-mini                                            | 20.00% | 0/8 + 0/3 | 2/2   | Rel 12           | N/A  | 1517 / 2003      |
-| 14 | hf.co/mradermacher/Sailor2-20B-Chat-GGUF:Q8_0                  | 20.00% | 0/8 + 0/3 | 2/2   | Rel 11           | N/A  | 1641 / 1551      |
-| 15 | hf.co/Qwen/Qwen3-32B-GGUF:Q4_K_M                               | 20.00% | 0/8 + 0/3 | 2/2   | Rel 7            | N/A  | 3920 / 3542      |
-| 16 | openai/o4-mini:flex                                            | 20.00% | 0/8 + 0/3 | 2/2   | Rel 8            | N/A  | 1371 / 11718     |
-| 17 | openai/gpt-4o-mini                                             | 20.00% | 0/8 + 0/3 | 2/2   | Rel 7            | N/A  | 1405 / 1303      |
-| 18 | deepseek-r1:14b                                                | 13.33% | 0/8 + 0/3 | 2/2   | Rel 9 / Party 1  | N/A  | 2272 / 2323      |
-| 19 | hf.co/tensorblock/OpenThaiLLM-Prebuilt-7B-GGUF:Q8_0            | 7.50%  | 1/8 + 0/3 | 1/2   | Rel 3 / Party 1  | N/A  | 1838 / 1879      |
-| 20 | openai/gpt-4.1-nano                                            | 5.83%  | 1/8 + 0/3 | 1/2   | Rel 11 / Party 1 | N/A  | 1408 / 1543      |
-| 21 | hf.co/aisingapore/Llama-SEA-LION-v3.5-70B-R-GGUF:Q2_K          | 5.00%  | 0/8 + 0/3 | 1/2   | Party 1          | N/A  | 2982 / 5321      |
-| 22 | phi4                                                           | 5.00%  | 0/8 + 0/3 | 1/2   | Rel 10 / Party 1 | N/A  | 1924 / 1594      |
-| 23 | hf.co/scb10x/typhoon2.1-gemma3-12b-gguf:Q4_K_M                 | 5.00%  | 0/8 + 0/3 | 1/2   | Rel 8 / Party 1  | N/A  | 1298 / 1154      |
-|    | hf.co/aisingapore/Llama-SEA-LION-v3.5-8B-R-GGUF:F16            | DNF    | DNF       | DNF   | DNF              | DNF  | DNF              |
+| #  | Model name                                                     | Score  | Rel       | Party | Invalid          | Cost      | In Tok / Out Tok |
+|----|----------------------------------------------------------------|--------|-----------|-------|------------------|-----------|------------------|
+| 1  | anthropic/claude-sonnet-4                                      | 76.00% | 7/8 + 1/3 | 2/2   | Rel 2            | $0.008028 | 1805 / 1171      |
+| 2  | anthropic/claude-3.5-sonnet                                    | 71.43% | 6/8 + 0/3 | 2/2   | Rel 1            | $0.007218 | 1758 / 6003      |
+| 3  | qwen/qwen-max                                                  | 69.00% | 7/8 + 0/3 | 2/2   | Rel 3            | $0.002805 | 1492 / 1310      |
+| 4  | openai/gpt-4.5-preview                                         | 66.67% | 7/8 + 1/3 | 2/2   | Rel 4            | N/A       | 1408 / 1510      |
+| 5  | openai/chatgpt-4o-latest                                       | 65.00% | 8/8 + 1/3 | 2/2   | Rel 7            | N/A       | 1517 / 1607      |
+| 6  | openai/o3:flex                                                 | 64.44% | 8/8 + 2/3 | 2/2   | Rel 8            | N/A       | 1480 / 9632      |
+| 7  | phi4-reasoning                                                 | 63.33% | 5/8 + 1/3 | 2/2   | Party 1          | N/A       | 10640 / 13200    |
+| 8  | anthropic/claude-opus-4-20250514                               | 60.83% | 7/8 + 0/3 | 2/2   | Rel 5            | N/A       | 1832 / 1375      |
+| 9  | google/gemini-2.5-flash-preview                                | 59.38% | 7/8 + 2/3 | 2/2   | Rel 7            | $0.000283 | 1444 / 1702      |
+| 10 | x-ai/grok-3-beta                                               | 57.50% | 5/8 + 1/3 | 2/2   | Rel 2            | $0.009623 | 1671 / 1215      |
+| 11 | deepseek/deepseek-r1-0528                                      | 55.00% | 6/8 + 1/3 | 2/2   | Rel 5            | $0.003902 | 1832 / 3414      |
+| 12 | google/gemini-2.5-flash-preview:thinking                       | 53.33% | 5/8 + 1/3 | 2/2   | Rel 3            | $0.015813 | 1345 / 9561      |
+| 13 | meta-llama/llama-3.3-70b-instruct                              | 48.57% | 4/8 + 1/3 | 2/2   | Rel 2            | $0.000202 | 1827 / 1756      |
+| 14 | meta-llama/llama-4-maverick                                    | 45.00% | 4/8 + 1/3 | 2/2   | Rel 3            | $0.000676 | 1903 / 1934      |
+| 15 | gemma3:27b                                                     | 40.00% | 4/8 + 0/3 | 2/2   | Rel 4            | N/A       | 1290 / 1057      |
+| 16 | google/gemini-2.5-pro-preview                                  | 40.00% | 2/8 + 0/3 | 2/2   |                  | $0.049646 | 1280 / 10352     |
+| 17 | openai/gpt-4.1                                                 | 38.79% | 7/8 + 1/3 | 2/2   | Rel 14 / Party 1 | N/A       | 1751 / 2185      |
+| 18 | llama3.1:8b                                                    | 35.00% | 6/8 + 0/3 | 1/2   | Rel 6 / Party 1  | N/A       | 1505 / 1396      |
+| 19 | hf.co/mradermacher/openthaigpt1.5-72b-instruct-i1-GGUF:IQ2_S   | 35.00% | 3/8 + 0/3 | 2/2   | Rel 3            | N/A       | 1470 / 1618      |
+| 20 | openai/gpt-4o                                                  | 31.25% | 3/8 + 0/3 | 2/2   | Rel 5            | N/A       | 1370 / 1285      |
+| 21 | hf.co/JulienElkaim/Tsunami-1.0-14B-Instruct-Q4_K_M-GGUF:Q4_K_M | 30.00% | 2/8 + 0/3 | 2/2   | Rel 2            | N/A       | 1367 / 765       |
+| 22 | hf.co/mradermacher/openthaigpt1.5-14b-instruct-GGUF:Q8_0       | 27.50% | 2/8 + 1/3 | 2/2   | Rel 5            | N/A       | 1439 / 1220      |
+| 23 | deepseek/deepseek-chat-v3-0324                                 | 26.00% | 3/8 + 0/3 | 2/2   | Rel 12           | $0.000964 | 1583 / 1708      |
+| 24 | gemma3:12b                                                     | 23.33% | 2/8 + 0/3 | 2/2   | Rel 10           | N/A       | 1419 / 1515      |
+| 25 | openai/gpt-4.1-mini                                            | 20.00% | 0/8 + 0/3 | 2/2   | Rel 12           | N/A       | 1517 / 2003      |
+| 26 | anthropic/claude-3.5-haiku                                     | 20.00% | 0/8 + 0/3 | 2/2   | Rel 5            | $0.001845 | 1759 / 1204      |
+| 27 | amazon/nova-pro-v1                                             | 20.00% | 0/8 + 0/3 | 2/2   | Rel 11           | $0.001833 | 2798 / 3320      |
+| 28 | hf.co/mradermacher/Sailor2-20B-Chat-GGUF:Q8_0                  | 20.00% | 0/8 + 0/3 | 2/2   | Rel 11           | N/A       | 1641 / 1551      |
+| 29 | hf.co/Qwen/Qwen3-32B-GGUF:Q4_K_M                               | 20.00% | 0/8 + 0/3 | 2/2   | Rel 7            | N/A       | 3920 / 3542      |
+| 30 | openai/o4-mini:flex                                            | 20.00% | 0/8 + 0/3 | 2/2   | Rel 8            | N/A       | 1371 / 11718     |
+| 31 | openai/gpt-4o-mini                                             | 20.00% | 0/8 + 0/3 | 2/2   | Rel 7            | N/A       | 1405 / 1303      |
+| 32 | qwen/qwen3-235b-a22b                                           | 20.00% | 0/8 + 0/3 | 2/2   | Rel 2            | $0.007231 | 1641 / 15231     |
+| 33 | deepseek-r1:14b                                                | 13.33% | 0/8 + 0/3 | 2/2   | Rel 9 / Party 1  | N/A       | 2272 / 2323      |
+| 34 | hf.co/tensorblock/OpenThaiLLM-Prebuilt-7B-GGUF:Q8_0            | 7.50%  | 1/8 + 0/3 | 1/2   | Rel 3 / Party 1  | N/A       | 1838 / 1879      |
+| 35 | openai/gpt-4.1-nano                                            | 5.83%  | 1/8 + 0/3 | 1/2   | Rel 11 / Party 1 | N/A       | 1408 / 1543      |
+| 36 | hf.co/aisingapore/Llama-SEA-LION-v3.5-70B-R-GGUF:Q2_K          | 5.00%  | 0/8 + 0/3 | 1/2   | Party 1          | N/A       | 2982 / 5321      |
+| 37 | phi4                                                           | 5.00%  | 0/8 + 0/3 | 1/2   | Rel 10 / Party 1 | N/A       | 1924 / 1594      |
+| 38 | hf.co/scb10x/typhoon2.1-gemma3-12b-gguf:Q4_K_M                 | 5.00%  | 0/8 + 0/3 | 1/2   | Rel 8 / Party 1  | N/A       | 1298 / 1154      |
+|    | hf.co/aisingapore/Llama-SEA-LION-v3.5-8B-R-GGUF:F16            | DNF    | DNF       | DNF   | DNF              | DNF       | DNF              |
 
-All models are using temperature = 0. The cost is as reported by OpenRouter or Requesty. Token count includes the
-fixed JSON conversion operation, but the cost is not included as it is not reported by Google API.
+All models are using temperature = 0. The cost is as reported by OpenRouter (other providers do not report cost).
+Token count includes the fixed JSON conversion operation, but the cost is not included as it is not reported by Google API.
 
 Gemma3, Phi4 and Hugging Face models are running in Ollama with default parameters except OLLAMA_FLASH_ATTENTION=1.
 **The model quantization is chosen to best fit my hardware** (1x RTX 5090), which may result in suboptimal performance

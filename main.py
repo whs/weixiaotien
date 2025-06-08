@@ -200,20 +200,21 @@ def main():
         # {"model": "openai/gpt-4o-mini", **requesty_args},
         # {"model": "openai/o3:flex", **requesty_args},
         # {"model": "openai/o4-mini:flex", **requesty_args},
-        # {"model": "google/gemini-2.5-flash-preview", **openrouter_args}, # DNF
-        # {"model": "google/gemini-2.5-flash-preview:thinking", **openrouter_args}, # DNF
+        # {"model": "google/gemini-2.5-flash-preview", **openrouter_args},
+        # {"model": "google/gemini-2.5-flash-preview:thinking", **openrouter_args},
+        # {"model": "google/gemini-2.5-pro-preview", **openrouter_args},
         # {"model": "meta-llama/llama-4-maverick", **openrouter_args},
         # {"model": "meta-llama/llama-3.3-70b-instruct", **openrouter_args},
-        # {"model": "amazon/nova-pro-v1", **openrouter_args}, # DNF
-        # {"model": "anthropic/claude-3.5-haiku", **openrouter_args}, # DNF
+        # {"model": "amazon/nova-pro-v1", **openrouter_args},
+        # {"model": "anthropic/claude-3.5-haiku", **openrouter_args},
         # {"model": "anthropic/claude-3.5-sonnet", **openrouter_args},
-        # {"model": "anthropic/claude-3.7-sonnet", **openrouter_args},
-        # {"model": "anthropic/claude-3.7-sonnet:thinking", **openrouter_args},
-        # {"model": "deepseek/deepseek-chat-v3-0324", **openrouter_args}, # DNF
-        # {"model": "deepseek/deepseek-r1", **openrouter_args},
-        # {"model": "qwen/qwen-max", **openrouter_args}, # DNF
+        # {"model": "anthropic/claude-sonnet-4", **openrouter_args},
+        # {"model": "anthropic/claude-opus-4-20250514", **requesty_args},
+        # {"model": "deepseek/deepseek-chat-v3-0324", **openrouter_args},
+        # {"model": "deepseek/deepseek-r1-0528", **openrouter_args},
+        # {"model": "qwen/qwen-max", **openrouter_args},
         # {"model": "qwen/qwen3-235b-a22b", **openrouter_args},
-        # {"model": "x-ai/grok-3-beta", **openrouter_args}, # No support
+        # {"model": "x-ai/grok-3-beta", **openrouter_args},
 
         # Ollama
         # {"model": "gemma3:27b", **ollama_args},

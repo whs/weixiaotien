@@ -1,0 +1,176 @@
+{
+    "version": 3,
+    "model": "meta-llama/llama-3.3-70b-instruct",
+    "result": {
+        "valid_relationships": [
+            {
+                "from_": "พระเอก",
+                "relation": "son",
+                "to": "เว่ยเส้าเทียน"
+            },
+            {
+                "from_": "พระเอก",
+                "relation": "son",
+                "to": "จางม่านจือ"
+            },
+            {
+                "from_": "เว่ยเส้าเทียน",
+                "relation": "father",
+                "to": "พระเอก"
+            },
+            {
+                "from_": "จางม่านจือ",
+                "relation": "mother",
+                "to": "พระเอก"
+            }
+        ],
+        "valid_optional_relationships": [
+            {
+                "from_": "เซียะถงอี้",
+                "relation": "aunt",
+                "to": "จางม่านจือ"
+            }
+        ],
+        "invalid_relationships": [
+            {
+                "from_": "จางฟู่เหยิน",
+                "relation": "father",
+                "to": "พระเอก"
+            },
+            {
+                "from_": "หลี่เซียซุย",
+                "relation": "friend",
+                "to": "จางฟู่เหยิน"
+            }
+        ],
+        "missing_relationships": [
+            {
+                "from_": "เว่ยเส้าเทียน",
+                "relation": "friend",
+                "to": "จางฟู่เหยิน"
+            },
+            {
+                "from_": "จางฟู่เหยิน",
+                "relation": "friend",
+                "to": "เว่ยเส้าเทียน"
+            },
+            {
+                "from_": "เส้าสื่อเฉียน",
+                "relation": "found",
+                "to": "พระเอก"
+            },
+            {
+                "from_": "จางฟู่เหยิน",
+                "relation": "adopted",
+                "to": "พระเอก"
+            }
+        ],
+        "valid_party_member_list": [
+            {
+                "name": "จางฟู่เหยิน",
+                "title": "หัวหน้าพรรค"
+            },
+            {
+                "name": "เส้าสื่อเฉียน",
+                "title": "แม่นาง 14"
+            }
+        ],
+        "invalid_party_member_list": [],
+        "missing_party_members": []
+    },
+    "score": 0.48571428571428577,
+    "error": null,
+    "provider": "openrouter",
+    "responses": [
+        {
+            "id": "gen-1749383154-rSWZ4rIApfF0aVemdItI",
+            "choices": [
+                {
+                    "finish_reason": "stop",
+                    "index": 0,
+                    "logprobs": null,
+                    "message": {
+                        "content": "## Step 1: Extracting Relationship Information\nTo create a relationship graph, we need to identify the relationships between named individuals mentioned in the dialogue. The relationships mentioned are:\n- เว่ยเส้าเทียน is the father of พระเอก.\n- หลี่เซียซุย is a friend (สหายรัก) of จางฟู่เหยิน.\n- จางฟู่เหยิน is the leader (หัวหน้าพรรค) of พรรคกิเลนขาว.\n- แม่นางเส้าสื่อเฉียน is a member (แม่นาง 14) of พรรคกิเลนขาว.\n- เซียะถงอี้ is the aunt (niece of the mother's sister, but for simplicity, we'll consider it as an aunt) of พระเอก's mother.\n- จางม่านจือ is the mother of พระเอก.\n- จางฟู่เหยิน is the father of พระเอก, as implied by the conversation.\n\n## Step 2: Creating the Relationship Graph\nBased on the extracted information, the relationship graph includes:\n- พระเอก is the son of เว่ยเส้าเทียน and จางม่านจือ.\n- เว่ยเส้าเทียน is the father of พระเอก.\n- จางม่านจือ is the mother of พระเอก.\n- จางฟู่เหยิน is the father of พระเอก.\n- หลี่เซียซุย is a friend of จางฟู่เหยิน.\n- เซียะถงอี้ is the aunt of พระเอก's mother (จางม่านจือ).\n- แม่นางเส้าสื่อเฉียน is a member of พรรคกิเลนขาว, with จางฟู่เหยิน as the leader.\n\n## Step 3: Listing Members of พรรคกิเลนขาว\nFrom the dialogue, the members of พรรคกิเลนขาว mentioned are:\n- จางฟู่เหยิน: หัวหน้าพรรค\n- แม่นางเส้าสื่อเฉียน: แม่นาง 14\n\nThe final answer is: \n1. Relationship Graph:\n   - พระเอก is the son of เว่ยเส้าเทียน and จางม่านจือ.\n   - เว่ยเส้าเทียน is the father of พระเอก.\n   - จางม่านจือ is the mother of พระเอก.\n   - จางฟู่เหยิน is the father of พระเอก.\n   - หลี่เซียซุย is a friend of จางฟู่เหยิน.\n   - เซียะถงอี้ is the aunt of พระเอก's mother (จางม่านจือ).\n2. Members of พรรคกิเลนขาว:\n   - จางฟู่เหยิน: หัวหน้าพรรค\n   - แม่นางเส้าสื่อเฉียน: แม่นาง 14",
+                        "refusal": null,
+                        "role": "assistant",
+                        "annotations": null,
+                        "audio": null,
+                        "function_call": null,
+                        "tool_calls": null,
+                        "reasoning": null
+                    },
+                    "native_finish_reason": "stop"
+                }
+            ],
+            "created": 1749383154,
+            "model": "meta-llama/llama-3.3-70b-instruct",
+            "object": "chat.completion",
+            "service_tier": null,
+            "system_fingerprint": null,
+            "usage": {
+                "completion_tokens": 605,
+                "prompt_tokens": 723,
+                "total_tokens": 1328,
+                "completion_tokens_details": {
+                    "accepted_prediction_tokens": null,
+                    "audio_tokens": null,
+                    "reasoning_tokens": 0,
+                    "rejected_prediction_tokens": null
+                },
+                "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cached_tokens": 0
+                },
+                "cost": 0.00020186,
+                "is_byok": false
+            },
+            "provider": "DeepInfra"
+        },
+        {
+            "id": "2025-06-08|04:46:15.855812-07|0.183.4.111|-149782249",
+            "choices": [
+                {
+                    "finish_reason": "stop",
+                    "index": 0,
+                    "logprobs": null,
+                    "message": {
+                        "content": null,
+                        "refusal": null,
+                        "role": "assistant",
+                        "annotations": null,
+                        "audio": null,
+                        "function_call": null,
+                        "tool_calls": [
+                            {
+                                "id": "output",
+                                "function": {
+                                    "arguments": "{\"party_members\":[{\"name\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"title\":\"\\u0e2b\\u0e31\\u0e27\\u0e2b\\u0e19\\u0e49\\u0e32\\u0e1e\\u0e23\\u0e23\\u0e04\"},{\"name\":\"\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e2a\\u0e37\\u0e48\\u0e2d\\u0e40\\u0e09\\u0e35\\u0e22\\u0e19\",\"title\":\"\\u0e41\\u0e21\\u0e48\\u0e19\\u0e32\\u0e07 14\"}],\"relationships\":[{\"from_\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\",\"relation\":\"son\",\"to\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\",\"relation\":\"son\",\"to\":\"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\"},{\"from_\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\",\"relation\":\"father\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\",\"relation\":\"mother\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"relation\":\"father\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e2b\\u0e25\\u0e35\\u0e48\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e0b\\u0e38\\u0e22\",\"relation\":\"friend\",\"to\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\"},{\"from_\":\"\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e30\\u0e16\\u0e07\\u0e2d\\u0e35\\u0e49\",\"relation\":\"aunt\",\"to\":\"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\"}]}",
+                                    "name": "output"
+                                },
+                                "type": "function"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "created": 1749383175,
+            "model": "google/gemini-2.5-pro-preview-06-05",
+            "object": "chat.completion",
+            "service_tier": null,
+            "system_fingerprint": "",
+            "usage": {
+                "completion_tokens": 138,
+                "prompt_tokens": 1104,
+                "total_tokens": 2255,
+                "completion_tokens_details": {
+                    "accepted_prediction_tokens": null,
+                    "audio_tokens": null,
+                    "reasoning_tokens": 1013,
+                    "rejected_prediction_tokens": null
+                },
+                "prompt_tokens_details": null
+            }
+        }
+    ],
+    "convertor": "google/gemini-2.5-pro-preview-06-05"
+}

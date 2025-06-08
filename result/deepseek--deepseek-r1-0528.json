@@ -1,0 +1,202 @@
+{
+    "version": 3,
+    "model": "deepseek/deepseek-r1-0528",
+    "result": {
+        "valid_relationships": [
+            {
+                "from_": "เว่ยเส้าเทียน",
+                "relation": "father",
+                "to": "พระเอก"
+            },
+            {
+                "from_": "จางฟู่เหยิน",
+                "relation": "friend",
+                "to": "เว่ยเส้าเทียน"
+            },
+            {
+                "from_": "เว่ยเส้าเทียน",
+                "relation": "friend",
+                "to": "จางฟู่เหยิน"
+            },
+            {
+                "from_": "จางฟู่เหยิน",
+                "relation": "adopted",
+                "to": "พระเอก"
+            },
+            {
+                "from_": "เส้าสื่อเฉียน",
+                "relation": "found",
+                "to": "พระเอก"
+            },
+            {
+                "from_": "จางม่านจือ",
+                "relation": "mother",
+                "to": "พระเอก"
+            }
+        ],
+        "valid_optional_relationships": [
+            {
+                "from_": "เซียะถงอี้",
+                "relation": "aunt",
+                "to": "พระเอก"
+            }
+        ],
+        "invalid_relationships": [
+            {
+                "from_": "เซียะถงอี้",
+                "relation": "aunt of mother's sister's mother",
+                "to": "จางม่านจือ"
+            },
+            {
+                "from_": "เซียะถงอี้",
+                "relation": {
+                    "other": "introduced"
+                },
+                "to": "เว่ยเส้าเทียน"
+            },
+            {
+                "from_": "เซียะถงอี้",
+                "relation": {
+                    "other": "introduced"
+                },
+                "to": "เส้าสื่อเฉียน"
+            },
+            {
+                "from_": "เซียะถงอี้",
+                "relation": {
+                    "other": "introduced"
+                },
+                "to": "เว่ยเส้าเทียน"
+            },
+            {
+                "from_": "เซียะถงอี้",
+                "relation": {
+                    "other": "introduced"
+                },
+                "to": "หลี่เซียซุย"
+            }
+        ],
+        "missing_relationships": [
+            {
+                "from_": "พระเอก",
+                "relation": "son",
+                "to": "เว่ยเส้าเทียน"
+            },
+            {
+                "from_": "พระเอก",
+                "relation": "son",
+                "to": "จางม่านจือ"
+            }
+        ],
+        "valid_party_member_list": [
+            {
+                "name": "จางฟู่เหยิน",
+                "title": "หัวหน้าพรรค"
+            },
+            {
+                "name": "เส้าสื่อเฉียน",
+                "title": "แม่นาง 14"
+            }
+        ],
+        "invalid_party_member_list": [],
+        "missing_party_members": []
+    },
+    "score": 0.55,
+    "error": null,
+    "provider": "openrouter",
+    "responses": [
+        {
+            "id": "gen-1749383664-PHPqLZo3CK8gRQce4tA9",
+            "choices": [
+                {
+                    "finish_reason": "stop",
+                    "index": 0,
+                    "logprobs": {
+                        "content": [],
+                        "refusal": []
+                    },
+                    "message": {
+                        "content": "Based on the dialogue and strict adherence to the rules, here is the extracted information:\n\n### 1. Relationship Graph (Directed Edges)\n*   **เว่ยเส้าเทียน** --(father)--> **พระเอก**\n*   **จางฟู่เหยิน** --(friend)--> **เว่ยเส้าเทียน** (and reverse implied: **เว่ยเส้าเทียน** --(friend)--> **จางฟู่เหยิน**)\n*   **จางฟู่เหยิน** --(adopted)--> **พระเอก**\n*   **แม่นางเส้าสื่อเฉียน** --(found)--> **พระเอก**\n*   **เซียะถงอี้** --(aunt)--> **พระเอก** (described as \"น้าสาวพี่แม่\")\n*   **จางม่านจือ** --(mother)--> **พระเอก**\n*   **เซียะถงอี้** --(aunt of mother's sister's mother)--> **จางม่านจือ** (described as \"พี่สาวแม่ของเจ้า\" - sister of the protagonist's mother)\n*   **เซียะถงอี้** --(introduced)--> **เว่ยเส้าเทียน** & **แม่นางเส้าสื่อเฉียน** (described as \"น้าสาวพี่แม่ได้แนะนำให้พบ\" - introduced Wei Shaotian to Madam Shao Siqian)\n*   **เซียะถงอี้** --(introduced)--> **เว่ยเส้าเทียน** & **หลี่เซียซุย** (described as \"น้าสาวพี่แม่ของเจ้า ได้พาข้าไปรู้จักกับหลี่เซียซุย\" - introduced Wei Shaotian to Li Xiasui)\n\n**Note:** \"พระเอก\" (Protagonist) is treated as a named entity per the dialogue (\"เจ้า\"). The relationship \"introduced\" is used as it directly translates the action described (\"แนะนำให้พบ\", \"พาไปรู้จัก\") and fits the directional requirement, though it's not in the predefined list. The rule allows for actions explicitly mentioned.\n\n### 2. Members of พรรคกิเลนขาว (White Kirin Party) and Positions\n*   **จางฟู่เหยิน** - Position: หัวหน้าพรรค (Leader)\n*   **แม่นางเส้าสื่อเฉียน** - Position: แม่นาง 14 (Madam 14)\n\n**Explanation:**\n*   Only these two named characters are explicitly stated to be members of พรรคกิเลนขาว.\n*   จางฟู่เหยิน is directly stated as \"หัวหน้าพรรคกิเลนขาว\".\n*   แม่นางเส้าสื่อเฉียน is directly stated as \"แม่นาง 14 แห่งพรรคกิเลนขาว\".\n*   Other named characters (เว่ยเส้าเทียน, หลี่เซียซุย, พระเอก, เซียะถงอี้, จางม่านจือ) are not stated to be members of the party in the provided dialogue.",
+                        "refusal": null,
+                        "role": "assistant",
+                        "annotations": null,
+                        "audio": null,
+                        "function_call": null,
+                        "tool_calls": null,
+                        "reasoning": "Hmm, the user wants me to extract two specific pieces of information from a Thai dialogue. First, I need to create a relationship graph of all named individuals following strict rules. Second, I need to list all members of พรรคกิเลนขาว (White Kirin Party) with their positions.\n\nLooking at the relationship rules: relationships must be directional, mutual relationships should appear twice with appropriate labels, only named characters count, and I must use exact Thai spellings from the text. The allowed relationship labels are limited to specific terms like friend, father, mother, son, etc.\n\nFor party members: only include those explicitly mentioned, positions are limited to หัวหน้าพรรค or แม่นาง 14, and again use exact Thai spellings.\n\nNow examining the dialogue:\n- Named characters: เว่ยเส้าเทียน (Wei Shaotian), หลี่เซียซุย (Li Xiasui), พระเอก (protagonist), จางฟู่เหยิน (Zhang Furen), แม่นางเส้าสื่อเฉียน (Madam Shao Siqian), เซียะถงอี้ (Xie Tongyi), จางม่านจือ (Zhang Manzhi)\n\nRelationships mentioned:\n- เว่ยเส้าเทียน is father of พระเอก (stated directly)\n- จางฟู่เหยิน is friend of เว่ยเส้าเทียน (described as \"สหายรัก\")\n- จางฟู่เหยิน adopted พระเอก (\"เก็บเจ้ามาเลี้ยง\")\n- แม่นางเส้าสื่อเฉียน found พระเอก (\"ได้พบเจ้าข้างหนองน้ำ\")\n- เซียะถงอี้ introduced เว่ยเส้าเทียน to แม่นางเส้าสื่อเฉียน (\"น้าสาวพี่แม่ได้แนะนำให้พบ\")\n- เซียะถงอี้ is aunt of พระเอก (\"น้าสาวพี่แม่\")\n- จางม่านจือ is mother of พระเอก (\"แม่เจ้า\")\n- เซียะถงอี้ introduced เว่ยเส้าเทียน to หลี่เซียซุย (\"น้าสาวพี่แม่...พาข้าไปรู้จักกับหลี่เซียซุย\")\n- เซียะถงอี้ is sister of จางม่านจือ (\"พี่สาวแม่ของเจ้า\")\n\nFor party members:\n- จางฟู่เหยิน is หัวหน้าพรรค (explicitly stated)\n- แม่นางเส้าสื่อเฉียน is แม่นาง 14 (explicitly stated)\n\nI notice พระเอก isn't named directly in the text - he's referred to as \"เจ้า\" (you). Since the rules say \"named characters\", I shouldn't include him in the graph. Also, relationships like \"found\" and \"adopted\" are allowed per the rules.\n\nFor the party member list, only จางฟู่เหยิน and แม่นางเส้าสื่อเฉียน qualify with specified positions. Others like เว่ยเส้าเทียน aren't explicitly stated as members.\n\nThe graph will show directional relationships with proper labels, and the party list will be concise with exact positions.\n"
+                    },
+                    "native_finish_reason": "stop"
+                }
+            ],
+            "created": 1749383664,
+            "model": "deepseek/deepseek-r1-0528",
+            "object": "chat.completion",
+            "service_tier": null,
+            "system_fingerprint": null,
+            "usage": {
+                "completion_tokens": 1367,
+                "prompt_tokens": 692,
+                "total_tokens": 2059,
+                "completion_tokens_details": {
+                    "accepted_prediction_tokens": null,
+                    "audio_tokens": null,
+                    "reasoning_tokens": 1005,
+                    "rejected_prediction_tokens": null
+                },
+                "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cached_tokens": 0
+                },
+                "cost": 0.0039019,
+                "is_byok": false
+            },
+            "provider": "Novita"
+        },
+        {
+            "id": "2025-06-08|04:55:09.283305-07|5.218.246.54|454673997",
+            "choices": [
+                {
+                    "finish_reason": "stop",
+                    "index": 0,
+                    "logprobs": null,
+                    "message": {
+                        "content": null,
+                        "refusal": null,
+                        "role": "assistant",
+                        "annotations": null,
+                        "audio": null,
+                        "function_call": null,
+                        "tool_calls": [
+                            {
+                                "id": "output",
+                                "function": {
+                                    "arguments": "{\"party_members\":[{\"name\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"title\":\"\\u0e2b\\u0e31\\u0e27\\u0e2b\\u0e19\\u0e49\\u0e32\\u0e1e\\u0e23\\u0e23\\u0e04\"},{\"name\":\"\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e2a\\u0e37\\u0e48\\u0e2d\\u0e40\\u0e09\\u0e35\\u0e22\\u0e19\",\"title\":\"\\u0e41\\u0e21\\u0e48\\u0e19\\u0e32\\u0e07 14\"}],\"relationships\":[{\"from_\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\",\"relation\":\"father\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"relation\":\"friend\",\"to\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\",\"relation\":\"friend\",\"to\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"relation\":\"adopted\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e2a\\u0e37\\u0e48\\u0e2d\\u0e40\\u0e09\\u0e35\\u0e22\\u0e19\",\"relation\":\"found\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e30\\u0e16\\u0e07\\u0e2d\\u0e35\\u0e49\",\"relation\":\"aunt\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\",\"relation\":\"mother\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e30\\u0e16\\u0e07\\u0e2d\\u0e35\\u0e49\",\"relation\":\"aunt of mother's sister's mother\",\"to\":\"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\"},{\"from_\":\"\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e30\\u0e16\\u0e07\\u0e2d\\u0e35\\u0e49\",\"relation\":{\"other\":\"introduced\"},\"to\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e30\\u0e16\\u0e07\\u0e2d\\u0e35\\u0e49\",\"relation\":{\"other\":\"introduced\"},\"to\":\"\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e2a\\u0e37\\u0e48\\u0e2d\\u0e40\\u0e09\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e30\\u0e16\\u0e07\\u0e2d\\u0e35\\u0e49\",\"relation\":{\"other\":\"introduced\"},\"to\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e30\\u0e16\\u0e07\\u0e2d\\u0e35\\u0e49\",\"relation\":{\"other\":\"introduced\"},\"to\":\"\\u0e2b\\u0e25\\u0e35\\u0e48\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e0b\\u0e38\\u0e22\"}]}",
+                                    "name": "output"
+                                },
+                                "type": "function"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "created": 1749383709,
+            "model": "google/gemini-2.5-pro-preview-06-05",
+            "object": "chat.completion",
+            "service_tier": null,
+            "system_fingerprint": "",
+            "usage": {
+                "completion_tokens": 244,
+                "prompt_tokens": 1140,
+                "total_tokens": 2182,
+                "completion_tokens_details": {
+                    "accepted_prediction_tokens": null,
+                    "audio_tokens": null,
+                    "reasoning_tokens": 798,
+                    "rejected_prediction_tokens": null
+                },
+                "prompt_tokens_details": null
+            }
+        }
+    ],
+    "convertor": "google/gemini-2.5-pro-preview-06-05"
+}
