@@ -1,0 +1,199 @@
+{
+    "version": 3,
+    "model": "llama3.1:8b",
+    "result": {
+        "valid_relationships": [
+            {
+                "from_": "เว่ยเส้าเทียน",
+                "relation": "father",
+                "to": "พระเอก"
+            },
+            {
+                "from_": "เว่ยเส้าเทียน",
+                "relation": "friend",
+                "to": "จางฟู่เหยิน"
+            },
+            {
+                "from_": "พระเอก",
+                "relation": "son",
+                "to": "เว่ยเส้าเทียน"
+            },
+            {
+                "from_": "พระเอก",
+                "relation": "son",
+                "to": "จางม่านจือ"
+            },
+            {
+                "from_": "จางฟู่เหยิน",
+                "relation": "friend",
+                "to": "เว่ยเส้าเทียน"
+            },
+            {
+                "from_": "จางม่านจือ",
+                "relation": "mother",
+                "to": "พระเอก"
+            }
+        ],
+        "valid_optional_relationships": [],
+        "invalid_relationships": [
+            {
+                "from_": "จางม่านจือ",
+                "relation": "adopted",
+                "to": "เว่ยเส้าเทียน"
+            },
+            {
+                "from_": "พระเอก",
+                "relation": "friend",
+                "to": "หลี่เซียซุย"
+            },
+            {
+                "from_": {
+                    "other": "จางม่านจือ"
+                },
+                "relation": {
+                    "other": "Sister-in-law of"
+                },
+                "to": {
+                    "other": "หลี่เซียซุย"
+                }
+            },
+            {
+                "from_": {
+                    "other": "หลี่เซียซุย"
+                },
+                "relation": {
+                    "other": "Niece of"
+                },
+                "to": {
+                    "other": "จางม่านจือ"
+                }
+            },
+            {
+                "from_": "หลี่เซียซุย",
+                "relation": "friend",
+                "to": "พระเอก"
+            },
+            {
+                "from_": "จางม่านจือ",
+                "relation": "adopted",
+                "to": "หลี่เซียซุย"
+            }
+        ],
+        "missing_relationships": [
+            {
+                "from_": "เส้าสื่อเฉียน",
+                "relation": "found",
+                "to": "พระเอก"
+            },
+            {
+                "from_": "จางฟู่เหยิน",
+                "relation": "adopted",
+                "to": "พระเอก"
+            }
+        ],
+        "valid_party_member_list": [
+            {
+                "name": "จางฟู่เหยิน",
+                "title": "หัวหน้าพรรค"
+            }
+        ],
+        "invalid_party_member_list": [
+            {
+                "name": {
+                    "other": "แม่นาง 14"
+                },
+                "title": {
+                    "other": "แม่นาง"
+                }
+            }
+        ],
+        "missing_party_members": [
+            {
+                "name": "เส้าสื่อเฉียน",
+                "title": "แม่นาง 14"
+            }
+        ]
+    },
+    "score": 0.35000000000000003,
+    "error": null,
+    "provider": "ollama",
+    "responses": [
+        {
+            "id": "chatcmpl-253",
+            "choices": [
+                {
+                    "finish_reason": "stop",
+                    "index": 0,
+                    "logprobs": null,
+                    "message": {
+                        "content": "**1. Relationship Graph**\n\nHere is the relationship graph of all named individuals:\n\n* เว่ยเส้าเทียน (Wee Si Tian)\n\t+ Father of เจ้า (Jia)\n\t+ Friend of จางฟู่เหยิน (Zhang Fu Yin)\n\t+ Adopted by จางม่านจือ (Zhang Man Zhe) (mother of เจ้า)\n* เจ้า (Jia)\n\t+ Son of เว่ยเส้าเทียน\n\t+ Son of จางม่านจือ\n\t+ Friend of หลี่เซียซุย (Li Xiaoyu)\n* จางฟู่เหยิน (Zhang Fu Yin)\n\t+ Leader of พรรคกิเลนขาว (White Lotus Party)\n\t+ Friend of เว่ยเส้าเทียน\n* จางม่านจือ (Zhang Man Zhe)\n\t+ Mother of เจ้า\n\t+ Sister-in-law of หลี่เซียซุย\n* หลี่เซียซุย (Li Xiaoyu)\n\t+ Niece of จางม่านจือ\n\t+ Friend of เจ้า\n\t+ Adopted by จางม่านจือ\n\n**2. Members of พรรคกิเลนขาว**\n\nHere are the members of พรรคกิเลนขาว mentioned in the story:\n\n* จางฟู่เหยิน (Zhang Fu Yin) - หัวหน้าพรรค\n* แม่นาง 14 (Lady 14) - แม่นาง",
+                        "refusal": null,
+                        "role": "assistant",
+                        "annotations": null,
+                        "audio": null,
+                        "function_call": null,
+                        "tool_calls": null
+                    }
+                }
+            ],
+            "created": 1749382042,
+            "model": "llama3.1:8b",
+            "object": "chat.completion",
+            "service_tier": null,
+            "system_fingerprint": "fp_ollama",
+            "usage": {
+                "completion_tokens": 314,
+                "prompt_tokens": 724,
+                "total_tokens": 1038,
+                "completion_tokens_details": null,
+                "prompt_tokens_details": null
+            }
+        },
+        {
+            "id": "2025-06-08|04:27:22.502717-07|6.108.78.226|1846137133",
+            "choices": [
+                {
+                    "finish_reason": "stop",
+                    "index": 0,
+                    "logprobs": null,
+                    "message": {
+                        "content": null,
+                        "refusal": null,
+                        "role": "assistant",
+                        "annotations": null,
+                        "audio": null,
+                        "function_call": null,
+                        "tool_calls": [
+                            {
+                                "id": "output",
+                                "function": {
+                                    "arguments": "{\"party_members\":[{\"name\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"title\":\"\\u0e2b\\u0e31\\u0e27\\u0e2b\\u0e19\\u0e49\\u0e32\\u0e1e\\u0e23\\u0e23\\u0e04\"},{\"name\":{\"other\":\"\\u0e41\\u0e21\\u0e48\\u0e19\\u0e32\\u0e07 14\"},\"title\":{\"other\":\"\\u0e41\\u0e21\\u0e48\\u0e19\\u0e32\\u0e07\"}}],\"relationships\":[{\"from_\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\",\"relation\":\"father\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\",\"relation\":\"friend\",\"to\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\",\"relation\":\"adopted\",\"to\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\",\"relation\":\"son\",\"to\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\",\"relation\":\"son\",\"to\":\"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\"},{\"from_\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\",\"relation\":\"friend\",\"to\":\"\\u0e2b\\u0e25\\u0e35\\u0e48\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e0b\\u0e38\\u0e22\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"relation\":\"friend\",\"to\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\",\"relation\":\"mother\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":{\"other\":\"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\"},\"relation\":{\"other\":\"Sister-in-law of\"},\"to\":{\"other\":\"\\u0e2b\\u0e25\\u0e35\\u0e48\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e0b\\u0e38\\u0e22\"}},{\"from_\":{\"other\":\"\\u0e2b\\u0e25\\u0e35\\u0e48\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e0b\\u0e38\\u0e22\"},\"relation\":{\"other\":\"Niece of\"},\"to\":{\"other\":\"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\"}},{\"from_\":\"\\u0e2b\\u0e25\\u0e35\\u0e48\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e0b\\u0e38\\u0e22\",\"relation\":\"friend\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\",\"relation\":\"adopted\",\"to\":\"\\u0e2b\\u0e25\\u0e35\\u0e48\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e0b\\u0e38\\u0e22\"}]}",
+                                    "name": "output"
+                                },
+                                "type": "function"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "created": 1749382042,
+            "model": "google/gemini-2.5-pro-preview-06-05",
+            "object": "chat.completion",
+            "service_tier": null,
+            "system_fingerprint": "",
+            "usage": {
+                "completion_tokens": 237,
+                "prompt_tokens": 781,
+                "total_tokens": 1863,
+                "completion_tokens_details": {
+                    "accepted_prediction_tokens": null,
+                    "audio_tokens": null,
+                    "reasoning_tokens": 845,
+                    "rejected_prediction_tokens": null
+                },
+                "prompt_tokens_details": null
+            }
+        }
+    ],
+    "convertor": "google/gemini-2.5-pro-preview-06-05"
+}

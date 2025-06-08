@@ -17,38 +17,47 @@ one of the training data, including this repository.
 
 (Read notes before using the result!)
 
-| #  | Model name                                                     | Score  | Rel       | Party | Invalid         | Cost      | In Tok / Out Tok |
-|----|----------------------------------------------------------------|--------|-----------|-------|-----------------|-----------|------------------|
-| 1  | meta-llama/llama-4-maverick                                    | 76.00% | 7/8 + 1/3 | 2/2   | Rel 2           | N/A       | 1153 / 1113      |
-| 2  | deepseek/deepseek-r1                                           | 62.86% | 5/8 + 1/3 | 2/2   | Rel 1           | $0.046424 | 1224 / 11624     |
-| 3  | openai/gpt-4.5-preview                                         | 60.00% | 4/8 + 1/3 | 2/2   |                 | $0.177450 | 1998 / 184       |
-| 4  | meta-llama/llama-3.3-70b-instruct                              | 55.00% | 6/8 + 1/3 | 2/2   | Rel 5           | $0.001643 | 1255 / 571       |
-| 5  | openai/gpt-4o-2024-11-20                                       | 44.00% | 3/8 + 1/3 | 2/2   | Rel 1           | $0.006875 | 1998 / 188       |
-| 6  | openai/gpt-4.1                                                 | 42.22% | 4/8 + 1/3 | 2/2   | Rel 4           | $0.008812 | 1998 / 602       |
-| 7  | PetrosStav/gemma3-tools:27b                                    | 42.22% | 4/8 + 1/3 | 2/2   | Rel 4           | N/A       | 1819 / 632       |
-| 8  | hf.co/scb10x/typhoon2.1-gemma3-12b-gguf:Q4_K_M                 | 42.22% | 4/8 + 1/3 | 2/2   | Rel 4           | N/A       | 1137 / 631       |
-| 9  | qwen/qwen3-235b-a22b                                           | 40.00% | 3/8 + 1/3 | 2/2   | Rel 2           | $0.011488 | 1295 / 28747     |
-| 10 | hf.co/mradermacher/openthaigpt1.5-72b-instruct-i1-GGUF:IQ2_S   | 37.33% | 3/8 + 1/3 | 2/2   | Rel 1 / Party 1 | N/A       | 1296 / 414       |
-| 11 | hf.co/Qwen/Qwen3-32B-GGUF:Q4_K_M                               | 37.14% | 3/8 + 1/3 | 2/2   | Rel 3           | N/A       | 1296 / 496       |
-| 12 | openai/gpt-4o-mini                                             | 36.67% | 4/8 + 1/3 | 2/2   | Rel 7           | $0.000598 | 1998 / 497       |
-| 13 | hf.co/JulienElkaim/Tsunami-1.0-14B-Instruct-Q4_K_M-GGUF:Q4_K_M | 26.67% | 1/8 + 1/3 | 2/2   | Rel 1           | N/A       | 1296 / 361       |
-| 14 | hf.co/tensorblock/OpenThaiLLM-Prebuilt-7B-GGUF:Q8_0            | 21.67% | 1/8 + 0/3 | 2/2   | Rel 5           | N/A       | 1296 / 313       |
-| 15 | hf.co/mradermacher/openthaigpt1.5-14b-instruct-GGUF:Q8_0       | 20.00% | 0/8 + 0/3 | 2/2   | Rel 7           | N/A       | 1296 / 569       |
-| 16 | hf.co/aisingapore/Llama-SEA-LION-v3.5-8B-R-GGUF:F16            | 13.33% | 1/8 + 0/3 | 1/2   | Party 2         | N/A       | 1223 / 169       |
-| 17 | phi4                                                           | 10.00% | 0/8 + 0/3 | 1/2   | Rel 7           | N/A       | 1634 / 497       |
-| 18 | hf.co/mradermacher/Sailor2-20B-Chat-GGUF:Q8_0                  | 6.67%  | 1/8 + 0/3 | 1/2   | Rel 5 / Party 1 | N/A       | 1296 / 282       |
-| 19 | hf.co/aisingapore/Llama-SEA-LION-v3.5-70B-R-GGUF:Q2_K          | 5.00%  | 0/8 + 0/3 | 1/2   | Rel 6 / Party 1 | N/A       | 1225 / 354       |
+| #  | Model name                                                     | Score  | Rel       | Party | Invalid          | Cost | In Tok / Out Tok |
+|----|----------------------------------------------------------------|--------|-----------|-------|------------------|------|------------------|
+| 1  | openai/gpt-4.5-preview                                         | 66.67% | 7/8 + 1/3 | 2/2   | Rel 4            | N/A  | 1408 / 1510      |
+| 2  | openai/chatgpt-4o-latest                                       | 65.00% | 8/8 + 1/3 | 2/2   | Rel 7            | N/A  | 1517 / 1607      |
+| 3  | openai/o3:flex                                                 | 64.44% | 8/8 + 2/3 | 2/2   | Rel 8            | N/A  | 1480 / 9632      |
+| 4  | phi4-reasoning                                                 | 63.33% | 5/8 + 1/3 | 2/2   | Party 1          | N/A  | 10640 / 13200    |
+| 5  | gemma3:27b                                                     | 40.00% | 4/8 + 0/3 | 2/2   | Rel 4            | N/A  | 1290 / 1057      |
+| 6  | openai/gpt-4.1                                                 | 38.79% | 7/8 + 1/3 | 2/2   | Rel 14 / Party 1 | N/A  | 1751 / 2185      |
+| 7  | llama3.1:8b                                                    | 35.00% | 6/8 + 0/3 | 1/2   | Rel 6 / Party 1  | N/A  | 1505 / 1396      |
+| 8  | hf.co/mradermacher/openthaigpt1.5-72b-instruct-i1-GGUF:IQ2_S   | 35.00% | 3/8 + 0/3 | 2/2   | Rel 3            | N/A  | 1470 / 1618      |
+| 9  | openai/gpt-4o                                                  | 31.25% | 3/8 + 0/3 | 2/2   | Rel 5            | N/A  | 1370 / 1285      |
+| 10 | hf.co/JulienElkaim/Tsunami-1.0-14B-Instruct-Q4_K_M-GGUF:Q4_K_M | 30.00% | 2/8 + 0/3 | 2/2   | Rel 2            | N/A  | 1367 / 765       |
+| 11 | hf.co/mradermacher/openthaigpt1.5-14b-instruct-GGUF:Q8_0       | 27.50% | 2/8 + 1/3 | 2/2   | Rel 5            | N/A  | 1439 / 1220      |
+| 12 | gemma3:12b                                                     | 23.33% | 2/8 + 0/3 | 2/2   | Rel 10           | N/A  | 1419 / 1515      |
+| 13 | openai/gpt-4.1-mini                                            | 20.00% | 0/8 + 0/3 | 2/2   | Rel 12           | N/A  | 1517 / 2003      |
+| 14 | hf.co/mradermacher/Sailor2-20B-Chat-GGUF:Q8_0                  | 20.00% | 0/8 + 0/3 | 2/2   | Rel 11           | N/A  | 1641 / 1551      |
+| 15 | hf.co/Qwen/Qwen3-32B-GGUF:Q4_K_M                               | 20.00% | 0/8 + 0/3 | 2/2   | Rel 7            | N/A  | 3920 / 3542      |
+| 16 | openai/o4-mini:flex                                            | 20.00% | 0/8 + 0/3 | 2/2   | Rel 8            | N/A  | 1371 / 11718     |
+| 17 | openai/gpt-4o-mini                                             | 20.00% | 0/8 + 0/3 | 2/2   | Rel 7            | N/A  | 1405 / 1303      |
+| 18 | deepseek-r1:14b                                                | 13.33% | 0/8 + 0/3 | 2/2   | Rel 9 / Party 1  | N/A  | 2272 / 2323      |
+| 19 | hf.co/tensorblock/OpenThaiLLM-Prebuilt-7B-GGUF:Q8_0            | 7.50%  | 1/8 + 0/3 | 1/2   | Rel 3 / Party 1  | N/A  | 1838 / 1879      |
+| 20 | openai/gpt-4.1-nano                                            | 5.83%  | 1/8 + 0/3 | 1/2   | Rel 11 / Party 1 | N/A  | 1408 / 1543      |
+| 21 | hf.co/aisingapore/Llama-SEA-LION-v3.5-70B-R-GGUF:Q2_K          | 5.00%  | 0/8 + 0/3 | 1/2   | Party 1          | N/A  | 2982 / 5321      |
+| 22 | phi4                                                           | 5.00%  | 0/8 + 0/3 | 1/2   | Rel 10 / Party 1 | N/A  | 1924 / 1594      |
+| 23 | hf.co/scb10x/typhoon2.1-gemma3-12b-gguf:Q4_K_M                 | 5.00%  | 0/8 + 0/3 | 1/2   | Rel 8 / Party 1  | N/A  | 1298 / 1154      |
+|    | hf.co/aisingapore/Llama-SEA-LION-v3.5-8B-R-GGUF:F16            | DNF    | DNF       | DNF   | DNF              | DNF  | DNF              |
 
-All models are using temperature = 0. The cost is as reported by OpenRouter.
+All models are using temperature = 0. The cost is as reported by OpenRouter or Requesty. Token count includes the
+fixed JSON conversion operation, but the cost is not included as it is not reported by Google API.
 
 Gemma3, Phi4 and Hugging Face models are running in Ollama with default parameters except OLLAMA_FLASH_ATTENTION=1.
 **The model quantization is chosen to best fit my hardware** (1x RTX 5090), which may result in suboptimal performance
 compared to the full model.
 
-Commercial models are running via OpenRouter. Since the test use Structured Output, OpenRouter only support models
-that are running on OpenAI and Fireworks' infrastructure.
+Commercial models are running via OpenRouter or Requesty, which use different inference providers underneath.
 
-Scoring is performed by
+For detailed output of each model, see the [result](result) directory.
+
+## Scoring
+
+The score is calculated by
 
 1. % of correct relationship (excl. optional relationships)
 2. One minus % of relationship outputs that are invalid (for example, if the output returns 9 relationships,
@@ -60,15 +69,9 @@ Scoring is performed by
 6. \[4] x \[5] x 0.2 (Party member score is 20% of overall score)
 7. \[3] + \[6]
 
-For detailed output of each model, see the [result](result) directory.
-
 ## The test
 
-The LLM should generate relationship graph from the story. The graph's edges are directional.
-
-As of v3 version of the test, we use structured output to ensure that the model output as instructed. The `temperature`
-is set at 0, while other parameters at default. Models are provided with a `think_*` field which it may use to think
-before responding, if the model itself do not use the `<think>` tag.
+The LLM should generate a relationship graph from the story. The graph's edges are directional.
 
 The correct relationship graph edges are
 
@@ -93,8 +96,18 @@ it is not evaluated.
 
 Additionally, the model should list the กิเลนขาว party members. The members are
 
-- จางฟู่เหยิน (leader)
-- เส้าสื่อเฉียน (14th lady)
+1. จางฟู่เหยิน (leader)
+2. เส้าสื่อเฉียน (14th lady)
+
+The models are supplied with the list of characters and relationships, and are told explicitly that the
+provided list is complete.
+
+Once the model has outputted both information, the output is then fed into Gemini 2.5 Pro (using low thinking)
+with another prompt asking it to convert that output into JSON using tool use. The resulting JSON is then graded with
+hardcoded rules without using AI.
+
+The LLM doing JSON conversion do not receive the input prompt nor the story. However, some LLM may repeat the
+story in the output which may affect the conversion result.
 
 ## Running
 
@@ -102,25 +115,6 @@ The evaluation is available in the evaluator.py file. This can be imported exter
 
 The main.py file is used to perform evaluation and recording. The format-result.py file is run to generate the table
 above. The table is then reformatted in PyCharm.
-
-## FAQ
-
-### Why use JSON output?
-
-Most LLM tests use two LLM - one under test, and one judging the result of the first one. This test, however, use
-hardcoded result to grade, which requires that the LLM output in machine-readable format.
-
-Some LLM might not be tuned to output JSON, and will not perform well in this test. The reason I structured the test
-this way are:
-
-1. Since there are no LLM that perform perfectly according to instructions, I don't trust that the grading LLM will
-   always grade correctly. Since the expected result is already known, it is better for a normal computer program to
-   be the judge as it should always judge according to instructions (except for bugs).
-2. I'm more interested in LLM-as-a-Library which applications can be built upon. If there are better ways to parse
-   LLM outputs, then the tests may switch to that method. This also means the tests here test two things - how the
-   LLM is able to understand the story, and how well is its JSON output capabilities.
-3. It is possible to run the tests for both JSON output and traditional text output judged by LLM, but it complicates
-   the reporting. The traditional test is left as an exercise for the reader.
 
 ## License
 

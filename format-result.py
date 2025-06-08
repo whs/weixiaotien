@@ -29,7 +29,7 @@ def main():
         if item.error:
             # TODO: Even in errors sometimes we can have more info
             formatted.append({
-                "#": rank+1,
+                "#": "",
                 "Model name": model_name,
                 "Score": "DNF",
                 "Rel": "DNF",
@@ -39,20 +39,20 @@ def main():
                 "In Tok / Out Tok": "DNF",
             })
         else:
-            cost = None
+            cost = 0.00
             request_tokens = 0
             response_tokens = 0
 
-            if item.openai_response:
-                request_tokens = item.openai_response.usage.prompt_tokens
-                response_tokens = item.openai_response.usage.completion_tokens
+            for resp in item.responses or []:
+                request_tokens += resp.usage.prompt_tokens
+                response_tokens += resp.usage.completion_tokens
 
-                if item.openai_response.usage.completion_tokens_details and item.openai_response.usage.completion_tokens_details.reasoning_tokens:
-                    response_tokens += item.openai_response.usage.completion_tokens_details.reasoning_tokens
+                if resp.usage.completion_tokens_details and resp.usage.completion_tokens_details.reasoning_tokens:
+                    response_tokens += resp.usage.completion_tokens_details.reasoning_tokens
 
-                if "cost" in item.openai_response.usage.model_extra:
+                if "cost" in resp.usage.model_extra:
                     # OpenRouter report the cost here
-                    cost = item.openai_response.usage.model_extra["cost"]
+                    cost += resp.usage.model_extra["cost"]
 
             invalid = []
             if len(item.result.invalid_relationships) > 0:
@@ -67,7 +67,7 @@ def main():
                 "Rel": f"{len(item.result.valid_relationships)}/8 + {len(item.result.valid_optional_relationships)}/3",
                 "Party": f"{len(item.result.valid_party_member_list)}/2",
                 "Invalid": " / ".join(invalid),
-                "Cost": "${:.6f}".format(cost) if cost is not None else "N/A",
+                "Cost": "${:.6f}".format(cost) if cost != 0.00 else "N/A",
                 "In Tok / Out Tok": f"{request_tokens} / {response_tokens}",
             })
 

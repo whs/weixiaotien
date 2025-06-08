@@ -4,78 +4,47 @@
     "result": {
         "valid_relationships": [],
         "valid_optional_relationships": [],
-        "invalid_relationships": [
-            {
-                "a": "พระเอก",
-                "relation": "friend",
-                "b": "เว่ยเส้าเทียน"
-            },
-            {
-                "a": "พระเอก",
-                "relation": "father",
-                "b": "หลี่เซียซุย"
-            },
-            {
-                "a": "หลี่เซียซุย",
-                "relation": "adopted",
-                "b": "จางฟู่เหยิน"
-            },
-            {
-                "a": "จางฟู่เหยิน",
-                "relation": "found",
-                "b": "หลี่เซียซุย"
-            },
-            {
-                "a": "เว่ยเส้าเทียน",
-                "relation": "mother",
-                "b": "จางม่านจือ"
-            },
-            {
-                "a": "เว่ยเส้าเทียน",
-                "relation": "aunt of mother's sister's mother",
-                "b": "หลี่เซียซุย"
-            }
-        ],
+        "invalid_relationships": [],
         "missing_relationships": [
             {
-                "a": "เว่ยเส้าเทียน",
+                "from_": "เว่ยเส้าเทียน",
                 "relation": "friend",
-                "b": "จางฟู่เหยิน"
+                "to": "จางฟู่เหยิน"
             },
             {
-                "a": "จางฟู่เหยิน",
+                "from_": "จางฟู่เหยิน",
                 "relation": "friend",
-                "b": "เว่ยเส้าเทียน"
+                "to": "เว่ยเส้าเทียน"
             },
             {
-                "a": "เว่ยเส้าเทียน",
+                "from_": "เว่ยเส้าเทียน",
                 "relation": "father",
-                "b": "พระเอก"
+                "to": "พระเอก"
             },
             {
-                "a": "จางม่านจือ",
+                "from_": "จางม่านจือ",
                 "relation": "mother",
-                "b": "พระเอก"
+                "to": "พระเอก"
             },
             {
-                "a": "พระเอก",
+                "from_": "พระเอก",
                 "relation": "son",
-                "b": "เว่ยเส้าเทียน"
+                "to": "เว่ยเส้าเทียน"
             },
             {
-                "a": "พระเอก",
+                "from_": "พระเอก",
                 "relation": "son",
-                "b": "จางม่านจือ"
+                "to": "จางม่านจือ"
             },
             {
-                "a": "เส้าสื่อเฉียน",
+                "from_": "เส้าสื่อเฉียน",
                 "relation": "found",
-                "b": "พระเอก"
+                "to": "พระเอก"
             },
             {
-                "a": "จางฟู่เหยิน",
+                "from_": "จางฟู่เหยิน",
                 "relation": "adopted",
-                "b": "พระเอก"
+                "to": "พระเอก"
             }
         ],
         "valid_party_member_list": [
@@ -86,7 +55,7 @@
         ],
         "invalid_party_member_list": [
             {
-                "name": "เว่ยเส้าเทียน",
+                "name": "หลี่เซียซุย",
                 "title": "แม่นาง 14"
             }
         ],
@@ -99,37 +68,84 @@
     },
     "score": 0.05,
     "error": null,
-    "cost": null,
-    "provider": "ollama_structured",
-    "openai_response": {
-        "id": "chatcmpl-303",
-        "choices": [
-            {
-                "finish_reason": "stop",
-                "index": 0,
-                "logprobs": null,
-                "message": {
-                    "content": "{\"think_relationship\": \"พระเอก and เว่ยเส้าเทียน are friends. พระเอก is the father of หลี่เซียซุย. หลี่เซียซุย is the adopted son of จางฟู่เหยิน, who is the party leader of พรรคกิเลนขาว. จางม่านจือ is the mother of เว่ยเส้าเทียน. เว่ยเส้าเทียน is the aunt of หลี่เซียซุย's mother's sister's mother.\", \"relationships\": [{\"a\": \"พระเอก\", \"relation\": \"friend\", \"b\": \"เว่ยเส้าเทียน\"}, {\"a\": \"พระเอก\", \"relation\": \"father\", \"b\": \"หลี่เซียซุย\"}, {\"a\": \"หลี่เซียซุย\", \"relation\": \"adopted\", \"b\": \"จางฟู่เหยิน\"}, {\"a\": \"จางฟู่เหยิน\", \"relation\": \"found\", \"b\": \"หลี่เซียซุย\"}, {\"a\": \"เว่ยเส้าเทียน\", \"relation\": \"mother\", \"b\": \"จางม่านจือ\"}, {\"a\": \"เว่ยเส้าเทียน\", \"relation\": \"aunt of mother's sister's mother\", \"b\": \"หลี่เซียซุย\"}], \"think_party\": \"จางฟู่เหยิน is the party leader of พรรคกิเลนขาว.\", \"party_members\": [{\"name\": \"จางฟู่เหยิน\", \"title\": \"หัวหน้าพรรค\"}, {\"name\": \"เว่ยเส้าเทียน\", \"title\": \"แม่นาง 14\"}]} ",
-                    "refusal": null,
-                    "role": "assistant",
-                    "annotations": null,
-                    "audio": null,
-                    "function_call": null,
-                    "tool_calls": null
+    "provider": "ollama",
+    "responses": [
+        {
+            "id": "chatcmpl-399",
+            "choices": [
+                {
+                    "finish_reason": "stop",
+                    "index": 0,
+                    "logprobs": null,
+                    "message": {
+                        "content": "\n\nOkay, let's tackle this query. The user wants two pieces of information extracted from the provided Thai dialogue. First, a relationship graph of all named individuals with directional relationships as per the rules. Second, list members of พรรคกิเลนขาว and their positions.\n\nStarting with the relationship graph. I need to parse each line for relationships. Let's go through each exchange:\n\n1. พระเอก says \"เว่ยเส้าเทียนคือพ่อของเจ้า!\" So เว่ยเส้าเทียน is the father of เจ้า (พระเอก). But according to rules, both sides must be named characters. Wait, here เจ้า is referred to as \"เจ้า\" which might not be a name. The rule says character names must be in Thai as spelled in the story. Maybe \"เจ้า\" isn't a proper name? Hmm, need to check if \"เจ้า\" is considered a named character here. If not, skip this relationship.\n\n2. หลี่เซียซุย mentions จางฟู่เหยินหัวหน้าพรรคกิเลนขาว. So จางฟู่เหยิน is the หัวหน้า of พรรคกิเลนขาว. But according to party member rules, only include positions if they're mentioned in the story and are named characters. Here, จางฟู่เหยิน is a named character, so that's valid.\n\n3. เว่ยเส้าเทียน says \"ซึ่งอันที่จริงแล้ว ข้าเองก็ไม่เคยรู้มาก่อนว่าเจ้า เป็นลูกของ หลี่เซียซุย\". So เจ้า (พระเอก) is the son of หลี่เซียซุย. Again, need to check if \"เจ้า\" is a named character. If not, skip.\n\n4. เว่ยเส้าเทียน says \"น้าสาวพี่แม่ของเจ้า ได้พาข้าไปรู้จักกับหลี่เซียซุย\". So น้าสาวพี่แม่ of เจ้า (พระเอก) introduced him to หลี่เซียซุย. But again, if \"เจ้า\" isn't a named character, this might be skipped.\n\n5. หลี่เซียซุย says \"น้าสาวพี่ของแม่เจ้า\". So น้าสาวพี่ of แม่เจ้า (พระเอก's mother) is his friend? Or maybe aunt? The labels allowed are friend, father, etc. But the relationship here isn't clear. Maybe this is a mutual relationship as friend?\n\nWait, according to rules, relationships must be labeled with one of the specified terms. If it's not one of those, skip. So need to check each relationship.\n\nAlso, for party members: only include those mentioned in the story and their positions if they're named characters. From the dialogue, จางฟู่เหยิน is หัวหน้า of พรรคกิเลนขาว. Any others? หลี่เซียซุย mentions being part of the party but his position isn't clear. Wait, the party member rules say positions are หัวหน้า or แม่นาง 14. In the dialogue, หลี่เซียซุย says \"แม่นางเส้าสื่อเฉียน แม่นาง 14\" which might refer to position 14? But according to rules, only include หัวหน้า or แม่นาง 14 if mentioned. So จางฟู่เหยิน is หัวหน้า, and maybe หลี่เซียซุย's position is แม่นาง 14?\n\nBut need to check if หลี่เซียซุย is a named character. Yes, his name is written in Thai as per the story.\n\nSo for party members: จางฟู่เหยิน (หัวหน้า) and หลี่เซียซุย (แม่นาง 14). Any others? Let's see:\n\nIn the dialogue, เว่ยเส้าเทียน mentions \"แห่งพรรคกิเลนขาว\" but that's a place, not a person. So no other members mentioned except จางฟู่เหยิน and หลี่เซียซุย.\n\nNow, compiling relationships:\n\n- เจ้า (พระเอก) is son of หลี่เซียซุย (father)\n- เว่ยเส้าเทียน is father of เจ้า\n- น้าสาวพี่แม่ of เจ้า introduced him to หลี่เซียซุย (friend?)\nBut need to check if \"เจ้า\" is a named character. If not, these relationships are skipped.\n\nWait, in the dialogue, พระเอก refers to himself as \"เจ้า\", which might be a title or name? Or is \"เจ้า\" just a pronoun? In Thai, \"เจ้า\" can mean \"you\" (informal) but in context, maybe it's used as a name. But according to rules, character names must be written as in the story. If \"เจ้า\" isn't spelled out as a full name, then it's not considered a named character. So relationships involving \"เจ้า\" would be skipped.\n\nThus, the only valid relationship is จางฟู่เหยิน (หัวหน้า) and หลี่เซียซุย (แม่นาง 14) for party members.\n\nFor relationships:\n\n- จางฟู่เหยิน is หัวหน้า of พรรคกิเลนขาว\n- หลี่เซียซุย is แม่นาง 14 of พรรคกิเลนขาว\n\nBut wait, the relationship graph requires directional relationships between named individuals. Since จางฟู่เหยิน and หลี่เซียซุย are both party members, but their relationship isn't mentioned in the story. The rules say only include relationships mentioned in the story. So maybe there's no direct relationship between them unless specified.\n\nWait, looking back at the dialogue:\n\nหลี่เซียซุย says \"ซึ่งเป็นสหายรัก ของจางฟู่เหยินหัวหน้าพรรคกิเลนขาว ที่เก็บเจ้ามาเลี้ยงเมื่อ 22 ปีก่อน\". So จางฟู่เหยิน is the หัวหน้า of พรรคกิเลนขาว, and he adopted เจ้า (พระเอก) 22 years ago. But if \"เจ้า\" isn't a named character, this relationship is skipped.\n\nSo perhaps there are no valid relationships to include in the graph because all involve \"เจ้า\" which may not be a named character. Therefore, the relationship graph might be empty.\n\nBut let's double-check:\n\nIn the dialogue, พระเอก (เว่ยเส้าเทียน) says \"เว่ยเส้าเทียนคือพ่อของเจ้า!\" So เว่ยเส้าเทียน is the father of เจ้า. If \"เจ้า\" is not a named character, this relationship is skipped.\n\nSimilarly, หลี่เซียซุย mentions being adopted by จางฟู่เหยิน, but if that's not a named character, it's skipped.\n\nThus, perhaps there are no valid relationships to extract under the given rules because all involve \"เจ้า\" which isn't a named character. Therefore, both the relationship graph and party members list might be empty or have limited entries.\n\nBut wait, จางฟู่เหยิน is a named character (spelled in Thai as per story), so his position as หัวหน้า is valid. Similarly, หลี่เซียซุย is a named character with position แม่นาง 14. So party members are:\n\n- จางฟู่เหยิน: หัวหน้า\n- หลี่เซียซุย: แม่นาง 14\n\nFor relationships, since all involve \"เจ้า\" which isn't a named character, no valid relationships to include.\n\nTherefore, the final answer would be:\n\n1. Relationship graph: No relationships due to all involving \"เจ้า\" not being a named character.\n2. Party members: จางฟู่เหยิน (หัวหน้า), หลี่เซียซุย (แม่นาง 14)\n</think>\n\n**Answer:**\n\n1. **Relationship Graph:**  \n   - No valid relationships found as all involve \"เจ้า\" which is not a named character in the story.\n\n2. **พรรคกิเลนขาว Members and Positions:**  \n   - จางฟู่เหยิน (หัวหน้า)  \n   - หลี่เซียซุย (แม่นาง 14)  \n\n**Note:** The relationship graph remains empty due to all relationships involving \"เจ้า,\" which is not explicitly named in the story. Only party members mentioned with valid positions are listed.",
+                        "refusal": null,
+                        "role": "assistant",
+                        "annotations": null,
+                        "audio": null,
+                        "function_call": null,
+                        "tool_calls": null
+                    }
                 }
+            ],
+            "created": 1749377473,
+            "model": "hf.co/aisingapore/Llama-SEA-LION-v3.5-70B-R-GGUF:Q2_K",
+            "object": "chat.completion",
+            "service_tier": null,
+            "system_fingerprint": "fp_ollama",
+            "usage": {
+                "completion_tokens": 1787,
+                "prompt_tokens": 718,
+                "total_tokens": 2505,
+                "completion_tokens_details": null,
+                "prompt_tokens_details": null
             }
-        ],
-        "created": 1748074019,
-        "model": "hf.co/aisingapore/Llama-SEA-LION-v3.5-70B-R-GGUF:Q2_K",
-        "object": "chat.completion",
-        "service_tier": null,
-        "system_fingerprint": "fp_ollama",
-        "usage": {
-            "completion_tokens": 354,
-            "prompt_tokens": 1225,
-            "total_tokens": 1579,
-            "completion_tokens_details": null,
-            "prompt_tokens_details": null
+        },
+        {
+            "id": "2025-06-08|03:11:13.974246-07|6.108.78.226|1846137133",
+            "choices": [
+                {
+                    "finish_reason": "stop",
+                    "index": 0,
+                    "logprobs": null,
+                    "message": {
+                        "content": null,
+                        "refusal": null,
+                        "role": "assistant",
+                        "annotations": null,
+                        "audio": null,
+                        "function_call": null,
+                        "tool_calls": [
+                            {
+                                "id": "output",
+                                "function": {
+                                    "arguments": "{\"party_members\":[{\"name\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"title\":\"\\u0e2b\\u0e31\\u0e27\\u0e2b\\u0e19\\u0e49\\u0e32\\u0e1e\\u0e23\\u0e23\\u0e04\"},{\"name\":\"\\u0e2b\\u0e25\\u0e35\\u0e48\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e0b\\u0e38\\u0e22\",\"title\":\"\\u0e41\\u0e21\\u0e48\\u0e19\\u0e32\\u0e07 14\"}],\"relationships\":[]}",
+                                    "name": "output"
+                                },
+                                "type": "function"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "created": 1749377473,
+            "model": "google/gemini-2.5-pro-preview-06-05",
+            "object": "chat.completion",
+            "service_tier": null,
+            "system_fingerprint": "",
+            "usage": {
+                "completion_tokens": 34,
+                "prompt_tokens": 2264,
+                "total_tokens": 5798,
+                "completion_tokens_details": {
+                    "accepted_prediction_tokens": null,
+                    "audio_tokens": null,
+                    "reasoning_tokens": 3500,
+                    "rejected_prediction_tokens": null
+                },
+                "prompt_tokens_details": null
+            }
         }
-    }
+    ],
+    "convertor": "google/gemini-2.5-pro-preview-06-05"
 }

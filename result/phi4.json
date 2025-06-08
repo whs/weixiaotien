@@ -6,81 +6,96 @@
         "valid_optional_relationships": [],
         "invalid_relationships": [
             {
-                "a": "หลี่เซียซุย",
+                "from_": "หลี่เซียซุย",
                 "relation": "father",
-                "b": "เว่ยเส้าเทียน"
+                "to": "เว่ยเส้าเทียน"
             },
             {
-                "a": "จางฟู่เหยิน",
+                "from_": "เว่ยเส้าเทียน",
+                "relation": "son",
+                "to": "หลี่เซียซุย"
+            },
+            {
+                "from_": "จางฟู่เหยิน",
                 "relation": "found",
-                "b": "เว่ยเส้าเทียน"
+                "to": "เว่ยเส้าเทียน"
             },
             {
-                "a": "จางม่านจือ",
-                "relation": "mother",
-                "b": "เว่ยเส้าเทียน"
+                "from_": "เว่ยเส้าเทียน",
+                "relation": "adopted",
+                "to": "จางฟู่เหยิน"
             },
             {
-                "a": "เส้าสื่อเฉียน",
+                "from_": "เส้าสื่อเฉียน",
                 "relation": "aunt of mother's sister's mother",
-                "b": "เว่ยเส้าเทียน"
+                "to": "เว่ยเส้าเทียน"
             },
             {
-                "a": "เซียะถงอี้",
+                "from_": "เว่ยเส้าเทียน",
                 "relation": "aunt",
-                "b": "เว่ยเส้าเทียน"
+                "to": "เส้าสื่อเฉียน"
             },
             {
-                "a": "จางม่านจือ",
-                "relation": "son",
-                "b": "หลี่เซียซุย"
+                "from_": "จางม่านจือ",
+                "relation": "mother",
+                "to": "เว่ยเส้าเทียน"
             },
             {
-                "a": "เส้าสื่อเฉียน",
+                "from_": "เว่ยเส้าเทียน",
                 "relation": "son",
-                "b": "หลี่เซียซุย"
+                "to": "จางม่านจือ"
+            },
+            {
+                "from_": "เซียะถงอี้",
+                "relation": "aunt of mother's sister's mother",
+                "to": "เว่ยเส้าเทียน"
+            },
+            {
+                "from_": "เว่ยเส้าเทียน",
+                "relation": "aunt",
+                "to": "เซียะถงอี้"
             }
         ],
         "missing_relationships": [
             {
-                "a": "เว่ยเส้าเทียน",
+                "from_": "เว่ยเส้าเทียน",
                 "relation": "friend",
-                "b": "จางฟู่เหยิน"
+                "to": "จางฟู่เหยิน"
             },
             {
-                "a": "จางฟู่เหยิน",
+                "from_": "จางฟู่เหยิน",
                 "relation": "friend",
-                "b": "เว่ยเส้าเทียน"
+                "to": "เว่ยเส้าเทียน"
             },
             {
-                "a": "เว่ยเส้าเทียน",
+                "from_": "เว่ยเส้าเทียน",
                 "relation": "father",
-                "b": "พระเอก"
+                "to": "พระเอก"
             },
             {
-                "a": "จางม่านจือ",
+                "from_": "จางม่านจือ",
                 "relation": "mother",
-                "b": "พระเอก"
+                "to": "พระเอก"
             },
             {
-                "a": "พระเอก",
+                "from_": "พระเอก",
                 "relation": "son",
-                "b": "เว่ยเส้าเทียน"
+                "to": "เว่ยเส้าเทียน"
             },
             {
-                "a": "พระเอก",
+                "from_": "พระเอก",
                 "relation": "son",
-                "b": "จางม่านจือ"
+                "to": "จางม่านจือ"
             },
             {
-                "a": "เส้าสื่อเฉียน",
+                "from_": "เส้าสื่อเฉียน",
                 "relation": "found",
-                "b": "พระเอก"
+                "to": "พระเอก"
             },
             {
-                "a": "จางฟู่เหยิน",
+                "from_": "จางฟู่เหยิน",
                 "relation": "adopted",
-                "b": "พระเอก"
+                "to": "พระเอก"
             }
         ],
         "valid_party_member_list": [
@@ -89,7 +104,12 @@
                 "title": "หัวหน้าพรรค"
             }
         ],
-        "invalid_party_member_list": [],
+        "invalid_party_member_list": [
+            {
+                "name": "เซียะถงอี้",
+                "title": "แม่นาง 14"
+            }
+        ],
         "missing_party_members": [
             {
                 "name": "เส้าสื่อเฉียน",
@@ -97,39 +117,86 @@
             }
         ]
     },
-    "score": 0.1,
+    "score": 0.05,
     "error": null,
-    "cost": null,
-    "provider": "ollama_structured",
-    "openai_response": {
-        "id": "chatcmpl-421",
-        "choices": [
-            {
-                "finish_reason": "stop",
-                "index": 0,
-                "logprobs": null,
-                "message": {
-                    "content": "{\n  \"think_relationship\": \"พระเอก, เว่ยเส้าเทียน, หลี่เซียซุย, จางฟู่เหยิน, จางม่านจือ, เส้าสื่อเฉียน, เซียะถงอี้\",\n  \"relationships\": [\n    {\n      \"a\": \"หลี่เซียซุย\",\n      \"relation\": \"father\",\n      \"b\": \"เว่ยเส้าเทียน\"\n    },\n    {\n      \"a\": \"จางฟู่เหยิน\",\n      \"relation\": \"found\",\n      \"b\": \"เว่ยเส้าเทียน\"\n    },\n    {\n      \"a\": \"จางม่านจือ\",\n      \"relation\": \"mother\",\n      \"b\": \"เว่ยเส้าเทียน\"\n    },\n    {\n      \"a\": \"เส้าสื่อเฉียน\",\n      \"relation\": \"aunt of mother's sister's mother\",\n      \"b\": \"เว่ยเส้าเทียน\"\n    },\n    {\n      \"a\": \"เซียะถงอี้\",\n      \"relation\": \"aunt\",\n      \"b\": \"เว่ยเส้าเทียน\"\n    },\n    {\n      \"a\": \"จางม่านจือ\",\n      \"relation\": \"son\",\n      \"b\": \"หลี่เซียซุย\"\n    },\n    {\n      \"a\": \"เส้าสื่อเฉียน\",\n      \"relation\": \"son\",\n      \"b\": \"หลี่เซียซุย\"\n    }\n  ],\n  \"think_party\": \"จางฟู่เหยิน เป็นหัวหน้าพรรคกิเลนขาว\",\n  \"party_members\": [\n    {\n      \"name\": \"จางฟู่เหยิน\",\n      \"title\": \"หัวหน้าพรรค\"\n    }\n  ]\n}",
-                    "refusal": null,
-                    "role": "assistant",
-                    "annotations": null,
-                    "audio": null,
-                    "function_call": null,
-                    "tool_calls": null
+    "provider": "ollama",
+    "responses": [
+        {
+            "id": "chatcmpl-40",
+            "choices": [
+                {
+                    "finish_reason": "stop",
+                    "index": 0,
+                    "logprobs": null,
+                    "message": {
+                        "content": "### Relationship Graph\n\n1. **หลี่เซียซุย → เว่ยเส้าเทียน**: Father (พ่อ)\n2. **เว่ยเส้าเทียน → หลี่เซียซุย**: Son (ลูก)\n\n3. **จางฟู่เหยิน → เว่ยเส้าเทียน**: Found (พบ)\n4. **เว่ยเส้าเทียน → จางฟู่เหยิน**: Adopted (เก็บ)\n\n5. **แม่นางเส้าสื่อเฉียน → เว่ยเส้าเทียน**: Aunt of mother's sister's mother (น้าสาวพี่แม่)\n6. **เว่ยเส้าเทียน → แม่นางเส้าสื่อเฉียน**: Aunt of father's sister's mother (น้าสาวพี่ของแม่)\n\n7. **จางม่านจือ → เว่ยเส้าเทียน**: Mother (แม่)\n8. **เว่ยเส้าเทียน → จางม่านจือ**: Son (ลูก)\n\n9. **แม่นาง 14 → เว่ยเส้าเทียน**: Aunt of mother's sister's mother (น้าสาวพี่แม่)\n10. **เว่ยเส้าเทียน → แม่นาง 14**: Aunt of father's sister's mother (น้าสาวพี่ของแม่)\n\n### Members of พรรคกิเลนขาว and Their Positions\n\n1. **จางฟู่เหยิน**: Head of the Party (หัวหน้าพรรค)\n2. **แม่นาง 14**: Mother 14 (แม่นาง 14)\n\nThese are the relationships and party members extracted from the dialogue based on the provided rules.",
+                        "refusal": null,
+                        "role": "assistant",
+                        "annotations": null,
+                        "audio": null,
+                        "function_call": null,
+                        "tool_calls": null
+                    }
                 }
+            ],
+            "created": 1749381776,
+            "model": "phi4",
+            "object": "chat.completion",
+            "service_tier": null,
+            "system_fingerprint": "fp_ollama",
+            "usage": {
+                "completion_tokens": 492,
+                "prompt_tokens": 1088,
+                "total_tokens": 1580,
+                "completion_tokens_details": null,
+                "prompt_tokens_details": null
             }
-        ],
-        "created": 1748074246,
-        "model": "phi4",
-        "object": "chat.completion",
-        "service_tier": null,
-        "system_fingerprint": "fp_ollama",
-        "usage": {
-            "completion_tokens": 497,
-            "prompt_tokens": 1634,
-            "total_tokens": 2131,
-            "completion_tokens_details": null,
-            "prompt_tokens_details": null
+        },
+        {
+            "id": "2025-06-08|04:22:56.227819-07|5.218.246.54|454673997",
+            "choices": [
+                {
+                    "finish_reason": "stop",
+                    "index": 0,
+                    "logprobs": null,
+                    "message": {
+                        "content": null,
+                        "refusal": null,
+                        "role": "assistant",
+                        "annotations": null,
+                        "audio": null,
+                        "function_call": null,
+                        "tool_calls": [
+                            {
+                                "id": "output",
+                                "function": {
+                                    "arguments": "{\"party_members\":[{\"name\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"title\":\"\\u0e2b\\u0e31\\u0e27\\u0e2b\\u0e19\\u0e49\\u0e32\\u0e1e\\u0e23\\u0e23\\u0e04\"},{\"name\":\"\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e30\\u0e16\\u0e07\\u0e2d\\u0e35\\u0e49\",\"title\":\"\\u0e41\\u0e21\\u0e48\\u0e19\\u0e32\\u0e07 14\"}],\"relationships\":[{\"from_\":\"\\u0e2b\\u0e25\\u0e35\\u0e48\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e0b\\u0e38\\u0e22\",\"relation\":\"father\",\"to\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\",\"relation\":\"son\",\"to\":\"\\u0e2b\\u0e25\\u0e35\\u0e48\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e0b\\u0e38\\u0e22\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"relation\":\"found\",\"to\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\",\"relation\":\"adopted\",\"to\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\"},{\"from_\":\"\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e2a\\u0e37\\u0e48\\u0e2d\\u0e40\\u0e09\\u0e35\\u0e22\\u0e19\",\"relation\":\"aunt of mother's sister's mother\",\"to\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\",\"relation\":\"aunt\",\"to\":\"\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e2a\\u0e37\\u0e48\\u0e2d\\u0e40\\u0e09\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\",\"relation\":\"mother\",\"to\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\",\"relation\":\"son\",\"to\":\"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\"},{\"from_\":\"\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e30\\u0e16\\u0e07\\u0e2d\\u0e35\\u0e49\",\"relation\":\"aunt of mother's sister's mother\",\"to\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\",\"relation\":\"aunt\",\"to\":\"\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e30\\u0e16\\u0e07\\u0e2d\\u0e35\\u0e49\"}]}",
+                                    "name": "output"
+                                },
+                                "type": "function"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "created": 1749381776,
+            "model": "google/gemini-2.5-pro-preview-06-05",
+            "object": "chat.completion",
+            "service_tier": null,
+            "system_fingerprint": "",
+            "usage": {
+                "completion_tokens": 236,
+                "prompt_tokens": 836,
+                "total_tokens": 1938,
+                "completion_tokens_details": {
+                    "accepted_prediction_tokens": null,
+                    "audio_tokens": null,
+                    "reasoning_tokens": 866,
+                    "rejected_prediction_tokens": null
+                },
+                "prompt_tokens_details": null
+            }
         }
-    }
+    ],
+    "convertor": "google/gemini-2.5-pro-preview-06-05"
 }
