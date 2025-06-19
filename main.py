@@ -29,6 +29,7 @@ class ResultData(BaseModel):
     provider: Optional[str] = None
     responses: Optional[list[Union[ChatCompletion, typing.Any]]] = None
     convertor: Optional[Union[Literal["self"], str]] = None
+    cost: Optional[float] = None
 
 
 # Set JudgeClient to OpenAI instance that supports tool use
@@ -36,9 +37,14 @@ CONVERTOR_CLIENT: OpenAI
 CONVERTOR_MODEL: str
 CONVERTOR_PARAMS = {}
 
+think_tag_re = re.compile('^<think>.*?</think>', re.DOTALL)
+
 def jsonize_conversion(model_output: str, client: OpenAI, completion_params, retry=3) -> (Optional[Output], list[
     Union[ChatCompletion, typing.Any]]):
     out_response = []
+
+    # Remove thinking tags - ollama doesn't separate thinking output in API
+    model_output = think_tag_re.sub('', model_output)
 
     convertor_params = {
         "messages": [
@@ -209,7 +215,7 @@ def main():
         # {"model": "anthropic/claude-3.5-haiku", **openrouter_args},
         # {"model": "anthropic/claude-3.5-sonnet", **openrouter_args},
         # {"model": "anthropic/claude-sonnet-4", **openrouter_args},
-        # {"model": "anthropic/claude-opus-4-20250514", **requesty_args},
+        # {"model": "anthropic/claude-opus-4", **openrouter_args},
         # {"model": "deepseek/deepseek-chat-v3-0324", **openrouter_args},
         # {"model": "deepseek/deepseek-r1-0528", **openrouter_args},
         # {"model": "qwen/qwen-max", **openrouter_args},

@@ -5,22 +5,13 @@
         "valid_relationships": [
             {
                 "from_": "เว่ยเส้าเทียน",
-                "relation": "friend",
-                "to": "จางฟู่เหยิน"
-            },
-            {
-                "from_": "จางฟู่เหยิน",
-                "relation": "friend",
-                "to": "เว่ยเส้าเทียน"
-            }
-        ],
-        "valid_optional_relationships": [],
-        "invalid_relationships": [],
-        "missing_relationships": [
-            {
-                "from_": "เว่ยเส้าเทียน",
                 "relation": "father",
                 "to": "พระเอก"
+            },
+            {
+                "from_": "พระเอก",
+                "relation": "son",
+                "to": "เว่ยเส้าเทียน"
             },
             {
                 "from_": "จางม่านจือ",
@@ -30,13 +21,39 @@
             {
                 "from_": "พระเอก",
                 "relation": "son",
+                "to": "จางม่านจือ"
+            },
+            {
+                "from_": "เว่ยเส้าเทียน",
+                "relation": "friend",
+                "to": "จางฟู่เหยิน"
+            },
+            {
+                "from_": "จางฟู่เหยิน",
+                "relation": "friend",
                 "to": "เว่ยเส้าเทียน"
+            }
+        ],
+        "valid_optional_relationships": [
+            {
+                "from_": "เซียะถงอี้",
+                "relation": "aunt",
+                "to": "พระเอก"
+            }
+        ],
+        "invalid_relationships": [
+            {
+                "from_": "จางฟู่เหยิน",
+                "relation": "found",
+                "to": "พระเอก"
             },
             {
                 "from_": "พระเอก",
-                "relation": "son",
-                "to": "จางม่านจือ"
-            },
+                "relation": "adopted",
+                "to": "จางฟู่เหยิน"
+            }
+        ],
+        "missing_relationships": [
             {
                 "from_": "เส้าสื่อเฉียน",
                 "relation": "found",
@@ -61,50 +78,50 @@
         "invalid_party_member_list": [],
         "missing_party_members": []
     },
-    "score": 0.4,
+    "score": 0.6666666666666667,
     "error": null,
     "provider": "openrouter",
     "responses": [
         {
-            "id": "gen-1750305155-1XFIRwbIE3eAdhCYq767",
+            "id": "gen-1750308566-pjrgsQx3QNwy1FWGFsm3",
             "choices": [
                 {
                     "finish_reason": "stop",
                     "index": 0,
                     "logprobs": null,
                     "message": {
-                        "content": "Here is the information extracted from the dialogue, following the provided rules.\n\n### 1. Relationship Graph\n\n| From | Relationship | To |\n| :--- | :--- | :--- |\n| เว่ยเส้าเทียน | friend | จางฟู่เหยิน |\n| จางฟู่เหยิน | friend | เว่ยเส้าเทียน |\n\n### 2. พรรคกิเลนขาว Members\n\n| Name | Position |\n| :--- | :--- |\n| จางฟู่เหยิน | หัวหน้าพรรค |\n| เส้าสื่อเฉียน | แม่นาง 14 |",
+                        "content": "Here are the two pieces of information extracted from the dialogue:\n\n### 1. Relationship Graph\n\n| From | Relationship | To |\n| :--- | :--- | :--- |\n| เว่ยเส้าเทียน | father | พระเอก |\n| พระเอก | son | เว่ยเส้าเทียน |\n| จางม่านจือ | mother | พระเอก |\n| พระเอก | son | จางม่านจือ |\n| เว่ยเส้าเทียน | friend | จางฟู่เหยิน |\n| จางฟู่เหยิน | friend | เว่ยเส้าเทียน |\n| จางฟู่เหยิน | found | พระเอก |\n| พระเอก | adopted | จางฟู่เหยิน |\n| เซียะถงอี้ | aunt | พระเอก |\n\n### 2. Members of พรรคกิเลนขาว\n\n| Name | Position |\n| :--- | :--- |\n| จางฟู่เหยิน | หัวหน้าพรรค |\n| แม่นางเส้าสื่อเฉียน | แม่นาง 14 |",
                         "refusal": null,
                         "role": "assistant",
                         "annotations": null,
                         "audio": null,
                         "function_call": null,
                         "tool_calls": null,
-                        "reasoning": "**Considering: Relationship Data**\n\nI'm currently focused on extracting the relationship graph. I've started by identifying named individuals, but the protagonist designation is tricky because it's a role. The dialogue doesn't explicitly state their name. This means I need to look for further clues within the dialogue to correctly create the relationship graph and extract all the relevant party members.\n\n\n**Defining: Relationship Extraction**\n\nI've moved on to the relationships between the identified individuals. I'm applying the provided rules to analyze the dialogue and extract connections. I'm prioritizing mutual and directional relationships and will exclude any relationships not explicitly stated. I'm also ensuring adherence to the given name spellings.\n\n\n**Constructing: Initial Relationship Graph**\n\nI've meticulously extracted the named individuals, clarifying \"Lady Shao Siqian\" to \"เส้าสื่อเฉียน\" and confirming all the names. Now, I'm dissecting the provided dialogue, applying the established relationship rules. I'm identifying direct and mutual relationships, taking note of how \"you\" refers to the unnamed protagonist. My immediate focus is to extract valid relationships.\n\n\n**Processing: Dialogue and Relationships**\n\nI'm currently grappling with the complexities of the Thai dialogue. I've identified the named individuals and have begun applying the rules to extract relationships. The lack of a name for the protagonist continues to be a significant hurdle, preventing the inclusion of several potential relationships. My focus is now on parsing each sentence, meticulously identifying valid connections based on the provided guidelines.\n\n\n**Refining: Relationship Extraction**\n\nI'm now scrutinizing the sentences, working through the dialogue systematically. I'm focused on interpreting each line, checking the rules, and ensuring that all extracted relationships adhere strictly to them. My current focus is on understanding the nuances of Thai family terms. It is helpful to confirm the connections and relationships, even if the unnamed protagonist is involved.\n\n\n**Evaluating: Relationship Rules**\n\nI'm now meticulously reviewing the relationships and the rules, especially the limitations imposed by the unnamed protagonist. I am stuck since the majority of the potential relationships involve this unnamed character, I've had trouble extracting valid data. I'm re-examining each sentence carefully, looking for any hidden clues that could allow me to extract some data.\n\n\n**Parsing: Sentence-by-Sentence Analysis**\n\nI'm methodically dissecting the remaining sentences, meticulously extracting valid relationship data. I am taking another look to see if any relationships can be parsed from the sentences. Despite the constraints, I continue to carefully apply the rules. My focus remains on accurately identifying and extracting these connections.\n\n\n**Parsing: Relationship Analysis**\n\nI've completed the sentence-by-sentence analysis of the dialogue. While I was able to identify specific named characters, the lack of the protagonist's name severely limits the extracted relationships, and many potential ones can't be included.  I'm currently working on a concise list of the extracted valid relationship data.\n\n\n**Refining: Relationship Analysis**\n\nI've completed the analysis of the dialogue, and now I'm struggling with the protagonist's lack of a name and the limitations on the rules for relationship extraction. The only clear and extracted relationships are those between Wei Shaotian and Zhang Furen.  I'm starting to suspect I might need to adjust how I approach the problem to find more connections within the strict parameters.\n\n\n**Extracting: Valid Relationships**\n\nI've completed the analysis of the dialogue, and am now distilling it to extract the valid relationships. I've identified a few core relationships: Wei Shaotian and Zhang Furen's friendship, along with the protagonist's relationships to their parents. My next step is to rigorously apply all the established rules to confirm the accuracy of the relationship graph and the list of party members.\n\n\n**Summarizing: Extracted Data**\n\nI'm creating a concise overview of the valid relationships. Based on my analysis, the only definite relationship I can extract from the dialogue is the friendship between Wei Shaotian and Zhang Furen. I have updated the list of party members as well, to match the available extractions.\n\n\n**Summarizing: Data Analysis**\n\nI've now successfully extracted the key relationships from the dialogue, along with a list of party members. I'm verifying those relationships with the rules, to ensure a correct mapping. The lack of a name for the protagonist continues to limit the extent of the relationship graph.\n\n\n**Refining: Extracted Data**\n\nI'm compiling the final data based on my meticulous analysis of the provided dialogue and the strict rules for extraction. The most significant challenge has been the absence of a name for the protagonist, severely limiting the possible relationships. I'm finalizing the relationship graph.\n\n\n**Extracting: Final Relationships**\n\nI've finalized the relationship graph extraction. Focusing on the given rules, the only extracted relationship is the mutual friendship between Wei Shaotian and Zhang Furen. The lack of a name for the protagonist significantly limits the graph's complexity. I've included only the valid party members.\n\n\n**Concluding: Relationship Extraction**\n\nI'm now summarizing my findings from the dialogue analysis, concentrating on the extraction of valid relationships between named characters, based on the rules. The primary challenge remains the lack of a name for the protagonist. I've included only the friendship between Wei Shaotian and Zhang Furen.\n\n\n**Concluding: Data Verification**\n\nI've reviewed the initial analysis and extraction of valid data, including the relationships and the list of party members, within the constraints. The lack of the protagonist's name continues to severely restrict the data I can extract. I'm now meticulously double-checking to guarantee full compliance with the specified rules, ensuring accuracy.\n\n\n**Extracting: Final Analysis**\n\nI'm finalizing the data. Despite several potential connections, the unnamed protagonist significantly limited valid extractions. I've successfully extracted the mutual friendship between Wei Shaotian and Zhang Furen based on the dialogue and the established rules. I am completing the party member's list.\n\n\n**Extracting: Data Verification**\n\nI've completed the extraction phase, the relationship analysis, and identified party members. I'm now at the verification stage. I'm double-checking my work, reviewing the dialogue against the rules, ensuring all the extracted data is complete. I am making final adjustments to the party members list, ensuring accuracy.\n\n\n**Verifying: Extracted Data**\n\nI'm verifying the extraction process, checking for omissions and accuracy against the source dialogue and the constraints of the rules. The only valid data is the friend relationship between Wei Shaotian and Zhang Furen and the party members. I am completing the analysis now.\n\n\n**Extracting: Party Members**\n\nI've completed the analysis.  I've distilled the extracted valid data, focusing on the established rules and the constraints of the unnamed protagonist. The final extraction is the friendship between Wei Shaotian and Zhang Furen, and the confirmed party members are: Zhang Furen (Party Leader) and Shao Siqian (Lady 14).\n\n\n**Summarizing: Analysis and Extraction**\n\nI'm creating a complete and fully extracted data set. Considering the constraints, I've finalized my extraction of the friendship between Wei Shaotian and Zhang Furen, as well as identifying the party members. I'm now prepared to verify and validate this information, as I feel confident I've extracted all possible data.\n\n\n**Finalizing: Data Extraction**\n\nI've reviewed all the information and successfully extracted the relationships and party members based on the strict rules. I've accounted for all the details, including the limitations imposed by the absence of the protagonist's name. I'm now sure I have a fully verified dataset.\n\n\n"
+                        "reasoning": "**Considering Relationships Now**\n\nI've moved on to the relationship graph, where I'm focusing on mapping the connections between characters. So far, I've identified พระเอก and เว่ยเส้าเทียน as key individuals in the dialogue. Next, I'll look for how they interact.\n\n\n**Mapping Character Interactions**\n\nI'm currently analyzing the dialogue to pinpoint interactions. I've identified \"หลี่เซียซุย\" as the source for the first relationship, stating that \"เว่ยเส้าเทียน\" is the father of \"พระเอก\". I'll next need to check this against the available rules, and also map out the reverse relationship. Then, I need to extract \"เว่ยเส้าเทียน\"'s relationship to \"จางฟู่เหยิน\".\n\n\n**Constructing Initial Relations**\n\nI've identified the characters and am currently detailing the initial relationships. From หลี่เซียซุย's dialogue, I've established the parent-child link between เว่ยเส้าเทียน and พระเอก and their reverse. I've also logged the friendly association between เว่ยเส้าเทียน and จางฟู่เหยิน. Next, I will capture จางฟู่เหยิน's role as a benefactor.\n\n\n**Detailing the Relationships**\n\nI've just finished fleshing out the relationship graph. The dialogue revealed that \"เว่ยเส้าเทียน\" is the \"father\" of \"พระเอก\", and \"จางฟู่เหยิน\" is his \"founding parent\". Additionally, \"เซียะถงอี้\" is his aunt (mother's sister). I'll move to extracting party members next.\n\n\n**Finalizing the Relations**\n\nI've completed the relationship graph based on the dialogue, adding all characters to it. I've meticulously extracted all relationships, like the parent-child dynamic of \"จางม่านจือ\" and \"พระเอก\" and the aunt-nephew bond between \"เซียะถงอี้\" and \"พระเอก\", and their reverse. Now I will extract party members.\n\n\n**Extracting the Party**\n\nI've finished the relationship graph by carefully examining the provided dialogue and rules. Now, I'm working to identify the party members. From the dialogue, there's no explicit information. Therefore, I'll move on to the next step.\n\n\n**Refining Relationships Extraction**\n\nI'm now reviewing the relationships to ensure complete accuracy. While I previously mapped \"aunt,\" I've realized the need to apply the label only in the correct direction. Similarly, I will now double-check all reverse relationships to ensure alignment with the established rules and the presence of explicit examples.\n\n\n**Refining the Relationships**\n\nI'm now focused on the second part of the prompt. I've successfully extracted the relationship graph, ensuring it adheres to all the rules, including the directionality and allowed labels like 'father,' 'aunt,' and 'friend.' I have also confirmed all relationships are with named characters. I am ready to move on to the party members.\n\n\n**Reviewing the Relationships**\n\nI've reviewed all relationships, paying close attention to the provided rules. All relationships are now confirmed to be directional, with the appropriate labels and matching the names in the dialogue. Further, all the labels are in the allowed list. I'm prepared to begin with the party members.\n\n\n**Addressing the Party List**\n\nI've shifted to extracting the party members. I've identified the White Qilin Party and its leader, and I'm now meticulously analyzing the dialogue for other members. แม่นางเส้าสื่อเฉียน and her position are also confirmed. The final check on these aspects is pending.\n\n\n**Assessing the Members**\n\nI'm now analyzing the dialogue to find the party members and their positions. I've already identified the leader, จางฟู่เหยิน, and another member, แม่นางเส้าสื่อเฉียน. The process is going well, so I will proceed to confirm the extracted members.\n\n\n"
                     },
                     "native_finish_reason": "STOP"
                 }
             ],
-            "created": 1750305155,
+            "created": 1750308566,
             "model": "google/gemini-2.5-pro",
             "object": "chat.completion",
             "service_tier": null,
             "system_fingerprint": null,
             "usage": {
-                "completion_tokens": 5386,
-                "prompt_tokens": 677,
-                "total_tokens": 6063,
+                "completion_tokens": 2587,
+                "prompt_tokens": 711,
+                "total_tokens": 3298,
                 "completion_tokens_details": {
                     "accepted_prediction_tokens": null,
                     "audio_tokens": null,
-                    "reasoning_tokens": 5247,
+                    "reasoning_tokens": 2343,
                     "rejected_prediction_tokens": null
                 },
                 "prompt_tokens_details": {
                     "audio_tokens": null,
                     "cached_tokens": 0
                 },
-                "cost": 0.05470625,
+                "cost": 0.02675875,
                 "is_byok": false,
                 "cost_details": {
                     "upstream_inference_cost": null
@@ -113,7 +130,7 @@
             "provider": "Google"
         },
         {
-            "id": "2025-06-18|20:53:26.168825-07|1.115.212.137|-1341980837",
+            "id": "2025-06-18|21:49:51.094723-07|6.108.72.15|-1374545708",
             "choices": [
                 {
                     "finish_reason": "stop",
@@ -130,7 +147,7 @@
                             {
                                 "id": "output",
                                 "function": {
-                                    "arguments": "{\"party_members\":[{\"name\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"title\":\"\\u0e2b\\u0e31\\u0e27\\u0e2b\\u0e19\\u0e49\\u0e32\\u0e1e\\u0e23\\u0e23\\u0e04\"},{\"name\":\"\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e2a\\u0e37\\u0e48\\u0e2d\\u0e40\\u0e09\\u0e35\\u0e22\\u0e19\",\"title\":\"\\u0e41\\u0e21\\u0e48\\u0e19\\u0e32\\u0e07 14\"}],\"relationships\":[{\"from_\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\",\"relation\":\"friend\",\"to\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"relation\":\"friend\",\"to\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"}]}",
+                                    "arguments": "{\"party_members\":[{\"name\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"title\":\"\\u0e2b\\u0e31\\u0e27\\u0e2b\\u0e19\\u0e49\\u0e32\\u0e1e\\u0e23\\u0e23\\u0e04\"},{\"name\":\"\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e2a\\u0e37\\u0e48\\u0e2d\\u0e40\\u0e09\\u0e35\\u0e22\\u0e19\",\"title\":\"\\u0e41\\u0e21\\u0e48\\u0e19\\u0e32\\u0e07 14\"}],\"relationships\":[{\"from_\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\",\"relation\":\"father\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\",\"relation\":\"son\",\"to\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\",\"relation\":\"mother\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\",\"relation\":\"son\",\"to\":\"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\"},{\"from_\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\",\"relation\":\"friend\",\"to\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"relation\":\"friend\",\"to\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"relation\":\"found\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\",\"relation\":\"adopted\",\"to\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\"},{\"from_\":\"\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e30\\u0e16\\u0e07\\u0e2d\\u0e35\\u0e49\",\"relation\":\"aunt\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"}]}",
                                     "name": "output"
                                 },
                                 "type": "function"
@@ -139,24 +156,24 @@
                     }
                 }
             ],
-            "created": 1750305206,
-            "model": "google/gemini-2.5-pro-preview-06-05",
+            "created": 1750308591,
+            "model": "google/gemini-2.5-pro",
             "object": "chat.completion",
             "service_tier": null,
             "system_fingerprint": "",
             "usage": {
-                "completion_tokens": 71,
-                "prompt_tokens": 603,
-                "total_tokens": 1240,
+                "completion_tokens": 167,
+                "prompt_tokens": 698,
+                "total_tokens": 1490,
                 "completion_tokens_details": {
                     "accepted_prediction_tokens": null,
                     "audio_tokens": null,
-                    "reasoning_tokens": 566,
+                    "reasoning_tokens": 625,
                     "rejected_prediction_tokens": null
                 },
                 "prompt_tokens_details": null
             }
         }
     ],
-    "convertor": "google/gemini-2.5-pro-preview-06-05"
+    "convertor": "google/gemini-2.5-pro"
 }

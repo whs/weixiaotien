@@ -4,27 +4,33 @@
     "result": {
         "valid_relationships": [
             {
+                "from_": "พระเอก",
+                "relation": "son",
+                "to": "เว่ยเส้าเทียน"
+            },
+            {
                 "from_": "เว่ยเส้าเทียน",
                 "relation": "father",
                 "to": "พระเอก"
-            },
+            }
+        ],
+        "valid_optional_relationships": [
+            {
+                "from_": "เซียะถงอี้",
+                "relation": "aunt of mother's sister's mother",
+                "to": "พระเอก"
+            }
+        ],
+        "invalid_relationships": [
             {
                 "from_": "จางฟู่เหยิน",
                 "relation": "friend",
-                "to": "เว่ยเส้าเทียน"
-            }
-        ],
-        "valid_optional_relationships": [],
-        "invalid_relationships": [
+                "to": "หลี่เซียซุย"
+            },
             {
                 "from_": "หลี่เซียซุย",
                 "relation": "friend",
-                "to": "เว่ยเส้าเทียน"
-            },
-            {
-                "from_": "เส้าสื่อเฉียน",
-                "relation": "aunt of mother's sister's mother",
-                "to": "พระเอก"
+                "to": "จางฟู่เหยิน"
             }
         ],
         "missing_relationships": [
@@ -34,14 +40,14 @@
                 "to": "จางฟู่เหยิน"
             },
             {
+                "from_": "จางฟู่เหยิน",
+                "relation": "friend",
+                "to": "เว่ยเส้าเทียน"
+            },
+            {
                 "from_": "จางม่านจือ",
                 "relation": "mother",
                 "to": "พระเอก"
-            },
-            {
-                "from_": "พระเอก",
-                "relation": "son",
-                "to": "เว่ยเส้าเทียน"
             },
             {
                 "from_": "พระเอก",
@@ -63,28 +69,34 @@
             {
                 "name": "จางฟู่เหยิน",
                 "title": "หัวหน้าพรรค"
-            },
+            }
+        ],
+        "invalid_party_member_list": [
+            {
+                "name": "เว่ยเส้าเทียน",
+                "title": "แม่นาง 14"
+            }
+        ],
+        "missing_party_members": [
             {
                 "name": "เส้าสื่อเฉียน",
                 "title": "แม่นาง 14"
             }
-        ],
-        "invalid_party_member_list": [],
-        "missing_party_members": []
+        ]
     },
-    "score": 0.30000000000000004,
+    "score": 0.16999999999999998,
     "error": null,
     "provider": "ollama",
     "responses": [
         {
-            "id": "chatcmpl-89",
+            "id": "chatcmpl-704",
             "choices": [
                 {
                     "finish_reason": "stop",
                     "index": 0,
                     "logprobs": null,
                     "message": {
-                        "content": "1. Relationship Graph:\n- เว่ยเส้าเทียน -father-> พระเอก\n- จางฟู่เหยิน -friend-> เว่ยเส้าเทียน\n- หลี่เซียซุย -friend-> เว่ยเส้าเทียน\n- เส้าสื่อเฉียน -aunt of mother's sister's mother-> พระเอก\n\n2. Party Members:\n- จางฟู่เหยิน: หัวหน้าพรรค\n- เส้าสื่อเฉียน: แม่นาง 14",
+                        "content": "1. Relationship Graph:\n- พระเอก - son - เว่ยเส้าเทียน\n- เว่ยเส้าเทียน - father - พระเอก\n- จางฟู่เหยิน - friend - หลี่เซียซุย\n- หลี่เซียซุย - friend - จางฟู่เหยิน\n- เซียะถงอี้ - aunt of mother's sister's mother - พระเอก\n\n2. Party Members of พรรคกิเลนขาว:\n- จางฟู่เหยิน: หัวหน้าพรรค\n- เว่ยเส้าเทียน: แม่นาง 14",
                         "refusal": null,
                         "role": "assistant",
                         "annotations": null,
@@ -94,21 +106,21 @@
                     }
                 }
             ],
-            "created": 1749380279,
+            "created": 1750309785,
             "model": "hf.co/JulienElkaim/Tsunami-1.0-14B-Instruct-Q4_K_M-GGUF:Q4_K_M",
             "object": "chat.completion",
             "service_tier": null,
             "system_fingerprint": "fp_ollama",
             "usage": {
-                "completion_tokens": 126,
-                "prompt_tokens": 789,
-                "total_tokens": 915,
+                "completion_tokens": 149,
+                "prompt_tokens": 823,
+                "total_tokens": 972,
                 "completion_tokens_details": null,
                 "prompt_tokens_details": null
             }
         },
         {
-            "id": "2025-06-08|03:57:59.639324-07|6.108.78.226|1846137133",
+            "id": "2025-06-18|22:09:46.024700-07|0.132.218.206|-147705481",
             "choices": [
                 {
                     "finish_reason": "stop",
@@ -125,7 +137,7 @@
                             {
                                 "id": "output",
                                 "function": {
-                                    "arguments": "{\"party_members\":[{\"name\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"title\":\"\\u0e2b\\u0e31\\u0e27\\u0e2b\\u0e19\\u0e49\\u0e32\\u0e1e\\u0e23\\u0e23\\u0e04\"},{\"name\":\"\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e2a\\u0e37\\u0e48\\u0e2d\\u0e40\\u0e09\\u0e35\\u0e22\\u0e19\",\"title\":\"\\u0e41\\u0e21\\u0e48\\u0e19\\u0e32\\u0e07 14\"}],\"relationships\":[{\"from_\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\",\"relation\":\"father\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"relation\":\"friend\",\"to\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e2b\\u0e25\\u0e35\\u0e48\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e0b\\u0e38\\u0e22\",\"relation\":\"friend\",\"to\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e2a\\u0e37\\u0e48\\u0e2d\\u0e40\\u0e09\\u0e35\\u0e22\\u0e19\",\"relation\":\"aunt of mother's sister's mother\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"}]}",
+                                    "arguments": "{\"party_members\":[{\"name\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"title\":\"\\u0e2b\\u0e31\\u0e27\\u0e2b\\u0e19\\u0e49\\u0e32\\u0e1e\\u0e23\\u0e23\\u0e04\"},{\"name\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\",\"title\":\"\\u0e41\\u0e21\\u0e48\\u0e19\\u0e32\\u0e07 14\"}],\"relationships\":[{\"from_\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\",\"relation\":\"son\",\"to\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\",\"relation\":\"father\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"relation\":\"friend\",\"to\":\"\\u0e2b\\u0e25\\u0e35\\u0e48\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e0b\\u0e38\\u0e22\"},{\"from_\":\"\\u0e2b\\u0e25\\u0e35\\u0e48\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e0b\\u0e38\\u0e22\",\"relation\":\"friend\",\"to\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\"},{\"from_\":\"\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e30\\u0e16\\u0e07\\u0e2d\\u0e35\\u0e49\",\"relation\":\"aunt of mother's sister's mother\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"}]}",
                                     "name": "output"
                                 },
                                 "type": "function"
@@ -134,24 +146,25 @@
                     }
                 }
             ],
-            "created": 1749380279,
-            "model": "google/gemini-2.5-pro-preview-06-05",
+            "created": 1750309786,
+            "model": "google/gemini-2.5-pro",
             "object": "chat.completion",
             "service_tier": null,
             "system_fingerprint": "",
             "usage": {
-                "completion_tokens": 106,
-                "prompt_tokens": 578,
-                "total_tokens": 1217,
+                "completion_tokens": 122,
+                "prompt_tokens": 592,
+                "total_tokens": 1755,
                 "completion_tokens_details": {
                     "accepted_prediction_tokens": null,
                     "audio_tokens": null,
-                    "reasoning_tokens": 533,
+                    "reasoning_tokens": 1041,
                     "rejected_prediction_tokens": null
                 },
                 "prompt_tokens_details": null
             }
         }
     ],
-    "convertor": "google/gemini-2.5-pro-preview-06-05"
+    "convertor": "google/gemini-2.5-pro",
+    "cost": null
 }

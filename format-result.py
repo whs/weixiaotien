@@ -54,6 +54,9 @@ def main():
                     # OpenRouter report the cost here
                     cost += resp.usage.model_extra["cost"]
 
+            if item.cost and isinstance(item.cost, (int, float)):
+                cost = item.cost
+
             invalid = []
             if len(item.result.invalid_relationships) > 0:
                 invalid.append(f"Rel {len(item.result.invalid_relationships)}")

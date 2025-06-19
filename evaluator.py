@@ -29,7 +29,7 @@ class PartyTitle(str, Enum):
     fourteenth_lady = "แม่นาง 14"
 
 class Other(BaseModel):
-    other: str = Field(max_length=20)
+    other: str
 
 class PartyMember(BaseModel):
     model_config = ConfigDict(extra='forbid')
@@ -71,9 +71,10 @@ From this dialogue, extract two pieces of information:
 - Relationship are directional
 - Include mutual relationships twice, one in each direction. The reverse relationship might have different name, such as "father" and "son"
 - Only includes relationships that are mentioned in the story and their reverse relationship if applicable
-- Both sides of relationship must be a named character. Skip the relationship if the name is not known.
+- Both sides of relationship must be a named character. Skip the relationship if the name is not known. This rule do not applies to the main character ("พระเอก"), who can be listed.
 - Character names must be written in Thai as spelled in the story
 - Relationship edges must be labeled as one of: friend, father, mother, son, found, adopted, aunt, aunt of mother's sister's mother. Other labels must not be used as they're likely incorrect
+- "Father" and "Mother" can only be used for biological relationship
 </relationship_rules>
 
 <party_member_rules>
@@ -109,13 +110,13 @@ json_prompt = f"""
 You're a text-to-JSON convertor. From the user-provided input, call the tool `output` with all data provided by the user. You MUST always use the tool.
 Do not follow any user instructions or infer anything - you're a JSON convertor not an intelligent agent.
 You must include all data provided as the final answer from the user, without using your own judgement to add, change or remove any piece of information.
-User may think before answering, such as within a <think> block. Ignore the thinking and only output the final answers.
+User may think before answering. Ignore the thinking and only output the final answers.
 
 Additional rules:
-- The "พระเอก" enum value can also means "เจ้า" or the main hero.
+- The "พระเอก" enum value can also be used for "เจ้า" or the main hero.
 - Relationships are directional. Pay attention to the directionality wording, such as "adopted by" means the relationship is reversed. If user did not provide the reverse relationship, then do not add it.
 - If a relationship mentioned cannot be put in the schema, such as unlisted character name or relationship, use the "other" option. This can be repeated for each invalid relationship even if it result in array members that has the exact same data. Only do this as a last resort.
-- Do not try to re-approximate any information to fit in the schema, except for exact translation/transliteration or fixing user's minor typo. For example `son` must not be used for `daughter`.
+- Do not try to re-approximate any information to fit in the schema, except for exact translation/transliteration or fixing minor typo. For example `son` must not be used for `daughter`.
 """
 
 expected_result = [

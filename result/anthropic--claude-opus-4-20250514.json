@@ -24,9 +24,9 @@
                 "to": "เว่ยเส้าเทียน"
             },
             {
-                "from_": "พระเอก",
-                "relation": "son",
-                "to": "จางม่านจือ"
+                "from_": "จางฟู่เหยิน",
+                "relation": "adopted",
+                "to": "พระเอก"
             },
             {
                 "from_": "จางม่านจือ",
@@ -34,32 +34,27 @@
                 "to": "พระเอก"
             },
             {
-                "from_": "เส้าสื่อเฉียน",
-                "relation": "found",
-                "to": "พระเอก"
+                "from_": "พระเอก",
+                "relation": "son",
+                "to": "จางม่านจือ"
             }
         ],
         "valid_optional_relationships": [],
         "invalid_relationships": [
             {
-                "from_": "เว่ยเส้าเทียน",
-                "relation": "adopted",
-                "to": "พระเอก"
-            },
-            {
                 "from_": "พระเอก",
                 "relation": "adopted",
-                "to": "เว่ยเส้าเทียน"
-            },
-            {
-                "from_": "พระเอก",
-                "relation": "son",
                 "to": "จางฟู่เหยิน"
             },
             {
                 "from_": "จางฟู่เหยิน",
                 "relation": "father",
                 "to": "พระเอก"
+            },
+            {
+                "from_": "พระเอก",
+                "relation": "son",
+                "to": "จางฟู่เหยิน"
             },
             {
                 "from_": "เซียะถงอี้",
@@ -69,8 +64,8 @@
         ],
         "missing_relationships": [
             {
-                "from_": "จางฟู่เหยิน",
-                "relation": "adopted",
+                "from_": "เส้าสื่อเฉียน",
+                "relation": "found",
                 "to": "พระเอก"
             }
         ],
@@ -87,19 +82,19 @@
         "invalid_party_member_list": [],
         "missing_party_members": []
     },
-    "score": 0.6083333333333334,
+    "score": 0.6454545454545455,
     "error": null,
     "provider": "requesty",
     "responses": [
         {
-            "id": "msg_011akzcewkNegu8bUWyXgfbp",
+            "id": "msg_014davUXxkypa8my7pBiLPwJ",
             "choices": [
                 {
                     "finish_reason": "stop",
                     "index": 0,
                     "logprobs": null,
                     "message": {
-                        "content": "Based on the dialogue, here's the extracted information:\n\n## 1. Relationship Graph\n\n```\nพระเอก → เว่ยเส้าเทียน: son\nเว่ยเส้าเทียน → พระเอก: father\nเว่ยเส้าเทียน → พระเอก: adopted\nพระเอก → เว่ยเส้าเทียน: adopted\nเว่ยเส้าเทียน → จางฟู่เหยิน: friend\nจางฟู่เหยิน → เว่ยเส้าเทียน: friend\nพระเอก → จางฟู่เหยิน: son\nจางฟู่เหยิน → พระเอก: father\nพระเอก → จางม่านจือ: son\nจางม่านจือ → พระเอก: mother\nเซียะถงอี้ → จางม่านจือ: aunt of mother's sister's mother\nเส้าสื่อเฉียน → พระเอก: found\n```\n\n## 2. พรรคกิเลนขาว Members and Positions\n\n- **จางฟู่เหยิน** - หัวหน้าพรรค\n- **เส้าสื่อเฉียน** - แม่นาง 14",
+                        "content": "Based on the dialogue, here is the extracted information:\n\n## 1. Relationship Graph\n\n```\nพระเอก → เว่ยเส้าเทียน: son\nเว่ยเส้าเทียน → พระเอก: father\nเว่ยเส้าเทียน → จางฟู่เหยิน: friend\nจางฟู่เหยิน → เว่ยเส้าเทียน: friend\nจางฟู่เหยิน → พระเอก: adopted\nพระเอก → จางฟู่เหยิน: adopted\nจางฟู่เหยิน → พระเอก: father\nพระเอก → จางฟู่เหยิน: son\nจางม่านจือ → พระเอก: mother\nพระเอก → จางม่านจือ: son\nเซียะถงอี้ → จางม่านจือ: aunt of mother's sister's mother\n```\n\n## 2. พรรคกิเลนขาว Members and Positions\n\n| Name | Position |\n|------|----------|\n| จางฟู่เหยิน | หัวหน้าพรรค |\n| เส้าสื่อเฉียน | แม่นาง 14 |",
                         "refusal": null,
                         "role": "assistant",
                         "annotations": null,
@@ -109,15 +104,15 @@
                     }
                 }
             ],
-            "created": 1749383569,
+            "created": 1750337273,
             "model": "claude-opus-4-20250514",
             "object": "chat.completion",
             "service_tier": null,
             "system_fingerprint": null,
             "usage": {
-                "completion_tokens": 368,
-                "prompt_tokens": 1121,
-                "total_tokens": 1489,
+                "completion_tokens": 353,
+                "prompt_tokens": 1158,
+                "total_tokens": 1511,
                 "completion_tokens_details": null,
                 "prompt_tokens_details": {
                     "audio_tokens": null,
@@ -127,7 +122,7 @@
             }
         },
         {
-            "id": "2025-06-08|04:52:50.081862-07|6.108.78.226|1846137133",
+            "id": "2025-06-19|05:47:53.957899-07|3.131.18.82|304359995",
             "choices": [
                 {
                     "finish_reason": "stop",
@@ -144,7 +139,7 @@
                             {
                                 "id": "output",
                                 "function": {
-                                    "arguments": "{\"party_members\":[{\"name\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"title\":\"\\u0e2b\\u0e31\\u0e27\\u0e2b\\u0e19\\u0e49\\u0e32\\u0e1e\\u0e23\\u0e23\\u0e04\"},{\"name\":\"\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e2a\\u0e37\\u0e48\\u0e2d\\u0e40\\u0e09\\u0e35\\u0e22\\u0e19\",\"title\":\"\\u0e41\\u0e21\\u0e48\\u0e19\\u0e32\\u0e07 14\"}],\"relationships\":[{\"from_\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\",\"relation\":\"son\",\"to\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\",\"relation\":\"father\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\",\"relation\":\"adopted\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\",\"relation\":\"adopted\",\"to\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\",\"relation\":\"friend\",\"to\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"relation\":\"friend\",\"to\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\",\"relation\":\"son\",\"to\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"relation\":\"father\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\",\"relation\":\"son\",\"to\":\"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\",\"relation\":\"mother\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e30\\u0e16\\u0e07\\u0e2d\\u0e35\\u0e49\",\"relation\":\"aunt of mother's sister's mother\",\"to\":\"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\"},{\"from_\":\"\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e2a\\u0e37\\u0e48\\u0e2d\\u0e40\\u0e09\\u0e35\\u0e22\\u0e19\",\"relation\":\"found\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"}]}",
+                                    "arguments": "{\"party_members\":[{\"name\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"title\":\"\\u0e2b\\u0e31\\u0e27\\u0e2b\\u0e19\\u0e49\\u0e32\\u0e1e\\u0e23\\u0e23\\u0e04\"},{\"name\":\"\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e2a\\u0e37\\u0e48\\u0e2d\\u0e40\\u0e09\\u0e35\\u0e22\\u0e19\",\"title\":\"\\u0e41\\u0e21\\u0e48\\u0e19\\u0e32\\u0e07 14\"}],\"relationships\":[{\"from_\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\",\"relation\":\"son\",\"to\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\",\"relation\":\"father\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\",\"relation\":\"friend\",\"to\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"relation\":\"friend\",\"to\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"relation\":\"adopted\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\",\"relation\":\"adopted\",\"to\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"relation\":\"father\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\",\"relation\":\"son\",\"to\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\",\"relation\":\"mother\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\",\"relation\":\"son\",\"to\":\"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\"},{\"from_\":\"\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e30\\u0e16\\u0e07\\u0e2d\\u0e35\\u0e49\",\"relation\":\"aunt of mother's sister's mother\",\"to\":\"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\"}]}",
                                     "name": "output"
                                 },
                                 "type": "function"
@@ -153,24 +148,25 @@
                     }
                 }
             ],
-            "created": 1749383570,
-            "model": "google/gemini-2.5-pro-preview-06-05",
+            "created": 1750337273,
+            "model": "google/gemini-2.5-pro",
             "object": "chat.completion",
             "service_tier": null,
             "system_fingerprint": "",
             "usage": {
-                "completion_tokens": 220,
-                "prompt_tokens": 711,
-                "total_tokens": 1718,
+                "completion_tokens": 207,
+                "prompt_tokens": 698,
+                "total_tokens": 1806,
                 "completion_tokens_details": {
                     "accepted_prediction_tokens": null,
                     "audio_tokens": null,
-                    "reasoning_tokens": 787,
+                    "reasoning_tokens": 901,
                     "rejected_prediction_tokens": null
                 },
                 "prompt_tokens_details": null
             }
         }
     ],
-    "convertor": "google/gemini-2.5-pro-preview-06-05"
+    "convertor": "google/gemini-2.5-pro",
+    "cost": 0.0438
 }
