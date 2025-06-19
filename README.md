@@ -27,21 +27,21 @@ one of the training data, including this repository.
 | 6  | openai/o3:flex                                                 | 64.44% | 8/8 + 2/3 | 2/2   | Rel 8            | N/A       | 1480 / 9632      |
 | 7  | phi4-reasoning                                                 | 63.33% | 5/8 + 1/3 | 2/2   | Party 1          | N/A       | 10640 / 13200    |
 | 8  | anthropic/claude-opus-4-20250514                               | 60.83% | 7/8 + 0/3 | 2/2   | Rel 5            | N/A       | 1832 / 1375      |
-| 9  | google/gemini-2.5-flash-preview                                | 59.38% | 7/8 + 2/3 | 2/2   | Rel 7            | $0.000283 | 1444 / 1702      |
-| 10 | x-ai/grok-3-beta                                               | 57.50% | 5/8 + 1/3 | 2/2   | Rel 2            | $0.009623 | 1671 / 1215      |
-| 11 | deepseek/deepseek-r1-0528                                      | 55.00% | 6/8 + 1/3 | 2/2   | Rel 5            | $0.003902 | 1832 / 3414      |
-| 12 | google/gemini-2.5-flash-preview:thinking                       | 53.33% | 5/8 + 1/3 | 2/2   | Rel 3            | $0.015813 | 1345 / 9561      |
-| 13 | meta-llama/llama-3.3-70b-instruct                              | 48.57% | 4/8 + 1/3 | 2/2   | Rel 2            | $0.000202 | 1827 / 1756      |
-| 14 | meta-llama/llama-4-maverick                                    | 45.00% | 4/8 + 1/3 | 2/2   | Rel 3            | $0.000676 | 1903 / 1934      |
-| 15 | gemma3:27b                                                     | 40.00% | 4/8 + 0/3 | 2/2   | Rel 4            | N/A       | 1290 / 1057      |
-| 16 | google/gemini-2.5-pro-preview                                  | 40.00% | 2/8 + 0/3 | 2/2   |                  | $0.049646 | 1280 / 10352     |
-| 17 | openai/gpt-4.1                                                 | 38.79% | 7/8 + 1/3 | 2/2   | Rel 14 / Party 1 | N/A       | 1751 / 2185      |
-| 18 | llama3.1:8b                                                    | 35.00% | 6/8 + 0/3 | 1/2   | Rel 6 / Party 1  | N/A       | 1505 / 1396      |
-| 19 | hf.co/mradermacher/openthaigpt1.5-72b-instruct-i1-GGUF:IQ2_S   | 35.00% | 3/8 + 0/3 | 2/2   | Rel 3            | N/A       | 1470 / 1618      |
-| 20 | openai/gpt-4o                                                  | 31.25% | 3/8 + 0/3 | 2/2   | Rel 5            | N/A       | 1370 / 1285      |
-| 21 | hf.co/JulienElkaim/Tsunami-1.0-14B-Instruct-Q4_K_M-GGUF:Q4_K_M | 30.00% | 2/8 + 0/3 | 2/2   | Rel 2            | N/A       | 1367 / 765       |
-| 22 | hf.co/mradermacher/openthaigpt1.5-14b-instruct-GGUF:Q8_0       | 27.50% | 2/8 + 1/3 | 2/2   | Rel 5            | N/A       | 1439 / 1220      |
-| 23 | deepseek/deepseek-chat-v3-0324                                 | 26.00% | 3/8 + 0/3 | 2/2   | Rel 12           | $0.000964 | 1583 / 1708      |
+| 9  | x-ai/grok-3-beta                                               | 57.50% | 5/8 + 1/3 | 2/2   | Rel 2            | $0.009623 | 1671 / 1215      |
+| 10 | deepseek/deepseek-r1-0528                                      | 55.00% | 6/8 + 1/3 | 2/2   | Rel 5            | $0.003902 | 1832 / 3414      |
+| 11 | meta-llama/llama-3.3-70b-instruct                              | 48.57% | 4/8 + 1/3 | 2/2   | Rel 2            | $0.000202 | 1827 / 1756      |
+| 12 | meta-llama/llama-4-maverick                                    | 45.00% | 4/8 + 1/3 | 2/2   | Rel 3            | $0.000676 | 1903 / 1934      |
+| 13 | google/gemini-2.5-flash                                        | 42.50% | 6/8 + 0/3 | 2/2   | Rel 10           | $0.000971 | 1448 / 1596      |
+| 14 | gemma3:27b                                                     | 40.00% | 4/8 + 0/3 | 2/2   | Rel 4            | N/A       | 1290 / 1057      |
+| 15 | google/gemini-2.5-pro                                          | 40.00% | 2/8 + 0/3 | 2/2   |                  | $0.054706 | 1280 / 11270     |
+| 16 | openai/gpt-4.1                                                 | 38.79% | 7/8 + 1/3 | 2/2   | Rel 14 / Party 1 | N/A       | 1751 / 2185      |
+| 17 | llama3.1:8b                                                    | 35.00% | 6/8 + 0/3 | 1/2   | Rel 6 / Party 1  | N/A       | 1505 / 1396      |
+| 18 | hf.co/mradermacher/openthaigpt1.5-72b-instruct-i1-GGUF:IQ2_S   | 35.00% | 3/8 + 0/3 | 2/2   | Rel 3            | N/A       | 1470 / 1618      |
+| 19 | openai/gpt-4o                                                  | 31.25% | 3/8 + 0/3 | 2/2   | Rel 5            | N/A       | 1370 / 1285      |
+| 20 | hf.co/JulienElkaim/Tsunami-1.0-14B-Instruct-Q4_K_M-GGUF:Q4_K_M | 30.00% | 2/8 + 0/3 | 2/2   | Rel 2            | N/A       | 1367 / 765       |
+| 21 | hf.co/mradermacher/openthaigpt1.5-14b-instruct-GGUF:Q8_0       | 27.50% | 2/8 + 1/3 | 2/2   | Rel 5            | N/A       | 1439 / 1220      |
+| 22 | deepseek/deepseek-chat-v3-0324                                 | 26.00% | 3/8 + 0/3 | 2/2   | Rel 12           | $0.000964 | 1583 / 1708      |
+| 23 | google/gemini-2.5-flash-lite-preview-06-17                     | 25.00% | 2/8 + 0/3 | 2/2   | Rel 6            | $0.000152 | 1352 / 1131      |
 | 24 | gemma3:12b                                                     | 23.33% | 2/8 + 0/3 | 2/2   | Rel 10           | N/A       | 1419 / 1515      |
 | 25 | openai/gpt-4.1-mini                                            | 20.00% | 0/8 + 0/3 | 2/2   | Rel 12           | N/A       | 1517 / 2003      |
 | 26 | anthropic/claude-3.5-haiku                                     | 20.00% | 0/8 + 0/3 | 2/2   | Rel 5            | $0.001845 | 1759 / 1204      |

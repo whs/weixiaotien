@@ -187,7 +187,7 @@ def main():
     convertor_provider = google_args
     CONVERTOR_CLIENT = OpenAI(**convertor_provider["openai_params"])
     CONVERTOR_PARAMS = convertor_provider["completion_params"]
-    CONVERTOR_MODEL = "google/gemini-2.5-pro-preview-06-05"
+    CONVERTOR_MODEL = "google/gemini-2.5-pro"
 
     # Check that the model support structured_outputs!
     for model in [
@@ -200,9 +200,9 @@ def main():
         # {"model": "openai/gpt-4o-mini", **requesty_args},
         # {"model": "openai/o3:flex", **requesty_args},
         # {"model": "openai/o4-mini:flex", **requesty_args},
-        # {"model": "google/gemini-2.5-flash-preview", **openrouter_args},
-        # {"model": "google/gemini-2.5-flash-preview:thinking", **openrouter_args},
-        # {"model": "google/gemini-2.5-pro-preview", **openrouter_args},
+        # {"model": "google/gemini-2.5-flash-lite-preview-06-17", **openrouter_args},
+        # {"model": "google/gemini-2.5-flash", **openrouter_args},
+        # {"model": "google/gemini-2.5-pro", **openrouter_args},
         # {"model": "meta-llama/llama-4-maverick", **openrouter_args},
         # {"model": "meta-llama/llama-3.3-70b-instruct", **openrouter_args},
         # {"model": "amazon/nova-pro-v1", **openrouter_args},
