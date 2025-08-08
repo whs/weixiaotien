@@ -1,0 +1,190 @@
+{
+    "version": 3,
+    "model": "deepseek/deepseek-r1-0528",
+    "result": {
+        "valid_relationships": [
+            {
+                "from_": "เว่ยเส้าเทียน",
+                "relation": "father",
+                "to": "พระเอก"
+            },
+            {
+                "from_": "พระเอก",
+                "relation": "son",
+                "to": "เว่ยเส้าเทียน"
+            },
+            {
+                "from_": "จางม่านจือ",
+                "relation": "mother",
+                "to": "พระเอก"
+            },
+            {
+                "from_": "พระเอก",
+                "relation": "son",
+                "to": "จางม่านจือ"
+            },
+            {
+                "from_": "เว่ยเส้าเทียน",
+                "relation": "friend",
+                "to": "จางฟู่เหยิน"
+            },
+            {
+                "from_": "จางฟู่เหยิน",
+                "relation": "friend",
+                "to": "เว่ยเส้าเทียน"
+            },
+            {
+                "from_": "จางฟู่เหยิน",
+                "relation": "adopted",
+                "to": "พระเอก"
+            }
+        ],
+        "valid_optional_relationships": [
+            {
+                "from_": "เซียะถงอี้",
+                "relation": "aunt",
+                "to": "พระเอก"
+            }
+        ],
+        "invalid_relationships": [
+            {
+                "from_": "จางฟู่เหยิน",
+                "relation": "found",
+                "to": "พระเอก"
+            },
+            {
+                "from_": {
+                    "other": "แม่นางเส้าสื่อเฉียน"
+                },
+                "relation": "found",
+                "to": "พระเอก"
+            }
+        ],
+        "missing_relationships": [
+            {
+                "from_": "เส้าสื่อเฉียน",
+                "relation": "found",
+                "to": "พระเอก"
+            }
+        ],
+        "valid_party_member_list": [
+            {
+                "name": "จางฟู่เหยิน",
+                "title": "หัวหน้าพรรค"
+            }
+        ],
+        "invalid_party_member_list": [
+            {
+                "name": {
+                    "other": "แม่นางเส้าสื่อเฉียน"
+                },
+                "title": "แม่นาง 14"
+            }
+        ],
+        "missing_party_members": [
+            {
+                "name": "เส้าสื่อเฉียน",
+                "title": "แม่นาง 14"
+            }
+        ]
+    },
+    "score": 0.6100000000000001,
+    "error": null,
+    "provider": "openrouter",
+    "responses": [
+        {
+            "id": "gen-1754622486-zNEyRZK4bdNaeIm9Gbdl",
+            "choices": [
+                {
+                    "finish_reason": "stop",
+                    "index": 0,
+                    "logprobs": null,
+                    "message": {
+                        "content": "### 1. Relationship Graph\n- เว่ยเส้าเทียน → (father) → พระเอก\n- พระเอก → (son) → เว่ยเส้าเทียน\n- จางม่านจือ → (mother) → พระเอก\n- พระเอก → (son) → จางม่านจือ\n- เว่ยเส้าเทียน → (friend) → จางฟู่เหยิน\n- จางฟู่เหยิน → (friend) → เว่ยเส้าเทียน\n- จางฟู่เหยิน → (found) → พระเอก\n- จางฟู่เหยิน → (adopted) → พระเอก\n- แม่นางเส้าสื่อเฉียน → (found) → พระเอก\n- เซียะถงอี้ → (aunt) → พระเอก\n\n### 2. Members of พรรคกิเลนขาว\n- จางฟู่เหยิน: หัวหน้าพรรค\n- แม่นางเส้าสื่อเฉียน: แม่นาง 14",
+                        "refusal": null,
+                        "role": "assistant",
+                        "annotations": null,
+                        "audio": null,
+                        "function_call": null,
+                        "tool_calls": null,
+                        "reasoning": "We are given a dialogue and need to extract two things:\n1. A relationship graph of all named individuals with specific rules.\n2. A list of all members of พรรคกิเลนขาว and their positions.\n\nFirst, let's list all named individuals from the dialogue:\n- พระเอก (the main character, we can list him even though he is not named explicitly by a personal name, but he is referred to as the protagonist)\n- เว่ยเส้าเทียน (Wei Shaotian)\n- หลี่เซียซุย (Li Xiasui)\n- จางฟู่เหยิน (Zhang Furen) - head of the party\n- แม่นางเส้าสื่อเฉียน (Madam Shao Siqian) - position: แม่นาง 14\n- เซียะถงอี้ (Xie Tongyi) - introduced as น้าสาวพี่แม่ (which we'll interpret as the aunt, specifically the mother's sister)\n- จางม่านจือ (Zhang Manzhi) - mother of the protagonist\n\nNow, let's extract relationships:\n\nFrom the dialogue:\n1. หลี่เซียซุย says: \"เว่ยเส้าเทียนคือพ่อของเจ้า\" -> เว่ยเส้าเทียน is the father of the protagonist (พระเอก). \n   - So: เว่ยเส้าเทียน -> (father) -> พระเอก\n   - Reverse: พระเอก -> (son) -> เว่ยเส้าเทียน\n\n2. หลี่เซียซุย says: \"เว่ยเส้าเทียนคือ ... สหายรัก ของจางฟู่เหยิน\" -> เว่ยเส้าเทียน is the lover (but note: our relationship labels do not include \"lover\". We have to use the provided labels. However, note the rule: only use the provided labels. The provided labels are: friend, father, mother, son, found, adopted, aunt, aunt of mother's sister's mother. \n   - The term \"สหายรัก\" might be translated as \"lover\" but we don't have that label. The closest is \"friend\". So we'll use \"friend\". \n   - So: เว่ยเส้าเทียน -> (friend) -> จางฟู่เหยิน\n   - And reverse: จางฟู่เหยิน -> (friend) -> เว่ยเส้าเทียน (since friend is mutual)\n\n3. หลี่เซียซุย says: \"จางฟู่เหยิน ... เก็บเจ้ามาเลี้ยงเมื่อ 22 ปีก่อน\" -> จางฟู่เหยิน found and raised the protagonist. The word \"เก็บ\" implies found and then raised, so we can use \"found\" and \"adopted\". But note the rule: we have the label \"found\" and \"adopted\". However, the rule says to use the provided labels. We can use \"found\" for the act of finding and \"adopted\" for the raising? But the rule says to only include relationships that are mentioned and their reverse. The dialogue says \"เก็บเจ้ามาเลี้ยง\", which is both finding and raising. We have two labels: \"found\" and \"adopted\". We can use both? But note the rule: we are to list the relationship as mentioned. The dialogue doesn't specify two separate actions. However, the rule says to use the provided labels. Since \"found\" is one of the labels, and the act of finding is mentioned, we can use \"found\". Also, the raising part might be considered \"adopted\". But note the rule: \"adopted\" is also a label. We can have two relationships? However, the rule says to include the relationship that is mentioned. We are told that จางฟู่เหยิน found the protagonist and raised him. So we can have:\n   - จางฟู่เหยิน -> (found) -> พระเอก\n   - Reverse: พระเอก -> (found by) -> but we don't have that label. The rule says to use only the provided labels. The reverse of \"found\" is not provided. So we cannot create a reverse for \"found\". Similarly, for \"adopted\", we have:\n   - จางฟู่เหยิน -> (adopted) -> พระเอก\n   - Reverse: พระเอก -> (adopted by) -> not provided. So we cannot create a reverse for \"adopted\". However, note the rule: \"Include mutual relationships twice, one in each direction. The reverse relationship might have different name\". But our provided labels do not have a reverse for \"found\" or \"adopted\". Therefore, we only list the forward relationship for these.\n\n   But wait, the rule says: \"Only includes relationships that are mentioned in the story and their reverse relationship if applicable\". Since the reverse is not mentioned and we don't have a label for it, we skip the reverse.\n\n   However, note that the rule also says: \"The reverse relationship might have different name\". But in the provided list, there is no reverse for \"found\" or \"adopted\". So we will only have:\n   - จางฟู่เหยิน -> (found) -> พระเอก\n   - จางฟู่เหยิน -> (adopted) -> พระเอก   [because the dialogue says both found and raised?]\n\n   But let's check: the dialogue says \"เก็บเจ้ามาเลี้ยง\", which is one action: found and then raised. We can interpret it as two separate relationships? However, the rule says to only include mentioned relationships. The act of finding is mentioned and the act of raising (adopting) is also mentioned? Actually, the word \"เก็บ\" means to pick up (found) and \"เลี้ยง\" means to raise (adopt). So we have two relationships.\n\n   Alternatively, we can choose one? But the rule says to include all mentioned. So we include both.\n\n   However, note that the rule says: \"Only includes relationships that are mentioned in the story\". The story mentions that he was found and raised. So we have two relationships.\n\n   But the reverse for these are not defined in our labels, so we don't add reverse.\n\n4. เว่ยเส้าเทียน says: \"แม่นางเส้าสื่อเฉียน ... ซึ่งได้พบเจ้าข้างหนองน้ำ\" -> แม่นางเส้าสื่อเฉียน found the protagonist? \n   - The dialogue: \"แม่นางเส้าสื่อเฉียน ... ได้พบเจ้าข้างหนองน้ำ\" -> found the protagonist at the pond. So we have:\n     - แม่นางเส้าสื่อเฉียน -> (found) -> พระเอก\n\n5. เว่ยเส้าเทียน says: \"ใกล้เมืองเหลียงคุน ซึ่งเป็นที่ๆ เซียะถงอี้ น้าสาวพี่แม่ได้แนะนำให้พบ\"\n   - This means: near Liangkun city, where Xie Tongyi, the aunt (mother's sister) introduced (them) to meet.\n   - Who did she introduce? The context: she introduced เว่ยเส้าเทียน to meet หลี่เซียซุย? Or to meet the protagonist? The next part by หลี่เซียซุย says: \"น้าสาวพี่ของแม่เจ้า\" (the aunt of your mother) and then เว่ยเส้าเทียน says: \"น้าสาวพี่แม่ของเจ้า ได้พาข้าไปรู้จักกับหลี่เซียซุย\" -> the aunt of your mother took me to know Li Xiasui.\n\n   So: \n   - เซียะถงอี้ (Xie Tongyi) is the aunt of the protagonist's mother? The dialogue says: \"น้าสาวพี่แม่\" which we interpret as the mother's sister (aunt). And the protagonist's mother is จางม่านจือ (as later revealed). So:\n     - เซียะถงอี้ -> (aunt) -> จางม่านจือ\n     - Reverse: จางม่านจือ -> (niece) -> but we don't have \"niece\", so we skip the reverse? However, note the provided labels: we have \"aunt\", and the reverse of aunt is not provided. So we only have one direction.\n\n   Also, the dialogue says: \"น้าสาวพี่แม่ของเจ้า ได้พาข้าไปรู้จักกับหลี่เซียซุย\" -> the aunt of your mother took me (เว่ยเส้าเทียน) to know หลี่เซียซุย. This implies that เซียะถงอี้ introduced เว่ยเส้าเทียน to หลี่เซียซุย. But what is the relationship? We don't have a label for \"introduced\". We have \"friend\", but it's not explicitly said they became friends. So we skip.\n\n6. หลี่เซียซุย says: \"จางม่านจือ แม่เจ้า\" -> จางม่านจือ is the mother of the protagonist.\n   - So: จางม่านจือ -> (mother) -> พระเอก\n   - Reverse: พระเอก -> (son) -> จางม่านจือ\n\n7. เว่ยเส้าเทียน says: \"จางม่านจือ ... ได้พาข้าไปพบ ... พี่สาวแม่ของเจ้า\"\n   - This is a bit confusing. Let me break it down:\n     - จางม่านจือ (mother of protagonist) took เว่ยเส้าเทียน to meet ... \"พี่สาวแม่ของเจ้า\" -> the older sister of the protagonist's mother? \n     - But the protagonist's mother is จางม่านจือ, so her older sister would be ...? \n     - However, note that earlier we have เซียะถงอี้ as the aunt (mother's sister). So is this the same person? The dialogue says: \"พี่สาวแม่ของเจ้า\" (older sister of your mother) and then หลี่เซียซุย says: \"น้าสาวพี่ของแม่เจ้า\" (aunt of your mother, meaning the sister of your mother). So it's the same: เซียะถงอี้.\n\n   But the sentence: \"จางม่านจือ ... ได้พาข้าไปพบ ... พี่สาวแม่ของเจ้า\" -> Zhang Manzhi took me to meet the older sister of your mother. But the older sister of your mother is not herself. So it must be someone else. And we know that เซียะถงอี้ is the aunt (sister of the mother). So it's เซียะถงอี้.\n\n   Therefore, we have:\n     - จางม่านจือ -> (sister) -> เซียะถงอี้? But note: the rule does not have \"sister\". We have \"aunt\", but that is for the relationship from the protagonist to the aunt. Here, we are talking about the relationship between จางม่านจือ and เซียะถงอี้. They are sisters. But we don't have a label for \"sister\". We have \"aunt\", but that is for the next generation. \n\n   How to represent? \n   - We have an existing relationship: เซียะถงอี้ -> (aunt) -> พระเอก, which implies that เซียะถงอี้ is the sister of the protagonist's mother (จางม่านจือ). So the relationship between จางม่านจือ and เซียะถงอี้ is that of sisters. But we don't have a label for \"sister\". \n\n   The rule says: \"Relationship edges must be labeled as one of: ...\". We cannot use \"sister\". Therefore, we cannot add a direct relationship between จางม่านจือ and เซียะถงอี้ because we don't have the label.\n\n   Alternatively, we can note that the aunt relationship already implies the sister relationship, but we are only to list direct edges. Since we cannot label it, we skip.\n\n   However, note that the rule says: \"Only includes relationships that are mentioned in the story\". The story does mention that เซียะถงอี้ is the aunt of the protagonist (which we have) and that she is the sister of the mother (which we cannot label directly). So we stick to the aunt relationship we already have.\n\n8. เว่ยเส้าเทียน says: \"น้าสาวพี่แม่ของเจ้า ได้พาข้าไปรู้จักกับหลี่เซียซุย\" -> the aunt of your mother (which is เซียะถงอี้) took me (เว่ยเส้าเทียน) to know หลี่เซียซุย. This does not specify a relationship between เซียะถงอี้ and หลี่เซียซุย, or between เว่ยเส้าเทียน and หลี่เซียซุย. So we skip.\n\n9. หลี่เซียซุย says: \"น้าสาวพี่ของแม่เจ้า\" -> this is just restating that เซียะถงอี้ is the aunt of the protagonist's mother, which we already have.\n\nNow, let's also note the biological parents:\n- Father: เว่ยเส้าเทียน\n- Mother: จางม่านจือ\n\nSo we have:\n- เว่ยเส้าเทียน -> (father) -> พระเอก\n- จางม่านจือ -> (mother) -> พระเอก\n\nAnd the reverse for both (son) from พระเอก.\n\nAlso, we have:\n- จางฟู่เหยิน -> (found) -> พระเอก\n- จางฟู่เหยิน -> (adopted) -> พระเอก\n- แม่นางเส้าสื่อเฉียน -> (found) -> พระเอก\n\nBut note: the rule says \"Both sides of relationship must be a named character. Skip the relationship if the name is not known. This rule do not applies to the main character\". The main character is พระเอก, so it's okay.\n\nNow, let's list all the relationships we have:\n\n1. เว่ยเส้าเทียน -> (father) -> พระเอก\n2. พระเอก -> (son) -> เว่ยเส้าเทียน\n3. จางม่านจือ -> (mother) -> พระเอก\n4. พระเอก -> (son) -> จางม่านจือ\n5. เว่ยเส้าเทียน -> (friend) -> จางฟู่เหยิน\n6. จางฟู่เหยิน -> (friend) -> เว่ยเส้าเทียน\n7. จางฟู่เหยิน -> (found) -> พระเอก\n8. จางฟู่เหยิน -> (adopted) -> พระเอก\n9. แม่นางเส้าสื่อเฉียน -> (found) -> พระเอก\n10. เซียะถงอี้ -> (aunt) -> พระเอก   [because she is the aunt (mother's sister) of the protagonist]\n\nNote: The rule says: \"aunt of mother's sister's mother\" is a label? Actually, the label is \"aunt\" and also \"aunt of mother's sister's mother\" is given as an example? But we are to use \"aunt\" for the relationship from the protagonist to his mother's sister.\n\nBut note: the rule says: \"aunt\" is one of the labels. So we use \"aunt\".\n\nHowever, the rule also says: \"aunt of mother's sister's mother\" is a specific example? But we don't have that complex relationship here. We have a simple aunt (mother's sister).\n\nSo we have 10 relationships.\n\nNow, let's list the party members of พรรคกิเลนขาว and their positions:\n\nFrom the dialogue:\n- จางฟู่เหยิน: described as \"หัวหน้าพรรคกิเลนขาว\" -> head of the party.\n- แม่นางเส้าสื่อเฉียน: described as \"แม่นาง 14\" (position 14) of the party.\n\nAlso, note that เว่ยเส้าเทียน is mentioned as a lover of จางฟู่เหยิน, but that doesn't make him a party member? The dialogue doesn't say he is a member. Similarly, หลี่เซียซุย is not mentioned as a party member. เซียะถงอี้ and จางม่านจือ are not mentioned as party members.\n\nSo party members:\n1. จางฟู่เหยิน: หัวหน้าพรรค\n2. แม่นางเส้าสื่อเฉียน: แม่นาง 14\n\nNow, let's write the answer.\n\nRelationship graph (each relationship as a tuple (from, relationship, to)):\n- (เว่ยเส้าเทียน, father, พระเอก)\n- (พระเอก, son, เว่ยเส้าเทียน)\n- (จางม่านจือ, mother, พระเอก)\n- (พระเอก, son, จางม่านจือ)\n- (เว่ยเส้าเทียน, friend, จางฟู่เหยิน)\n- (จางฟู่เหยิน, friend, เว่ยเส้าเทียน)\n- (จางฟู่เหยิน, found, พระเอก)\n- (จางฟู่เหยิน, adopted, พระเอก)\n- (แม่นางเส้าสื่อเฉียน, found, พระเอก)\n- (เซียะถงอี้, aunt, พระเอก)\n\nParty members:\n- จางฟู่เหยิน: หัวหน้าพรรค\n- แม่นางเส้าสื่อเฉียน: แม่นาง 14\n\nNote: The main character is referred to as \"เจ้า\" in the dialogue, and we are representing him as พระเอก.\n\nLet me double-check the names in Thai as spelled in the story:\n- พระเอก (we are using this as the main character's identifier)\n- เว่ยเส้าเทียน\n- หลี่เซียซุย\n- จางฟู่เหยิน\n- แม่นางเส้าสื่อเฉียน\n- เซียะถงอี้\n- จางม่านจือ\n\nAll are in Thai.\n\nNow, write the answer accordingly."
+                    },
+                    "native_finish_reason": "stop"
+                }
+            ],
+            "created": 1754622486,
+            "model": "deepseek/deepseek-r1-0528",
+            "object": "chat.completion",
+            "service_tier": null,
+            "system_fingerprint": null,
+            "usage": {
+                "completion_tokens": 4152,
+                "prompt_tokens": 727,
+                "total_tokens": 4879,
+                "completion_tokens_details": {
+                    "accepted_prediction_tokens": null,
+                    "audio_tokens": null,
+                    "reasoning_tokens": 5101,
+                    "rejected_prediction_tokens": null
+                },
+                "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cached_tokens": 0
+                },
+                "cost": 0.00941486,
+                "is_byok": false,
+                "cost_details": {
+                    "upstream_inference_cost": null
+                }
+            },
+            "provider": "Lambda"
+        },
+        {
+            "id": "a2qVaN-cBITjseMPiauQ2Qg",
+            "choices": [
+                {
+                    "finish_reason": "tool_calls",
+                    "index": 0,
+                    "logprobs": null,
+                    "message": {
+                        "content": null,
+                        "refusal": null,
+                        "role": "assistant",
+                        "annotations": null,
+                        "audio": null,
+                        "function_call": null,
+                        "tool_calls": [
+                            {
+                                "id": "output",
+                                "function": {
+                                    "arguments": "{\"party_members\":[{\"name\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"title\":\"\\u0e2b\\u0e31\\u0e27\\u0e2b\\u0e19\\u0e49\\u0e32\\u0e1e\\u0e23\\u0e23\\u0e04\"},{\"name\":{\"other\":\"\\u0e41\\u0e21\\u0e48\\u0e19\\u0e32\\u0e07\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e2a\\u0e37\\u0e48\\u0e2d\\u0e40\\u0e09\\u0e35\\u0e22\\u0e19\"},\"title\":\"\\u0e41\\u0e21\\u0e48\\u0e19\\u0e32\\u0e07 14\"}],\"relationships\":[{\"from_\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\",\"relation\":\"father\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\",\"relation\":\"son\",\"to\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\",\"relation\":\"mother\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\",\"relation\":\"son\",\"to\":\"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\"},{\"from_\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\",\"relation\":\"friend\",\"to\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"relation\":\"friend\",\"to\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"relation\":\"found\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"relation\":\"adopted\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":{\"other\":\"\\u0e41\\u0e21\\u0e48\\u0e19\\u0e32\\u0e07\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e2a\\u0e37\\u0e48\\u0e2d\\u0e40\\u0e09\\u0e35\\u0e22\\u0e19\"},\"relation\":\"found\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e30\\u0e16\\u0e07\\u0e2d\\u0e35\\u0e49\",\"relation\":\"aunt\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"}]}",
+                                    "name": "output"
+                                },
+                                "type": "function"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "created": 1754622571,
+            "model": "google/gemini-2.5-pro",
+            "object": "chat.completion",
+            "service_tier": null,
+            "system_fingerprint": "",
+            "usage": {
+                "completion_tokens": 188,
+                "prompt_tokens": 677,
+                "total_tokens": 1676,
+                "completion_tokens_details": {
+                    "accepted_prediction_tokens": null,
+                    "audio_tokens": null,
+                    "reasoning_tokens": 811,
+                    "rejected_prediction_tokens": null
+                },
+                "prompt_tokens_details": null
+            }
+        }
+    ],
+    "convertor": "google/gemini-2.5-pro",
+    "cost": null
+}

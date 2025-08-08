@@ -1,0 +1,184 @@
+{
+    "version": 3,
+    "model": "openai/gpt-5-chat",
+    "result": {
+        "valid_relationships": [
+            {
+                "from_": "พระเอก",
+                "relation": "son",
+                "to": "เว่ยเส้าเทียน"
+            },
+            {
+                "from_": "เว่ยเส้าเทียน",
+                "relation": "father",
+                "to": "พระเอก"
+            },
+            {
+                "from_": "เว่ยเส้าเทียน",
+                "relation": "friend",
+                "to": "จางฟู่เหยิน"
+            },
+            {
+                "from_": "จางฟู่เหยิน",
+                "relation": "friend",
+                "to": "เว่ยเส้าเทียน"
+            },
+            {
+                "from_": "จางฟู่เหยิน",
+                "relation": "adopted",
+                "to": "พระเอก"
+            },
+            {
+                "from_": "เส้าสื่อเฉียน",
+                "relation": "found",
+                "to": "พระเอก"
+            },
+            {
+                "from_": "จางม่านจือ",
+                "relation": "mother",
+                "to": "พระเอก"
+            },
+            {
+                "from_": "พระเอก",
+                "relation": "son",
+                "to": "จางม่านจือ"
+            }
+        ],
+        "valid_optional_relationships": [
+            {
+                "from_": "เซียะถงอี้",
+                "relation": "aunt of mother's sister's mother",
+                "to": "พระเอก"
+            }
+        ],
+        "invalid_relationships": [
+            {
+                "from_": "พระเอก",
+                "relation": "found",
+                "to": "จางฟู่เหยิน"
+            },
+            {
+                "from_": "พระเอก",
+                "relation": "found",
+                "to": "เส้าสื่อเฉียน"
+            },
+            {
+                "from_": "พระเอก",
+                "relation": "aunt",
+                "to": "เซียะถงอี้"
+            }
+        ],
+        "missing_relationships": [],
+        "valid_party_member_list": [
+            {
+                "name": "จางฟู่เหยิน",
+                "title": "หัวหน้าพรรค"
+            },
+            {
+                "name": "เส้าสื่อเฉียน",
+                "title": "แม่นาง 14"
+            }
+        ],
+        "invalid_party_member_list": [],
+        "missing_party_members": []
+    },
+    "score": 0.8,
+    "error": null,
+    "provider": "openrouter",
+    "responses": [
+        {
+            "id": "gen-1754621602-6lAArjOuY6M1vdt6TQLb",
+            "choices": [
+                {
+                    "finish_reason": "stop",
+                    "index": 0,
+                    "logprobs": null,
+                    "message": {
+                        "content": "ได้เลย เรามาแยกข้อมูลตามที่คุณต้องการ  \n\n**1. ความสัมพันธ์ (Relationship Graph)**  \n\n```\nพระเอก --son--> เว่ยเส้าเทียน\nเว่ยเส้าเทียน --father--> พระเอก\n\nเว่ยเส้าเทียน --friend--> จางฟู่เหยิน\nจางฟู่เหยิน --friend--> เว่ยเส้าเทียน\n\nจางฟู่เหยิน --adopted--> พระเอก\nพระเอก --found--> จางฟู่เหยิน\n\nเส้าสื่อเฉียน --found--> พระเอก\nพระเอก --found--> เส้าสื่อเฉียน\n\nเซียะถงอี้ --aunt of mother's sister's mother--> พระเอก\nพระเอก --aunt--> เซียะถงอี้\n\nจางม่านจือ --mother--> พระเอก\nพระเอก --son--> จางม่านจือ\n```\n\n---\n\n**2. รายชื่อสมาชิกพรรคกิเลนขาว และตำแหน่ง**\n\n- จางฟู่เหยิน — หัวหน้าพรรค  \n- เส้าสื่อเฉียน — แม่นาง 14  \n\n---\n\nคุณอยากให้เราวาด **relationship graph** ออกมาเป็นภาพด้วยไหม? จะช่วยให้เห็นความเชื่อมโยงชัดขึ้นมาก",
+                        "refusal": null,
+                        "role": "assistant",
+                        "annotations": null,
+                        "audio": null,
+                        "function_call": null,
+                        "tool_calls": null,
+                        "reasoning": null
+                    },
+                    "native_finish_reason": "stop"
+                }
+            ],
+            "created": 1754621602,
+            "model": "openai/gpt-5-chat",
+            "object": "chat.completion",
+            "service_tier": null,
+            "system_fingerprint": null,
+            "usage": {
+                "completion_tokens": 294,
+                "prompt_tokens": 717,
+                "total_tokens": 1011,
+                "completion_tokens_details": {
+                    "accepted_prediction_tokens": null,
+                    "audio_tokens": null,
+                    "reasoning_tokens": 0,
+                    "rejected_prediction_tokens": null
+                },
+                "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cached_tokens": 0
+                },
+                "cost": 0.00383625,
+                "is_byok": false,
+                "cost_details": {
+                    "upstream_inference_cost": null
+                }
+            },
+            "provider": "OpenAI"
+        },
+        {
+            "id": "p2aVaJKFHtLB694Pu5aJgQw",
+            "choices": [
+                {
+                    "finish_reason": "tool_calls",
+                    "index": 0,
+                    "logprobs": null,
+                    "message": {
+                        "content": null,
+                        "refusal": null,
+                        "role": "assistant",
+                        "annotations": null,
+                        "audio": null,
+                        "function_call": null,
+                        "tool_calls": [
+                            {
+                                "id": "output",
+                                "function": {
+                                    "arguments": "{\"party_members\":[{\"name\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"title\":\"\\u0e2b\\u0e31\\u0e27\\u0e2b\\u0e19\\u0e49\\u0e32\\u0e1e\\u0e23\\u0e23\\u0e04\"},{\"name\":\"\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e2a\\u0e37\\u0e48\\u0e2d\\u0e40\\u0e09\\u0e35\\u0e22\\u0e19\",\"title\":\"\\u0e41\\u0e21\\u0e48\\u0e19\\u0e32\\u0e07 14\"}],\"relationships\":[{\"from_\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\",\"relation\":\"son\",\"to\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\",\"relation\":\"father\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\",\"relation\":\"friend\",\"to\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"relation\":\"friend\",\"to\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"relation\":\"adopted\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\",\"relation\":\"found\",\"to\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\"},{\"from_\":\"\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e2a\\u0e37\\u0e48\\u0e2d\\u0e40\\u0e09\\u0e35\\u0e22\\u0e19\",\"relation\":\"found\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\",\"relation\":\"found\",\"to\":\"\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e2a\\u0e37\\u0e48\\u0e2d\\u0e40\\u0e09\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e30\\u0e16\\u0e07\\u0e2d\\u0e35\\u0e49\",\"relation\":\"aunt of mother's sister's mother\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\",\"relation\":\"aunt\",\"to\":\"\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e30\\u0e16\\u0e07\\u0e2d\\u0e35\\u0e49\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\",\"relation\":\"mother\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\",\"relation\":\"son\",\"to\":\"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\"}]}",
+                                    "name": "output"
+                                },
+                                "type": "function"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "created": 1754621607,
+            "model": "google/gemini-2.5-pro",
+            "object": "chat.completion",
+            "service_tier": null,
+            "system_fingerprint": "",
+            "usage": {
+                "completion_tokens": 215,
+                "prompt_tokens": 745,
+                "total_tokens": 1825,
+                "completion_tokens_details": {
+                    "accepted_prediction_tokens": null,
+                    "audio_tokens": null,
+                    "reasoning_tokens": 865,
+                    "rejected_prediction_tokens": null
+                },
+                "prompt_tokens_details": null
+            }
+        }
+    ],
+    "convertor": "google/gemini-2.5-pro",
+    "cost": null
+}

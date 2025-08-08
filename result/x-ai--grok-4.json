@@ -1,0 +1,168 @@
+{
+    "version": 3,
+    "model": "x-ai/grok-4",
+    "result": {
+        "valid_relationships": [
+            {
+                "from_": "เว่ยเส้าเทียน",
+                "relation": "father",
+                "to": "พระเอก"
+            },
+            {
+                "from_": "พระเอก",
+                "relation": "son",
+                "to": "เว่ยเส้าเทียน"
+            },
+            {
+                "from_": "จางม่านจือ",
+                "relation": "mother",
+                "to": "พระเอก"
+            },
+            {
+                "from_": "พระเอก",
+                "relation": "son",
+                "to": "จางม่านจือ"
+            },
+            {
+                "from_": "เว่ยเส้าเทียน",
+                "relation": "friend",
+                "to": "จางฟู่เหยิน"
+            },
+            {
+                "from_": "จางฟู่เหยิน",
+                "relation": "friend",
+                "to": "เว่ยเส้าเทียน"
+            },
+            {
+                "from_": "จางฟู่เหยิน",
+                "relation": "adopted",
+                "to": "พระเอก"
+            },
+            {
+                "from_": "เส้าสื่อเฉียน",
+                "relation": "found",
+                "to": "พระเอก"
+            }
+        ],
+        "valid_optional_relationships": [
+            {
+                "from_": "เซียะถงอี้",
+                "relation": "aunt",
+                "to": "พระเอก"
+            }
+        ],
+        "invalid_relationships": [],
+        "missing_relationships": [],
+        "valid_party_member_list": [
+            {
+                "name": "จางฟู่เหยิน",
+                "title": "หัวหน้าพรรค"
+            },
+            {
+                "name": "เส้าสื่อเฉียน",
+                "title": "แม่นาง 14"
+            }
+        ],
+        "invalid_party_member_list": [],
+        "missing_party_members": []
+    },
+    "score": 1.0,
+    "error": null,
+    "provider": "openrouter",
+    "responses": [
+        {
+            "id": "gen-1754621376-9I8BFqKMVwX77HPt6gRo",
+            "choices": [
+                {
+                    "finish_reason": "stop",
+                    "index": 0,
+                    "logprobs": null,
+                    "message": {
+                        "content": "{\n  \"relationship_graph\": [\n    \"เว่ยเส้าเทียน -> father -> พระเอก\",\n    \"พระเอก -> son -> เว่ยเส้าเทียน\",\n    \"จางม่านจือ -> mother -> พระเอก\",\n    \"พระเอก -> son -> จางม่านจือ\",\n    \"เว่ยเส้าเทียน -> friend -> จางฟู่เหยิน\",\n    \"จางฟู่เหยิน -> friend -> เว่ยเส้าเทียน\",\n    \"จางฟู่เหยิน -> adopted -> พระเอก\",\n    \"แม่นางเส้าสื่อเฉียน -> found -> พระเอก\",\n    \"เซียะถงอี้ -> aunt -> พระเอก\"\n  ],\n  \"party_members\": [\n    {\n      \"name\": \"จางฟู่เหยิน\",\n      \"position\": \"หัวหน้าพรรค\"\n    },\n    {\n      \"name\": \"แม่นางเส้าสื่อเฉียน\",\n      \"position\": \"แม่นาง 14\"\n    }\n  ]\n}",
+                        "refusal": null,
+                        "role": "assistant",
+                        "annotations": null,
+                        "audio": null,
+                        "function_call": null,
+                        "tool_calls": null,
+                        "reasoning": null
+                    },
+                    "native_finish_reason": "stop"
+                }
+            ],
+            "created": 1754621376,
+            "model": "x-ai/grok-4",
+            "object": "chat.completion",
+            "service_tier": null,
+            "system_fingerprint": "fp_11a2067b87",
+            "usage": {
+                "completion_tokens": 3601,
+                "prompt_tokens": 734,
+                "total_tokens": 4335,
+                "completion_tokens_details": {
+                    "accepted_prediction_tokens": null,
+                    "audio_tokens": null,
+                    "reasoning_tokens": 3375,
+                    "rejected_prediction_tokens": null
+                },
+                "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cached_tokens": 3
+                },
+                "cost": 0.05621025,
+                "is_byok": false,
+                "cost_details": {
+                    "upstream_inference_cost": null
+                }
+            },
+            "provider": "xAI"
+        },
+        {
+            "id": "AWaVaI3yPPL6seMP9t2t-AI",
+            "choices": [
+                {
+                    "finish_reason": "tool_calls",
+                    "index": 0,
+                    "logprobs": null,
+                    "message": {
+                        "content": null,
+                        "refusal": null,
+                        "role": "assistant",
+                        "annotations": null,
+                        "audio": null,
+                        "function_call": null,
+                        "tool_calls": [
+                            {
+                                "id": "output",
+                                "function": {
+                                    "arguments": "{\"party_members\":[{\"name\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"title\":\"\\u0e2b\\u0e31\\u0e27\\u0e2b\\u0e19\\u0e49\\u0e32\\u0e1e\\u0e23\\u0e23\\u0e04\"},{\"name\":\"\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e2a\\u0e37\\u0e48\\u0e2d\\u0e40\\u0e09\\u0e35\\u0e22\\u0e19\",\"title\":\"\\u0e41\\u0e21\\u0e48\\u0e19\\u0e32\\u0e07 14\"}],\"relationships\":[{\"from_\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\",\"relation\":\"father\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\",\"relation\":\"son\",\"to\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\",\"relation\":\"mother\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\",\"relation\":\"son\",\"to\":\"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\"},{\"from_\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\",\"relation\":\"friend\",\"to\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"relation\":\"friend\",\"to\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"relation\":\"adopted\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e2a\\u0e37\\u0e48\\u0e2d\\u0e40\\u0e09\\u0e35\\u0e22\\u0e19\",\"relation\":\"found\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e30\\u0e16\\u0e07\\u0e2d\\u0e35\\u0e49\",\"relation\":\"aunt\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"}]}",
+                                    "name": "output"
+                                },
+                                "type": "function"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "created": 1754621441,
+            "model": "google/gemini-2.5-pro",
+            "object": "chat.completion",
+            "service_tier": null,
+            "system_fingerprint": "",
+            "usage": {
+                "completion_tokens": 166,
+                "prompt_tokens": 700,
+                "total_tokens": 1521,
+                "completion_tokens_details": {
+                    "accepted_prediction_tokens": null,
+                    "audio_tokens": null,
+                    "reasoning_tokens": 655,
+                    "rejected_prediction_tokens": null
+                },
+                "prompt_tokens_details": null
+            }
+        }
+    ],
+    "convertor": "google/gemini-2.5-pro",
+    "cost": null
+}

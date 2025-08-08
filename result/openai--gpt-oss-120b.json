@@ -1,0 +1,182 @@
+{
+    "version": 3,
+    "model": "openai/gpt-oss-120b",
+    "result": {
+        "valid_relationships": [
+            {
+                "from_": "เว่ยเส้าเทียน",
+                "relation": "father",
+                "to": "พระเอก"
+            },
+            {
+                "from_": "พระเอก",
+                "relation": "son",
+                "to": "เว่ยเส้าเทียน"
+            },
+            {
+                "from_": "จางม่านจือ",
+                "relation": "mother",
+                "to": "พระเอก"
+            },
+            {
+                "from_": "พระเอก",
+                "relation": "son",
+                "to": "จางม่านจือ"
+            }
+        ],
+        "valid_optional_relationships": [],
+        "invalid_relationships": [
+            {
+                "from_": "หลี่เซียซุย",
+                "relation": "friend",
+                "to": "จางฟู่เหยิน"
+            },
+            {
+                "from_": "จางฟู่เหยิน",
+                "relation": "friend",
+                "to": "หลี่เซียซุย"
+            }
+        ],
+        "missing_relationships": [
+            {
+                "from_": "เว่ยเส้าเทียน",
+                "relation": "friend",
+                "to": "จางฟู่เหยิน"
+            },
+            {
+                "from_": "จางฟู่เหยิน",
+                "relation": "friend",
+                "to": "เว่ยเส้าเทียน"
+            },
+            {
+                "from_": "เส้าสื่อเฉียน",
+                "relation": "found",
+                "to": "พระเอก"
+            },
+            {
+                "from_": "จางฟู่เหยิน",
+                "relation": "adopted",
+                "to": "พระเอก"
+            }
+        ],
+        "valid_party_member_list": [
+            {
+                "name": "จางฟู่เหยิน",
+                "title": "หัวหน้าพรรค"
+            },
+            {
+                "name": "เส้าสื่อเฉียน",
+                "title": "แม่นาง 14"
+            }
+        ],
+        "invalid_party_member_list": [],
+        "missing_party_members": []
+    },
+    "score": 0.46666666666666673,
+    "error": null,
+    "provider": "openrouter",
+    "responses": [
+        {
+            "id": "gen-1754621509-wrHLiKRlw9PKthQV2E45",
+            "choices": [
+                {
+                    "finish_reason": "stop",
+                    "index": 0,
+                    "logprobs": null,
+                    "message": {
+                        "content": "**1. Relationship graph (directional edges)**  \n\n| From (Thai) | Relationship | To (Thai) |\n|-------------|--------------|-----------|\n| เว่ยเส้าเทียน | father | พระเอก |\n| พระเอก | son | เว่ยเส้าเทียน |\n| หลี่เซียซุย | friend | จางฟู่เหยิน |\n| จางฟู่เหยิน | friend | หลี่เซียซุย |\n| จางม่านจือ | mother | พระเอก |\n| พระเอก | son | จางม่านจือ |\n\n*Only the relationships explicitly mentioned in the dialogue are included, and each mutual relationship is listed twice (once for each direction).*\n\n---\n\n**2. พรรคกิเลนขาว – members and their positions**\n\n| Member (Thai) | Position |\n|---------------|----------|\n| จางฟู่เหยิน | หัวหน้าพรรค |\n| แม่นางเส้าสื่อเฉียน | แม่นาง 14 |\n\n*These are the only characters identified in the story as members of พรรคกิเลนขาว with a valid party‑member position.*",
+                        "refusal": null,
+                        "role": "assistant",
+                        "annotations": null,
+                        "audio": null,
+                        "function_call": null,
+                        "tool_calls": null,
+                        "reasoning": "We need to extract relationships and party members.\n\nFirst parse dialogue:\n\nCharacters: พระเอก (main character), เว่ยเส้าเทียน, หลี่เซียซุย, จางฟู่เหยิน, แม่นางเส้าสื่อเฉียน, จางม่านจือ, น้าสาวพี่แม่ (maybe same as \"น้าสาวพี่ของแม่เจ้า\"?), also \"พี่สาวแม่ของเจ้า\" (same as above?), \"น้าสาวพี่ของแม่เจ้า\". Need to treat as named individuals. The rule: both sides must be named characters. If name not known, skip. So \"น้าสาวพี่แม่ของเจ้า\" is a description, not a proper name, so skip relationships involving that unless the name is given. The name \"น้าสาวพี่แม่ของเจ้า\" is not a proper name, so skip.\n\nNow relationships:\n\n- หลี่เซียซุย says: \"เว่ยเส้าเทียนคือพ่อของเจ้า!\" So relationship: เว่ยเส้าเทียน -> father of พระเอก. Reverse: พระเอก -> son of เว่ยเส้าเทียน.\n\n- \"ซึ่งเป็นสหายรัก ของจางฟู่เหยินหัวหน้าพรรคกิเลนขาว\" So relationship: หลี่เซียซุย -> friend of จางฟู่เหยิน (friend). Reverse: จางฟู่เหยิน -> friend of หลี่เซียซุย.\n\n- \"แม่นางเส้าสื่อเฉียน แม่นาง 14\" This seems to be a person: แม่นางเส้าสื่อเฉียน, position \"แม่นาง 14\". Relationship? Not given.\n\n- \"จางฟู่เหยินหัวหน้าพรรคกิเลนขาว\" So จางฟู่เหยิน is head of party (หัวหน้าพรรค). That's party member.\n\n- \"จางม่านจือ แม่เจ้า\" So relationship: จางม่านจือ -> mother of พระเอก. Reverse: พระเอก -> son of จางม่านจือ.\n\n- \"พี่สาวแม่ของเจ้า\" (maybe same as \"น้าสาวพี่แม่ของเจ้า\") Not a proper name.\n\n- \"น้าสาวพี่ของแม่เจ้า\" same.\n\n- \"หลี่เซียซุย ก่อนที่จะเจอเจ้า\" not relationship.\n\n- \"เว่ยเส้าเทียน ... ก่อนที่จะเจอเจ้า\" no.\n\n- \"หลี่เซียซุย ... เมื่อ 22 ปีก่อน\" no.\n\nThus relationships list:\n\n1. เว่ยเส้าเทียน father พระเอก\n2. พระเอก son เว่ยเส้าเทียน\n3. หลี่เซียซุย friend จางฟู่เหยิน\n4. จางฟู่เหยิน friend หลี่เซียซุย\n5. จางม่านจือ mother พระเอก\n6. พระเอก son จางม่านจือ\n\nCheck if any other relationships: \"หลี่เซียซุย ... ที่เก็บเจ้ามาเลี้ยงเมื่อ 22 ปีก่อน\" Not a relationship.\n\nNow party members: Party \"พรรคกิเลนขาว\". Members mentioned: จางฟู่เหยิน (หัวหน้าพรรค), แม่นางเส้าสื่อเฉียน (แม่นาง 14). Also maybe \"เว่ยเส้าเทียน\" is member? The text: \"เว่ยเส้าเทียน: ...แห่งพรรคกิเลนขาว\". It says \"เว่ยเส้าเทียน: ...แห่งพรรคกิเลนขาว\". Could be member but not explicit position. Only include members with positions: หัวหน้าพรรค, แม่นาง 14. So we have:\n\n- จางฟู่เหยิน – หัวหน้าพรรค\n- แม่นางเส้าสื่อเฉียน – แม่นาง 14\n\nAny other with those positions? No.\n\nNow produce output.\n\nRelationship graph: list edges maybe as \"Source -> Target : label\". Provide both directions.\n\nParty members list.\n\nLet's format.\n\n",
+                        "reasoning_details": [
+                            {
+                                "type": "reasoning.text",
+                                "text": "We need to extract relationships and party members.\n\nFirst parse dialogue:\n\nCharacters: พระเอก (main character), เว่ยเส้าเทียน, หลี่เซียซุย, จางฟู่เหยิน, แม่นางเส้าสื่อเฉียน, จางม่านจือ, น้าสาวพี่แม่ (maybe same as \"น้าสาวพี่ของแม่เจ้า\"?), also \"พี่สาวแม่ของเจ้า\" (same as above?), \"น้าสาวพี่ของแม่เจ้า\". Need to treat as named individuals. The rule: both sides must be named characters. If name not known, skip. So \"น้าสาวพี่แม่ของเจ้า\" is a description, not a proper name, so skip relationships involving that unless the name is given. The name \"น้าสาวพี่แม่ของเจ้า\" is not a proper name, so skip.\n\nNow relationships:\n\n- หลี่เซียซุย says: \"เว่ยเส้าเทียนคือพ่อของเจ้า!\" So relationship: เว่ยเส้าเทียน -> father of พระเอก. Reverse: พระเอก -> son of เว่ยเส้าเทียน.\n\n- \"ซึ่งเป็นสหายรัก ของจางฟู่เหยินหัวหน้าพรรคกิเลนขาว\" So relationship: หลี่เซียซุย -> friend of จางฟู่เหยิน (friend). Reverse: จางฟู่เหยิน -> friend of หลี่เซียซุย.\n\n- \"แม่นางเส้าสื่อเฉียน แม่นาง 14\" This seems to be a person: แม่นางเส้าสื่อเฉียน, position \"แม่นาง 14\". Relationship? Not given.\n\n- \"จางฟู่เหยินหัวหน้าพรรคกิเลนขาว\" So จางฟู่เหยิน is head of party (หัวหน้าพรรค). That's party member.\n\n- \"จางม่านจือ แม่เจ้า\" So relationship: จางม่านจือ -> mother of พระเอก. Reverse: พระเอก -> son of จางม่านจือ.\n\n- \"พี่สาวแม่ของเจ้า\" (maybe same as \"น้าสาวพี่แม่ของเจ้า\") Not a proper name.\n\n- \"น้าสาวพี่ของแม่เจ้า\" same.\n\n- \"หลี่เซียซุย ก่อนที่จะเจอเจ้า\" not relationship.\n\n- \"เว่ยเส้าเทียน ... ก่อนที่จะเจอเจ้า\" no.\n\n- \"หลี่เซียซุย ... เมื่อ 22 ปีก่อน\" no.\n\nThus relationships list:\n\n1. เว่ยเส้าเทียน father พระเอก\n2. พระเอก son เว่ยเส้าเทียน\n3. หลี่เซียซุย friend จางฟู่เหยิน\n4. จางฟู่เหยิน friend หลี่เซียซุย\n5. จางม่านจือ mother พระเอก\n6. พระเอก son จางม่านจือ\n\nCheck if any other relationships: \"หลี่เซียซุย ... ที่เก็บเจ้ามาเลี้ยงเมื่อ 22 ปีก่อน\" Not a relationship.\n\nNow party members: Party \"พรรคกิเลนขาว\". Members mentioned: จางฟู่เหยิน (หัวหน้าพรรค), แม่นางเส้าสื่อเฉียน (แม่นาง 14). Also maybe \"เว่ยเส้าเทียน\" is member? The text: \"เว่ยเส้าเทียน: ...แห่งพรรคกิเลนขาว\". It says \"เว่ยเส้าเทียน: ...แห่งพรรคกิเลนขาว\". Could be member but not explicit position. Only include members with positions: หัวหน้าพรรค, แม่นาง 14. So we have:\n\n- จางฟู่เหยิน – หัวหน้าพรรค\n- แม่นางเส้าสื่อเฉียน – แม่นาง 14\n\nAny other with those positions? No.\n\nNow produce output.\n\nRelationship graph: list edges maybe as \"Source -> Target : label\". Provide both directions.\n\nParty members list.\n\nLet's format.\n\n",
+                                "format": "unknown",
+                                "index": 0
+                            }
+                        ]
+                    },
+                    "native_finish_reason": "stop"
+                }
+            ],
+            "created": 1754621509,
+            "model": "openai/gpt-oss-120b",
+            "object": "chat.completion",
+            "service_tier": null,
+            "system_fingerprint": null,
+            "usage": {
+                "completion_tokens": 1137,
+                "prompt_tokens": 766,
+                "total_tokens": 1903,
+                "completion_tokens_details": {
+                    "accepted_prediction_tokens": null,
+                    "audio_tokens": null,
+                    "reasoning_tokens": 1387,
+                    "rejected_prediction_tokens": null
+                },
+                "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cached_tokens": 0
+                },
+                "cost": 0.00058059,
+                "is_byok": false,
+                "cost_details": {
+                    "upstream_inference_cost": null
+                }
+            },
+            "provider": "DeepInfra"
+        },
+        {
+            "id": "S2aVaMjqOYTjseMPiauQ2Qg",
+            "choices": [
+                {
+                    "finish_reason": "tool_calls",
+                    "index": 0,
+                    "logprobs": null,
+                    "message": {
+                        "content": null,
+                        "refusal": null,
+                        "role": "assistant",
+                        "annotations": null,
+                        "audio": null,
+                        "function_call": null,
+                        "tool_calls": [
+                            {
+                                "id": "output",
+                                "function": {
+                                    "arguments": "{\"party_members\":[{\"name\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"title\":\"\\u0e2b\\u0e31\\u0e27\\u0e2b\\u0e19\\u0e49\\u0e32\\u0e1e\\u0e23\\u0e23\\u0e04\"},{\"name\":\"\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e2a\\u0e37\\u0e48\\u0e2d\\u0e40\\u0e09\\u0e35\\u0e22\\u0e19\",\"title\":\"\\u0e41\\u0e21\\u0e48\\u0e19\\u0e32\\u0e07 14\"}],\"relationships\":[{\"from_\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\",\"relation\":\"father\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\",\"relation\":\"son\",\"to\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e2b\\u0e25\\u0e35\\u0e48\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e0b\\u0e38\\u0e22\",\"relation\":\"friend\",\"to\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"relation\":\"friend\",\"to\":\"\\u0e2b\\u0e25\\u0e35\\u0e48\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e0b\\u0e38\\u0e22\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\",\"relation\":\"mother\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\",\"relation\":\"son\",\"to\":\"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\"}]}",
+                                    "name": "output"
+                                },
+                                "type": "function"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "created": 1754621515,
+            "model": "google/gemini-2.5-pro",
+            "object": "chat.completion",
+            "service_tier": null,
+            "system_fingerprint": "",
+            "usage": {
+                "completion_tokens": 125,
+                "prompt_tokens": 708,
+                "total_tokens": 1722,
+                "completion_tokens_details": {
+                    "accepted_prediction_tokens": null,
+                    "audio_tokens": null,
+                    "reasoning_tokens": 889,
+                    "rejected_prediction_tokens": null
+                },
+                "prompt_tokens_details": null
+            }
+        }
+    ],
+    "convertor": "google/gemini-2.5-pro",
+    "cost": null
+}

@@ -148,7 +148,7 @@
     "provider": "ollama",
     "responses": [
         {
-            "id": "chatcmpl-988",
+            "id": "chatcmpl-254",
             "choices": [
                 {
                     "finish_reason": "stop",
@@ -165,7 +165,7 @@
                     }
                 }
             ],
-            "created": 1750309269,
+            "created": 1754621764,
             "model": "gemma3:27b",
             "object": "chat.completion",
             "service_tier": null,
@@ -179,10 +179,10 @@
             }
         },
         {
-            "id": "2025-06-18|22:01:09.926519-07|6.108.77.200|-1207624959",
+            "id": "RGeVaKv9L_qbseMPuKHVmQE",
             "choices": [
                 {
-                    "finish_reason": "stop",
+                    "finish_reason": "tool_calls",
                     "index": 0,
                     "logprobs": null,
                     "message": {
@@ -205,7 +205,7 @@
                     }
                 }
             ],
-            "created": 1750309269,
+            "created": 1754621764,
             "model": "google/gemini-2.5-pro",
             "object": "chat.completion",
             "service_tier": null,
@@ -213,11 +213,11 @@
             "usage": {
                 "completion_tokens": 285,
                 "prompt_tokens": 758,
-                "total_tokens": 1833,
+                "total_tokens": 2106,
                 "completion_tokens_details": {
                     "accepted_prediction_tokens": null,
                     "audio_tokens": null,
-                    "reasoning_tokens": 790,
+                    "reasoning_tokens": 1063,
                     "rejected_prediction_tokens": null
                 },
                 "prompt_tokens_details": null
