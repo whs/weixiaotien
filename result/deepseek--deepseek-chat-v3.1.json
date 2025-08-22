@@ -1,0 +1,190 @@
+{
+    "version": 3,
+    "model": "deepseek/deepseek-chat-v3.1",
+    "result": {
+        "valid_relationships": [
+            {
+                "from_": "พระเอก",
+                "relation": "son",
+                "to": "เว่ยเส้าเทียน"
+            },
+            {
+                "from_": "เว่ยเส้าเทียน",
+                "relation": "father",
+                "to": "พระเอก"
+            },
+            {
+                "from_": "จางฟู่เหยิน",
+                "relation": "adopted",
+                "to": "พระเอก"
+            },
+            {
+                "from_": "เส้าสื่อเฉียน",
+                "relation": "found",
+                "to": "พระเอก"
+            },
+            {
+                "from_": "จางม่านจือ",
+                "relation": "mother",
+                "to": "พระเอก"
+            },
+            {
+                "from_": "จางฟู่เหยิน",
+                "relation": "friend",
+                "to": "เว่ยเส้าเทียน"
+            },
+            {
+                "from_": "เว่ยเส้าเทียน",
+                "relation": "friend",
+                "to": "จางฟู่เหยิน"
+            }
+        ],
+        "valid_optional_relationships": [],
+        "invalid_relationships": [
+            {
+                "from_": "หลี่เซียซุย",
+                "relation": "found",
+                "to": "พระเอก"
+            },
+            {
+                "from_": "เซียะถงอี้",
+                "relation": "friend",
+                "to": "เว่ยเส้าเทียน"
+            },
+            {
+                "from_": "เซียะถงอี้",
+                "relation": "friend",
+                "to": "หลี่เซียซุย"
+            },
+            {
+                "from_": "จางม่านจือ",
+                "relation": "friend",
+                "to": "เว่ยเส้าเทียน"
+            }
+        ],
+        "missing_relationships": [
+            {
+                "from_": "พระเอก",
+                "relation": "son",
+                "to": "จางม่านจือ"
+            }
+        ],
+        "valid_party_member_list": [
+            {
+                "name": "จางฟู่เหยิน",
+                "title": "หัวหน้าพรรค"
+            },
+            {
+                "name": "เส้าสื่อเฉียน",
+                "title": "แม่นาง 14"
+            }
+        ],
+        "invalid_party_member_list": [],
+        "missing_party_members": []
+    },
+    "score": 0.6454545454545455,
+    "error": null,
+    "provider": "openrouter",
+    "responses": [
+        {
+            "id": "gen-1755845010-IarZzxLNK1H91resFS6w",
+            "choices": [
+                {
+                    "finish_reason": "stop",
+                    "index": 0,
+                    "logprobs": null,
+                    "message": {
+                        "content": "<extracted_information>\n1. Relationship graph:\n- พระเอก -> เว่ยเส้าเทียน: son\n- เว่ยเส้าเทียน -> พระเอก: father\n- หลี่เซียซุย -> พระเอก: found\n- จางฟู่เหยิน -> พระเอก: adopted\n- แม่นางเส้าสื่อเฉียน -> พระเอก: found\n- เซียะถงอี้ -> เว่ยเส้าเทียน: friend\n- เซียะถงอี้ -> หลี่เซียซุย: friend\n- จางม่านจือ -> พระเอก: mother\n- จางม่านจือ -> เว่ยเส้าเทียน: friend\n- จางฟู่เหยิน -> เว่ยเส้าเทียน: friend\n- เว่ยเส้าเทียน -> จางฟู่เหยิน: friend\n\n2. พรรคกิเลนขาว members:\n- จางฟู่เหยิน: หัวหน้าพรรค\n- แม่นางเส้าสื่อเฉียน: แม่นาง 14\n</extracted_information>",
+                        "refusal": null,
+                        "role": "assistant",
+                        "annotations": null,
+                        "audio": null,
+                        "function_call": null,
+                        "tool_calls": null,
+                        "reasoning": null
+                    },
+                    "native_finish_reason": "stop"
+                }
+            ],
+            "created": 1755845010,
+            "model": "deepseek/deepseek-chat-v3.1",
+            "object": "chat.completion",
+            "service_tier": null,
+            "system_fingerprint": null,
+            "usage": {
+                "completion_tokens": 249,
+                "prompt_tokens": 726,
+                "total_tokens": 975,
+                "completion_tokens_details": {
+                    "accepted_prediction_tokens": null,
+                    "audio_tokens": null,
+                    "reasoning_tokens": 0,
+                    "rejected_prediction_tokens": null
+                },
+                "prompt_tokens_details": {
+                    "audio_tokens": 0,
+                    "cached_tokens": 0
+                },
+                "cost": 0.00051867,
+                "is_byok": false,
+                "cost_details": {
+                    "upstream_inference_cost": null,
+                    "input_audio_cache_read_tokens": null
+                }
+            },
+            "provider": "AtlasCloud"
+        },
+        {
+            "id": "nhGoaKKHDqW4694P-vrYwQE",
+            "choices": [
+                {
+                    "finish_reason": "tool_calls",
+                    "index": 0,
+                    "logprobs": null,
+                    "message": {
+                        "content": null,
+                        "refusal": null,
+                        "role": "assistant",
+                        "annotations": null,
+                        "audio": null,
+                        "function_call": null,
+                        "tool_calls": [
+                            {
+                                "id": "output",
+                                "function": {
+                                    "arguments": "{\"party_members\":[{\"name\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"title\":\"\\u0e2b\\u0e31\\u0e27\\u0e2b\\u0e19\\u0e49\\u0e32\\u0e1e\\u0e23\\u0e23\\u0e04\"},{\"name\":\"\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e2a\\u0e37\\u0e48\\u0e2d\\u0e40\\u0e09\\u0e35\\u0e22\\u0e19\",\"title\":\"\\u0e41\\u0e21\\u0e48\\u0e19\\u0e32\\u0e07 14\"}],\"relationships\":[{\"from_\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\",\"relation\":\"son\",\"to\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\",\"relation\":\"father\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e2b\\u0e25\\u0e35\\u0e48\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e0b\\u0e38\\u0e22\",\"relation\":\"found\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"relation\":\"adopted\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e2a\\u0e37\\u0e48\\u0e2d\\u0e40\\u0e09\\u0e35\\u0e22\\u0e19\",\"relation\":\"found\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e30\\u0e16\\u0e07\\u0e2d\\u0e35\\u0e49\",\"relation\":\"friend\",\"to\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e30\\u0e16\\u0e07\\u0e2d\\u0e35\\u0e49\",\"relation\":\"friend\",\"to\":\"\\u0e2b\\u0e25\\u0e35\\u0e48\\u0e40\\u0e0b\\u0e35\\u0e22\\u0e0b\\u0e38\\u0e22\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\",\"relation\":\"mother\",\"to\":\"\\u0e1e\\u0e23\\u0e30\\u0e40\\u0e2d\\u0e01\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e21\\u0e48\\u0e32\\u0e19\\u0e08\\u0e37\\u0e2d\",\"relation\":\"friend\",\"to\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\",\"relation\":\"friend\",\"to\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\"},{\"from_\":\"\\u0e40\\u0e27\\u0e48\\u0e22\\u0e40\\u0e2a\\u0e49\\u0e32\\u0e40\\u0e17\\u0e35\\u0e22\\u0e19\",\"relation\":\"friend\",\"to\":\"\\u0e08\\u0e32\\u0e07\\u0e1f\\u0e39\\u0e48\\u0e40\\u0e2b\\u0e22\\u0e34\\u0e19\"}]}",
+                                    "name": "output"
+                                },
+                                "type": "function",
+                                "extra_content": {
+                                    "google": {
+                                        "thought_signature": "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"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "created": 1755845022,
+            "model": "google/gemini-2.5-pro",
+            "object": "chat.completion",
+            "service_tier": null,
+            "system_fingerprint": "",
+            "usage": {
+                "completion_tokens": 209,
+                "prompt_tokens": 695,
+                "total_tokens": 1684,
+                "completion_tokens_details": {
+                    "accepted_prediction_tokens": null,
+                    "audio_tokens": null,
+                    "reasoning_tokens": 780,
+                    "rejected_prediction_tokens": null
+                },
+                "prompt_tokens_details": null
+            }
+        }
+    ],
+    "convertor": "google/gemini-2.5-pro",
+    "cost": null
+}
